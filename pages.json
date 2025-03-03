@@ -1,26 +1,26 @@
-{
-    "title": "Iota", 
-    "href": "music/iota.html",
-    "dates": {
-        "05-12-2024": "released",
-        "06-22-2024": "updated description"
-    },
-    "categories": ["music"],
-    "tags": ["album", "self-release"],
-    "contributors": {
-        "Popbot": {
-            "role": "primary creator",
-            "page": "https://www.popbot.work/index.html"
+[
+    {
+        "title": "Iota", 
+        "href": "music/iota.html",
+        "dates": {
+            "05-12-2024": "released",
+            "06-22-2024": "updated description"
         },
-        "Amfivolia": {
-            "role": "album artwork, collaborator on track 2",
-            "page": "https://amfivolia.crd.co/"
-        },
-        "Corrix": {
-            "role": "collaborator on track 7",
-            "page": "https://soundcloud.com/corrixtunes"
-
-        }
-
-    } 
-}
+        "categories": ["music"],
+        "tags": ["album", "self-release"],
+        "contributors": {
+            "Popbot": {
+                "role": "primary creator",
+                "page": "https://www.popbot.work/index.html"
+            },
+            "Amfivolia": {
+                "role": "album artwork, collaborator on track 2",
+                "page": "https://amfivolia.crd.co/"
+            },
+            "Corrix": {
+                "role": "collaborator on track 7",
+                "page": "https://soundcloud.com/corrixtunes"
+            }
+        } 
+    }
+]
