@@ -30,8 +30,7 @@
 			"    \"tags\": [$6],",
 			"    \"contributors\": {",
 			"        \"Popbot\": \"primary creator\"",
-			"        }$0",
-			"    } ",
+			"    }$0",
 			"}"
 		],
 		"description": "adds a new item entry"

@@ -43,5 +43,43 @@
                 }
             }
         ]
+    },
+    {
+        "title": "test musi", 
+        "href": "url",
+        "dates": {
+            "00-00-0000": "published"
+        },
+        "categories": ["music"],
+        "tags": ["a"],
+        "contributors": {
+            "Popbot": "primary creator"
+        } 
+    },
+
+    {
+        "title": "test other", 
+        "href": "url",
+        "dates": {
+            "00-00-0001": "published"
+        },
+        "categories": ["other"],
+        "tags": ["a", "b"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    
+    {
+        "title": "another test other", 
+        "href": "url",
+        "dates": {
+            "00-00-0002": "published"
+        },
+        "categories": ["other"],
+        "tags": ["b"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
     }
 ]
