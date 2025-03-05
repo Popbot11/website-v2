@@ -1,0 +1,47 @@
+[
+    {
+        "title": "Iota", 
+        "href": "music/iota.html",
+        "dates": {
+            "05-12-2024": "released",
+            "06-22-2024": "updated description"
+        },
+        "categories": ["music"],
+        "tags": ["album", "self-release"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "Amfivolia": "album artwork, collaborator on track 2",
+            "Corrix":  "collaborator on track 7"
+        }
+    },
+
+    {
+        "title": "example project", 
+        "href": "example.com",
+        "dates": {
+            "04-33-0002": "something happened"
+        },
+        "categories": ["music"],
+        "tags": ["EP"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "username": "role",
+            "bob": "did stuff"
+        },
+        "contents": [
+            {
+                "title": "track 1",
+                "contributors": {
+                    "Popbot": "primary creator",
+                    "username": "role"
+                }
+            },
+            {
+                "title": "track 2",
+                "contributors": {
+                    "Popbot": "primary creator"
+                }
+            }
+        ]
+    }
+]

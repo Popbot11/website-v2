@@ -26,27 +26,22 @@
 			"    \"dates\": {",
 			"        \"${3:mm-dd-yyyy}\": \"${4:published}\"",
 			"    },",
-			"    \"categories\": [\"${5|music, contraption, video, writing, other|}\"],",
+			"    \"categories\": [\"${5|music,contraption,video,writing,other|}\"],",
 			"    \"tags\": [$6],",
 			"    \"contributors\": {",
-			"        \"Popbot\": {",
-			"            \"role\": \"primary creator\",",
-			"            \"page\": \"https://www.popbot.work/index.html\"",
+			"        \"Popbot\": \"primary creator\"",
 			"        }$0",
 			"    } ",
 			"}"
 		],
 		"description": "adds a new item entry"
 	},
-	"new contributor": {
+	"key value pair": {
 		"scope": "json",
-		"prefix": "contributor",
+		"prefix": "pair",
 		"body": [
 			",",
-			"\"${1:name}\": {",
-			"    \"role\": \"${2:role}\",",
-			"    \"page\": \"${3:url}\"",
-			"}$0",
+			"\"${1:key}\": \"${2:value}\"$0",
 		]
 	},
 	"new date": {
@@ -56,5 +51,34 @@
 			",",
 			"\"${1:mm-dd-yyyy}\": \"${2:message}\""
 		]
+	},
+	"add contents body": {
+		"scope": "json",
+		"prefix": "contents body",
+		"body": [
+			",",
+			"\"contents\": [",
+			"    {",
+			"        \"title\": \"${1:title}\", ",
+			"        \"contributors\": {",
+			"            \"Popbot\": \"primary creator\"",
+			"        } ",
+			"    }$0",
+			"]"
+		]
+	},
+	"add contents item": {
+		"scope": "json",
+		"prefix": "contents item",
+		"body": [
+			",",
+			"{",
+			"    \"title\": \"${1:title}\", ",
+			"    \"contributors\": {",
+			"        \"Popbot\": \"primary creator\"",
+			"    } ",
+			"}$0"
+		],
 	}
+
 }

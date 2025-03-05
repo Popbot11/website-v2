@@ -1,0 +1,17 @@
+
+{
+    "popbot": {
+        "website": "https://www.popbot.work",
+        "bandcamp": "popbotmusic.bandcamp.com"
+    },
+    "username": {
+        "website": "url",
+        "some other page": "url",
+        "twitter": "url",
+        "zillow": "url",
+        "e621": "url",
+        "key": "value"
+    }
+}
+
+ 
