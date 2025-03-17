@@ -10,7 +10,7 @@
         <title>popbot.work</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -19,7 +19,45 @@
         
         <!-- <script src="" async defer></script> -->
 
-        <script src="index.js" type="module"></script>
-        <div id="canvas"></div>
+
+        <span>music:</span>
+        <div id="container-music" data-category="music">
+            
+            <div class="item">
+                <span class="year">year</span> | <span class="title">title</span> <span class="tags">tag(s)</span>
+            </div>
+            <hr>
+            <!-- CONTENTS RENDERED HERE -->
+        </div>
+
+
+        <hr>
+
+        <span>contraptions:</span>
+        <div id="container-contraption" data-category="contraptions">
+            <div class="item">
+                <span class="year">year</span> | <span class="title">title</span> <span class="tags">tag(s)</span>
+            </div>
+            <hr>
+            
+
+        </div>
+
+        <br>
+        <hr>
+        
+
+        <!-- <div class="infoPopup">
+            <center><b>Title</b><br></center>
+            <div class="container">
+                <span>Authors:</span> 
+                <div class="indent">
+                    <a href="">author</a>: <span>role</span><br>
+                </div>
+            </div>
+        </div> -->
+        
+        
+        <script src="script.js" type="module"></script>
     </body>
 </html>
