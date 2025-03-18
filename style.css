@@ -79,7 +79,15 @@ hr {
         float: right;
     }
 
-.infoPopup {
+
+
+
+.dropdown {
+    position: absolute;
+
+}    
+
+.info {
     border-color: rgba(255, 255, 255, 0);
     background-image: repeating-linear-gradient(180deg, rgba(250, 118, 18, 0.27) 0%, rgba(82, 53, 22, 0.385) 10%, rgba(250, 103, 18, 0.297) 20%);
     box-shadow: 0px 0px 30px rgb(179, 161, 0);
@@ -92,11 +100,10 @@ hr {
     width: 30%;
     max-width: 500px;
 
-    position: absolute;
-    backdrop-filter: blur(8px) hue-rotate(180deg);
+    backdrop-filter: blur(7px) hue-rotate(180deg);
     
 } 
-    .infoPopup .container {
+    .info .container {
         border-color: rgb(0, 0, 0);
         background-color: rgba(0, 0, 0, 0.163);
         border-width: 0px;
@@ -104,35 +111,28 @@ hr {
         width: 100%;
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     }
-    .infoPopup .indent {
+    .info .indent {
         padding-left: 20px;
     }
-    .infoPopup b {
+    .info b {
         font-size: 20px;
     }
-    .infoPopup a {
+    .info a {
         color: rgb(0, 39, 236);
     }
-    .infoPopup a:visited {
+    .info a:visited {
         color: rgb(48, 59, 0);
     }
 
 
 .tracklist {
     border-color: rgba(255, 255, 255, 0);
-    background-image: repeating-linear-gradient(180deg, rgba(250, 118, 18, 0.27) 0%, rgba(82, 53, 22, 0.385) 10%, rgba(250, 103, 18, 0.297) 20%);
-    box-shadow: 0px 0px 30px rgb(179, 161, 0);
+    background-image: repeating-linear-gradient(110deg, rgba(250, 18, 157, 0.27) 0%, rgba(239, 7, 123, 0.385) 10%, rgba(250, 18, 157, 0.27) 20%);
+    box-shadow: 0px 0px 30px rgba(179, 0, 255, 0.527);
     
-    filter: opacity(0.9);
-    border-width: 2px;
-    border-style: solid;
-
-    min-width: 250px;
-    width: 30%;
-    max-width: 500px;
+    backdrop-filter: blur(1px);
 
     position: absolute;
-    backdrop-filter: blur(8px) hue-rotate(180deg);
     
 } 
     .tracklist .container {
@@ -140,19 +140,13 @@ hr {
         background-color: rgba(0, 0, 0, 0.163);
         border-width: 0px;
         border-style: solid;
-        width: 100%;
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        
+        /* filter: blur(0.25px); */
+        
     }
     .tracklist .indent {
         padding-left: 20px;
-    }
-    .tracklist b {
-        font-size: 20px;
-    }
-    .tracklist a {
-        color: rgb(0, 39, 236);
-    }
-    .tracklist a:visited {
-        color: rgb(48, 59, 0);
+        
     }
 

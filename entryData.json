@@ -11,90 +11,137 @@
             "Popbot": "primary creator",
             "Amfivolia": "album artwork, collaborator on track 2",
             "Corrix":  "collaborator on track 7"
-        }
-    },
-
-    {
-        "title": "before iota", 
-        "href": "example.com",
-        "dates": {
-            "2023-03-04": "something happened"
-        },
-        "categories": ["music", "contraption"],
-        "tags": ["EP"],
-        "contributors": {
-            "Popbot": "primary creator",
-            "username": "role",
-            "bob": "did stuff"
         },
         "contents": [
-            {
-                "title": "track 1",
-                "contributors": {
-                    "Popbot": "primary creator",
-                    "username": "role"
-                }
-            },
-            {
-                "title": "track 2",
-                "contributors": {
-                    "Popbot": "primary creator"
-                }
-            }
+            "Fibril",
+            "Flakes",
+            "Tulip Tree (w/ Amfivolia)",
+            "Beams",
+            "Organic Machine",
+            "Falling Objects",
+            "Spokes (w/ Corrix)",
+            "Crystals",
+            "Mites",
+            "Sediment",
+            "Agglomerate",
+            "Ash"
         ]
     },
     {
-        "title": "after iota", 
-        "href": "something",
+        "title": "dipe preme", 
+        "href": "url",
         "dates": {
-            "2025-04-14": "birthed"
+            "2025-01-16": "published"
         },
         "categories": ["music"],
+        "tags": ["single"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "Noah Lin": "primary creator"
+        }
+    },
+    {
+        "title": "TECH 201 Etude", 
+        "href": "url",
+        "dates": {
+            "2025-01-9": "published"
+        },
+        "categories": ["music"],
+        "tags": ["single"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "Texture", 
+        "href": "url",
+        "dates": {
+            "2024-12-07": "published",
+            "2024-09-14": "Swells posted on soundcloud"
+        },
+        "categories": ["music"],
+        "tags": [],
+        "contributors": {
+            "Popbot": "primary creator",
+            "Dustdrift": "remixed Whine"
+        },
+        "contents": [
+            "Swells",
+            "Whine",
+            "Dry",
+            "Auning",
+            "Whine (Distdrift remix)"
+        ]
+    },
+    {
+        "title": "crazyn7uts", 
+        "href": "url",
+        "dates": {
+            "2024-08-30": "published"
+        },
+        "categories": ["music"],
+        "tags": ["single", "collaborative"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "lukasio": "primary creator"
+        }
+    }
+
+
+    ,
+    {
+        "title": "module editor", 
+        "href": "url",
+        "dates": {
+            "2025-01-22": "published",
+            "2025-01-23": "updated code",
+            "2025-01-28": "updated code",
+            "2025-01-31": "updated paramaters"
+        },
+        "categories": ["contraption"],
+        "tags": ["WIP"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "melda algos", 
+        "href": "url",
+        "dates": {
+            "2025-01-20": "published"
+        },
+        "categories": ["contraption"],
+        "tags": ["melda"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "buffer-gen", 
+        "href": "url",
+        "dates": {
+            "2024-11-17": "published on website",
+            "2024-12-12": "got preset files (toml) working",
+            "2024-12-14": "bulk module, other stuff",
+            "other dates": "not a complete log"
+        },
+        "categories": ["contraption"],
         "tags": [],
         "contributors": {
             "Popbot": "primary creator"
         }
     },
     {
-        "title": "new contraption", 
+        "title": "new thing idk", 
         "href": "url",
         "dates": {
-            "2025-3-19": "published",
-            "2025-4-20": "edited in some way"
+            "2026": "published"
         },
         "categories": ["music"],
-        "tags": ["megacollab", "single"],
-        "contributors": {
-            "Popbot": "primary creator"
-        }
-    },
-    {
-        "title": "contraptionagain", 
-        "href": "url",
-        "dates": {
-            "2025-20-12": "published"
-        },
-        "categories": ["contraption"],
-        "tags": ["something"],
-        "contributors": {
-            "Popbot": "primary creator"
-        }
-    },
-    {
-        "title": "project with a lot of collaborators", 
-        "href": "url",
-        "dates": {
-            "2025-3-19": "published"
-        },
-        "categories": ["music"],
-        "tags": ["megacollab", "single"],
+        "tags": ["collaborative"],
         "contributors": {
             "Popbot": "primary creator",
-            "Amfivolia": "penis man",
-            "somebody": "something",
-            "thisguy": "did stuff yay",
-            "another person": "killed god",
-            "zora harrison": "moral support"
+            "skrillex": "biological father"
         }
     }
 ]

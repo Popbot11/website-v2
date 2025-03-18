@@ -17,7 +17,7 @@
 	// }
 	"new site item": {
 		"scope": "json",
-		"prefix": "item",
+		"prefix": ["item", "entry"],
 		"body": [
 			",",
 			"{",
@@ -57,27 +57,8 @@
 		"body": [
 			",",
 			"\"contents\": [",
-			"    {",
-			"        \"title\": \"${1:title}\", ",
-			"        \"contributors\": {",
-			"            \"Popbot\": \"primary creator\"",
-			"        } ",
-			"    }$0",
+			"    \"$0\"",
 			"]"
 		]
 	},
-	"add contents item": {
-		"scope": "json",
-		"prefix": "contents item",
-		"body": [
-			",",
-			"{",
-			"    \"title\": \"${1:title}\", ",
-			"    \"contributors\": {",
-			"        \"Popbot\": \"primary creator\"",
-			"    } ",
-			"}$0"
-		],
-	}
-
 }
