@@ -74,10 +74,23 @@
         "title": "another test other", 
         "href": "url",
         "dates": {
-            "00-00-0002": "published"
+            "2025-3-19": "published",
+            "2025-4-20": "edited in some way"
         },
-        "categories": ["other"],
-        "tags": ["b"],
+        "categories": ["music"],
+        "tags": ["megacollab", "single"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "contraptionagain", 
+        "href": "url",
+        "dates": {
+            "2025-20-12": "published"
+        },
+        "categories": ["contraption"],
+        "tags": ["something"],
         "contributors": {
             "Popbot": "primary creator"
         }
