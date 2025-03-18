@@ -3,8 +3,7 @@
         "title": "Iota", 
         "href": "music/iota.html",
         "dates": {
-            "05-12-2024": "released",
-            "06-22-2024": "updated description"
+            "2023-05-12": "released"
         },
         "categories": ["music"],
         "tags": ["album", "self-release"],
@@ -16,12 +15,12 @@
     },
 
     {
-        "title": "example project", 
+        "title": "before iota", 
         "href": "example.com",
         "dates": {
-            "04-33-0002": "something happened"
+            "2023-03-04": "something happened"
         },
-        "categories": ["music"],
+        "categories": ["music", "contraption"],
         "tags": ["EP"],
         "contributors": {
             "Popbot": "primary creator",
@@ -45,33 +44,19 @@
         ]
     },
     {
-        "title": "test musi", 
-        "href": "url",
+        "title": "after iota", 
+        "href": "something",
         "dates": {
-            "00-00-0000": "published"
+            "2025-04-14": "birthed"
         },
         "categories": ["music"],
-        "tags": ["a"],
-        "contributors": {
-            "Popbot": "primary creator"
-        } 
-    },
-
-    {
-        "title": "test other", 
-        "href": "url",
-        "dates": {
-            "00-00-0001": "published"
-        },
-        "categories": ["other"],
-        "tags": ["a", "b"],
+        "tags": [],
         "contributors": {
             "Popbot": "primary creator"
         }
     },
-    
     {
-        "title": "another test other", 
+        "title": "new contraption", 
         "href": "url",
         "dates": {
             "2025-3-19": "published",
@@ -93,6 +78,23 @@
         "tags": ["something"],
         "contributors": {
             "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "project with a lot of collaborators", 
+        "href": "url",
+        "dates": {
+            "2025-3-19": "published"
+        },
+        "categories": ["music"],
+        "tags": ["megacollab", "single"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "Amfivolia": "penis man",
+            "somebody": "something",
+            "thisguy": "did stuff yay",
+            "another person": "killed god",
+            "zora harrison": "moral support"
         }
     }
 ]

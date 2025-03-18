@@ -24,7 +24,7 @@
 			"    \"title\": \"${1:title}\", ",
 			"    \"href\": \"${2:url}\",",
 			"    \"dates\": {",
-			"        \"${3:mm-dd-yyyy}\": \"${4:published}\"",
+			"        \"${3:yyyy-mm-dd}\": \"${4:published}\"",
 			"    },",
 			"    \"categories\": [\"${5|music,contraption,video,writing,other|}\"],",
 			"    \"tags\": [$6],",
@@ -48,7 +48,7 @@
 		"prefix": "date",
 		"body": [
 			",",
-			"\"${1:mm-dd-yyyy}\": \"${2:message}\""
+			"\"${1:yyyy-mm-dd}\": \"${2:message}\""
 		]
 	},
 	"add contents body": {
