@@ -1,12 +1,13 @@
 [
+
     {
         "title": "Iota", 
-        "href": "music/iota.html",
+        "src": "https://popbot.work/music/iotaAlbum.html",
         "dates": {
             "2023-05-12": "released"
         },
         "categories": ["music"],
-        "tags": ["album", "self-release"],
+        "tags": ["Album"],
         "contributors": {
             "Popbot": "primary creator",
             "Amfivolia": "album artwork, collaborator on track 2",
@@ -29,7 +30,7 @@
     },
     {
         "title": "dipe preme", 
-        "href": "url",
+        "src": "https://popbot.work/music/dipePreme.html",
         "dates": {
             "2025-01-16": "published"
         },
@@ -42,7 +43,7 @@
     },
     {
         "title": "TECH 201 Etude", 
-        "href": "url",
+        "src": "https://popbot.work/music/TECH201Etude.html",
         "dates": {
             "2025-01-9": "published"
         },
@@ -54,13 +55,13 @@
     },
     {
         "title": "Texture", 
-        "href": "url",
+        "src": "https://popbot.work/music/textureEP.html",
         "dates": {
             "2024-12-07": "published",
             "2024-09-14": "Swells posted on soundcloud"
         },
         "categories": ["music"],
-        "tags": [],
+        "tags": ["EP"],
         "contributors": {
             "Popbot": "primary creator",
             "Dustdrift": "remixed Whine"
@@ -75,7 +76,7 @@
     },
     {
         "title": "crazyn7uts", 
-        "href": "url",
+        "src": "https://popbot.work/music/crazyn7uts.html",
         "dates": {
             "2024-08-30": "published"
         },
@@ -91,7 +92,7 @@
     ,
     {
         "title": "module editor", 
-        "href": "url",
+        "src": "https://popbot.work/contraptions/moduleEditor.html",
         "dates": {
             "2025-01-22": "published",
             "2025-01-23": "updated code",
@@ -106,7 +107,7 @@
     },
     {
         "title": "melda algos", 
-        "href": "url",
+        "src": "https://popbot.work/contraptions/meldaAlgos.html",
         "dates": {
             "2025-01-20": "published"
         },
@@ -118,7 +119,7 @@
     },
     {
         "title": "buffer-gen", 
-        "href": "url",
+        "src": "https://popbot.work/contraptions/buffer-gen.html",
         "dates": {
             "2024-11-17": "published on website",
             "2024-12-12": "got preset files (toml) working",
@@ -129,19 +130,6 @@
         "tags": [],
         "contributors": {
             "Popbot": "primary creator"
-        }
-    },
-    {
-        "title": "new thing idk", 
-        "href": "url",
-        "dates": {
-            "2026": "published"
-        },
-        "categories": ["music"],
-        "tags": ["collaborative"],
-        "contributors": {
-            "Popbot": "primary creator",
-            "skrillex": "biological father"
         }
     }
 ]

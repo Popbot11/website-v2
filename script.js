@@ -1,7 +1,10 @@
 import entryData from './entryData.json' with {type: 'json'};
-entryData.sort((a, b) => parseFloat(Object.keys(b.dates)[0].replace("-", "")) - parseFloat(Object.keys(a.dates)[0].replace("-", "")));
+entryData.sort((a, b) => parseFloat(Object.keys(b.dates)[0]) - parseFloat(Object.keys(a.dates)[0]));
 const categories = ["music", "contraption"];
 
+var canvas = document.getElementById("canvas");
+
+// track mouse position
 var mouseX;
 var mouseY;
 document.addEventListener(
@@ -10,10 +13,9 @@ document.addEventListener(
         mouseX = event.clientX;
         mouseY = event.clientY;
     }
-)
+);
 
-
-
+// generate html for a single entry
 const renderEntry = entry => {
     var element = document.createElement("div");
     element.className="item";
@@ -21,7 +23,7 @@ const renderEntry = entry => {
     
     // TODO: define more dynamic functionality for dates. on hover, the date should expand to a verbose date ("Month" ##, 20xx)
     var dropdown = document.createElement("div");
-    dropdown.appendChild(renderInfoPopup(entry));
+    dropdown.appendChild(renderDropdown(entry));
 
     if (Object.keys(entry).includes("contents")) {
         dropdown.appendChild(renderTracklist(entry));
@@ -50,14 +52,15 @@ const renderEntry = entry => {
         (event) => {
             // display stuff in main window when clicked
             console.log("mmfgfh " + event.clientX);
+            canvas.src = entry.src;
         }
     )
 
     return element;
 };
 
-
-const renderInfoPopup = (entry) => {
+// generate html for the main info dropdown
+const renderDropdown = (entry) => {
     
     var element = document.createElement("div");
     
@@ -79,37 +82,48 @@ const renderInfoPopup = (entry) => {
     `;
     
     return element;
-}
+};
 
+// generate HTML for the tracklist, if applicable
 const renderTracklist = (entry) => {
     
     var element = document.createElement("div");
-
-    
-        console.log( JSON.stringify(entry.contents).replace("\",\"", "\n"));
-        // ${[entry.contents]}
-        element.className="tracklist";
-        element.innerHTML=`
-        <div class="container">
-            <span>Tracklist: </span>
-            <div class="indent">
-                
-                ${entry.contents.map((track, index) => `<div>${index + 1}. ${track}</div>`).join('')}
-            </div>
+    element.className="tracklist";
+    element.innerHTML=`
+    <div class="container">
+        <span>Tracklist: </span>
+        <div class="indent">
+            
+            ${entry.contents.map((track, index) => `<div>${index + 1}. ${track}</div>`).join('')}
         </div>
-        `
-    
+    </div>
+    `;
     return element;
+};
 
-}
-
+// render full list of entries
 for (const entry of entryData){
     for (const category of categories) {
         if (entry.categories.includes(category)) {
-
             document.getElementById("container-"+category).appendChild(renderEntry(entry));
-            
         }
     }
 }
 
+// inject html for the content, displayed after an item is clicked
+const renderContent = entry => {
+
+};
+
+// inject html for the info portion of the item being displayed
+const renderInfo = entry => {
+
+};
+
+// inject iframe if href, auto-generate from json otherwise
+const renderDisplay = entry => {
+
+};
+
+
+// TODO: extra dropdowns for person data and verbose dates (full changelog)

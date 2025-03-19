@@ -13,51 +13,35 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <!--[if lt IE 7]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <!-- <script src="" async defer></script> -->
-
-
         <span>music:</span>
         <div id="container-music" data-category="music">
-            
             <div class="item">
                 <span class="year">year</span> | <span class="title">title</span> <span class="tags">tag(s)</span>
             </div>
             <hr>
-            <!-- CONTENTS RENDERED HERE -->
         </div>
 
-
         <hr>
-
         <span>contraptions:</span>
         <div id="container-contraption" data-category="contraptions">
             <div class="item">
                 <span class="year">year</span> | <span class="title">title</span> <span class="tags">tag(s)</span>
             </div>
             <hr>
-            
-
         </div>
 
         <br>
         <hr>
-        
+        <br>
 
-        <!-- <div class="infoPopup">
-            <center><b>Title</b><br></center>
-            <div class="container">
-                <span>Authors:</span> 
-                <div class="indent">
-                    <a href="">author</a>: <span>role</span><br>
-                </div>
-            </div>
-        </div> -->
-        
-        
+        <div id="content">
+            <div id="info"></div>
+            <span>Authors: ${entry.contributors} (for each contributor, show dropdown on click that links out to socails)</span><br>
+            <span>${entry.dates[0]} (on hover show expanded dates)</span><br>
+            <iframe src="testpage.html" id="display"></iframe>
+        </div>
+
         <script src="script.js" type="module"></script>
+
     </body>
 </html>
