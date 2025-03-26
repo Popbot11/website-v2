@@ -1,8 +1,10 @@
 import entryData from './entryData.json' with {type: 'json'};
-entryData.sort((a, b) => parseFloat(Object.keys(b.dates)[0]) - parseFloat(Object.keys(a.dates)[0]));
+import personData from './personData.json' with {type: 'json'};
+
+entryData.sort((a, b) => parseInt(Object.keys(b.dates)[0].replaceAll("-","")) - parseInt(Object.keys(a.dates)[0].replaceAll("-",""))); 
+
 const categories = ["music", "contraption"];
 
-var canvas = document.getElementById("canvas");
 
 // track mouse position
 var mouseX;
@@ -51,8 +53,8 @@ const renderEntry = entry => {
         "mousedown",
         (event) => {
             // display stuff in main window when clicked
-            console.log("mmfgfh " + event.clientX);
-            canvas.src = entry.src;
+            document.getElementById("content").innerHTML="";
+            document.getElementById("content").appendChild(renderContent(entry));
         }
     )
 
@@ -101,6 +103,54 @@ const renderTracklist = (entry) => {
     return element;
 };
 
+
+
+// inject html for the content, displayed after an item is clicked
+const renderContent = entry => {
+    var element = document.createElement("div");
+    element.innerHTML = `
+    <div class="container">
+        <span>Authors:</span>
+        <div class="indent">
+            ${Object.keys(entry.contributors).map(author => renderAuthor(author).outerHTML).join("")}
+            <br>
+            <span id="authorInfo"></span>
+        </div>
+        <span>Dates:</span>
+        <div class="indent">
+        
+        </div>
+        <hr>
+    </div>
+    `;
+    // renderDisplay();
+    
+    return element;
+};
+
+function updateAuthorLinks(){
+    document.getElementById("authorInfo").innerHTML=personData.author;
+}
+
+
+const renderAuthor = author => {
+    var element = document.createElement("button");
+    element.innerHTML=`${author}`
+
+    
+    element.setAttribute("onclick", `document.getElementById("authorInfo").innerHTML="${Object.keys(personData).map(text => text)}"`);
+
+    return element;
+}
+
+
+const renderAuthorLinks = author => {
+
+    return author
+}
+
+// TODO: extra dropdowns for person data and verbose dates (full changelog)
+
 // render full list of entries
 for (const entry of entryData){
     for (const category of categories) {
@@ -109,21 +159,3 @@ for (const entry of entryData){
         }
     }
 }
-
-// inject html for the content, displayed after an item is clicked
-const renderContent = entry => {
-
-};
-
-// inject html for the info portion of the item being displayed
-const renderInfo = entry => {
-
-};
-
-// inject iframe if href, auto-generate from json otherwise
-const renderDisplay = entry => {
-
-};
-
-
-// TODO: extra dropdowns for person data and verbose dates (full changelog)

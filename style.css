@@ -158,3 +158,6 @@ hr {
 
         /* overflow-x:clip; */
     }
+    #content .indent {
+        padding-left: 20px;
+    }
