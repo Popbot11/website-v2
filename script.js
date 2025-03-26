@@ -7,8 +7,8 @@ const categories = ["music", "contraption"];
 
 
 // track mouse position
-var mouseX;
-var mouseY;
+let mouseX;
+let mouseY;
 document.addEventListener(
     "mousemove",
     (event) => {
@@ -19,12 +19,12 @@ document.addEventListener(
 
 // generate html for a single entry
 const renderEntry = entry => {
-    var element = document.createElement("div");
+    let element = document.createElement("div");
     element.className="item";
     element.innerHTML = `<span class="year">${Object.keys(entry.dates)[0].substring(0, 4)}</span> | <span class="title">${entry.title}</span> <span class="tags">${entry.tags.join(", ")}</span>`
     
     // TODO: define more dynamic functionality for dates. on hover, the date should expand to a verbose date ("Month" ##, 20xx)
-    var dropdown = document.createElement("div");
+    let dropdown = document.createElement("div");
     dropdown.appendChild(renderDropdown(entry));
 
     if (Object.keys(entry).includes("contents")) {
@@ -37,7 +37,10 @@ const renderEntry = entry => {
         "mouseover",
         (event) => {
             element.style.backgroundColor = "rgba(0, 0, 0, 0.27)";
-            dropdown.style=`transform:translateX(${mouseX}px);`;
+            dropdown.style=`
+                top: ${mouseY + 10}px;
+                left: ${mouseX + 10}px;
+            `;
             element.appendChild(dropdown);
         }
     );
@@ -64,7 +67,7 @@ const renderEntry = entry => {
 // generate html for the main info dropdown
 const renderDropdown = (entry) => {
     
-    var element = document.createElement("div");
+    let element = document.createElement("div");
     
     element.className="info";
     element.innerHTML = `
@@ -89,7 +92,7 @@ const renderDropdown = (entry) => {
 // generate HTML for the tracklist, if applicable
 const renderTracklist = (entry) => {
     
-    var element = document.createElement("div");
+    let element = document.createElement("div");
     element.className="tracklist";
     element.innerHTML=`
     <div class="container">
@@ -107,7 +110,7 @@ const renderTracklist = (entry) => {
 
 // inject html for the content, displayed after an item is clicked
 const renderContent = entry => {
-    var element = document.createElement("div");
+    let element = document.createElement("div");
     element.innerHTML = `
     <div class="container">
         <span>Authors:</span>
@@ -118,19 +121,27 @@ const renderContent = entry => {
         </div>
         <span>Dates:</span>
         <div class="indent">
-        
+            something
         </div>
-        <hr>
-    </div>
+        
     `;
+    if (Object.keys(entry).includes("src")){
+        let iframe = document.createElement("iframe");
+        iframe.setAttribute("src", entry.src);
+
+        // TODO: finish this
+        element.appendChild(iframe);
+    } else {
+        console.log("does not include source");
+    }
     // renderDisplay();
-    
+    element.innerHTML += `</div>`
     return element;
 };
 
 
 const renderAuthor = (author, entry) => {
-    var element = document.createElement("button");
+    let element = document.createElement("button");
     element.innerHTML=`${author}`
     
     const renderAuthorLink = (text, author) => {return `<a href='${personData[author.toLowerCase()][String(text)]}' target='_blank'>${text}</a>`;}
@@ -139,8 +150,6 @@ const renderAuthor = (author, entry) => {
     } catch {
         element.setAttribute("onclick", `document.getElementById("authorInfo").innerHTML="${author.toLowerCase()} isn't in the database"`);
     }
-    // element.setAttribute("onclick", `console.log("")`);
-
     return element;
 }
 
@@ -149,7 +158,7 @@ const renderAuthor = (author, entry) => {
 
 // TODO: extra dropdowns for person data and verbose dates (full changelog)
 
-// render full list of entries
+// actually render full list of entries
 for (const entry of entryData){
     for (const category of categories) {
         if (entry.categories.includes(category)) {
@@ -157,3 +166,10 @@ for (const entry of entryData){
         }
     }
 }
+
+// TODO: ZORA CODE IMPLEMENT THIS IN A SEC
+// const renderAuthorLink = (text, author) => `<a href='${personData[author.toLowerCase()][String(text)]}' target='_blank'>${text}</a>`;
+// element.addEventListener("click", () => {
+//   const links = Object.keys(personData[author.toLowerCase()]).map(text => renderAuthorLink(text, author)).join(" | ");
+//   document.getElementById("authorInfo").innerHTML = links;
+// });

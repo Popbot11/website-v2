@@ -136,7 +136,7 @@
     },
     {
         "title": "Album of Life", 
-        "href": "url",
+        "src": "testpage.html",
         "dates": {
             "2025-03-21": "published"
         },

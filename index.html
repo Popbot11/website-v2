@@ -11,38 +11,55 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+
+        <!-- DEFINING SVG FIILTERS FOR CSS -->
+        <svg height="0" width="0">
+            <defs>
+                <filter id="offset" width="180" height="180">
+                    <feOffset in="SourceGraphic" dx="0" dy="50">
+                        <animate 
+                            attributeName="dy"
+                            values="-50; 0; 50; 0; -50"
+                            dur="10s"
+                            repeatCount="indefinite"
+                        />
+                    </feOffset>              
+                </filter>
+            </defs>
+        </svg>
+
     </head>
     <body>
-        <span>music:</span>
+
+        
         <div id="container-music" data-category="music">
+            <center><b>music</b></center>
             <div class="item">
                 <span class="year">year</span> | <span class="title">title</span> <span class="tags">tag(s)</span>
             </div>
             <hr>
         </div>
 
-        <hr>
-        <span>contraptions:</span>
+
+        <!-- <span>contraptions:</span> -->
         <div id="container-contraption" data-category="contraptions">
             <div class="item">
                 <span class="year">year</span> | <span class="title">title</span> <span class="tags">tag(s)</span>
             </div>
             <hr>
         </div>
+ 
 
         <br>
         <hr>
         <br>
 
-        <div id="content">
-            <div id="info">
-                <span>Authors: ${entry.contributors} (for each contributor, show dropdown on click that links out to socails)</span><br>
-                <span>${entry.dates[0]} (on hover show expanded dates)</span><br>
-            </div>  
-            <iframe src="testpage.html" id="display"></iframe>
-        </div>
+        <div id="content"></div>
+
+
+        
 
         <script src="script.js" type="module"></script>
-
+        
     </body>
 </html>
