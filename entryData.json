@@ -84,7 +84,7 @@
         "tags": ["single", "collaborative"],
         "contributors": {
             "Popbot": "primary creator",
-            "lukasio": "primary creator"
+            "lukasipo": "primary creator"
         }
     }
 
@@ -114,7 +114,9 @@
         "categories": ["contraption"],
         "tags": ["melda"],
         "contributors": {
-            "Popbot": "primary creator"
+            "Popbot": "primary creator",
+            "lukasipo": "was there doing similar stuff",
+            "amfivolia": "was there doing similar stuff"
         }
     },
     {

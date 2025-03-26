@@ -68,17 +68,17 @@ const renderDropdown = (entry) => {
     
     element.className="info";
     element.innerHTML = `
-    <center><b>${entry.title}</b><br></center>
+    <center style="font-size: 20px">${entry.title}<br></center>
     <div class="container">
         <span>Author(s):</span> 
         <div class="indent">
-            ${Object.keys(entry.contributors).map(author => `<a href="">${author}</a>: <span>${entry.contributors[author]}</span><br>`).join('')}
+            ${Object.keys(entry.contributors).map(author => ` <span><b>${author}</b>: ${entry.contributors[author]}</span><br>`).join('')}
         </div>
     </div>
     <div class="container">
         <span>Date(s):</span>
         <div class="indent">
-            ${Object.keys(entry.dates).map(date => `<a href="">${date}</a>: <span>${entry.dates[date]}</span><br>`).join('')}
+            ${Object.keys(entry.dates).map(date => `<span><b>${date}</b>: ${entry.dates[date]}</span><br>`).join('')}
         </div>
     </div>
     `;
@@ -112,7 +112,7 @@ const renderContent = entry => {
     <div class="container">
         <span>Authors:</span>
         <div class="indent">
-            ${Object.keys(entry.contributors).map(author => renderAuthor(author).outerHTML).join("")}
+            ${Object.keys(entry.contributors).map(author => renderAuthor(author, entry).outerHTML).join("")}
             <br>
             <span id="authorInfo"></span>
         </div>
@@ -128,26 +128,24 @@ const renderContent = entry => {
     return element;
 };
 
-function updateAuthorLinks(){
-    document.getElementById("authorInfo").innerHTML=personData.author;
-}
 
-
-const renderAuthor = author => {
+const renderAuthor = (author, entry) => {
     var element = document.createElement("button");
     element.innerHTML=`${author}`
-
     
-    element.setAttribute("onclick", `document.getElementById("authorInfo").innerHTML="${Object.keys(personData).map(text => text)}"`);
+    const renderAuthorLink = (text, author) => {return `<a href='${personData[author.toLowerCase()][String(text)]}' target='_blank'>${text}</a>`;}
+    try {
+        element.setAttribute("onclick", `document.getElementById("authorInfo").innerHTML="${author}: ${Object.keys(personData[author.toLowerCase()]).map(text => renderAuthorLink(text, author)).join(" | ")}<br>role: ${entry.contributors[author]}"`);
+    } catch {
+        element.setAttribute("onclick", `document.getElementById("authorInfo").innerHTML="${author.toLowerCase()} isn't in the database"`);
+    }
+    // element.setAttribute("onclick", `console.log("")`);
 
     return element;
 }
 
 
-const renderAuthorLinks = author => {
 
-    return author
-}
 
 // TODO: extra dropdowns for person data and verbose dates (full changelog)
 

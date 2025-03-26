@@ -15,6 +15,9 @@ hr {
     padding: 5px;
     margin: 0%;
 }
+[id^="container"] .item{
+    cursor: pointer;
+}
 
 #container-music {
     color: rgb(0, 0, 0);
@@ -102,9 +105,9 @@ hr {
     .info .indent {
         padding-left: 20px;
     }
-    .info b {
+    /* .info b {
         font-size: 20px;
-    }
+    } */
     .info a {
         color: rgb(0, 39, 236);
     }
@@ -160,4 +163,7 @@ hr {
     }
     #content .indent {
         padding-left: 20px;
+    }
+    #content button {
+        cursor: pointer;
     }
