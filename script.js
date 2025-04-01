@@ -1,6 +1,7 @@
 import entryData from './entryData.json' with {type: 'json'};
 import personData from './personData.json' with {type: 'json'};
 
+
 entryData.sort((a, b) => parseInt(Object.keys(b.dates)[0].replaceAll("-","")) - parseInt(Object.keys(a.dates)[0].replaceAll("-",""))); 
 
 const categories = ["music", "contraption"];
@@ -9,6 +10,7 @@ const categories = ["music", "contraption"];
 // track mouse position
 let mouseX;
 let mouseY;
+
 document.addEventListener(
     "mousemove",
     (event) => {
