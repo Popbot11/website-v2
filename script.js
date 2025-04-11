@@ -1,5 +1,5 @@
-import entryData from './entryData.js';
-import personData from './personData.js';
+import entryData from './data/entryData.js';
+import personData from './data/personData.js';
 
 
 entryData.sort((a, b) => parseInt(Object.keys(b.dates)[0].replaceAll("-","")) - parseInt(Object.keys(a.dates)[0].replaceAll("-",""))); 
