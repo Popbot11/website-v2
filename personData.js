@@ -1,0 +1,51 @@
+const personData = 
+{
+    "popbot": {
+        "website": "https://www.popbot.work",
+        "bandcamp": "https://popbotmusic.bandcamp.com/",
+        "soundcloud": "https://soundcloud.com/popbot1",
+        "spotify": "https://open.spotify.com/artist/4eDbD4oyIs9osobAAkkh0T",
+        "bluesky": "https://bsky.app/profile/popbot.work",
+        "instagram": "https://www.instagram.com/popbot_/?hl=af",
+        "youtube": "https://www.youtube.com/channel/UCckNFTtfD7FKCqbTE5UBVPw",
+        "github": "https://github.com/Popbot11",
+        "newgrounds": "https://popbot2.newgrounds.com/",
+        "discord server": "https://discord.gg/RpZ4dt9mUr"
+    },
+    "example": {
+        "website": "url",
+        "some other page": "url",
+        "twitter": "url",
+        "zillow": "url",
+        "e621": "url",
+        "key": "value"
+    },
+    "lukasipo": {
+        "soundcloud": "https://soundcloud.com/lukasipo",
+        "twitter": "https://x.com/lukasipo1"
+    },
+    "amfivolia": {
+        "portfolio": "https://amfivolia.crd.co/#work",
+        "soundcloud": "https://soundcloud.com/amfivolia",
+        "bandcamp": "https://amfivolia.bandcamp.com/",
+        "spotify": "https://open.spotify.com/artist/3SyI00x3JUB1J0iDEp8QGH?si=xZQe_hOURfuXwV4BZipdNA",
+        "youtube": "https://www.youtube.com/channel/UCSttPJRIqmNEFpiFEIFmnxg"
+    },
+    "axis twelve": {
+        "soundcloud": "https://soundcloud.com/axistwelve",
+        "bandcamp": "https://axistwelve.bandcamp.com/",
+        "twitter": "https://x.com/axis_twelve",
+        "linktree": "https://linktr.ee/axistwelve",
+        "bluesky": "https://bsky.app/profile/hanad.bsky.social",
+        "2nd soundcloud": "https://soundcloud.com/axes-one-to-eleven"
+    },
+    "arturia": {
+        "website": "https://www.arturia.com/"
+    },
+    "noah lin": {
+        "website": "https://isaac-einhorn.neocities.org/",
+        "soundcloud": "https://soundcloud.com/einhorn-again"
+    }
+}
+
+export default personData;

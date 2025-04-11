@@ -1,0 +1,228 @@
+const entryData = [
+    {
+        "title": "Iota", 
+        "src": "https://popbot.work/music/iotaAlbum.html",
+        "dates": {
+            "2023-05-12": "released"
+        },
+        "categories": ["music"],
+        "tags": ["album"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "Amfivolia": "album artwork, collaborator on track 2",
+            "Corrix":  "collaborator on track 7"
+        },
+        "contents": [
+            "Fibril",
+            "Flakes",
+            "Tulip Tree (w/ Amfivolia)",
+            "Beams",
+            "Organic Machine",
+            "Falling Objects",
+            "Spokes (w/ Corrix)",
+            "Crystals",
+            "Mites",
+            "Sediment",
+            "Agglomerate",
+            "Ash"
+        ]
+    },
+    {
+        "title": "Texture", 
+        "src": "https://popbot.work/music/textureEP.html",
+        "dates": {
+            "2024-12-07": "published",
+            "2024-09-14": "Swells posted on soundcloud"
+        },
+        "categories": ["music"],
+        "tags": ["ep"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "Dustdrift": "remixed Whine"
+        },
+        "contents": [
+            "Swells",
+            "Whine",
+            "Dry",
+            "Auning",
+            "Whine (Distdrift remix)"
+        ]
+    },
+    {
+        "title": "crazyn7uts", 
+        "src": "https://popbot.work/music/crazyn7uts.html",
+        "dates": {
+            "2024-08-30": "published"
+        },
+        "categories": ["music"],
+        "tags": ["single", "collaborative"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "lukasipo": "primary creator"
+        }
+    }
+
+
+    ,
+    {
+        "title": "module editor", 
+        "src": "https://popbot.work/contraptions/moduleEditor.html",
+        "dates": {
+            "2025-01-22": "published",
+            "2025-01-23": "updated code",
+            "2025-01-28": "updated code",
+            "2025-01-31": "updated paramaters"
+        },
+        "categories": ["contraption"],
+        "tags": ["wip"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "melda algos", 
+        "src": "https://popbot.work/contraptions/meldaAlgos.html",
+        "dates": {
+            "2025-01-20": "published"
+        },
+        "categories": ["contraption"],
+        "tags": ["melda"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "lukasipo": "was there doing similar stuff",
+            "amfivolia": "was there doing similar stuff"
+        }
+    },
+    {
+        "title": "buffer-gen", 
+        "src": "https://popbot.work/contraptions/buffer-gen.html",
+        "dates": {
+            "2024-11-17": "published on website",
+            "2024-12-12": "got preset files (toml) working",
+            "2024-12-14": "bulk module, other stuff",
+            "other dates": "not a complete log"
+        },
+        "categories": ["contraption"],
+        "tags": [],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "Album of Life", 
+        "src": "testpage.html",
+        "dates": {
+            "2025-03-21": "published"
+        },
+        "categories": ["music"],
+        "tags": ["album", "collaborative", "shitpost"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "john riddim": "featured artist",
+            "Amfivolia": "primary creator",
+            "lukasipo": "primary creator"
+        },
+        "contents": [
+            "genesis",
+            "song of life",
+            "jajaja_2",
+            "b3434",
+            "club blubber",
+            "house",
+            "lets get schmurbo",
+            "clapper",
+            "turbo hop",
+            "great one",
+            "the super piece",
+            "the song of song 2",
+            "ball city",
+            "song of song john riddim remix",
+            "the song of the solos",
+            "lets get rickety crickety",
+            "splurg salsa",
+            "john riddim feature",
+            "zoo tension",
+            "facewc",
+            "cicada season",
+            "the super song",
+            "intensity building",
+            "the ultra song",
+            "jazz scat galore!",
+            "the super piece 2",
+            "mouth core",
+            "times way back when",
+            "bald1 vs. house fly",
+            "exit piece _"
+        ]
+    },
+    {
+        "title": "new item haha syssss", 
+        "href": "url",
+        "dates": {
+            "2025-3-25": "published"
+        },
+        "categories": ["music"],
+        "tags": ["test", "shitpost"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "lukasipo"  : "cool dude"
+        }
+    },
+    {
+        "title": "any% 2", 
+        "description": "Im a featured artist on the form any% volume 2 compilation. for this, a bunch of artists were given 18 hours to write a piece of music between 50 and 70 seconds. I initially wasnt going to do anything but i did offer to help out with some smaller things for people's projects if they needed assistance. around halfway through the event axis twelve and I started talking, and I ended up making the intro/outro, and a few of the percussion layers. she did the rest of everything. I had very little creative control which i honestly kind of appreciated cause on that same day I had started a remix which took a lot of creative energy since i havent done a remix in. actually i dont think ive ever done one. anywasy yeah thats the track!!!!!!!",
+        "href": "url",
+        "dates": {
+            "2025-02-07": "published"
+        },
+        "categories": ["music"],
+        "tags": ["collaborative", "single"],
+        "contributors": {
+            "Axis Twelve": "primary creator",
+            "Popbot": "featured artist"
+        }
+    },
+    {
+        "title": "pigments 6 demo", 
+        "description": "description",
+        "href": "music/pigments6demo.html",
+        "dates": {
+            "2025-01-28": "published"
+        },
+        "categories": ["music"],
+        "tags": ["commission"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "Arturia": "company that paid me"
+        }
+    },
+    {
+        "title": "dipe preme ", 
+        "description": "goofy dnb track i made with my friend Noah, sampled a few things from animusic. played at electrophonics 1 fall 2024. quuite happy with the way this is mixed",
+        "href": "url",
+        "dates": {
+            "2025-01-15": "published"
+        },
+        "categories": ["music"],
+        "tags": ["single", "collaborative"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "Noah Lin": "primary creator, artwork"
+        }
+    },
+    {
+        "title": "TECH 201 Etude", 
+        "description": "I wrote this using pro tools for a midterm assignment. The class was called TECH 201; it's the class that people (such as myself) majoring in electronic music stuff usually take in their first semester. AMong other things like learning the basics of voltage controlled synthesis and the history of electronic music throughout the 20th century, we also had to learn pro tools. Ignoring the scum that is AVID, pro tools is actually pretty alright if you're using it for what it's meant to be used for. It's nothing like using ableton, bitwig, blockhead, or any other daw that I know how to use. pro tools' user experience is undoubtedly horrendous. despire this, i was still pleasantly suprised because i only wanted to end my own life for <i>some</i> of the time. \nim super mega insano style yapping right now. the vast majority of the sounds in this piece came from my singing voice and recordings of the synths in my college's studio with me. \nIt's nowhere near the same level of polish as what I normally enjoy making, but i'm not really able to export stems from pro tools into ableton to further polish it (which is insane btw. like 30 year old software cant fucking export stems? why the fuck). but yeah its finished and my rule is that if i finish something and i don't plan to include it in a larger project it has to go out. cause its not doing anything useful just rotting on my hard drive. \nhardcore raw html yapping rn \n I was going to include this on my bare branches album (which as of today jan 9 2025 this is not released and wont be for a while probably) but i wanna keep the tracks in the album to a pretty unified aesthetic, which excludes this track from making sense to be included on it. ",
+        "href": "url",
+        "dates": {
+            "2025-01-09": "published"
+        },
+        "categories": ["music"],
+        "tags": ["single"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    }
+]
+
+export default entryData;
