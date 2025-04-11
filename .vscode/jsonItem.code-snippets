@@ -16,7 +16,7 @@
 	// 	"description": "Log output to console"
 	// }
 	"new site item": {
-		"scope": "js",
+		"scope": "javascript",
 		"prefix": ["item", "entry"],
 		"body": [
 			",",
@@ -37,7 +37,7 @@
 		"description": "adds a new item entry"
 	},
 	"key value pair": {
-		"scope": "js",
+		"scope": "javascript",
 		"prefix": "pair",
 		"body": [
 			",",
@@ -45,7 +45,7 @@
 		]
 	},
 	"new date": {
-		"scope": "js",
+		"scope": "javascript",
 		"prefix": "date",
 		"body": [
 			",",
@@ -53,7 +53,7 @@
 		]
 	},
 	"add contents body": {
-		"scope": "js",
+		"scope": "javascript",
 		"prefix": "contents body",
 		"body": [
 			",",
