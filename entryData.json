@@ -7,7 +7,7 @@
             "2023-05-12": "released"
         },
         "categories": ["music"],
-        "tags": ["Album"],
+        "tags": ["album"],
         "contributors": {
             "Popbot": "primary creator",
             "Amfivolia": "album artwork, collaborator on track 2",
@@ -36,7 +36,7 @@
             "2024-09-14": "Swells posted on soundcloud"
         },
         "categories": ["music"],
-        "tags": ["EP"],
+        "tags": ["ep"],
         "contributors": {
             "Popbot": "primary creator",
             "Dustdrift": "remixed Whine"
@@ -75,7 +75,7 @@
             "2025-01-31": "updated paramaters"
         },
         "categories": ["contraption"],
-        "tags": ["WIP"],
+        "tags": ["wip"],
         "contributors": {
             "Popbot": "primary creator"
         }
@@ -116,7 +116,7 @@
             "2025-03-21": "published"
         },
         "categories": ["music"],
-        "tags": ["Album", "collaborative", "shitpost"],
+        "tags": ["album", "collaborative", "shitpost"],
         "contributors": {
             "Popbot": "primary creator",
             "john riddim": "featured artist",
@@ -165,7 +165,7 @@
             "2025-3-25": "published"
         },
         "categories": ["music"],
-        "tags": ["Test", "shitpost"],
+        "tags": ["test", "shitpost"],
         "contributors": {
             "Popbot": "primary creator",
             "lukasipo"  : "cool dude"

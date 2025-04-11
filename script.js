@@ -5,6 +5,12 @@ import personData from './personData.json' with {type: 'json'};
 entryData.sort((a, b) => parseInt(Object.keys(b.dates)[0].replaceAll("-","")) - parseInt(Object.keys(a.dates)[0].replaceAll("-",""))); 
 
 const categories = ["music", "contraption"];
+var tags = {
+    "shitpost": false,
+    "wip": false
+};
+
+console.log(tags);
 
 
 // track mouse position
@@ -20,9 +26,10 @@ document.addEventListener(
 );
 
 // generate html for a single entry
-const renderEntry = entry => {
+const renderEntry = (entry) => {
     let element = document.createElement("div");
     element.className="item";
+    element.id = (entry.title);
     element.innerHTML = `<span class="year">${Object.keys(entry.dates)[0].substring(0, 4)}</span> | <span class="title">${entry.title}</span> <span class="tags">${entry.tags.join(", ")}</span>`
     
     // TODO: define more dynamic functionality for dates. on hover, the date should expand to a verbose date ("Month" ##, 20xx)
@@ -109,7 +116,6 @@ const renderTracklist = (entry) => {
 };
 
 
-
 // inject html for the content, displayed after an item is clicked
 const renderContent = entry => {
     let element = document.createElement("div");
@@ -127,15 +133,24 @@ const renderContent = entry => {
         </div>
         
     `;
+
+    // NOTE: prioritizes 
     if (Object.keys(entry).includes("src")){
         let iframe = document.createElement("iframe");
         iframe.setAttribute("src", entry.src);
 
         // TODO: finish this
         element.appendChild(iframe);
-    } else {
-        console.log("does not include source");
+    } else if (Object.keys(entry).includes("description")) {
+        let description = document.createElement("p");
+        description.innerHTML = entry.description;
+        element.appendChild(description);
     }
+    else {
+        console.log("does not include source or description");
+    }
+
+    
     // renderDisplay();
     element.innerHTML += `</div>`
     return element;
@@ -156,18 +171,66 @@ const renderAuthor = (author, entry) => {
 }
 
 
+function filterEntries(){
+    for (const entry of entryData){
+        let rendered = true;
 
+        for (const entryTag of entry.tags){
+            if (!tags[entryTag.toLowerCase()]) { rendered = false; }  
+        }
 
-// TODO: extra dropdowns for person data and verbose dates (full changelog)
+        if (!rendered){
+            document.getElementById(entry.title).setAttribute("hidden", "hidden")
+        } else {
+            document.getElementById(entry.title).removeAttribute("hidden")
+        }
 
-// actually render full list of entries
+    }
+}
+
+// GO ENTRIES
 for (const entry of entryData){
+    for (const tag of entry.tags) {
+        if (!(tag.toLowerCase() in tags)) {
+            tags[tag.toLowerCase()] = true;
+        }
+    }
+
     for (const category of categories) {
         if (entry.categories.includes(category)) {
             document.getElementById("container-"+category).appendChild(renderEntry(entry));
         }
+        
     }
 }
+
+
+// GO TAGS
+console.log(tags);
+for (const tag of Object.keys(tags)) {
+    let checkbox = document.createElement("span");
+    const checkboxStatus = input => {
+        if(!input){ return "checked"; } 
+        return "";
+    }
+    checkbox.innerHTML = `
+        <input type="checkbox" id="${tag}"  ${checkboxStatus(tags[tag.toLowerCase()])}>
+        <label for="${tag}">${tag}</label>
+        <br>
+    `
+
+    checkbox.addEventListener("change", () => {
+        tags[tag] = !tags[tag];
+        filterEntries();
+    })
+
+    document.getElementById("container-taglist").appendChild(checkbox);
+}
+
+filterEntries();
+
+
+
 
 // TODO: ZORA CODE IMPLEMENT THIS IN A SEC
 // const renderAuthorLink = (text, author) => `<a href='${personData[author.toLowerCase()][String(text)]}' target='_blank'>${text}</a>`;
