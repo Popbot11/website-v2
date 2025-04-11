@@ -69,6 +69,7 @@ const renderEntry = (entry) => {
             document.getElementById("content").appendChild(renderContent(entry));
         }
     )
+    
 
     return element;
 };
@@ -94,6 +95,8 @@ const renderDropdown = (entry) => {
         </div>
     </div>
     `;
+
+    element.style=`transform: rotate(${(Math.random() * 10 )- 5}deg)`
     
     return element;
 };
@@ -112,6 +115,7 @@ const renderTracklist = (entry) => {
         </div>
     </div>
     `;
+    element.style=`transform: rotate(${(Math.random() * 10 )- 5}deg)`
     return element;
 };
 

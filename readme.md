@@ -20,15 +20,15 @@ TODOS:
     - [ ] all videos (livestreams stay seperate)
     - [ ] random other stuff (writings, shitposts, whatever other garbage)
 - [ ] implement rendering for
-    - [ ] descriptions when applicable
+    - [x] descriptions when applicable
     - [ ] proper iframe rendering for when src is specified
     - [ ] cover artwork when applicable
     - [ ] automatic embeds
         - [ ] bandcamp (API?)
         - [ ] soundcloud (API?)
-- [ ] filter entries by tags
+- [x] filter entries by tags
 - [ ] sections for
-    - [ ] contraptions
+    - [x] contraptions
     - [ ] videos
     - [ ] writings
     - [ ] other

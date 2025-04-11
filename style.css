@@ -87,6 +87,7 @@ hr {
 
 .dropdown {
     position: absolute;
+    /* transform: rotate(10deg); */
 }    
 
 .info {
@@ -94,6 +95,8 @@ hr {
     background-image: repeating-linear-gradient(180deg, rgba(250, 118, 18, 0.27) 0%, rgba(82, 53, 22, 0.385) 10%, rgba(250, 103, 18, 0.297) 20%);
     box-shadow: 0px 0px 30px rgb(179, 161, 0);
     
+    /* color: aqua; */
+
     filter: opacity(0.9);
     border-width: 2px;
     border-style: solid;

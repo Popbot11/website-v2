@@ -58,7 +58,8 @@ const entryData = [
         "tags": ["single", "collaborative"],
         "contributors": {
             "Popbot": "primary creator",
-            "lukasipo": "primary creator"
+            "lukasipo": "primary creator, atrwork",
+            "juha": "artwork"
         }
     }
 
@@ -222,7 +223,24 @@ const entryData = [
         "contributors": {
             "Popbot": "primary creator"
         }
+    },
+    {
+        "title": "Precision", 
+        "description": "A fun idm/bass track I made with Rhino Betatron, which released on his album Karkadann. It's a really fun listen, since every track on the album is a collab.",
+        "href": "url",
+        "dates": {
+            "2024-08-23": "published"
+        },
+        "categories": ["music"],
+        "tags": ["collaborative", "single"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "Rhino Betatron": "primary creator",
+            "Stasys": "cover artwork"
+        }
     }
+    
+    
 ]
 
 export default entryData;
