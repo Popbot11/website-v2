@@ -1,4 +1,4 @@
-
+const personData = 
 {
     "popbot": {
         "website": "https://www.popbot.work",
@@ -48,4 +48,4 @@
     }
 }
 
- 
+export default personData;

@@ -1,5 +1,4 @@
-[
-
+const entryData = [
     {
         "title": "Iota", 
         "src": "https://popbot.work/music/iotaAlbum.html",
@@ -154,8 +153,6 @@
             "times way back when",
             "bald1 vs. house fly",
             "exit piece _"
-
-
         ]
     },
     {
@@ -227,3 +224,5 @@
         }
     }
 ]
+
+export default entryData;
