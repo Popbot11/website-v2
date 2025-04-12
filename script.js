@@ -13,6 +13,8 @@ var tags = {
 console.log(tags);
 
 
+
+
 // track mouse position
 let mouseX;
 let mouseY;
@@ -22,6 +24,7 @@ document.addEventListener(
     (event) => {
         mouseX = event.clientX;
         mouseY = event.clientY;
+        document.getElementById("mousecoords").innerHTML = `test stuff:<br>X: ${mouseX}<br>Y: ${mouseY}<br>${window.scrollY}`;
     }
 );
 
@@ -47,17 +50,17 @@ const renderEntry = (entry) => {
         (event) => {
             element.style.backgroundColor = "rgba(0, 0, 0, 0.27)";
             dropdown.style=`
-                top: ${mouseY + 10}px;
-                left: ${mouseX + 10}px;
+                top: ${mouseY + 10 + window.scrollY}px;
+                left: ${mouseX + 10 + window.scrollX}px;
             `;
-            element.appendChild(dropdown);
+            document.documentElement.appendChild(dropdown);
         }
     );
     element.addEventListener(
         "mouseout",
         (event) => {
             element.style.backgroundColor = "";
-            element.removeChild(dropdown);
+            document.documentElement.removeChild(dropdown);
         }
     )
 
