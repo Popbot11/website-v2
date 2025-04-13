@@ -33,7 +33,7 @@ TODOS:
     - [ ] writings
     - [ ] other
 - [ ] restore whimsy
-- [ ] (if even possible) "portal" divs -- svg filters make this possible?
+- [ ] rare eclipse event (with original OST by hans zimmer and bald1)
 
 
 

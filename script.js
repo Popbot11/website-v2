@@ -24,16 +24,46 @@ document.addEventListener(
     (event) => {
         mouseX = event.clientX;
         mouseY = event.clientY;
-        document.getElementById("mousecoords").innerHTML = `test stuff:<br>X: ${mouseX}<br>Y: ${mouseY}<br>${window.scrollY}`;
+        document.getElementById("mousecoords").innerHTML = `
+                debug stuff:<br>
+                X: ${mouseX}<br>
+                Y: ${mouseY}<br>
+                scroll: ${window.scrollY}<br>
+                vp width: ${getViewportWidth()}`;
     }
 );
+
+
+// var viewportwidth;
+// var viewportheight;
+// if (typeof window.innerWidth != 'undefined') {
+//      viewportwidth = window.innerWidth,
+//      viewportheight = window.innerHeight
+// } else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0) {
+//     viewportwidth = document.documentElement.clientWidth,
+//     viewportheight = document.documentElement.clientHeight
+// } else {
+//       viewportwidth = document.getElementsByTagName('body')[0].clientWidth,
+//       viewportheight = document.getElementsByTagName('body')[0].clientHeight
+// }
+
+// code from https://andylangton.co.uk/web-development/get-viewport-size-width-and-height-with-javascript/
+const getViewportWidth = () => {
+    if (typeof window.innerWidth != 'undefined') {
+        return window.innerWidth;
+   } else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0) {
+       return document.documentElement.clientWidth;
+   } else {
+         return document.getElementsByTagName('body')[0].clientWidth;
+   }
+}
 
 // generate html for a single entry
 const renderEntry = (entry) => {
     let element = document.createElement("div");
     element.className="item";
     element.id = (entry.title);
-    element.innerHTML = `<span class="year">${Object.keys(entry.dates)[0].substring(0, 4)}</span> | <span class="title">${entry.title}</span> <span class="tags">${entry.tags.join(", ")}</span>`
+    element.innerHTML = `<span class="tags">${entry.tags.join(", ")}</span><span class="year">${Object.keys(entry.dates)[0].substring(0, 4)}</span> | <span class="title">${entry.title}</span> `
     
     // TODO: define more dynamic functionality for dates. on hover, the date should expand to a verbose date ("Month" ##, 20xx)
     let dropdown = document.createElement("div");
@@ -49,11 +79,17 @@ const renderEntry = (entry) => {
         "mouseover",
         (event) => {
             element.style.backgroundColor = "rgba(0, 0, 0, 0.27)";
+            
             dropdown.style=`
-                top: ${mouseY + 10 + window.scrollY}px;
-                left: ${mouseX + 10 + window.scrollX}px;
+                top: ${mouseY + 10 + window.scrollY + 2}px;
+                left: ${Math.max(
+                    Math.min(
+                        mouseX + 10 + window.scrollX - 126.6, 
+                        getViewportWidth() - 253.2), 
+                    0)}px;
             `;
             document.documentElement.appendChild(dropdown);
+            
         }
     );
     element.addEventListener(
@@ -68,8 +104,8 @@ const renderEntry = (entry) => {
         "mousedown",
         (event) => {
             // display stuff in main window when clicked
-            document.getElementById("content").innerHTML="";
-            document.getElementById("content").appendChild(renderContent(entry));
+            document.getElementById("metadata").innerHTML="";
+            document.getElementById("metadata").appendChild(renderContent(entry));
         }
     )
     
@@ -136,7 +172,7 @@ const renderContent = entry => {
         </div>
         <span>Dates:</span>
         <div class="indent">
-            something
+            dates dont work yet :)
         </div>
         
     `;
@@ -148,10 +184,9 @@ const renderContent = entry => {
 
         // TODO: finish this
         element.appendChild(iframe);
+        document.getElementById("description").innerHTML = `no description provided`;
     } else if (Object.keys(entry).includes("description")) {
-        let description = document.createElement("p");
-        description.innerHTML = entry.description;
-        element.appendChild(description);
+        document.getElementById("description").innerHTML = `<b>${entry.title}</b>:<br>${entry.description}`;
     }
     else {
         console.log("does not include source or description");
@@ -170,9 +205,9 @@ const renderAuthor = (author, entry) => {
     
     const renderAuthorLink = (text, author) => {return `<a href='${personData[author.toLowerCase()][String(text)]}' target='_blank'>${text}</a>`;}
     try {
-        element.setAttribute("onclick", `document.getElementById("authorInfo").innerHTML="${author}: ${Object.keys(personData[author.toLowerCase()]).map(text => renderAuthorLink(text, author)).join(" | ")}<br>role: ${entry.contributors[author]}"`);
+        element.setAttribute("onclick", `document.getElementById("authorInfo").innerHTML="<b>${author}</b>: ${Object.keys(personData[author.toLowerCase()]).map(text => renderAuthorLink(text, author)).join(" | ")}<br><b>role</b>: ${entry.contributors[author]}"`);
     } catch {
-        element.setAttribute("onclick", `document.getElementById("authorInfo").innerHTML="${author.toLowerCase()} isn't in the database"`);
+        element.setAttribute("onclick", `document.getElementById("authorInfo").innerHTML="<b>${author}</b>: isn't in the database yet; no links. <br><b>role</b>: ${entry.contributors[author]}"`);
     }
     return element;
 }
@@ -181,9 +216,11 @@ const renderAuthor = (author, entry) => {
 function filterEntries(){
     for (const entry of entryData){
         let rendered = true;
-
-        for (const entryTag of entry.tags){
-            if (!tags[entryTag.toLowerCase()]) { rendered = false; }  
+        // console.log(entry.tags.sort());
+        for (const entryTag of entry.tags.sort()){
+            if (!tags[entryTag.toLowerCase()]) { 
+                rendered = false; 
+            }  
         }
 
         if (!rendered){
@@ -197,7 +234,7 @@ function filterEntries(){
 
 // GO ENTRIES
 for (const entry of entryData){
-    for (const tag of entry.tags) {
+    for (const tag of entry.tags.sort()) {
         if (!(tag.toLowerCase() in tags)) {
             tags[tag.toLowerCase()] = true;
         }

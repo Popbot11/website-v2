@@ -22,7 +22,7 @@
 			",",
 			"{",
 			"    \"title\": \"${1:title}\", ",
-			"    \"description\": \"${2:description}\",",
+			"    \"description\": `${2:description}`,",
 			"    \"href\": \"${3:url}\",",
 			"    \"dates\": {",
 			"        \"${4:yyyy-mm-dd}\": \"${5:published}\"",
