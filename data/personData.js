@@ -10,7 +10,8 @@ const personData =
         "youtube": "https://www.youtube.com/channel/UCckNFTtfD7FKCqbTE5UBVPw",
         "github": "https://github.com/Popbot11",
         "newgrounds": "https://popbot2.newgrounds.com/",
-        "discord server": "https://discord.gg/RpZ4dt9mUr"
+        "discord server": "https://discord.gg/RpZ4dt9mUr",
+        "bandcamp fan acc": "https://bandcamp.com/xxx_-_popbots-fan-account42069_-_xxx"
     },
     "example": {
         "website": "url",
