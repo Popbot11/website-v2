@@ -406,3 +406,6 @@ hr {
     50% {width: 88.4px}
     100% {width: 88px}
 }
+.larger {
+    font-size: larger;
+}
