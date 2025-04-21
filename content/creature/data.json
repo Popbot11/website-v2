@@ -1,0 +1,24 @@
+{
+    "title": "Creature", 
+    "href": "url",
+    "dates": {
+        "2024-11-18": "released cloudburst",
+        "2024-10-01": "released deep hollow",
+        "2024-08-21": "released creature",
+        "2024-08-20": "released glint"
+    },
+    "categories": ["music"],
+    "tags": ["ep", "collab"],
+    "contributors": {
+        "Popbot": "primary creator, cover art",
+        "Macronutrients": "primary creator/collaborator on deep hollow, helped with cover art on deep hollow",
+        "omatsu": "rendered my blender file for track 4 since my laptop's integrated graphics weren't good enough"
+    },
+    "contents": [
+        "Glint",
+        "Creature",
+        "Deep Hollow",
+        "Cloudburst",
+        "(bonus) Mass"
+    ]
+}

@@ -468,6 +468,19 @@ const entryData = [
             "Popbot": "primary creator",
             "Jasko": "algorithm"
         }
+    },
+    {
+        "title": "turbo style", 
+        "description": `uhhh yeah! alright. yup. that's it. you can stop writing. yup. yup. er-- okay! yes yea so that's.. yea. uhhh yea`,
+        "href": "dot com",
+        "dates": {
+            "2025-04-15": "right now"
+        },
+        "categories": ["video"],
+        "tags": ["ball supreeme"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
     }
     
     

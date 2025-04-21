@@ -1,0 +1,451 @@
+[
+    {
+        "title": "Iota", 
+        "src": "https://popbot.work/music/iotaAlbum.html",
+        "dates": {
+            "2023-05-12": "released"
+        },
+        "categories": ["music"],
+        "tags": ["album"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "Amfivolia": "album artwork, collaborator on track 2",
+            "Corrix":  "collaborator on track 7"
+        },
+        "contents": [
+            "Fibril",
+            "Flakes",
+            "Tulip Tree (w/ Amfivolia)",
+            "Beams",
+            "Organic Machine",
+            "Falling Objects",
+            "Spokes (w/ Corrix)",
+            "Crystals",
+            "Mites",
+            "Sediment",
+            "Agglomerate",
+            "Ash"
+        ]
+    },
+    {
+        "title": "Texture", 
+        "src": "https://popbot.work/music/textureEP.html",
+        "dates": {
+            "2024-12-07": "published",
+            "2024-09-14": "Swells posted on soundcloud"
+        },
+        "categories": ["music"],
+        "tags": ["ep"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "Dustdrift": "remixed Whine"
+        },
+        "contents": [
+            "Swells",
+            "Whine",
+            "Dry",
+            "Auning",
+            "Whine (Distdrift remix)"
+        ]
+    },
+    {
+        "title": "crazyn7uts", 
+        "src": "https://popbot.work/music/crazyn7uts.html",
+        "dates": {
+            "2024-08-30": "published"
+        },
+        "categories": ["music"],
+        "tags": ["single", "collab"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "lukasipo": "primary creator, atrwork",
+            "juha": "artwork"
+        }
+    }
+
+
+    ,
+    {
+        "title": "module editor", 
+        "src": "https://popbot.work/contraptions/moduleEditor.html",
+        "dates": {
+            "2025-01-22": "published",
+            "2025-01-23": "updated code",
+            "2025-01-28": "updated code",
+            "2025-01-31": "updated paramaters"
+        },
+        "categories": ["contraption"],
+        "tags": ["wip", "melda"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "melda algos", 
+        "src": "https://popbot.work/contraptions/meldaAlgos.html",
+        "dates": {
+            "2025-01-20": "published"
+        },
+        "categories": ["contraption"],
+        "tags": ["melda"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "lukasipo": "was there doing similar stuff",
+            "amfivolia": "was there doing similar stuff"
+        }
+    },
+    {
+        "title": "buffer-gen", 
+        "src": "https://popbot.work/contraptions/buffer-gen.html",
+        "dates": {
+            "2024-11-17": "published on website",
+            "2024-12-12": "got preset files (toml) working",
+            "2024-12-14": "bulk module, other stuff",
+            "other dates": "not a complete log"
+        },
+        "categories": ["contraption"],
+        "tags": [],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "Album of Life", 
+        "src": "testpage.html",
+        "dates": {
+            "2025-03-21": "published"
+        },
+        "categories": ["music"],
+        "tags": ["album", "collab", "shitpost"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "john riddim": "featured artist, undiagnosed genius",
+            "Amfivolia": "primary creator",
+            "lukasipo": "primary creator"
+        },
+        "contents": [
+            "genesis",
+            "song of life",
+            "jajaja_2",
+            "b3434",
+            "club blubber",
+            "house",
+            "lets get schmurbo",
+            "clapper",
+            "turbo hop",
+            "great one",
+            "the super piece",
+            "the song of song 2",
+            "ball city",
+            "song of song john riddim remix",
+            "the song of the solos",
+            "lets get rickety crickety",
+            "splurg salsa",
+            "john riddim feature",
+            "zoo tension",
+            "facewc",
+            "cicada season",
+            "the super song",
+            "intensity building",
+            "the ultra song",
+            "jazz scat galore!",
+            "the super piece 2",
+            "mouth core",
+            "times way back when",
+            "bald1 vs. house fly",
+            "exit piece _"
+        ]
+    },
+    {
+        "title": "new item haha syssss", 
+        "href": "url",
+        "dates": {
+            "2025-3-25": "published"
+        },
+        "categories": ["music"],
+        "tags": ["test", "shitpost"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "lukasipo"  : "cool dude"
+        }
+    },
+    {
+        "title": "FORM any% vol. 2", 
+        "href": "url",
+        "dates": {
+            "2025-02-07": "published"
+        },
+        "categories": ["music"],
+        "tags": ["collab", "single"],
+        "contributors": {
+            "Axis Twelve": "primary creator",
+            "Popbot": "featured artist"
+        }
+    },
+    {
+        "title": "pigments 6 demo", 
+         
+        "href": "music/pigments6demo.html",
+        "dates": {
+            "2025-01-28": "published"
+        },
+        "categories": ["music"],
+        "tags": ["commission"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "Arturia": "company that paid me"
+        }
+    },
+    {
+        "title": "dipe preme ", 
+        "href": "url",
+        "dates": {
+            "2025-01-15": "published"
+        },
+        "categories": ["music"],
+        "tags": ["single", "collab"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "Noah Lin": "primary creator, artwork"
+        }
+    },
+    {
+        "title": "TECH 201 Etude", 
+        "href": "url",
+        "dates": {
+            "2025-01-09": "published"
+        },
+        "categories": ["music"],
+        "tags": ["single"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "Precision", 
+        "href": "url",
+        "dates": {
+            "2024-08-23": "published"
+        },
+        "categories": ["music"],
+        "tags": ["collab", "single"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "Rhino Betatron": "primary creator",
+            "Stasys": "cover artwork"
+        }
+    },
+    {
+        "title": "Creature", 
+        "href": "url",
+        "dates": {
+            "2024-11-18": "released cloudburst",
+            "2024-10-01": "released deep hollow",
+            "2024-08-21": "released creature",
+            "2024-08-20": "released glint"
+        },
+        "categories": ["music"],
+        "tags": ["ep", "collab"],
+        "contributors": {
+            "Popbot": "primary creator, cover art",
+            "Macronutrients": "primary creator/collaborator on deep hollow, helped with cover art on deep hollow",
+            "omatsu": "rendered my blender file for track 4 since my laptops integrated graphics werent good enough"
+        },
+        "contents": [
+            "Glint",
+            "Creature",
+            "Deep Hollow",
+            "Cloudburst",
+            "(bonus) Mass"
+        ]
+    },
+    {
+        "title": "Simulated Microcosm", 
+        "href": "url",
+        "dates": {
+            "2024-03-02": "published"
+        },
+        "categories": ["music"],
+        "tags": ["ep"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "amfivolia": "cover artwork (CRAZY MODE)",
+            "cerulean mei": "helped me solidify my vision for the project"
+        },
+        "contents": [
+            "Propagule",
+            "Tardigrades",
+            "Diatoms",
+            "Canopy",
+            "Murmuration",
+            "Allelopathy",
+            "Buoyant"
+        ]
+    },
+    {
+        "title": "FORM All Nighter vol. 9", 
+        "href": "url",
+        "dates": {
+            "2024-08-17": "published"
+        },
+        "categories": ["music"],
+        "tags": ["single", "collab"],
+        "contributors": {
+            "Stasys": "primary creator",
+            "Keitha": "Contributor",
+            "MANSTRETTA": "Contributor",
+            "Popbot": "Contributor"
+        }
+    },
+    {
+        "title": ".setique - harm", 
+        "href": "url",
+        "dates": {
+            "2023-10-16": "published"
+        },
+        "categories": ["music"],
+        "tags": ["collab", "single"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "boxkitty": "primary creator",
+            ".setique": "boxkitty & Popbot dual alias",
+            "dove": "cover artwork"
+        }
+    },
+    {
+        "title": "Rope", 
+        "href": "url",
+        "dates": {
+            "2023-08-25": "published"
+        },
+        "categories": ["music"],
+        "tags": ["megacollab", "collab", "single"],
+        "contributors": {
+            "Popbot": "main organization, mixing, main project file, contributed to most sections i think, made the section with the guitar and stuff, worked heavily on the drop at 2:07 and made the drop at 6:12",
+            "juha": "the most beautiful and amazing and awesome and epic outro ever. its so good. i love it so much. also section between 2:45 and 3:12",
+            "visyura": "artwork, everything between 3:40 and 4:45. as well as the initial main melodic motif",
+            "jhl": "some of the vocals, a bunch of orchestral stuff, big loud bit before the quiet bit before the other big loud bit. not gonna list specific timestamps cause their stuff is basically everywhere",
+            "fehu": "section between 3:12 and 3:39 (i think)",
+            "glyphli": "dont quite remember :( i do know she made some awesome pads near the outro and i remember her being in call a lot, but cant exactly recall. i imagine she has a bunch of layers present throughout.",
+            "exorbiter": " section between 3:12 and 3:39 (i think)",
+            "lukasipo": " iirc, assorted samples, textures, layers, and lukasipo",
+            "(un)familiar": "structure and first draft for the drop at 2:08, as well as some drums i think (not sure)",
+            "mleuc": "one of the snare samples"
+        }
+    },
+    {
+        "title": "noise injection", 
+        "href": "url",
+        "dates": {
+            "2024-09-29": "published"
+        },
+        "categories": ["contraption"],
+        "tags": ["m4l"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "filter crazy", 
+        "href": "url",
+        "dates": {
+            "2024-09-26": "published",
+            "2024-09-26 2": "updated so that it works"
+        },
+        "categories": ["contraption"],
+        "tags": ["m4l"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "modal synth", 
+        "href": "https://popbot.work/contraptions/modalSynth.html",
+        "dates": {
+            "2024-09-24": "published"
+        },
+        "categories": ["contraption"],
+        "tags": ["m4l", "paid"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "combobulator brains", 
+         
+        "href": "url",
+        "dates": {
+            "yyyy-mm-dd": "published"
+        },
+        "categories": ["contraption"],
+        "tags": ["paid", "add-on"],
+        "contributors": {   
+            "Popbot": "primary creator",
+            "Datamind Audio": "creator of plugin and company that paid me"
+        }
+    },
+    {
+        "title": "john feedback explorer", 
+         
+        "href": "url",
+        "dates": {
+            "yyyy-mm-dd": "published"
+        },
+        "categories": ["contraption"],
+        "tags": ["m4l"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "25 parallel delays", 
+         
+        "href": "url",
+        "dates": {
+            "yyyy-mm-dd": "published"
+        },
+        "categories": ["contraption"],
+        "tags": ["m4l"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "bad reverb", 
+         
+        "href": "url",
+        "dates": {
+            "yyyy-mm-dd": "published"
+        },
+        "categories": ["contraption"],
+        "tags": ["m4l"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "battery muncher", 
+        "href": "url",
+        "dates": {
+            "yyyy-mm-dd": "published"
+        },
+        "categories": ["contraption"],
+        "tags": ["m4l", "collab"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "Jasko": "algorithm"
+        }
+    },
+    {
+        "title": "turbo style", 
+        "href": "dot com",
+        "dates": {
+            "2025-04-15": "right now"
+        },
+        "categories": ["video"],
+        "tags": ["ball supreeme"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    }    
+]
