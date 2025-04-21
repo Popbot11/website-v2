@@ -1,5 +1,6 @@
 import json
 import csv
+import os
 
 f = open('./data/entryData.json')
 datajson = json.load(f)
@@ -13,11 +14,15 @@ for entry in datajson:
         entry["title"]
     ]
     data.append(row)
+    os.makedirs(("./content/"+entry["title"]), exist_ok=True)
+
+
 
 data.sort(key=lambda x: x[0])
-
 with open('./data/entryData.csv', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerows(data)
+
+
     
 
