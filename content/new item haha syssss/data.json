@@ -1,0 +1,18 @@
+{
+    "title": "new item haha syssss",
+    "href": "url",
+    "dates": {
+        "2025-3-25": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "test",
+        "shitpost"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "lukasipo": "cool dude"
+    }
+}

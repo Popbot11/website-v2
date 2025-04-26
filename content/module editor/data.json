@@ -1,0 +1,20 @@
+{
+    "title": "module editor",
+    "src": "https://popbot.work/contraptions/moduleEditor.html",
+    "dates": {
+        "2025-01-22": "published",
+        "2025-01-23": "updated code",
+        "2025-01-28": "updated code",
+        "2025-01-31": "updated paramaters"
+    },
+    "categories": [
+        "contraption"
+    ],
+    "tags": [
+        "wip",
+        "melda"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    }
+}

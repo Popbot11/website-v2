@@ -1,0 +1,17 @@
+{
+    "title": "filter crazy",
+    "href": "url",
+    "dates": {
+        "2024-09-26": "published",
+        "2024-09-26 2": "updated so that it works"
+    },
+    "categories": [
+        "contraption"
+    ],
+    "tags": [
+        "m4l"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    }
+}

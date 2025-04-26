@@ -1,0 +1,17 @@
+{
+    "title": "buffer-gen",
+    "src": "https://popbot.work/contraptions/buffer-gen.html",
+    "dates": {
+        "2024-11-17": "published on website",
+        "2024-12-12": "got preset files (toml) working",
+        "2024-12-14": "bulk module, other stuff",
+        "other dates": "not a complete log"
+    },
+    "categories": [
+        "contraption"
+    ],
+    "tags": [],
+    "contributors": {
+        "Popbot": "primary creator"
+    }
+}

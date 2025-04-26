@@ -1,0 +1,18 @@
+{
+    "title": "dipe preme",
+    "href": "url",
+    "dates": {
+        "2025-01-15": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single",
+        "collab"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "Noah Lin": "primary creator, artwork"
+    }
+}

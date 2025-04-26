@@ -1,0 +1,16 @@
+{
+    "title": "TECH 201 Etude",
+    "href": "url",
+    "dates": {
+        "2025-01-09": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "title": "battery muncher",
+    "href": "url",
+    "dates": {
+        "yyyy-mm-dd": "published"
+    },
+    "categories": [
+        "contraption"
+    ],
+    "tags": [
+        "m4l",
+        "collab"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "Jasko": "algorithm"
+    }
+}

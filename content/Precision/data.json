@@ -1,0 +1,19 @@
+{
+    "title": "Precision",
+    "href": "url",
+    "dates": {
+        "2024-08-23": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "collab",
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "Rhino Betatron": "primary creator",
+        "Stasys": "cover artwork"
+    }
+}

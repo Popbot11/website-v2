@@ -1,25 +1,10 @@
 
 <html>
     <head>
-
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <script>
-            fetch("./index.json").then(res => res.json()).then(index => {
-                Object.keys(index).forEach(key => {
-                    // console.log(index[key])
-                    try {
-                        fetch('./'+index[key]+"/description.txt").then(res => res.text()).then(file => {
-                            document.getElementById("hi").innerHTML = file 
-                        })
-                    } catch {
-                        console.log("oughs")
-                    }
-
-                    // THIS DOESNT WORK BECUSE MY ARMPITS ARE SO SWEARTY
-                });
-            })
-        </script>
-        <p id="hi"></p>
+        <script src="script.js" type="module"></script>   
+        <div id="content"></div>
     </body>
 </html>

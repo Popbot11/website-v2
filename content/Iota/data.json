@@ -1,0 +1,32 @@
+{
+    "title": "Iota",
+    "src": "https://popbot.work/music/iotaAlbum.html",
+    "dates": {
+        "2023-05-12": "released"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "album"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "Amfivolia": "album artwork, collaborator on track 2",
+        "Corrix": "collaborator on track 7"
+    },
+    "contents": [
+        "Fibril",
+        "Flakes",
+        "Tulip Tree (w/ Amfivolia)",
+        "Beams",
+        "Organic Machine",
+        "Falling Objects",
+        "Spokes (w/ Corrix)",
+        "Crystals",
+        "Mites",
+        "Sediment",
+        "Agglomerate",
+        "Ash"
+    ]
+}
