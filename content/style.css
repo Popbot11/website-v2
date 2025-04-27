@@ -16,7 +16,15 @@
 }
 .description {
     padding-left: 40px;
+    width: 100%;
+    /* background-color: rgba(0, 0, 0, 0.163); */
 }
 .contents {
+    padding-left: 40px;
+}
+.contributor-links {
+    padding-left: 80px;
+}
+.indent {
     padding-left: 40px;
 }

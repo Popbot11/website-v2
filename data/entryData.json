@@ -157,19 +157,6 @@
         ]
     },
     {
-        "title": "new item haha syssss", 
-        "href": "url",
-        "dates": {
-            "2025-3-25": "published"
-        },
-        "categories": ["music"],
-        "tags": ["test", "shitpost"],
-        "contributors": {
-            "Popbot": "primary creator",
-            "lukasipo"  : "cool dude"
-        }
-    },
-    {
         "title": "FORM anypercent vol. 2", 
         "href": "url",
         "dates": {
@@ -435,17 +422,5 @@
             "Popbot": "primary creator",
             "Jasko": "algorithm"
         }
-    },
-    {
-        "title": "turbo style", 
-        "href": "dot com",
-        "dates": {
-            "2025-04-15": "right now"
-        },
-        "categories": ["video"],
-        "tags": ["ball supreeme"],
-        "contributors": {
-            "Popbot": "primary creator"
-        }
-    }    
+    } 
 ]

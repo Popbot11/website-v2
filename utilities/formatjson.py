@@ -33,7 +33,12 @@ for entry in datajson:
     # print (data, '\n')
 
 
-index = dict(sorted(index.items(), key=lambda item: item[1]['date']))
+index = dict(sorted(index.items(), key=lambda x: 
+                    (''.join(c for c in x[1]['date'] if not c.isalpha())), 
+                    reverse=True))
+
+for item in index:
+    print(item, "\n\t", index[item])
 
 with open('./content/index.json', 'w') as jsonfile:
     json.dump(index, jsonfile, indent=4)

@@ -8,16 +8,16 @@ fetch("./index.json").then(res => res.json()).then(index => {
         element.id = (title);
         element.innerHTML = `
             <span class="title" id="${title}-title">${title}</span><br>
+            <div class="dates" id="${title}-dates"></div>
+            <div class="description" id="${title}-description"></div>
             <div class="category" id="${title}-category"></div>
             <div class="tags" id="${title}-tags"></div>
             <div class="contributors" id="${title}-contributors"></div>
             <div class="contributor-links" id="${title}-contributor-links"></div>
-            <div class="dates" id="${title}-dates"></div>
-            <div class="description" id="${title}-description"></div>
             <div class="contents" id="${title}-contents"></div>
             <hr>
             
-        `
+        `;
         document.getElementById("content").appendChild(element);
 
         // DESCRIPTION.TXT
@@ -26,9 +26,12 @@ fetch("./index.json").then(res => res.json()).then(index => {
                 const response = await fetch('./'+title+"/description.txt");
                 if (response.ok) {
                     const file = await response.text();
-                    document.getElementById(`${title}-description`).innerHTML += (file + "<br><br>");
+                    document.getElementById(`${title}-description`).innerHTML += `
+                        Description:
+                        <div class="indent">${file}</div>
+                    `;
                 } else {
-                    document.getElementById(`${title}-description`).remove()
+                    document.getElementById(`${title}-description`).remove();
                 }
             } catch (error) {}
         }
@@ -38,13 +41,13 @@ fetch("./index.json").then(res => res.json()).then(index => {
             try {
                 const response = await fetch('./'+title+"/data.json");
                 if (response.ok) {
-                    const file = await response.json();
+                    const data = await response.json();
                     
                     // TAGS
                     {
                         document.getElementById(`${title}-tags`).innerHTML += `
                             Tags:
-                            ${file.tags.map(tag => `${tag}`).join(" | ")}
+                            ${data.tags.map(tag => `${tag}`).join(" | ")}
                             <br>
                         `;
                     }
@@ -53,7 +56,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
                     {
                         document.getElementById(`${title}-category`).innerHTML += `
                             Category:
-                            ${file.categories[0]}
+                            ${data.categories[0]}
                             <br>
                         `;
                     }
@@ -63,11 +66,11 @@ fetch("./index.json").then(res => res.json()).then(index => {
                         // let element = document.createElement("span");
                         let target = document.getElementById(`${title}-contributors`)
                         target.innerHTML += "Contributors:"
-                        Object.keys(file.contributors).forEach(contributor => {
+                        Object.keys(data.contributors).forEach(contributor => {
                             
                             let button = document.createElement("button");
                             button.innerHTML = contributor
-                            button.setAttribute("onclick", "fetch('../data/personData.json').then(res => res.json()).then(personData => {try{document.getElementById('"+title+"-contributor-links').innerHTML = `<b>"+contributor+":</b> "+file.contributors[contributor]+"<br><b>Links:</b> ${Object.keys(personData['"+contributor.toLowerCase()+"']).map(text => \"<a href='\"+personData['"+contributor.toLowerCase()+"'][text]+\"'>\"+text+\"</a>\").join(' | ')}` + `<br><button onclick=\"document.getElementById('"+title+"-contributor-links').innerHTML=null;\">hide</button>`;}catch{document.getElementById('"+title+"-contributor-links').innerHTML = `<b>"+contributor+"</b>: "+file.contributors[contributor]+"<br><b>Links:</b>  isn't in the database yet; no links` + `<br><button onclick=\"document.getElementById('"+title+"-contributor-links').innerHTML=null;\">hide</button>`;}})");
+                            button.setAttribute("onclick", "fetch('../data/personData.json').then(res => res.json()).then(personData => {try{document.getElementById('"+title+"-contributor-links').innerHTML = `<b>"+contributor+":</b> "+data.contributors[contributor]+"<br><b>Links:</b> ${Object.keys(personData['"+contributor.toLowerCase()+"']).map(text => \"<a href='\"+personData['"+contributor.toLowerCase()+"'][text]+\"'>\"+text+\"</a>\").join(' | ')}` + `<br><button onclick=\"document.getElementById('"+title+"-contributor-links').innerHTML=null;\">hide</button>`;}catch{document.getElementById('"+title+"-contributor-links').innerHTML = `<b>"+contributor+"</b>: "+data.contributors[contributor]+"<br><b>Links:</b>  isn't in the database yet; no links` + `<br><button onclick=\"document.getElementById('"+title+"-contributor-links').innerHTML=null;\">hide</button>`;}})");
                             target.appendChild(button)
                             target.innerHTML += " | "
                         });
@@ -76,15 +79,29 @@ fetch("./index.json").then(res => res.json()).then(index => {
 
                     // DATES
                     {
-
+                        document.getElementById(`${title}-dates`).innerHTML += "Date(s):<br>"
+                        for (const date of Object.keys(data["dates"])) {
+                            document.getElementById(`${title}-dates`).innerHTML += `
+                                <span class="indent">${date}: ${data["dates"][date]}</span><br>
+                            `
+                        }
                     }
 
                     // CONTENTS
                     {
-
+                        if (Object.keys(data).includes("contents")){
+                            document.getElementById(`${title}-contents`).innerHTML += `
+                                Tracklist:
+                                <ol>
+                                    ${data.contents.map((track) => `<li>${track}</li>`).join(``)}
+                                </ol>
+                            `;
+                        } else {
+                            document.getElementById(`${title}-contents`).remove();
+                        }
                     }
                 } else {
-                    document.getElementById(`${title}-dates`).innerHTML = "data file missing<br>"
+                    document.getElementById(`${title}-dates`).innerHTML = "data file missing<br>";
                 }
             } catch (error) {}
         }
