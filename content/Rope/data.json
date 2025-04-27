@@ -1,6 +1,5 @@
 {
     "title": "Rope",
-    "href": "url",
     "dates": {
         "2023-08-25": "published"
     },
@@ -23,5 +22,9 @@
         "lukasipo": " iirc, assorted samples, textures, layers, and lukasipo",
         "(un)familiar": "structure and first draft for the drop at 2:08, as well as some drums i think (not sure)",
         "mleuc": "one of the snare samples"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/popbot-juha-visyura-jhl-fehu-glyphli-exorbiter-lukasipo-rope-w-mleuc-snare",
+        "webpage": "./content/rope/index.html"
     }
 }

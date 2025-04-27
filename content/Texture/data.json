@@ -21,5 +21,10 @@
         "Dry",
         "Auning",
         "Whine (Distdrift remix)"
-    ]
+    ],
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/sets/texture",
+        "bandcamp": "https://popbotmusic.bandcamp.com/album/texture",
+        "webpage": "./content/Texture/index.html"
+    }
 }

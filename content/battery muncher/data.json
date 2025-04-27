@@ -1,6 +1,5 @@
 {
     "title": "battery muncher",
-    "href": "url",
     "dates": {
         "yyyy-mm-dd": "published"
     },
@@ -14,5 +13,8 @@
     "contributors": {
         "Popbot": "primary creator",
         "Jasko": "algorithm"
+    },
+    "links": {
+        "webpage": "./content/battery muncher/index.html"
     }
 }

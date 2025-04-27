@@ -1,6 +1,5 @@
 {
     "title": "dipe preme",
-    "href": "url",
     "dates": {
         "2025-01-15": "published"
     },
@@ -14,5 +13,10 @@
     "contributors": {
         "Popbot": "primary creator",
         "Noah Lin": "primary creator, artwork"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/popbot-isaac-einhorn-dipe-preme",
+        "bandcamp": "https://popbotmusic.bandcamp.com/track/dipe-preme",
+        "webpage": "./content/dipe preme/index.html"
     }
 }

@@ -26,7 +26,12 @@
             "Agglomerate",
             "Ash"
         ],
-        "description": "this is the description for iota"
+        "description": "this is the description for iota",
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/sets/iota-1",
+            "bandcamp": "https://popbotmusic.bandcamp.com/album/iota",
+            "webpage": "./content/Iota/index.html"
+        }
     },
     {
         "title": "Texture", 
@@ -47,7 +52,12 @@
             "Dry",
             "Auning",
             "Whine (Distdrift remix)"
-        ]
+        ],
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/sets/texture",
+            "bandcamp": "https://popbotmusic.bandcamp.com/album/texture",
+            "webpage":"./content/Texture/index.html"
+        }
     },
     {
         "title": "crazyn7uts", 
@@ -61,6 +71,11 @@
             "Popbot": "primary creator",
             "lukasipo": "primary creator, atrwork",
             "juha": "artwork"
+        },
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/popbot-lukasipo-crazyn7uts",
+            "bandcamp": "https://popbotmusic.bandcamp.com/track/crazyn7uts",
+            "webpage": "./content/crazyn7uts/index.html"
         }
     }
 
@@ -155,11 +170,14 @@
             "times way back when",
             "bald1 vs. house fly",
             "exit piece _"
-        ]
-    },
+        ],
+        "links": {
+            "soundcloud": "https://soundcloud.com/bald1-791658435/sets/album-of-life",
+            "bandcamp": "https://bald1.bandcamp.com/album/album-of-life"
+        }
+    },  
     {
         "title": "FORM anypercent vol. 2", 
-        "href": "url",
         "dates": {
             "2025-02-07": "published"
         },
@@ -168,6 +186,11 @@
         "contributors": {
             "Axis Twelve": "primary creator",
             "Popbot": "featured artist"
+        },
+        "links": {
+            "soundcloud": "https://soundcloud.com/artbyform/axis-twelve-quandary-feat?in=artbyform/sets/anypercent-level-2",
+            "bandcamp": "https://artbyform.bandcamp.com/album/any-level-2",
+            "artwork": "https://www.instagram.com/iamrluquin/"
         }
     },
     {
@@ -186,7 +209,6 @@
     },
     {
         "title": "dipe preme", 
-        "href": "url",
         "dates": {
             "2025-01-15": "published"
         },
@@ -195,11 +217,15 @@
         "contributors": {
             "Popbot": "primary creator",
             "Noah Lin": "primary creator, artwork"
+        },
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/popbot-isaac-einhorn-dipe-preme",
+            "bandcamp": "https://popbotmusic.bandcamp.com/track/dipe-preme",
+            "webpage":"./content/dipe preme/index.html"
         }
     },
     {
         "title": "TECH 201 Etude", 
-        "href": "url",
         "dates": {
             "2025-01-09": "published"
         },
@@ -207,11 +233,15 @@
         "tags": ["single"],
         "contributors": {
             "Popbot": "primary creator"
+        },
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/tech-201-etude",
+            "bandcamp": "https://popbotmusic.bandcamp.com/track/tech-201-etude",
+            "webpage": "./content/TECH 201 Etude/index.html"
         }
     },
     {
         "title": "Precision", 
-        "href": "url",
         "dates": {
             "2024-08-23": "published"
         },
@@ -221,11 +251,15 @@
             "Popbot": "primary creator",
             "Rhino Betatron": "primary creator",
             "Stasys": "cover artwork"
+        },
+        "links": {
+            "soundcloud": "https://soundcloud.com/rhinobetatron/06-rhino-betatron-popbot",
+            "bandcamp": "https://rhinobetatron.bandcamp.com/track/precision",
+            "webpage": "./content/precision/index.html"
         }
     },
     {
         "title": "Creature", 
-        "href": "url",
         "dates": {
             "2024-11-18": "released cloudburst",
             "2024-10-01": "released deep hollow",
@@ -245,11 +279,15 @@
             "Deep Hollow",
             "Cloudburst",
             "(bonus) Mass"
-        ]
+        ],
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/sets/creature-ep",
+            "bandcamp": "https://popbotmusic.bandcamp.com/album/creature",
+            "webpage": "./content/Creature/index.html"
+        }
     },
     {
         "title": "Simulated Microcosm", 
-        "href": "url",
         "dates": {
             "2024-03-02": "published"
         },
@@ -268,11 +306,15 @@
             "Murmuration",
             "Allelopathy",
             "Buoyant"
-        ]
+        ],
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/sets/simulated-microcosm",
+            "bandcamp": "https://popbotmusic.bandcamp.com/album/simulated-microcosm",
+            "webpage": "./content/Simulated Microcosm/index.html"
+        }
     },
     {
         "title": "FORM All Nighter vol. 9", 
-        "href": "url",
         "dates": {
             "2024-08-17": "published"
         },
@@ -283,11 +325,15 @@
             "Keitha": "Contributor",
             "MANSTRETTA": "Contributor",
             "Popbot": "Contributor"
+        },
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/sets/keitha-manstretta-popbot",
+            "bandcamp": "https://artbyform.bandcamp.com/track/big-flourish",
+            "webpage":"./content/FORM All Nighter vol. 9/index.html"
         }
     },
     {
-        "title": ".setique - harm", 
-        "href": "url",
+        "title": "setique - harm", 
         "dates": {
             "2023-10-16": "published"
         },
@@ -298,11 +344,15 @@
             "boxkitty": "primary creator",
             ".setique": "boxkitty & Popbot dual alias",
             "dove": "cover artwork"
+        },
+        "links": {
+            "soundcloud": "https://soundcloud.com/setique/harm",
+            "webpage": "./content/setique - harm/index.html",
+            "bandcamp": "https://setique.bandcamp.com/track/harm"
         }
     },
     {
         "title": "Rope", 
-        "href": "url",
         "dates": {
             "2023-08-25": "published"
         },
@@ -319,11 +369,14 @@
             "lukasipo": " iirc, assorted samples, textures, layers, and lukasipo",
             "(un)familiar": "structure and first draft for the drop at 2:08, as well as some drums i think (not sure)",
             "mleuc": "one of the snare samples"
+        },
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/popbot-juha-visyura-jhl-fehu-glyphli-exorbiter-lukasipo-rope-w-mleuc-snare",
+            "webpage": "./content/rope/index.html"
         }
     },
     {
         "title": "noise injection", 
-        "href": "url",
         "dates": {
             "2024-09-29": "published"
         },
@@ -335,7 +388,6 @@
     },
     {
         "title": "filter crazy", 
-        "href": "url",
         "dates": {
             "2024-09-26": "published",
             "2024-09-26 2": "updated so that it works"
@@ -361,7 +413,6 @@
     {
         "title": "combobulator brains", 
          
-        "href": "url",
         "dates": {
             "yyyy-mm-dd": "published"
         },
@@ -370,12 +421,15 @@
         "contributors": {   
             "Popbot": "primary creator",
             "Datamind Audio": "creator of plugin and company that paid me"
+        },
+        "links": {
+            "webpage": "./content/combobulator brains/index.html",
+            "datamind": "https://datamindaudio.ai/shop/"
         }
     },
     {
         "title": "john feedback explorer", 
          
-        "href": "url",
         "dates": {
             "yyyy-mm-dd": "published"
         },
@@ -388,7 +442,6 @@
     {
         "title": "25 parallel delays", 
          
-        "href": "url",
         "dates": {
             "yyyy-mm-dd": "published"
         },
@@ -400,8 +453,6 @@
     },
     {
         "title": "bad reverb", 
-         
-        "href": "url",
         "dates": {
             "yyyy-mm-dd": "published"
         },
@@ -413,7 +464,6 @@
     },
     {
         "title": "battery muncher", 
-        "href": "url",
         "dates": {
             "yyyy-mm-dd": "published"
         },
@@ -422,12 +472,14 @@
         "contributors": {
             "Popbot": "primary creator",
             "Jasko": "algorithm"
+        },
+        "links": {
+            "webpage": "./content/battery muncher/index.html"
         }
     },
     {
         "title": "tub girls", 
         "description": "description",
-        "href": "url",
         "dates": {
             "2025-03-12": "performed"
         },
@@ -447,7 +499,6 @@
     {
         "title": "stardust", 
         "description": "description",
-        "href": "url",
         "dates": {
             "2024-06-04": "published"
         },
@@ -455,6 +506,50 @@
         "tags": ["single"],
         "contributors": {
             "Popbot": "primary creator"
+        },
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/stardust-1"
+        }
+    },
+    {
+        "title": "7 person feedback loop", 
+        "description": "description",
+        "dates": {
+            "2022-08-04": "published"
+        },
+        "categories": ["music"],
+        "tags": ["collab"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "jhl": "primary creator",
+            "juha": "primary creator",
+            "glyphli": "primary creator",
+            "emilydotgg": "primary creator",
+            "lukasipo": "primary creator",
+            "ranotot": "primary creator"
+        },
+        "links": {
+            "soundcloud": "https://soundcloud.com/lukasipo/7-person-feedback-loop"
+        }
+    },
+    {
+        "title": "4 person feedback loop", 
+        "description": "description",
+        "dates": {
+            "2022-08-04": "published"
+        },
+        "categories": ["music"],
+        "tags": ["collab"],
+        "contributors": {
+            "Popbot": "primary creator",
+            "jhl": "primary creator",
+            "emilydotgg": "primary creator",
+            "lukasipo": "primary creator"
+        },
+        "links": {
+            "soundcloud": "https://soundcloud.com/lukasipo/4-person-feedback-loop"
         }
     }
+
+
 ]

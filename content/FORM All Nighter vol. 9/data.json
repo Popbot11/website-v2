@@ -1,6 +1,5 @@
 {
     "title": "FORM All Nighter vol. 9",
-    "href": "url",
     "dates": {
         "2024-08-17": "published"
     },
@@ -16,5 +15,10 @@
         "Keitha": "Contributor",
         "MANSTRETTA": "Contributor",
         "Popbot": "Contributor"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/sets/keitha-manstretta-popbot",
+        "bandcamp": "https://artbyform.bandcamp.com/track/big-flourish",
+        "webpage": "./content/FORM All Nighter vol. 9/index.html"
     }
 }

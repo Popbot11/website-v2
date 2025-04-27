@@ -1,6 +1,5 @@
 {
     "title": "Simulated Microcosm",
-    "href": "url",
     "dates": {
         "2024-03-02": "published"
     },
@@ -23,5 +22,10 @@
         "Murmuration",
         "Allelopathy",
         "Buoyant"
-    ]
+    ],
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/sets/simulated-microcosm",
+        "bandcamp": "https://popbotmusic.bandcamp.com/album/simulated-microcosm",
+        "webpage": "./content/Simulated Microcosm/index.html"
+    }
 }

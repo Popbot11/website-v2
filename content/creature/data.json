@@ -1,6 +1,5 @@
 {
     "title": "Creature",
-    "href": "url",
     "dates": {
         "2024-11-18": "released cloudburst",
         "2024-10-01": "released deep hollow",
@@ -25,5 +24,10 @@
         "Deep Hollow",
         "Cloudburst",
         "(bonus) Mass"
-    ]
+    ],
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/sets/creature-ep",
+        "bandcamp": "https://popbotmusic.bandcamp.com/album/creature",
+        "webpage": "./content/Creature/index.html"
+    }
 }

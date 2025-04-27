@@ -1,6 +1,5 @@
 {
-    "title": ".setique - harm",
-    "href": "url",
+    "title": "setique - harm",
     "dates": {
         "2023-10-16": "published"
     },
@@ -16,5 +15,10 @@
         "boxkitty": "primary creator",
         ".setique": "boxkitty & Popbot dual alias",
         "dove": "cover artwork"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/setique/harm",
+        "webpage": "./content/setique - harm/index.html",
+        "bandcamp": "https://setique.bandcamp.com/track/harm"
     }
 }

@@ -28,5 +28,10 @@
         "Sediment",
         "Agglomerate",
         "Ash"
-    ]
+    ],
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/sets/iota-1",
+        "bandcamp": "https://popbotmusic.bandcamp.com/album/iota",
+        "webpage": "./content/Iota/index.html"
+    }
 }

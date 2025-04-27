@@ -1,6 +1,5 @@
 {
     "title": "combobulator brains",
-    "href": "url",
     "dates": {
         "yyyy-mm-dd": "published"
     },
@@ -14,5 +13,9 @@
     "contributors": {
         "Popbot": "primary creator",
         "Datamind Audio": "creator of plugin and company that paid me"
+    },
+    "links": {
+        "webpage": "./content/combobulator brains/index.html",
+        "datamind": "https://datamindaudio.ai/shop/"
     }
 }

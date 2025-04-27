@@ -1,6 +1,5 @@
 {
     "title": "tub girls",
-    "href": "url",
     "dates": {
         "2025-03-12": "performed"
     },
@@ -12,7 +11,7 @@
         "live"
     ],
     "contributors": {
-        "Tubs girl": "collective alias",
+        "Tub's girl": "collective alias",
         "robin gillespie": "created score, tub",
         "miriam sachs": "created score, vocals, piano, accordian",
         "cellularautomaton": "created score, bass recorder, chair, keynote speaker",
