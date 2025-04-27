@@ -16,13 +16,13 @@
 	// 	"description": "Log output to console"
 	// }
 	"new site item": {
-		"scope": "javascript",
+		"scope": "json",
 		"prefix": ["item", "entry"],
 		"body": [
 			",",
 			"{",
 			"    \"title\": \"${1:title}\", ",
-			"    \"description\": `${2:description}`,",
+			"    \"description\": \"${2:description}\",",
 			"    \"href\": \"${3:url}\",",
 			"    \"dates\": {",
 			"        \"${4:yyyy-mm-dd}\": \"${5:published}\"",
@@ -37,7 +37,7 @@
 		"description": "adds a new item entry"
 	},
 	"key value pair": {
-		"scope": "javascript",
+		"scope": "json",
 		"prefix": "pair",
 		"body": [
 			",",
@@ -45,7 +45,7 @@
 		]
 	},
 	"new date": {
-		"scope": "javascript",
+		"scope": "json",
 		"prefix": "date",
 		"body": [
 			",",
@@ -53,7 +53,7 @@
 		]
 	},
 	"add contents body": {
-		"scope": "javascript",
+		"scope": "json",
 		"prefix": "contents body",
 		"body": [
 			",",

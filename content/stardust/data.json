@@ -1,0 +1,16 @@
+{
+    "title": "stardust",
+    "href": "url",
+    "dates": {
+        "2024-06-04": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    }
+}

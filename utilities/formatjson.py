@@ -26,6 +26,15 @@ for entry in datajson:
     os.makedirs(("./content/"+entry["title"]), exist_ok=True)
 
     data=entry
+    
+    with open("./content/"+entry["title"]+"/description.txt", 'w') as file:
+        try:
+            print(entry['description'])
+            file.write(entry['description'])
+        except:
+            # print("no description in", entry["title"])
+            pass
+
     data.pop('description', None)
     # f = open("./content/"+entry["title"]+"/data.json", "w")
     with open("./content/"+entry["title"]+"/data.json", 'w') as jsonfile:
@@ -37,8 +46,8 @@ index = dict(sorted(index.items(), key=lambda x:
                     (''.join(c for c in x[1]['date'] if not c.isalpha())), 
                     reverse=True))
 
-for item in index:
-    print(item, "\n\t", index[item])
+# for item in index:
+#     print(item, "\n\t", index[item])
 
 with open('./content/index.json', 'w') as jsonfile:
     json.dump(index, jsonfile, indent=4)

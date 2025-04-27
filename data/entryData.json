@@ -25,7 +25,8 @@
             "Sediment",
             "Agglomerate",
             "Ash"
-        ]
+        ],
+        "description": "this is the description for iota"
     },
     {
         "title": "Texture", 
@@ -422,5 +423,38 @@
             "Popbot": "primary creator",
             "Jasko": "algorithm"
         }
-    } 
+    },
+    {
+        "title": "tub girls", 
+        "description": "description",
+        "href": "url",
+        "dates": {
+            "2025-03-12": "performed"
+        },
+        "categories": ["music"],
+        "tags": ["collab", "live"],
+        "contributors": {
+            "Tub's girl": "collective alias",
+            "robin gillespie": "created score, tub",
+            "miriam sachs": "created score, vocals, piano, accordian",
+            "cellularautomaton": "created score, bass recorder, chair, keynote speaker",
+            "gwen mckee": "created score, TIMARA cart, pipe organ, contact mic stuff",
+            "rosalie coleman": "created score, fiddle",
+            "indigo bongwater": "created score, alto saxophone, primary opposition",
+            "sarai juares osorio": "created score, guitar, vocals"
+        }
+    },
+    {
+        "title": "stardust", 
+        "description": "description",
+        "href": "url",
+        "dates": {
+            "2024-06-04": "published"
+        },
+        "categories": ["music"],
+        "tags": ["single"],
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    }
 ]

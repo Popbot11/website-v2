@@ -1,0 +1,30 @@
+{
+    "title": "example",
+    "dates": {
+        "2024-11-18": "released cloudburst",
+        "2024-10-01": "released deep hollow",
+        "2024-08-21": "released creature",
+        "2024-08-20": "released glint"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "soundcloud": "",
+        "bandcamp": "",
+        "webpage": ""
+    },
+    "contents": [
+        "Glint",
+        "Creature",
+        "Deep Hollow",
+        "Cloudburst",
+        "(bonus) Mass"
+    ]
+}
