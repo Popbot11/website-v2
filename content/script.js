@@ -11,6 +11,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
             <div class="category" id="${title}-category"></div>
             <div class="tags" id="${title}-tags"></div>
             <div class="contributors" id="${title}-contributors"></div>
+            <div class="contributor-links" id="${title}-contributor-links"></div>
             <div class="dates" id="${title}-dates"></div>
             <div class="description" id="${title}-description"></div>
             <div class="contents" id="${title}-contents"></div>
@@ -19,7 +20,6 @@ fetch("./index.json").then(res => res.json()).then(index => {
         `
         document.getElementById("content").appendChild(element);
 
-        
         // DESCRIPTION.TXT
         {
             try {
@@ -60,6 +60,17 @@ fetch("./index.json").then(res => res.json()).then(index => {
 
                     // CONTRIBUTORS
                     {
+                        // let element = document.createElement("span");
+                        let target = document.getElementById(`${title}-contributors`)
+                        target.innerHTML += "Contributors:"
+                        Object.keys(file.contributors).forEach(contributor => {
+                            
+                            let button = document.createElement("button");
+                            button.innerHTML = contributor
+                            button.setAttribute("onclick", "fetch('../data/personData.json').then(res => res.json()).then(personData => {try{document.getElementById('"+title+"-contributor-links').innerHTML = `<b>"+contributor+":</b> "+file.contributors[contributor]+"<br><b>Links:</b> ${Object.keys(personData['"+contributor.toLowerCase()+"']).map(text => \"<a href='\"+personData['"+contributor.toLowerCase()+"'][text]+\"'>\"+text+\"</a>\").join(' | ')}` + `<br><button onclick=\"document.getElementById('"+title+"-contributor-links').innerHTML=null;\">hide</button>`;}catch{document.getElementById('"+title+"-contributor-links').innerHTML = `<b>"+contributor+"</b>: "+file.contributors[contributor]+"<br><b>Links:</b>  isn't in the database yet; no links` + `<br><button onclick=\"document.getElementById('"+title+"-contributor-links').innerHTML=null;\">hide</button>`;}})");
+                            target.appendChild(button)
+                            target.innerHTML += " | "
+                        });
                         
                     }
 
@@ -78,7 +89,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
             } catch (error) {}
         }
 
-
+        // 
     
     });
 })

@@ -33,9 +33,6 @@ for entry in datajson:
     # print (data, '\n')
 
 
-    
-
-
 index = dict(sorted(index.items(), key=lambda item: item[1]['date']))
 
 with open('./content/index.json', 'w') as jsonfile:
