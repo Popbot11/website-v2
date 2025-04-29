@@ -515,7 +515,7 @@
         "title": "7 person feedback loop", 
         "description": "description",
         "dates": {
-            "2022-08-04": "published"
+            "2023-08-04": "published"
         },
         "categories": ["music"],
         "tags": ["collab"],
@@ -536,7 +536,7 @@
         "title": "4 person feedback loop", 
         "description": "description",
         "dates": {
-            "2022-08-04": "published"
+            "2023-08-04": "published"
         },
         "categories": ["music"],
         "tags": ["collab"],
@@ -549,7 +549,136 @@
         "links": {
             "soundcloud": "https://soundcloud.com/lukasipo/4-person-feedback-loop"
         }
+    },
+    {
+        "title": "Luminance", 
+        "description": "note: fill in description wiht both the bandcamp description and the description on my current website",
+        "dates": {
+            "2020-09-29": "published"
+        },
+        "categories": ["music"],
+        "tags": ["ep", "collab"],
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/sets/luminance",
+            "bandcamp": "https://popbotmusic.bandcamp.com/album/luminance",
+            "webpage": "./content/luminance/index.html"
+        },
+        "contributors": {
+            "Popbot": "primary creator",
+            "Cranque": "collaborator on track 6",
+            "Ryan Wheless": "contributes to Moss in Solitude and Torus",
+            "RetroReboot": "collaborator on mustard stain"
+        },
+        "contents": [
+            "Jaged Sphere",
+            "Blue Shoes",
+            "Mustard Stain",
+            "Con",
+            "Moss in Solitude",
+            "AKM320 And Falling",
+            "Torus"
+        ]
+    },
+    {
+        "title": "Thumper", 
+        "description": "the first track i made in my sorta idm style. i learned a lot about stuff while making this. it was the first thing i made in the live 11 beta, iirc. ADD MORE INFO",
+        "dates": {
+            "2021-02-09": "published"
+        },
+        "categories": ["music"],
+        "tags": ["single"],
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/thumper",
+            "bandcamp": "https://popbotmusic.bandcamp.com/track/thumper",
+            "webpage": "./content/thumper/index.html"
+        },
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "Depth", 
+        "description": "Three aesthetically similar tunes that I initially didn't think to include on an EP but later decided to. I made the majority of this while in google meets forschool, not paying attention. ADD MORE INFO",
+        "dates": {
+            "2021-03-04": "published Magma on soundcloud",
+            "2021-03-11": "published Arrival on soundcloud",
+            "2021-03-24": "published Lockjaw on soundcloud"
+        },
+        "categories": ["music"],
+        "tags": ["ep"],
+        "links": {
+            "magma soundcloud": "https://soundcloud.com/popbot1/magma",
+            "arrival soundcloud": "https://soundcloud.com/popbot1/arrival",
+            "lockjaw soundcloud": "https://soundcloud.com/popbot1/lockjaw",
+            "bandcamp": "https://popbotmusic.bandcamp.com/album/depth-ep",
+            "webpage": "./content/depth/index.html"
+        },
+        "contributors": {
+            "Popbot": "primary creator"
+        },
+        "contents": [
+            "Magma",
+            "Arrival",
+            "Lockjaw"
+        ]
+    },
+    {
+        "title": "For Loop Loop", 
+        "description": "remake of a track from 2020 <h1>[ADD MORE INFO LATER]</h1>",
+        "dates": {
+            "2021-04-16": "published"
+        },
+        "categories": ["music"],
+        "tags": ["single"],
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/for-loop-loop",
+            "bandcamp": "https://popbotmusic.bandcamp.com/track/for-loop-loop",
+            "webpage": "./content/for loop loop/index.html"
+        },
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "Resen", 
+        "description": "<h1>do this</h1>",
+        "dates": {
+            "2021-04-25": "published"
+        },
+        "categories": ["music"],
+        "tags": ["single"],
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/resen",
+            "bandcamp": "https://popbotmusic.bandcamp.com/track/resen",
+            "webpage": "./content/resen/index.html"
+        },
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "Reactant", 
+        "description": "<h1>do this</h1>",
+        "dates": {
+            "2021-09-18": "published"
+        },
+        "categories": ["music"],
+        "tags": ["ep"],
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/sets/reactant-ep",
+            "bandcamp": "https://popbotmusic.bandcamp.com/album/reactant",
+            "webpage": "./content/reactant/index.html"
+        },
+        "contributors": {
+            "Popbot": "primary creator"
+        },
+        "contents": [
+            "Flow",
+            "Cascase",
+            "Boiling Point",
+            "FIbers",
+            "ELement B",
+            "Restraint"
+        ]
     }
-
-
 ]

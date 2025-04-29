@@ -1,0 +1,33 @@
+{
+    "title": "Luminance",
+    "dates": {
+        "2020-09-29": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "ep",
+        "collab"
+    ],
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/sets/luminance",
+        "bandcamp": "https://popbotmusic.bandcamp.com/album/luminance",
+        "webpage": "./content/luminance/index.html"
+    },
+    "contributors": {
+        "Popbot": "primary creator",
+        "Cranque": "collaborator on track 6",
+        "Ryan Wheless": "contributes to Moss in Solitude and Torus",
+        "RetroReboot": "collaborator on mustard stain"
+    },
+    "contents": [
+        "Jaged Sphere",
+        "Blue Shoes",
+        "Mustard Stain",
+        "Con",
+        "Moss in Solitude",
+        "AKM320 And Falling",
+        "Torus"
+    ]
+}

@@ -7,7 +7,8 @@ fetch("./index.json").then(res => res.json()).then(index => {
         element.className="item";
         element.id = (title);
         element.innerHTML = `
-            <span class="title" id="${title}-title">${title}</span><br>
+            <span class="title" id="${title}-title">${title}</span><br><br>
+            <div class="links" id="${title}-links"></div>
             <div class="dates" id="${title}-dates"></div>
             <div class="description" id="${title}-description"></div>
             <div class="category" id="${title}-category"></div>
@@ -26,10 +27,16 @@ fetch("./index.json").then(res => res.json()).then(index => {
                 const response = await fetch('./'+title+"/description.txt");
                 if (response.ok) {
                     const file = await response.text();
-                    document.getElementById(`${title}-description`).innerHTML += `
-                        Description:
-                        <div class="indent">${file}</div>
-                    `;
+                    if (file.length != 0) {
+                        document.getElementById(`${title}-description`).innerHTML += `
+                            <b>Description</b>:
+                            <div class="indent">${file}</div>
+                        `;
+                    } else {
+                        document.getElementById(`${title}-description`).innerHTML += `
+                            <b>Description</b>: [description is empty]
+                        `;
+                    }
                 } else {
                     document.getElementById(`${title}-description`).remove();
                 }
@@ -46,7 +53,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
                     // TAGS
                     {
                         document.getElementById(`${title}-tags`).innerHTML += `
-                            Tags:
+                            <b>Tags</b>:
                             ${data.tags.map(tag => `${tag}`).join(" | ")}
                             <br>
                         `;
@@ -55,7 +62,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
                     // CATEGORY
                     {
                         document.getElementById(`${title}-category`).innerHTML += `
-                            Category:
+                            <b>Category</b>:
                             ${data.categories[0]}
                             <br>
                         `;
@@ -65,7 +72,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
                     {
                         // let element = document.createElement("span");
                         let target = document.getElementById(`${title}-contributors`)
-                        target.innerHTML += "Contributors:"
+                        target.innerHTML += "<b>Contributors</b>: "
                         Object.keys(data.contributors).forEach(contributor => {
                             
                             let button = document.createElement("button");
@@ -79,7 +86,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
 
                     // DATES
                     {
-                        document.getElementById(`${title}-dates`).innerHTML += "Date(s):<br>"
+                        document.getElementById(`${title}-dates`).innerHTML += "<b>Date(s)</b>:<br>"
                         for (const date of Object.keys(data["dates"])) {
                             document.getElementById(`${title}-dates`).innerHTML += `
                                 <span class="indent">${date}: ${data["dates"][date]}</span><br>
@@ -91,7 +98,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
                     {
                         if (Object.keys(data).includes("contents")){
                             document.getElementById(`${title}-contents`).innerHTML += `
-                                Tracklist:
+                                <b>Tracklist</b>:
                                 <ol>
                                     ${data.contents.map((track) => `<li>${track}</li>`).join(``)}
                                 </ol>
@@ -100,13 +107,27 @@ fetch("./index.json").then(res => res.json()).then(index => {
                             document.getElementById(`${title}-contents`).remove();
                         }
                     }
+
+                    // LINKS
+                    {
+                        if (Object.keys(data).includes("links")) {
+                            document.getElementById(`${title}-links`).innerHTML += `
+                            <b>Links</b>: ${Object.keys(data.links).map(link => `<a href="${data.links.link}" target="_blank">${link}</a>`).join(" | ")}
+                            `;
+                        } else {
+                            document.getElementById(`${title}-links`).remove();
+                        }
+                    }
                 } else {
                     document.getElementById(`${title}-dates`).innerHTML = "data file missing<br>";
                 }
             } catch (error) {}
         }
 
-        // 
+        // IMAGES
+        {
+
+        }
     
     });
 })

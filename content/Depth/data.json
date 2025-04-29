@@ -1,0 +1,29 @@
+{
+    "title": "Depth",
+    "dates": {
+        "2021-03-04": "published Magma on soundcloud",
+        "2021-03-11": "published Arrival on soundcloud",
+        "2021-03-24": "published Lockjaw on soundcloud"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "ep"
+    ],
+    "links": {
+        "magma soundcloud": "https://soundcloud.com/popbot1/magma",
+        "arrival soundcloud": "https://soundcloud.com/popbot1/arrival",
+        "lockjaw soundcloud": "https://soundcloud.com/popbot1/lockjaw",
+        "bandcamp": "https://popbotmusic.bandcamp.com/album/depth-ep",
+        "webpage": "./content/depth/index.html"
+    },
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "contents": [
+        "Magma",
+        "Arrival",
+        "Lockjaw"
+    ]
+}

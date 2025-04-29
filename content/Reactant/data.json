@@ -1,0 +1,28 @@
+{
+    "title": "Reactant",
+    "dates": {
+        "2021-09-18": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "ep"
+    ],
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/sets/reactant-ep",
+        "bandcamp": "https://popbotmusic.bandcamp.com/album/reactant",
+        "webpage": "./content/reactant/index.html"
+    },
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "contents": [
+        "Flow",
+        "Cascase",
+        "Boiling Point",
+        "FIbers",
+        "ELement B",
+        "Restraint"
+    ]
+}
