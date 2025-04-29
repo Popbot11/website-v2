@@ -146,11 +146,6 @@ fetch("./index.json").then(res => res.json()).then(index => {
                 }
             } catch (error) {}
         }
-
-        // IMAGES
-        {
-
-        }
     
     });
 })

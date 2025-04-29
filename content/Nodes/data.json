@@ -24,5 +24,8 @@
         "Mammatus Clouds",
         "Photo SYnthesis",
         "Stratus"
-    ]
+    ],
+    "media": {
+        "nodes-cover.png": "cover art for the Nodes EP. the foreground 'crystalized' layer is by ZedNotZ"
+    }
 }

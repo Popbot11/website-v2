@@ -24,5 +24,8 @@
         "FIbers",
         "ELement B",
         "Restraint"
-    ]
+    ],
+    "media": {
+        "reactant-cover.jpg": "cover artwork for Reactant made by me in blender"
+    }
 }

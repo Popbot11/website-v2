@@ -29,5 +29,15 @@
         "Moss in Solitude",
         "AKM320 And Falling",
         "Torus"
-    ]
+    ],
+    "media": {
+        "luminance-cover.jpg": "cover art for the ep mmade by me in blender",
+        "jaged-sphere-cover.png": "cover art for jaged sphere made by me in blender",
+        "blue-shoes-cover.png": "cover art for blue shoes made by me in blender",
+        "mustard-stain-cover.png": "cover art for mustard stain made by me in blender",
+        "con-cover.png": "cover art for con made by me in blender",
+        "modd-in-solitude-cover.png": "cover art for moss in solitude made by me in blender",
+        "akm320-and-falling-cover.png": "cover art for akm320 and falling made by me in blender",
+        "torus-cover.png": "cover art for torus made by me in blender"
+    }
 }
