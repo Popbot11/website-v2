@@ -1,0 +1,41 @@
+{
+    "title": "Simulated Microcosm",
+    "dates": {
+        "2024-03-02": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "ep"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "amfivolia": "cover artwork (CRAZY MODE)",
+        "cerulean mei": "helped me solidify my vision for the project"
+    },
+    "contents": [
+        "Propagule",
+        "Tardigrades",
+        "Diatoms",
+        "Canopy",
+        "Murmuration",
+        "Allelopathy",
+        "Buoyant"
+    ],
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/sets/simulated-microcosm",
+        "bandcamp": "https://popbotmusic.bandcamp.com/album/simulated-microcosm",
+        "webpage": "./content/Simulated Microcosm/index.html"
+    },
+    "media": {
+        "microcosm-cover-huge.png": "full 6k x 6k cover art, masterfully made in blender by Amfivolia",
+        "propagule.jpg": "zooomed-in section for Propagule",
+        "tardigrades.jpg": "zooomed-in section for Tardigrades",
+        "diatoms.jpg": "zooomed-in section for Diatoms",
+        "canopy.jpg": "zooomed-in section for Canopy",
+        "murmuration.jpg": "zooomed-in section for Murmuration",
+        "allelopathy.png": "zooomed-in section for Alleopathy",
+        "bouyant.jpg": "zooomed-in section for Bouyant"
+    }
+}

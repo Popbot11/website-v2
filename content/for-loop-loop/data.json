@@ -1,0 +1,20 @@
+{
+    "title": "For Loop Loop",
+    "dates": {
+        "2021-04-16": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single"
+    ],
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/for-loop-loop",
+        "bandcamp": "https://popbotmusic.bandcamp.com/track/for-loop-loop",
+        "webpage": "./content/for loop loop/index.html"
+    },
+    "contributors": {
+        "Popbot": "primary creator"
+    }
+}

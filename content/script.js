@@ -3,6 +3,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
     // this has to be done first because all their contents will be loaded asynchronously
     console.log(index);
     Object.keys(index).forEach(async title => {
+        const path = title.toLowerCase().replaceAll(" ", "-")
         let element = document.createElement("div");
         element.className="item";
         element.id = (title);
@@ -25,7 +26,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
         // DESCRIPTION.TXT
         {
             try {
-                const response = await fetch('./'+title+"/description.txt");
+                const response = await fetch('./'+path+"/description.txt");
                 if (response.ok) {
                     const file = await response.text();
                     if (file.length != 0) {
@@ -47,7 +48,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
         // DATA.JSON
         {
             try {
-                const response = await fetch('./'+title+"/data.json");
+                const response = await fetch('./'+path+"/data.json");
                 if (response.ok) {
                     const data = await response.json();
                     
@@ -123,13 +124,17 @@ fetch("./index.json").then(res => res.json()).then(index => {
                     //MEDIA
                     {
                         if(Object.keys(data).includes("media")) {
-                            document.getElementById(`${title}-media`).innerHTML += "<b>Media</b>:<br>";
+                            document.getElementById(`${title}-media`).innerHTML += "<b>Media</b>:<br><br>";
                             for (const filename of Object.keys(data.media)) {
                                 document.getElementById(`${title}-media`).innerHTML += `
-                               <span class="media-item">
-                                    <img src=${title}/${filename.replace(" ", "-")} width="250px"><br>
+                                
+                                <span class="media-item">
+                                    <a href="${path}/${filename.replace(" ", "-")}" target="_blank">
+                                        <img src="${path}/${filename.replace(" ", "-")}" width="250px"><br>
+                                    </a>
                                     <span>${data.media[filename]}</span>
-                               </span>
+                                </span>
+                                
                                 `;
                             }
                         }else {

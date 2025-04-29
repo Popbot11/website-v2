@@ -1,0 +1,20 @@
+{
+    "title": "TECH 201 Etude",
+    "dates": {
+        "2025-01-09": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/tech-201-etude",
+        "bandcamp": "https://popbotmusic.bandcamp.com/track/tech-201-etude",
+        "webpage": "./content/TECH 201 Etude/index.html"
+    }
+}

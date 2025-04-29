@@ -2,13 +2,15 @@
     "title": "Iota",
     "src": "https://popbot.work/music/iotaAlbum.html",
     "dates": {
-        "2023-05-12": "released"
+        "2023-05-20": "full release",
+        "2023-05-16": "released Flakes as a single"
     },
     "categories": [
         "music"
     ],
     "tags": [
-        "album"
+        "album",
+        "collab"
     ],
     "contributors": {
         "Popbot": "primary creator",

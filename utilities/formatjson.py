@@ -23,14 +23,14 @@ for entry in datajson:
     contents['category'] = list(entry["categories"])[0]
 
     index[entry["title"]] = contents
-    os.makedirs(("./content/"+entry["title"]), exist_ok=True)
+    os.makedirs(("./content/"+entry["title"].lower().replace(" ", "-")), exist_ok=True)
 
     data=entry
     # if the file doesn't exist, create it and set its contents to be whatever's in the description.
     # otherwise, leave teh file alone. it didnt do anything wrong. 
     try:
-        with open("./content/"+entry["title"]+"/description.txt", 'x') as xfile:
-            with open("./content/"+entry["title"]+"/description.txt", 'w') as file:
+        with open("./content/"+entry["title"].lower().replace(" ", "-")+"/description.txt", 'x') as xfile:
+            with open("./content/"+entry["title"].lower().replace(" ", "-")+"/description.txt", 'w') as file:
                 try:
                     print(entry['description'])
                     file.write(entry['description'])
@@ -41,7 +41,7 @@ for entry in datajson:
 
     data.pop('description', None)
     # f = open("./content/"+entry["title"]+"/data.json", "w")
-    with open("./content/"+entry["title"]+"/data.json", 'w') as jsonfile:
+    with open("./content/"+entry["title"].lower().replace(" ", "-")+"/data.json", 'w') as jsonfile:
         json.dump(data, jsonfile, indent=4)
     # print (data, '\n')
 

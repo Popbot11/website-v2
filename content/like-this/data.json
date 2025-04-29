@@ -1,0 +1,23 @@
+{
+    "title": "Like This",
+    "dates": {
+        "2023-01-22": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single"
+    ],
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/likethis",
+        "bandcamp": "https://popbotmusic.bandcamp.com/track/like-this",
+        "webpage": "./content/like this/index.html"
+    },
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "media": {
+        "like-this-cover.png": "cover art for Like This made by myself in blender"
+    }
+}

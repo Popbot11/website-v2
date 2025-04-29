@@ -1,6 +1,5 @@
 {
     "title": "Texture",
-    "src": "https://popbot.work/music/textureEP.html",
     "dates": {
         "2024-12-07": "published",
         "2024-09-14": "Swells posted on soundcloud"
@@ -13,7 +12,8 @@
     ],
     "contributors": {
         "Popbot": "primary creator",
-        "Dustdrift": "remixed Whine"
+        "Dustdrift": "remixed Whine",
+        "lukasipo": "cover art"
     },
     "contents": [
         "Swells",
@@ -26,5 +26,13 @@
         "soundcloud": "https://soundcloud.com/popbot1/sets/texture",
         "bandcamp": "https://popbotmusic.bandcamp.com/album/texture",
         "webpage": "./content/Texture/index.html"
+    },
+    "media": {
+        "pellegrino5.png": "final cover artwork for the EP (by lukasipo, made in blender)",
+        "pellegrino.png": "alternate cover artwork (by lukasipo, made in blender)",
+        "pellegrino1.png": "alternate cover artwork (by lukasipo, made in blender)",
+        "pellegrino2.png": "alternate cover artwork (by lukasipo, made in blender)",
+        "pellegrino3.png": "alternate cover artwork (by lukasipo, made in blender)",
+        "pellegrino4.png": "alternate cover artwork (by lukasipo, made in blender)"
     }
 }
