@@ -1,0 +1,30 @@
+{
+    "title": "Rope",
+    "dates": {
+        "2023-08-25": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "megacollab",
+        "collab",
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "main organization, mixing, main project file, contributed to most sections i think, made the section with the guitar and stuff, worked heavily on the drop at 2:07 and made the drop at 6:12",
+        "juha": "the most beautiful and amazing and awesome and epic outro ever. its so good. i love it so much. also section between 2:45 and 3:12",
+        "visyura": "artwork, everything between 3:40 and 4:45. as well as the initial main melodic motif",
+        "jhl": "some of the vocals, a bunch of orchestral stuff, big loud bit before the quiet bit before the other big loud bit. not gonna list specific timestamps cause their stuff is basically everywhere",
+        "fehu": "section between 3:12 and 3:39 (i think)",
+        "glyphli": "dont quite remember :( i do know she made some awesome pads near the outro and i remember her being in call a lot, but cant exactly recall. i imagine she has a bunch of layers present throughout.",
+        "exorbiter": " section between 3:12 and 3:39 (i think)",
+        "lukasipo": " iirc, assorted samples, textures, layers, and lukasipo",
+        "(un)familiar": "structure and first draft for the drop at 2:08, as well as some drums i think (not sure)",
+        "mleuc": "one of the snare samples"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/popbot-juha-visyura-jhl-fehu-glyphli-exorbiter-lukasipo-rope-w-mleuc-snare",
+        "webpage": "./content/rope/index.html"
+    }
+}

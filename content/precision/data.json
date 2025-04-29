@@ -1,0 +1,23 @@
+{
+    "title": "Precision",
+    "dates": {
+        "2024-08-23": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "collab",
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "Rhino Betatron": "primary creator",
+        "Stasys": "cover artwork"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/rhinobetatron/06-rhino-betatron-popbot",
+        "bandcamp": "https://rhinobetatron.bandcamp.com/track/precision",
+        "webpage": "./content/precision/index.html"
+    }
+}
