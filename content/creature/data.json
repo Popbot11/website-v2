@@ -29,5 +29,11 @@
         "soundcloud": "https://soundcloud.com/popbot1/sets/creature-ep",
         "bandcamp": "https://popbotmusic.bandcamp.com/album/creature",
         "webpage": "./content/Creature/index.html"
+    },
+    "media": {
+        "Glint.png": "cover artwork for Glint",
+        "Creature.png": "cover artwork for Creature",
+        "Deep_Hollow.png": "cover artwork for Deep Hollow (w/ Macronutrients)",
+        "Cloudburst.png": "cover artwork for Cloudburst and the whole EP (w/ rendering help from omatsu)"
     }
 }

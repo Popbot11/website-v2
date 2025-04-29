@@ -16,6 +16,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
             <div class="contributors" id="${title}-contributors"></div>
             <div class="contributor-links" id="${title}-contributor-links"></div>
             <div class="contents" id="${title}-contents"></div>
+            <div class="media" id="${title}-media"></div>
             <hr>
             
         `;
@@ -116,6 +117,23 @@ fetch("./index.json").then(res => res.json()).then(index => {
                             `;
                         } else {
                             document.getElementById(`${title}-links`).remove();
+                        }
+                    }
+
+                    //MEDIA
+                    {
+                        if(Object.keys(data).includes("media")) {
+                            document.getElementById(`${title}-media`).innerHTML += "<b>Media</b>:<br>";
+                            for (const filename of Object.keys(data.media)) {
+                                document.getElementById(`${title}-media`).innerHTML += `
+                               <span class="media-item">
+                                    <img src=${title}/${filename.replace(" ", "-")} width="250px"><br>
+                                    <span>${data.media[filename]}</span>
+                               </span>
+                                `;
+                            }
+                        }else {
+                            document.getElementById(`${title}-media`).remove();
                         }
                     }
                 } else {

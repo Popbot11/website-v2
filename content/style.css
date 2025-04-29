@@ -23,9 +23,19 @@
 .contents {
     padding-left: 40px;
 }
+.media {
+    padding-left: 40px;
+}
 .contributor-links {
     padding-left: 80px;
 }
 .indent {
     padding-left: 40px;
+}
+.media-item {
+    width: 250px;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: top;
 }

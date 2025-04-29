@@ -26,5 +26,8 @@
         "Deep Hollow",
         "Cloudburst",
         "(bonus) Mass"
-    ]
+    ],
+    "media": {
+        "filename.filetype": "short caption"
+    }
 }

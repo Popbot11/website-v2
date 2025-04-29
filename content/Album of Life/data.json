@@ -53,5 +53,8 @@
     "links": {
         "soundcloud": "https://soundcloud.com/bald1-791658435/sets/album-of-life",
         "bandcamp": "https://bald1.bandcamp.com/album/album-of-life"
+    },
+    "media": {
+        "cover.png": "cover artwork by Amfivolia"
     }
 }

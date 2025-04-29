@@ -3,10 +3,11 @@
         "title": "Iota", 
         "src": "https://popbot.work/music/iotaAlbum.html",
         "dates": {
-            "2023-05-12": "released"
+            "2023-05-20": "full release",
+            "2023-05-16": "released Flakes as a single"
         },
         "categories": ["music"],
-        "tags": ["album"],
+        "tags": ["album", "collab"],
         "contributors": {
             "Popbot": "primary creator",
             "Amfivolia": "album artwork, collaborator on track 2",
@@ -35,7 +36,6 @@
     },
     {
         "title": "Texture", 
-        "src": "https://popbot.work/music/textureEP.html",
         "dates": {
             "2024-12-07": "published",
             "2024-09-14": "Swells posted on soundcloud"
@@ -44,7 +44,8 @@
         "tags": ["ep"],
         "contributors": {
             "Popbot": "primary creator",
-            "Dustdrift": "remixed Whine"
+            "Dustdrift": "remixed Whine",
+            "lukasipo": "cover art"
         },
         "contents": [
             "Swells",
@@ -61,7 +62,6 @@
     },
     {
         "title": "crazyn7uts", 
-        "src": "https://popbot.work/music/crazyn7uts.html",
         "dates": {
             "2024-08-30": "published"
         },
@@ -83,7 +83,6 @@
     ,
     {
         "title": "module editor", 
-        "src": "https://popbot.work/contraptions/moduleEditor.html",
         "dates": {
             "2025-01-22": "published",
             "2025-01-23": "updated code",
@@ -98,7 +97,6 @@
     },
     {
         "title": "melda algos", 
-        "src": "https://popbot.work/contraptions/meldaAlgos.html",
         "dates": {
             "2025-01-20": "published"
         },
@@ -112,7 +110,6 @@
     },
     {
         "title": "buffer-gen", 
-        "src": "https://popbot.work/contraptions/buffer-gen.html",
         "dates": {
             "2024-11-17": "published on website",
             "2024-12-12": "got preset files (toml) working",
@@ -195,7 +192,6 @@
     },
     {
         "title": "pigments 6 demo", 
-         
         "href": "music/pigments6demo.html",
         "dates": {
             "2025-01-28": "published"
@@ -680,5 +676,168 @@
             "ELement B",
             "Restraint"
         ]
+    },
+    {
+        "title": "Restitution", 
+        "description": "<h1>do this</h1>",
+        "dates": {
+            "2021-12-01": "published"
+        },
+        "categories": ["music"],
+        "tags": ["single"],
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/restitution",
+            "bandcamp": "https://popbotmusic.bandcamp.com/track/restitution",
+            "webpage": "./content/restitution/index.html"
+        },
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "Cyberfridge", 
+        "description": "<h1>do this</h1>",
+        "dates": {
+            "2022-01-10": "published on streaming",
+            "2023-09-20": "taken off of streaming (remains on soundcloud)"
+        },
+        "categories": ["music"],
+        "tags": ["collab", "single", "shitpost"],
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/popbot-arcerion-zed-not-z-cyberfridge",
+            "webpage": "./content/cyberfridge/index.html"
+        },
+        "contributors": {
+            "Popbot": "primary creator",
+            "arcerion": "primary creator",
+            "ZedNotZ": "primary creator, artwork"
+        }
+    },
+    {
+        "title": "Producer Hub Megacollab", 
+        "description": "<h1>do this</h1>",
+        "dates": {
+            "2022-04-29": "premiered on SVS"
+        },
+        "categories": ["music"],
+        "tags": ["collab", "ep", "megacollab"],
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/sets/producer-hub-loose-connections/s-clvX00DvSG5?",
+            "webpage": "./content/producer hub megacollab/index.html"
+        },
+        "contributors": {
+            "Popbot": "contributor, primary organizer, project manager",
+            "arcerion": "contributor, organizer, project manager",
+            "Deadbushia": "album artwork, contributor",
+            "ZedNotZ": "album artwork, contributor",
+            "lightspark": "contributor",
+            "lukemans": "contributor",
+            "pfiffel": "contributor",
+            "jesus stevan": "contributor",
+            "rannument": "contributor, project manager",
+            "3manon": "contributor",
+            "Asymmetrical Faces": "contributor",
+            "Jaxxic / Alaska": "contributor",
+            "Shoug": "contributor",
+            "Shoug's Dad": "contributor",
+            "Jame5": "contributor",
+            "PixelGrowlz": "contributor",
+            "DeNomally": "contributor",
+            "Geefogo": "contributor",
+            "dazed": "Contributor",
+            "DEAD SM!LE": "contributor",
+            "Lionblaze": "contributor",
+            "klarigon": "contributor"
+        },
+        "contents": [
+            "Producer Hub - The Midtempo Manifesto",
+            "Producer Hub - Parrot Cave",
+            "Producer Hub - Ocean Breeze",
+            "Producer Hub Megacollab Project"
+        ]
+    },
+    {
+        "title": "Nodes", 
+        "description": "<h1>do this</h1>",
+        "dates": {
+            "2022-02-26": "published"
+        },
+        "categories": ["music"],
+        "tags": ["ep"],
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/sets/nodes",
+            "bandcamp": "https://popbotmusic.bandcamp.com/album/nodes-2",
+            "webpage": "./content/nodes/index.html"
+        },
+        "contributors": {
+            "Popbot": "primary creator",
+            "ZedNotZ": "added the transparent foreground layer on the cover artwork"
+        },
+        "contents": [
+            "Decagonite",
+            "schlonkus",
+            "Mammatus Clouds",
+            "Photo SYnthesis",
+            "Stratus"
+        ]
+    },
+    {
+        "title": "Spittle Springs", 
+        "description": "<h1>do this</h1>",
+        "dates": {
+            "2023-03-31": "published on Billegal Beats"
+        },
+        "categories": ["music"],
+        "tags": ["ep"],
+        "links": {
+            "soundcloud": "https://soundcloud.com/billegalbeats/sets/popbot-spittle-springs-ep",
+            "bandcamp": "https://billegalbeats.bandcamp.com/album/spittle-springs",
+            "webpage": "./content/spittle springs/index.html"
+        },
+        "contributors": {
+            "Popbot": "primary creator",
+            "George Antonios": "Billegal manager & Web designer",
+            "gm_work": "artwork"
+        },
+        "contents": [
+            "Grist",
+            "pocket-note",
+            "Admixture",
+            "Brain Termites"
+        ]
+    },
+    {
+        "title": "Like This", 
+        "description": "<h1>do this</h1>",
+        "dates": {
+            "2023-01-22": "published"
+        },
+        "categories": ["music"],
+        "tags": ["single"],
+        "links": {
+            "soundcloud": "https://soundcloud.com/popbot1/likethis",
+            "bandcamp": "https://popbotmusic.bandcamp.com/track/like-this",
+            "webpage": "./content/like this/index.html"
+        },
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "TPain - Church dont blink mix", 
+        "description": "<h1>do this</h1>",
+        "dates": {
+            "2023-05-25": "published"
+        },
+        "categories": ["music"],
+        "tags": ["single", "collab"],
+        "links": {
+            "soundcloud": "https://soundcloud.com/bxktty/t-pain-church-popbot-boxkitty-dont-blink-mix?in=bxktty/sets/flip",
+            "webpage": "./content/tpain - church dont blink mix/index.html"
+        },
+        "contributors": {
+            "Popbot": "primary creator",
+            "boxkitty": "primary creator"
+        }
     }
 ]
