@@ -1,7 +1,7 @@
 {
     "title": "Big Flourish",
     "dates": {
-        "yyyy-mm-dd": "published"
+        "2024-08-17": "published"
     },
     "categories": [
         "music"
@@ -17,6 +17,13 @@
         "webpage": "./content/big-flourish/index.html"
     },
     "contributors": {
-        "Popbot": "primary creator"
+        "Stasys": "primary creator",
+        "Keitha": "Contributor",
+        "MANSTRETTA": "Contributor",
+        "Popbot": "Contributor",
+        "Meepwrath": "Cover Artwork"
+    },
+    "media": {
+        "big-flourish-cover.jpg": "cover artwork by Meepwrath"
     }
 }
