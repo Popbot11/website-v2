@@ -17,6 +17,9 @@
     "links": {
         "soundcloud": "https://soundcloud.com/popbot1/popbot-isaac-einhorn-dipe-preme",
         "bandcamp": "https://popbotmusic.bandcamp.com/track/dipe-preme",
-        "webpage": "./content/dipe preme/index.html"
+        "webpage": "../content/dipe-preme/index.html"
+    },
+    "media": {
+        "dipepreme-art.png": "cover artwork by Noah Lin"
     }
 }

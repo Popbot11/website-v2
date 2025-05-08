@@ -114,7 +114,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
                     {
                         if (Object.keys(data).includes("links")) {
                             document.getElementById(`${title}-links`).innerHTML += `
-                            <b>Links</b>: ${Object.keys(data.links).map(link => `<a href="${data.links.link}" target="_blank">${link}</a>`).join(" | ")}
+                            <b>Links</b>: ${Object.keys(data.links).map(link => `<a href="${data.links[link]}" target="_blank">${link}</a>`).join(" | ")}
                             `;
                         } else {
                             document.getElementById(`${title}-links`).remove();
@@ -130,7 +130,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
                                 document.getElementById(`${title}-media`).innerHTML += `
                                 
                                 <span class="media-item">
-                                    <a href="${imgPath}}" target="_blank">
+                                    <a href="${imgPath}" target="_blank">
                                         <img src="${imgPath}" width="250px"><br>
                                     </a>
                                     <span>${data.media[filename]}</span>
