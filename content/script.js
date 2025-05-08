@@ -36,7 +36,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
                         `;
                     } else {
                         document.getElementById(`${title}-description`).innerHTML += `
-                            <b>Description</b>: [description is empty]
+                            <b>Description</b>: <span class="error">description is empty</span>
                         `;
                     }
                 } else {
@@ -126,11 +126,12 @@ fetch("./index.json").then(res => res.json()).then(index => {
                         if(Object.keys(data).includes("media")) {
                             document.getElementById(`${title}-media`).innerHTML += "<b>Media</b>:<br><br>";
                             for (const filename of Object.keys(data.media)) {
+                                const imgPath = `${path}/${filename.replace(" ", "-")}`;
                                 document.getElementById(`${title}-media`).innerHTML += `
                                 
                                 <span class="media-item">
-                                    <a href="${path}/${filename.replace(" ", "-")}" target="_blank">
-                                        <img src="${path}/${filename.replace(" ", "-")}" width="250px"><br>
+                                    <a href="${imgPath}}" target="_blank">
+                                        <img src="${imgPath}" width="250px"><br>
                                     </a>
                                     <span>${data.media[filename]}</span>
                                 </span>
@@ -142,7 +143,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
                         }
                     }
                 } else {
-                    document.getElementById(`${title}-dates`).innerHTML = "data file missing<br>";
+                    document.getElementById(`${title}-dates`).innerHTML = "<span class='error'>data file missing, or some other worse error</span><br>";
                 }
             } catch (error) {}
         }

@@ -1,10 +1,7 @@
 {
     "title": "example",
     "dates": {
-        "2024-11-18": "released cloudburst",
-        "2024-10-01": "released deep hollow",
-        "2024-08-21": "released creature",
-        "2024-08-20": "released glint"
+        "yyyy-mm-dd": "published"
     },
     "categories": [
         "music"
@@ -18,14 +15,10 @@
     "links": {
         "soundcloud": "",
         "bandcamp": "",
-        "webpage": ""
+        "webpage": "./content/<title>/index.html"
     },
     "contents": [
-        "Glint",
-        "Creature",
-        "Deep Hollow",
-        "Cloudburst",
-        "(bonus) Mass"
+        "TRACKLIST GOES HERE"
     ],
     "media": {
         "filename.filetype": "short caption"

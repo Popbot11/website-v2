@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -31,73 +27,162 @@
                 </filter>
             </defs>
         </svg>
-        
-
     </head>
     <body>
-        <p id="mousecoords">😺😺😺🦊🦊🦊🦊rmmmrrp!</p>
-        <p>wip draft for a complete redesign of my  <a href="https://www.popbot.work/index.html">current website</a></p>
-        
-        <!-- MUSIC -->
-        <div id="container-music" data-category="music">
-            <center><b>music</b></center>
-            <div class="item">
-                <span class="year">year</span> | <span class="title">title</span> <span class="tags">tag(s)</span>
-            </div>
-            <hr>
-        </div>
-
-        <!-- CONTRAPTIONS -->
-        <div id="container-contraption" data-category="contrahttps://popbot11.github.io/website-v2/">
-            <center><b>contraptions</b></center>
-            <div class="item">
-                <span class="year">year</span> | <span class="title">title</span> <span class="tags">tag(s)</span>
-            </div>
-            <hr>
-        </div>
-
-        <!-- TAGLIST -->
-        <div id="container-taglist">
-            <center><span>Exclude:<br></span></center>
-            <hr>
-        </div>
-        
-        <div id="container-video">
-            <center><span>Video<br></span></center>
-        </div>
-
-        <div id="container-externallinks">
-            <center><span>My external links<br></span></center>
-        </div>
-
-        <div id="container-other">
-            <center><span>whatever other bullshit?<br></span></center>
-        </div>
-
-        <!-- METADATA -->
-        <div id="metadata">
-            <b>hello! welcomem to my page :)</b><br>
-            My name is Robin, and I make music and music-related things. Most people online know me as Popbot. 
-            This website is a place where I put all of the stuff I'm personally involved with, and probably other things too.<br>
-            I'm currently a student at Oberlin College & Conservatory, persuing a double degree in Computer Science and TIMARA (Technology in Music and Related Arts)</div>
-        <div id="description">description of entry will be here</div>
-
-        <!-- BULLSHIT -->
-        <button onclick="dripMode()" class="dripMode">enter Drip Mode</button>
-        <button onclick="turboMode()" class="turboMode">enter Turbo Mode</button>
-        <a  href="expertmode.html"><button class="crazyMode">enter Expert Mode</button></a>
-        
-        <div class="the88x31s">
-            <a href="https://minor-locrian.neocities.org/" target="_blank">
-                <img src="media/buttons/88x31javascriptfree.gif" >
-            </a>
-            <img src="media/buttons/88x31lies(false).gif"><br>
-            <img src="media/buttons/ben_barker_spectral.png">
-            <img src="media/buttons/popbotbutton.gif">
-        </div>
     
-        <!-- <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/101276036&amp;color=ff6600&amp;auto_play=false&amp;show_artwork=true"></iframe> -->
-    
-        <script src="script.js" type="module"></script>        
+
+        <!-- RIGHT SIDEBAR -->
+        <span>
+
+            <!-- TITLE -->
+            <div 
+                id="container-title"
+                style="
+                    width: 300px;
+                    height: 1em;
+                    text-align: center;
+                    right: 5px;
+                    top: 5px;
+                ">
+                title
+            </div>
+
+            <!-- CATEGORY -->
+            <div 
+                id="container-category"
+                style="
+                    width: 80px;
+                    height: 1em;
+                    right: 225px;
+                    top: 40px;
+                ">
+                category
+            </div>
+
+            <!-- TAGS -->
+            <div 
+                id="container-tags"
+                style="
+                    width: 200px;
+                    height: 1em;
+                    right: 5px;
+                    top: 40px;
+                ">
+                tag | tag | tag | tag | tag
+            </div>
+
+            <!-- DESCRIPTION -->
+            <div 
+                id="container-description"
+                style="
+                    width: 300px;
+                    height: 250px;
+                    right: 5px;
+                    top: 175px;
+                ">
+                description<br>
+                description description description description description description description description description description description description description description description description 
+                description description description description description description
+            </div>
+        </span>
+
+
+        <!-- STUFF ON LEFT -->
+        <span>
+            <!-- MUSIC -->
+            <div 
+                id="container-music"
+                style="
+                    width: 300px;
+                    height: 440px;
+                    left: 5px;
+                    top: 5px;
+                ">
+                music list<br>music list<br>music list<br>music list<br>music list<br>music list<br>
+                music list<br>music list<br>music list<br>music list<br>music list<br>music list<br>
+            </div>
+
+            <!-- CONTRAPTIONS -->
+            <div 
+                id="container-contraptions"
+                style="
+                    width: 300px;
+                    height: 220px;
+                    left: 330px;
+                    top: 5px;
+                ">
+                contraption list<br>contraption list<br>contraption list<br>contraption list<br>contraption list<br>contraption list<br>contraption list<br>contraption list<br>contraption list<br>contraption list<br>contraption list
+            </div>
+
+            <!-- VIDEO -->
+            <div 
+                id="container-video"
+                style="
+                    width: 230px;
+                    height: 200px;
+                    left: 300px;
+                    top: 290px;
+                ">
+                video list<br>video list<br>video list<br>video list<br>video list<br>video list<br>video list<br>video list<br>video list<br>video list<br>video list
+            </div>
+
+            <!-- FILTERS -->
+            <div 
+                id="container-filters"
+                style="
+                    width: 100px;
+                    height: 210px;
+                    left: 180px;
+                    top: 445px;
+                ">
+                <input type="checkbox">tag<br><input type="checkbox">tag<br><input type="checkbox">tag<br><input type="checkbox">tag<br><input type="checkbox">tag<br><input type="checkbox">tag<br><input type="checkbox">tag<br><input type="checkbox">tag<br>
+            </div>
+
+
+            <!-- INFO -->
+            <div 
+                id="container-info"
+                style="
+                    width: 260px;
+                    height: 210px;
+                    left: 320px;
+                    top: 495px;
+                ">
+                My name is Robin, and I make music and music-related things. Most people online know me as Popbot.
+                This website is a place where I put all of the stuff I'm personally involved with, and probably other things too.
+                I'm currently a student at Oberlin College & Conservatory, persuing a double degree in Computer Science and TIMARA (Technology in Music and Related Arts)
+            </div>
+
+
+            <!-- TEMP NOTICE -->
+            <div 
+                id="container-filters"
+                style="
+                    width: 400px;
+                    height: 210px;
+                    right: 0px;
+                    top: 460px;
+                ">
+
+                <p style="
+                    color: red;
+                    ">
+
+                    <b>some info for you, the visitor:</b><br>
+                    hi this website is currently under construction. the goal here is to have a static page that's data driven and way easier for me to maintain and iterate on in the long run.
+                
+                    while I work on building this current version, you can check out an older revision 
+                    <a href="old/index.html">here</a>. <br><br>
+                    i've <i>mostly</i> finished the "expert mode", which is just a complete listing of every piece of data i've indexed, which you can view <a href="content/index.html">here</a> <br>
+                    I'm yet to fully index everything; that's gonna be a long process because i've made a <i>lot</i> of things over the years. but the code mostly works which is what i care about rn. 
+                </p>
+                <p>
+                    
+            </div>
+
+
+
+
+        </span>
     </body>
 </html>

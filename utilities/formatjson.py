@@ -41,7 +41,7 @@ for entry in datajson:
 
     data.pop('description', None)
     # f = open("./content/"+entry["title"]+"/data.json", "w")
-    with open("./content/"+entry["title"].lower().replace(" ", "-")+"/data.json", 'w') as jsonfile:
+    with open("./content/"+entry["title"].lower().replace(" ", "-")+"/data.json", 'x') as jsonfile:
         json.dump(data, jsonfile, indent=4)
     # print (data, '\n')
 

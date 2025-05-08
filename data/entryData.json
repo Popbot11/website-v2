@@ -839,5 +839,90 @@
             "Popbot": "primary creator",
             "boxkitty": "primary creator"
         }
+    },
+    {
+        "title": "Ray Volpe - Lazerbeam (ragtime edit)", 
+        "description": "",
+        "dates": {
+            "yyyy-mm-dd": "published"
+        },
+        "categories": ["music"],
+        "tags": ["single","remix","shitpost"],
+        "links": {
+            "soundcloud": "",
+            "webpage": ""
+        },
+        "contributors": {
+            "Popbot": "primary creator",
+            "Ray Volpe": "dubstep man"
+        }
+    },
+    {
+        "title": "Coalition", 
+        "description": "",
+        "dates": {
+            "yyyy-mm-dd": "published"
+        },
+        "categories": ["music"],
+        "tags": ["collab", "megacollab", "single"],
+        "links": {
+            "soundcloud": "",
+            "bandcamp": "",
+            "webpage": ""
+        },
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "Helicity", 
+        "description": "",
+        "dates": {
+            "yyyy-mm-dd": "published"
+        },
+        "categories": ["music"],
+        "tags": ["collab", "megacollab", "single"],
+        "links": {
+            "soundcloud": "",
+            "bandcamp": "",
+            "webpage": ""
+        },
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "Big Flourish", 
+        "description": "",
+        "dates": {
+            "yyyy-mm-dd": "published"
+        },
+        "categories": ["music"],
+        "tags": ["collab", "megacollab", "single"],
+        "links": {
+            "soundcloud": "",
+            "bandcamp": "",
+            "webpage": ""
+        },
+        "contributors": {
+            "Popbot": "primary creator"
+        }
+    },
+    {
+        "title": "Invention for Tub", 
+        "description": "",
+        "dates": {
+            "yyyy-mm-dd": "published"
+        },
+        "categories": ["music"],
+        "tags": ["collab"],
+        "links": {
+            "soundcloud": "",
+            "bandcamp": "",
+            "webpage": ""
+        },
+        "contributors": {
+            "Popbot": "primary creator"
+        }
     }
 ]

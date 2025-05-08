@@ -1,4 +1,8 @@
 {
+    "______test": {
+        "category": "other",
+        "date": "2025-05-08"
+    },
     "Album of Life": {
         "date": "2025-03-21",
         "category": "music"
@@ -166,5 +170,25 @@
     "battery muncher": {
         "date": "yyyy-mm-dd",
         "category": "contraption"
+    },
+    "Ray Volpe - Lazerbeam (ragtime edit)": {
+        "date": "yyyy-mm-dd",
+        "category": "music"
+    },
+    "Coalition": {
+        "date": "yyyy-mm-dd",
+        "category": "music"
+    },
+    "Helicity": {
+        "date": "yyyy-mm-dd",
+        "category": "music"
+    },
+    "Big Flourish": {
+        "date": "yyyy-mm-dd",
+        "category": "music"
+    },
+    "Invention for Tub": {
+        "date": "yyyy-mm-dd",
+        "category": "music"
     }
 }

@@ -1,0 +1,22 @@
+{
+    "title": "Helicity",
+    "dates": {
+        "yyyy-mm-dd": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "collab",
+        "megacollab",
+        "single"
+    ],
+    "links": {
+        "soundcloud": "",
+        "bandcamp": "",
+        "webpage": ""
+    },
+    "contributors": {
+        "Popbot": "primary creator"
+    }
+}
