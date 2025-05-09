@@ -28,7 +28,7 @@
     "links": {
         "soundcloud": "https://soundcloud.com/popbot1/sets/creature-ep",
         "bandcamp": "https://popbotmusic.bandcamp.com/album/creature",
-        "webpage": "./content/Creature/index.html"
+        "webpage": "../content/Creature/index.html"
     },
     "media": {
         "Glint.png": "cover artwork for Glint",
