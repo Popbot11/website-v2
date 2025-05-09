@@ -63,7 +63,10 @@ const renderEntry = (entry) => {
     let element = document.createElement("div");
     element.className="item";
     element.id = (entry.title);
-    element.innerHTML = `<span class="tags">${entry.tags.join(", ")}</span><span class="year">${Object.keys(entry.dates)[0].substring(0, 4)}</span> | <span class="title">${entry.title}</span> `
+    element.innerHTML = `
+        <span class="tags">${entry.tags.join(", ")}</span>
+        <span class="year">${Object.keys(entry.dates)[0].substring(0, 4)}</span> | 
+        <span class="title">${entry.title}</span> `
     
     // TODO: define more dynamic functionality for dates. on hover, the date should expand to a verbose date ("Month" ##, 20xx)
     let dropdown = document.createElement("div");
