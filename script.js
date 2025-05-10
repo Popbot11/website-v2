@@ -21,6 +21,19 @@ const priorityTags = [
     "paid"
 ]
 
+// useful for clearing event listeners
+function recreateNode(el, withChildren) {
+  if (withChildren) {
+    el.parentNode.replaceChild(el.cloneNode(true), el);
+  }
+  else {
+    var newEl = el.cloneNode(false);
+    while (el.hasChildNodes()) newEl.appendChild(el.firstChild);
+    el.parentNode.replaceChild(newEl, el);
+  }
+}
+
+
 // track mouse position
 let mouseX;
 let mouseY;
@@ -60,10 +73,12 @@ fetch("content/index.json").then(res => res.json()).then(index => {
         `;
         document.getElementById("dropdown-cache").appendChild(entryDropdown);
 
+
+
         entryItem.innerHTML = `       
             <span class="year" id="item-${title}-date">${index[title]["date"].substring(0,4)}</span> | 
             <span class="title">${title}</span> 
-            <span class="tags" id="item-${title}-tags">tag, tag, tag</span>
+            <span class="tags" id="item-${title}-tags">tags</span>
             <br>
         `;
 
@@ -171,40 +186,83 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                 });
                             }
 
+                            // LINKS
+                            {  
+                                document.getElementById(`container-links`).innerHTML = `
+                                <b>Links</b>: ${Object.keys(data.links).map(link => `<a href="${data.links[link]}" target="_blank">${link}</a>`).join(" | ")}
+                                `;
+                            }
+
                             // DATES
                             {
-                                document.getElementById(`${title}-dates`).innerHTML += "<b>Date(s)</b>:<br>"
-                                for (const date of Object.keys(data["dates"])) {
-                                    document.getElementById(`${title}-dates`).innerHTML += `
-                                        <span class="indent">${date}: ${data["dates"][date]}</span><br>
-                                    `
-                                }
+                                document.getElementById("date-dropdown").innerHTML =  Object.keys(data["dates"]).map(date => 
+                                    `<b>${date}</b>: ${data["dates"][date]}`
+                                ).join("<br>");
+
+                                recreateNode(document.getElementById("container-date"));
+                                const containerDate = document.getElementById(`container-date`);
+                                containerDate.innerHTML = Object.keys(data["dates"])[0];
+                                containerDate.addEventListener(
+                                    "mouseover",
+                                    event => {
+                                       document.getElementById(`date-dropdown`).style=`
+                                                top: ${mouseY + 25 + window.scrollY + 2}px;
+                                                left: ${Math.max(
+                                                    Math.min(
+                                                        mouseX + 10 + window.scrollX - (document.getElementById("date-dropdown").offsetWidth / 2), 
+                                                        getViewportWidth() - 253.2), 
+                                                    0)}px;
+                                                visibility: visible;
+                                            `;
+                                    }
+                                );
+                                containerDate.addEventListener(
+                                    "mouseleave",
+                                    event => {
+                                        document.getElementById(`date-dropdown`).style.visibility = "hidden";
+                                    }
+                                );
                             }
+
+                          
 
                             // CONTENTS
                             {
                                 if (Object.keys(data).includes("contents")){
-                                    document.getElementById(`${title}-contents`).innerHTML += `
-                                        <b>Tracklist</b>:
-                                        <ol>
-                                            ${data.contents.map((track) => `<li>${track}</li>`).join(``)}
-                                        </ol>
-                                    `;
+                                    document.getElementById("container-contents").style.visibility = "visible";
+                                    
+                                    document.getElementById("contents-dropdown").innerHTML = data["contents"].map((track, index) => `<div>${index + 1}. ${track}</div>`).join('')
+
+                                    recreateNode(document.getElementById("container-contents"));
+                                    const containerContents = document.getElementById(`container-contents`);
+                                    // containerDate.innerHTML = Object.keys(data["contents"])[0];
+                                    containerContents.addEventListener(
+                                        "mouseover",
+                                        event => {
+                                            
+                                            document.getElementById(`contents-dropdown`).style=`
+                                                top: ${mouseY + 25 + window.scrollY + 2}px;
+                                                left: ${Math.max(
+                                                    Math.min(
+                                                        mouseX + 10 + window.scrollX - (document.getElementById("contents-dropdown").offsetWidth / 2), 
+                                                        getViewportWidth() - 253.2), 
+                                                    0)}px;
+                                                visibility: visible;
+                                            `;
+                                        }
+                                    );
+                                    containerContents.addEventListener(
+                                        "mouseleave",
+                                        event => {
+                                            document.getElementById(`contents-dropdown`).style.visibility = "hidden";
+                                        }
+                                    );
                                 } else {
-                                    document.getElementById(`${title}-contents`).remove();
+                                    document.getElementById("container-contents").style.visibility = "hidden";
                                 }
                             }
 
-                            // LINKS
-                            {
-                                if (Object.keys(data).includes("links")) {
-                                    document.getElementById(`${title}-links`).innerHTML += `
-                                    <b>Links</b>: ${Object.keys(data.links).map(link => `<a href="${data.links[link]}" target="_blank">${link}</a>`).join(" | ")}
-                                    `;
-                                } else {
-                                    document.getElementById(`${title}-links`).remove();
-                                }
-                            }
+                            
 
                             //MEDIA
                             {
