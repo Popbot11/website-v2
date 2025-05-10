@@ -37,11 +37,16 @@ hr {
     
     border-style: hidden;
     box-shadow: 
-        0px 0px 10px rgb(0, 107, 32),
+        0px 0px 10px rgb(146, 201, 163),
         20px 20px 100px rgba(107, 100, 0, 0.438);
-    background-image: linear-gradient(290deg ,rgb(255, 153, 0) 0%, rgb(0, 126, 27) 35%, rgba(157, 168, 7, 0) 100%); 
+    background-image: linear-gradient(
+        290deg ,
+        rgb(255, 204, 127) 0%, 
+        rgb(2, 219, 49) 50%, 
+        rgba(243, 255, 81, 0) 100%); 
 
     overflow-y: scroll;
+    overflow-x: hidden;
     scrollbar-width:thin;
 
     /* transform: rotate(3deg); */
@@ -55,7 +60,12 @@ hr {
 }
 #container-contraption {
     color: rgb(0, 0, 0);
-    background-image: repeating-linear-gradient(40deg ,rgb(255, 68, 0), rgb(237, 203, 125) 0%, rgba(187, 195, 85, 0.614) 30%, rgba(157, 168, 7, 0) 30%); 
+    background-image: repeating-linear-gradient(
+        40deg ,
+        rgb(255, 68, 0), 
+        rgb(237, 203, 125) 0%, 
+        rgba(187, 195, 85, 0.614) 30%, 
+        rgba(157, 168, 7, 0) 30%); 
 
 
     border-style:hidden;
@@ -115,7 +125,10 @@ hr {
     font-size: smaller;
     
     border-color: rgba(255, 255, 255, 0);
-    background-image: repeating-linear-gradient(180deg, rgba(250, 118, 18, 0.27) 0%, rgba(82, 53, 22, 0.385) 10%, rgba(250, 103, 18, 0.297) 20%);
+    background-image: repeating-linear-gradient(
+        180deg, rgba(250, 118, 18, 0.27) 0%, 
+        rgba(82, 53, 22, 0.385) 10%, 
+        rgba(250, 103, 18, 0.297) 20%);
     box-shadow: 0px 0px 30px rgb(179, 161, 0);
 
     filter: opacity(0.9);
@@ -138,4 +151,24 @@ hr {
     background-color: azure;
     float: right;
     right: 0px;
+}
+
+
+[class^="tag"] {
+    margin-left: 4px;
+    background-image: repeating-linear-gradient(
+        70deg, rgba(192, 74, 255, 0) 0%, 
+        rgba(255, 242, 0, 0) 20%, 
+        rgba(13, 203, 255, 0.551) 80%, 
+        rgba(18, 115, 250, 0) 100%);
+
+    box-shadow: 0px 0px 30px rgba(255, 52, 133, 0);
+}
+.tag-priority {
+    visibility: visible;
+    /* position: absolute; */
+}
+.tag-hidden {
+    visibility: hidden;
+    position: absolute;
 }

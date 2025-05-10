@@ -12,6 +12,13 @@ const getViewportWidth = () => {
    }
 }
 
+const priorityTags = [
+    "album",
+    "ep",
+    "shitpost",
+    "wip"
+]
+
 // track mouse position
 let mouseX;
 let mouseY;
@@ -54,7 +61,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
         entryItem.innerHTML = `       
             <span class="year" id="item-${title}-date">${index[title]["date"].substring(0,4)}</span> | 
             <span class="title">${title}</span> 
-            <span class="tags">tag, tag, tag</span>
+            <span class="tags" id="item-${title}-tags">tag, tag, tag</span>
             <br>
         `;
 
@@ -64,7 +71,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                 entryItem.style.left = "10px";
                 entryItem.style.backgroundColor = "rgba(1, 1, 1, 0.1)";
                 entryItem.querySelectorAll('.tags').forEach(el => 
-                    el.style.color = "red");
+                    el.style.visibility = "visible");
             
                 if (document.getElementById("show-dropdowns").checked) {
                     entryDropdown.style=`
@@ -77,9 +84,6 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                         visibility: visible;
                     `;
                 }
-                
-                
-
             }
         );
         entryItem.addEventListener(
@@ -88,13 +92,17 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                 entryItem.style.left = "";
                 entryItem.style.backgroundColor = "rgba(1, 1, 1, 0)";
                 entryItem.querySelectorAll('.tags').forEach(el => 
-                    el.style.color = "");
+                    el.style.visibility = "visible");
+                if (document.getElementById("show-dropdowns").checked) {
+                    entryDropdown.style = `
+                        visibility: hidden;
+                    `;
+                }
                 
-                entryDropdown.style = `
-                    visibility: hidden;
-                `
             }
         );
+
+        // ONCLICK
         entryItem.addEventListener(
             "click",
             async (event) => {
@@ -124,109 +132,104 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                 }
 
                 // DATA.JSON
-        {
-            try {
-                const response = await fetch('./content/'+path+"/data.json");
-                if (response.ok) {
-                    const data = await response.json();
-                    
-                    // TITLE
-                    {
-                        document.getElementById(`container-title`).innerHTML = title;
-                    }
-
-                    // CATEGORY
-                    {
-                        document.getElementById(`container-category`).innerHTML = data.categories[0];
-                    }
-
-                    // TAGS
-                    {
-                        document.getElementById(`container-tags`).innerHTML = data.tags.map(tag => `${tag}`).join(" | ");
-                    }
-
-                   
-
-                    // CONTRIBUTORS
-                    {
-                        // let element = document.createElement("span");
-                        let target = document.getElementById(`container-contributors`)
-                        target.innerHTML = `
-                            <b>Contributors</b>: 
-                            <span id='contributor-buttons'></span><br><br>
-                            <span id='contributor-links'></span>`;
-                        Object.keys(data.contributors).forEach(contributor => {
+                {
+                    try {
+                        const response = await fetch('./content/'+path+"/data.json");
+                        if (response.ok) {
+                            const data = await response.json();
                             
-                            let button = document.createElement("button");
-                            button.innerHTML = contributor
-                            button.setAttribute("onclick", "fetch('../data/personData.json').then(res => res.json()).then(personData => {try{document.getElementById('contributor-links').innerHTML = `<b>"+contributor+":</b> "+data.contributors[contributor]+"<br><b>Links:</b> ${Object.keys(personData['"+contributor.toLowerCase()+"']).map(text => \"<a target='_blank' href='\"+personData['"+contributor.toLowerCase()+"'][text]+\"'>\"+text+\"</a>\").join(' | ')}` + `<br><button onclick=\"document.getElementById('contributor-links').innerHTML=null;\">hide</button>`;}catch{document.getElementById('contributor-links').innerHTML = `<b>"+contributor+"</b>: "+data.contributors[contributor]+"<br><b>Links:</b>  isn't in the database yet; no links` + `<br><button onclick=\"document.getElementById('contributor-links').innerHTML=null;\">hide</button>`;}})");
-                            document.getElementById('contributor-buttons').appendChild(button)
-            
-                        });
-                        
-                    }
+                            // TITLE
+                            document.getElementById(`container-title`).innerHTML = title;
+                            
 
-                    // DATES
-                    {
-                        document.getElementById(`${title}-dates`).innerHTML += "<b>Date(s)</b>:<br>"
-                        for (const date of Object.keys(data["dates"])) {
-                            document.getElementById(`${title}-dates`).innerHTML += `
-                                <span class="indent">${date}: ${data["dates"][date]}</span><br>
-                            `
-                        }
-                    }
+                            // CATEGORY
+                            document.getElementById(`container-category`).innerHTML = data.categories[0];
+                            
 
-                    // CONTENTS
-                    {
-                        if (Object.keys(data).includes("contents")){
-                            document.getElementById(`${title}-contents`).innerHTML += `
-                                <b>Tracklist</b>:
-                                <ol>
-                                    ${data.contents.map((track) => `<li>${track}</li>`).join(``)}
-                                </ol>
-                            `;
-                        } else {
-                            document.getElementById(`${title}-contents`).remove();
-                        }
-                    }
+                            // TAGS
+                            document.getElementById(`container-tags`).innerHTML = data.tags.map(tag => `${tag}`).join(" | ");
+                            
 
-                    // LINKS
-                    {
-                        if (Object.keys(data).includes("links")) {
-                            document.getElementById(`${title}-links`).innerHTML += `
-                            <b>Links</b>: ${Object.keys(data.links).map(link => `<a href="${data.links[link]}" target="_blank">${link}</a>`).join(" | ")}
-                            `;
-                        } else {
-                            document.getElementById(`${title}-links`).remove();
-                        }
-                    }
-
-                    //MEDIA
-                    {
-                        if(Object.keys(data).includes("media")) {
-                            document.getElementById(`${title}-media`).innerHTML += "<b>Media</b>:<br><br>";
-                            for (const filename of Object.keys(data.media)) {
-                                const imgPath = `${path}/${filename.replace(" ", "-")}`;
-                                document.getElementById(`${title}-media`).innerHTML += `
-                                
-                                <span class="media-item">
-                                    <a href="${imgPath}" target="_blank">
-                                        <img src="${imgPath}" width="250px"><br>
-                                    </a>
-                                    <span>${data.media[filename]}</span>
-                                </span>
-                                
-                                `;
+                            // CONTRIBUTORS
+                            {
+                                // let element = document.createElement("span");
+                                let target = document.getElementById(`container-contributors`)
+                                target.innerHTML = `
+                                    <b>Contributors</b>: 
+                                    <span id='contributor-buttons'></span><br><br>
+                                    <span id='contributor-links'></span>`;
+                                Object.keys(data.contributors).forEach(contributor => {
+                                    
+                                    let button = document.createElement("button");
+                                    button.innerHTML = contributor
+                                    button.setAttribute("onclick", "fetch('../data/personData.json').then(res => res.json()).then(personData => {try{document.getElementById('contributor-links').innerHTML = `<b>"+contributor+":</b> "+data.contributors[contributor]+"<br><b>Links:</b> ${Object.keys(personData['"+contributor.toLowerCase()+"']).map(text => \"<a target='_blank' href='\"+personData['"+contributor.toLowerCase()+"'][text]+\"'>\"+text+\"</a>\").join(' | ')}` + `<br><button onclick=\"document.getElementById('contributor-links').innerHTML=null;\">hide</button>`;}catch{document.getElementById('contributor-links').innerHTML = `<b>"+contributor+"</b>: "+data.contributors[contributor]+"<br><b>Links:</b>  isn't in the database yet; no links` + `<br><button onclick=\"document.getElementById('contributor-links').innerHTML=null;\">hide</button>`;}})");
+                                    document.getElementById('contributor-buttons').appendChild(button)
+                    
+                                });
                             }
-                        }else {
-                            document.getElementById(`${title}-media`).remove();
+
+                            // DATES
+                            {
+                                document.getElementById(`${title}-dates`).innerHTML += "<b>Date(s)</b>:<br>"
+                                for (const date of Object.keys(data["dates"])) {
+                                    document.getElementById(`${title}-dates`).innerHTML += `
+                                        <span class="indent">${date}: ${data["dates"][date]}</span><br>
+                                    `
+                                }
+                            }
+
+                            // CONTENTS
+                            {
+                                if (Object.keys(data).includes("contents")){
+                                    document.getElementById(`${title}-contents`).innerHTML += `
+                                        <b>Tracklist</b>:
+                                        <ol>
+                                            ${data.contents.map((track) => `<li>${track}</li>`).join(``)}
+                                        </ol>
+                                    `;
+                                } else {
+                                    document.getElementById(`${title}-contents`).remove();
+                                }
+                            }
+
+                            // LINKS
+                            {
+                                if (Object.keys(data).includes("links")) {
+                                    document.getElementById(`${title}-links`).innerHTML += `
+                                    <b>Links</b>: ${Object.keys(data.links).map(link => `<a href="${data.links[link]}" target="_blank">${link}</a>`).join(" | ")}
+                                    `;
+                                } else {
+                                    document.getElementById(`${title}-links`).remove();
+                                }
+                            }
+
+                            //MEDIA
+                            {
+                                if(Object.keys(data).includes("media")) {
+                                    document.getElementById(`${title}-media`).innerHTML += "<b>Media</b>:<br><br>";
+                                    for (const filename of Object.keys(data.media)) {
+                                        const imgPath = `${path}/${filename.replace(" ", "-")}`;
+                                        document.getElementById(`${title}-media`).innerHTML += `
+                                        
+                                        <span class="media-item">
+                                            <a href="${imgPath}" target="_blank">
+                                                <img src="${imgPath}" width="250px"><br>
+                                            </a>
+                                            <span>${data.media[filename]}</span>
+                                        </span>
+                                        
+                                        `;
+                                    }
+                                }else {
+                                    document.getElementById(`${title}-media`).remove();
+                                }
+                            }
+
+                        } else {
+                            document.getElementById(`${title}-dates`).innerHTML = "<span class='error'>data file missing, or some other worse error</span><br>";
                         }
-                    }
-                } else {
-                    document.getElementById(`${title}-dates`).innerHTML = "<span class='error'>data file missing, or some other worse error</span><br>";
+                    } catch (error) {}
                 }
-            } catch (error) {}
-        }
             }
         );
         
@@ -241,10 +244,6 @@ fetch("content/index.json").then(res => res.json()).then(index => {
 
         document.getElementById("container-"+index[title]["category"]).appendChild(entryItem)
         
-        
-
-        
-
         // DATA.JSON
         {
             try {
@@ -259,6 +258,15 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                             ${data.tags.map(tag => `${tag}`).join(" | ")}
                             <br>
                         `;
+                        document.getElementById(`item-${title}-tags`).innerHTML = data.tags.map(tag => {
+                            if (priorityTags.includes(tag)) {
+                                return `<span class="tag-priority" id="tag-${title}-${tag}">${tag}</span>`
+                            } else {
+                                return `<span class="tag-hidden" id="tag-${title}-${tag}">${tag}</span>`
+                            }
+                            
+                        }).join("");
+                            
                     }
 
                     // CONTRIBUTORS

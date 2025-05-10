@@ -5,7 +5,6 @@
 # for now tho, this is fine. 
 
 import json
-import csv
 import os
 
 f = open('./data/entryData.json')
