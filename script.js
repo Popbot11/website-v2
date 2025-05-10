@@ -16,7 +16,9 @@ const priorityTags = [
     "album",
     "ep",
     "shitpost",
-    "wip"
+    "wip",
+    "m4l",
+    "paid"
 ]
 
 // track mouse position
@@ -70,8 +72,10 @@ fetch("content/index.json").then(res => res.json()).then(index => {
             (event) => {
                 entryItem.style.left = "10px";
                 entryItem.style.backgroundColor = "rgba(1, 1, 1, 0.1)";
-                entryItem.querySelectorAll('.tags').forEach(el => 
-                    el.style.visibility = "visible");
+                const hiddenTags = entryItem.querySelectorAll('.tag-hidden');
+                hiddenTags.forEach(el => {
+                    el.style = "visibility: visible;";
+                });
             
                 if (document.getElementById("show-dropdowns").checked) {
                     entryDropdown.style=`
@@ -91,8 +95,8 @@ fetch("content/index.json").then(res => res.json()).then(index => {
             (event) => {
                 entryItem.style.left = "";
                 entryItem.style.backgroundColor = "rgba(1, 1, 1, 0)";
-                entryItem.querySelectorAll('.tags').forEach(el => 
-                    el.style.visibility = "visible");
+                entryItem.querySelectorAll('.tag-hidden').forEach(el => 
+                    el.style = "visibility: hidden; position: absolute;");
                 if (document.getElementById("show-dropdowns").checked) {
                     entryDropdown.style = `
                         visibility: hidden;
@@ -163,8 +167,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                     let button = document.createElement("button");
                                     button.innerHTML = contributor
                                     button.setAttribute("onclick", "fetch('../data/personData.json').then(res => res.json()).then(personData => {try{document.getElementById('contributor-links').innerHTML = `<b>"+contributor+":</b> "+data.contributors[contributor]+"<br><b>Links:</b> ${Object.keys(personData['"+contributor.toLowerCase()+"']).map(text => \"<a target='_blank' href='\"+personData['"+contributor.toLowerCase()+"'][text]+\"'>\"+text+\"</a>\").join(' | ')}` + `<br><button onclick=\"document.getElementById('contributor-links').innerHTML=null;\">hide</button>`;}catch{document.getElementById('contributor-links').innerHTML = `<b>"+contributor+"</b>: "+data.contributors[contributor]+"<br><b>Links:</b>  isn't in the database yet; no links` + `<br><button onclick=\"document.getElementById('contributor-links').innerHTML=null;\">hide</button>`;}})");
-                                    document.getElementById('contributor-buttons').appendChild(button)
-                    
+                                    document.getElementById('contributor-buttons').appendChild(button);
                                 });
                             }
 
@@ -260,9 +263,9 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                         `;
                         document.getElementById(`item-${title}-tags`).innerHTML = data.tags.map(tag => {
                             if (priorityTags.includes(tag)) {
-                                return `<span class="tag-priority" id="tag-${title}-${tag}">${tag}</span>`
+                                return `<span class="tag-priority" id="tag-${title}-${tag}" style="visibility: visible;">${tag}</span>`
                             } else {
-                                return `<span class="tag-hidden" id="tag-${title}-${tag}">${tag}</span>`
+                                return `<span class="tag-hidden" id="tag-${title}-${tag}" style="visibility: hidden; position: absolute;">${tag}</span>`
                             }
                             
                         }).join("");

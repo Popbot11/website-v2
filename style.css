@@ -75,7 +75,7 @@ hr {
 
     /* transform: rotate(15deg); */
     overflow-y: scroll;
-    overflow-x: visible;
+    overflow-x: hidden;
 
 
     
@@ -105,13 +105,14 @@ hr {
 }
 .title {
     backdrop-filter: blur(2px);
+    z-index: 9;
 }
 .tags {
     float: right;
     right: 0px;
     position: absolute;
     height: max-content;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family:Arial, Helvetica, sans-serif;
     font-size: small;
 }
 
@@ -136,7 +137,7 @@ hr {
     border-style: solid;
 
 
-    backdrop-filter: blur(7px) hue-rotate(180deg);;
+    backdrop-filter: blur(7px) hue-rotate(180deg);
 
     
 }
@@ -154,21 +155,16 @@ hr {
 }
 
 
-[class^="tag"] {
+[class^="tag-"] {
     margin-left: 4px;
     background-image: repeating-linear-gradient(
         70deg, rgba(192, 74, 255, 0) 0%, 
         rgba(255, 242, 0, 0) 20%, 
         rgba(13, 203, 255, 0.551) 80%, 
         rgba(18, 115, 250, 0) 100%);
-
+    backdrop-filter: blur(7px);
     box-shadow: 0px 0px 30px rgba(255, 52, 133, 0);
-}
-.tag-priority {
-    visibility: visible;
-    /* position: absolute; */
-}
-.tag-hidden {
-    visibility: hidden;
-    position: absolute;
+    z-index: 10;
+    border-style:groove;
+    border-color: rgba(240, 248, 255, 0.368);
 }
