@@ -189,4 +189,8 @@ hr {
     float: right;
     right: 0px;
 }
+#mobileNotif {
+    visibility: hidden;
+    position: absolute;
+}
 

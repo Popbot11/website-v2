@@ -42,8 +42,18 @@
             <hr>
         </span>
 
+        <div class="main" id="mobileNotif">
+            hey, it looks like you're using a browser on a mobile client. <br>
+            this page will likely be unusable on your device. <br>
+            you can choose to either continue with the normal desktop page, or redirrect to expert mode (which works better on mobile). <br>
+            <button onclick="
+                document.body.removeChild(document.getElementById(`mobileNotif`));
+            "
+            >continue</button> | <a href="./content/index.html"><button>expert mode</button></a>
+        </div>
+
         <!-- MAIN CONTENT -->
-        <div class="main">
+        <div class="main" id="main">
             <!-- STUFF ON RIGHT -->
             <span>
                 
