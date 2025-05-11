@@ -1,4 +1,8 @@
 {
+    "the writhing mass": {
+        "category": "video",
+        "date": "2025-04-22"
+    },
     "Album of Life": {
         "date": "2025-03-21",
         "category": "music"
@@ -10,6 +14,10 @@
     "FORM anypercent vol. 2": {
         "date": "2025-02-07",
         "category": "music"
+    },
+    "WIP track for my next album": {
+        "category": "video",
+        "date": "2025-01-29"
     },
     "pigments 6 demo": {
         "date": "2025-01-28",
@@ -34,6 +42,10 @@
     "TECH 201 Etude": {
         "date": "2025-01-09",
         "category": "music"
+    },
+    "livestreams": {
+        "category": "video",
+        "date": "2025-01-01"
     },
     "alon mor type beat drums": {
         "category": "music",
@@ -79,6 +91,14 @@
         "date": "2024-08-17",
         "category": "music"
     },
+    "PB Modal Synth Promo Video": {
+        "category": "video",
+        "date": "2024-07-24"
+    },
+    "PB Modal Synth Tutorial": {
+        "category": "video",
+        "date": "2024-07-23"
+    },
     "Helicity": {
         "date": "2024-07-07",
         "category": "music"
@@ -86,6 +106,14 @@
     "stardust": {
         "date": "2024-06-04",
         "category": "music"
+    },
+    "Guidelines for Physically Based Sound Design": {
+        "category": "video",
+        "date": "2024-05-01"
+    },
+    "Yapping about sound design workflow": {
+        "category": "video",
+        "date": "2024-03-25"
     },
     "Simulated Microcosm": {
         "date": "2024-03-02",

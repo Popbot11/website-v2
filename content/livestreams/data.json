@@ -1,0 +1,20 @@
+{
+    "title": "livestreams",
+    "dates": {
+        "2025-01-01": "last stream",
+        "2022-12-24": "first stream"
+    },
+    "categories": [
+        "video"
+    ],
+    "tags": [
+        "live"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "youtube": "https://www.youtube.com/@Popbot/streams",
+        "webpage": "../content/livestreams/index.html"
+    }
+}

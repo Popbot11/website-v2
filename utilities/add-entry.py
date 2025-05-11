@@ -36,7 +36,7 @@ try:
     with open("./content/"+title.lower().replace(" ", "-")+"/data.json", "x") as datafile:
         json.dump(templatedata, datafile, indent=4)
         print("\twrote template data to data.json")
-    with open("../content/"+title.lower().replace(" ", "-")+"/description.txt", "x") as descriptionfile:
+    with open("./content/"+title.lower().replace(" ", "-")+"/description.txt", "x") as descriptionfile:
         descriptionfile.write(description)
         print("\twrote description to description.txt")
 except:

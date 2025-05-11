@@ -78,9 +78,9 @@ hr {
     /* transform: rotate(15deg); */
     overflow-y: scroll;
     overflow-x: hidden;
-
-
-    
+}
+#container-video {
+    overflow-x: hidden;
 }
 
 #container-title {

@@ -48,22 +48,8 @@ function updateDebug() {
                 vp width: ${viewportWidth}`;
 }
 
-document.addEventListener(
-    "mousemove",
-    (event) => {
-        mouseX = event.clientX;
-        mouseY = event.clientY;
-        viewportWidth = window.innerWidth;
-        updateDebug();
-    }
-);
-window.addEventListener(
-    "resize",
-    event => {
-        viewportWidth = window.innerWidth;
-        updateDebug();
-
-        if (viewportWidth < 970) {
+function updateMobileNotif() {
+    if (viewportWidth < 970) {
             document.getElementById("mobileNotif").style = `
                 visibility: visible;
                 position: relative;
@@ -74,6 +60,25 @@ window.addEventListener(
                 position: absolute;
             `; 
         }
+}
+
+document.addEventListener(
+    "mousemove",
+    (event) => {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+        viewportWidth = window.innerWidth;
+        updateDebug();
+        updateMobileNotif();
+    }
+);
+window.addEventListener(
+    "resize",
+    event => {
+        viewportWidth = window.innerWidth;
+        updateDebug();
+        updateMobileNotif();
+        
     }
 )
 
@@ -191,10 +196,8 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                             // TITLE
                             document.getElementById(`container-title`).innerHTML = title;
                             
-
                             // CATEGORY
                             document.getElementById(`container-category`).innerHTML = data.categories[0];
-                            
 
                             // TAGS
                             document.getElementById(`container-tags`).innerHTML = data.tags.map(tag => `${tag}`).join(" | ");
@@ -255,8 +258,6 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                 );
                             }
 
-                          
-
                             // CONTENTS
                             {
                                 if (Object.keys(data).includes("contents")){
@@ -293,8 +294,6 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                 }
                             }
 
-                            
-
                             //MEDIA
                             {
                                 recreateNode(document.getElementById("container-media"));
@@ -320,14 +319,6 @@ fetch("content/index.json").then(res => res.json()).then(index => {
             }
         );
         
-        
-        
-        // switch (index[title]["category"]) {
-        //     case "music": 
-        //         console.log("music");
-        //         document.getElementById("container-music").appendChild(element);
-        //         break;
-        // }
 
         document.getElementById("container-"+index[title]["category"]).appendChild(entryItem)
         

@@ -1,0 +1,18 @@
+{
+    "title": "the writhing mass",
+    "dates": {
+        "2025-04-22": "published"
+    },
+    "categories": [
+        "video"
+    ],
+    "tags": [
+        "software demo"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "youtube": "https://www.youtube.com/watch?v=TI37HFuCN_M"
+    }
+}
