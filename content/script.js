@@ -114,7 +114,14 @@ fetch("./index.json").then(res => res.json()).then(index => {
                     {
                         if (Object.keys(data).includes("links")) {
                             document.getElementById(`${title}-links`).innerHTML += `
-                            <b>Links</b>: ${Object.keys(data.links).map(link => `<a href="${data.links[link]}" target="_blank">${link}</a>`).join(" | ")}
+                            <b>Links</b>: ${Object.keys(data.links)
+                                .map(link => {
+                                    let url = data.links[link];
+                                    if (url.startsWith("./content/")) {
+                                        url = "."+url;
+                                    } 
+                                    return `<a href="${url}" target="_blank">${link}</a>
+                                `}).join(" | ")}
                             `;
                         } else {
                             document.getElementById(`${title}-links`).remove();

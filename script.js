@@ -223,7 +223,14 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                             // LINKS
                             {  
                                 document.getElementById(`container-links`).innerHTML = `
-                                <b>Links</b>: ${Object.keys(data.links).map(link => `<a href="${data.links[link]}" target="_blank">${link}</a>`).join(" | ")}
+                                <b>Links</b>: ${Object.keys(data.links)
+                                    .map(link => {
+                                        let url = data.links[link];
+                                        if (url.startsWith("../content/")) {
+                                            url = url.substring(1);
+                                        } 
+                                        return `<a href="${url}" target="_blank">${link}</a>`;
+                                    }).join(" | ")}
                                 `;
                             }
 
@@ -386,7 +393,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                         )
                     }
 
-                    // CONTENTS
+                    // CONTENTS (unused code)
                     {
                         if (Object.keys(data).includes("contents")){
                             document.getElementById(`${title}-contents`).innerHTML += `
@@ -400,7 +407,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                         }
                     }
 
-                    // LINKS
+                    // LINKS (unused code)
                     {
                         if (Object.keys(data).includes("links")) {
                             document.getElementById(`${title}-links`).innerHTML += `
