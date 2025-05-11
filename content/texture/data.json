@@ -25,7 +25,7 @@
     "links": {
         "soundcloud": "https://soundcloud.com/popbot1/sets/texture",
         "bandcamp": "https://popbotmusic.bandcamp.com/album/texture",
-        "webpage": "./content/Texture/index.html"
+        "webpage": "../content/texture/index.html"
     },
     "media": {
         "pellegrino5.png": "final cover artwork for the EP (by lukasipo, made in blender)",

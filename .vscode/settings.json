@@ -1,3 +1,4 @@
 {
-    "vscode-pets.disableEffects": true
+    "vscode-pets.disableEffects": true,
+    "liveServer.settings.port": 5501
 }

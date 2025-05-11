@@ -25,6 +25,9 @@
     },
     "links": {
         "soundcloud": "https://soundcloud.com/popbot1/popbot-juha-visyura-jhl-fehu-glyphli-exorbiter-lukasipo-rope-w-mleuc-snare",
-        "webpage": "./content/rope/index.html"
+        "webpage": "../content/rope/index.html"
+    },
+    "media": {
+        "rope_13_artwork.png": "cover artwork by visyura"
     }
 }

@@ -12,7 +12,7 @@
     "links": {
         "soundcloud": "https://soundcloud.com/popbot1/sets/nodes",
         "bandcamp": "https://popbotmusic.bandcamp.com/album/nodes-2",
-        "webpage": "./content/nodes/index.html"
+        "webpage": "../content/nodes/index.html"
     },
     "contributors": {
         "Popbot": "primary creator",

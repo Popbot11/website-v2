@@ -98,6 +98,12 @@ hr {
     margin-top: 0px;
     background-color: rgb(0, 255, 255);
 }
+#container-media {
+    border-style: hidden;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: none;
+    visibility: hidden;
+}
 
 /* ENTRIES */
 .entry{
@@ -192,5 +198,5 @@ hr {
 #mobileNotif {
     visibility: hidden;
     position: absolute;
+    font-size: x-large;
 }
-

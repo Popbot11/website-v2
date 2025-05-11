@@ -1,0 +1,32 @@
+{
+    "title": "The Traveler's Mind",
+    "dates": {
+        "2023-12-01": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single", "collab", "megacollab"
+    ],
+    "contributors": {
+        "Stasys": "project organizer, contributor, cover art",
+        "Popbot": "contributor",
+        "Kyodaina": "contributor",
+        "fwocl": "contributor",
+        "Aeronoise": "cover art"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/stasysmusial/sets/through-sharp-eyes-we-witness",
+        "bandcamp": "https://stasysmusial.bandcamp.com/album/through-sharp-eyes-we-witness",
+        "webpage": "../content/the-travelers-mind/index.html"
+    },
+    "contents": [
+        "The Traveler's Mind",
+        "Into Fog",
+        "Beyond The Outer Limit"
+    ],
+    "media": {
+        "tseww-cover.jpg": "artwork by Aeronoise and Stasys"
+    }
+}

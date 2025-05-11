@@ -12,7 +12,7 @@
     "links": {
         "soundcloud": "https://soundcloud.com/popbot1/sets/reactant-ep",
         "bandcamp": "https://popbotmusic.bandcamp.com/album/reactant",
-        "webpage": "./content/reactant/index.html"
+        "webpage": "../content/reactant/index.html"
     },
     "contributors": {
         "Popbot": "primary creator"

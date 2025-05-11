@@ -1,7 +1,7 @@
 {
     "title": "Helicity",
     "dates": {
-        "yyyy-mm-dd": "published"
+        "2024-07-07": "published"
     },
     "categories": [
         "music"
@@ -12,11 +12,20 @@
         "single"
     ],
     "links": {
-        "soundcloud": "",
-        "bandcamp": "",
-        "webpage": ""
+        "soundcloud": "https://soundcloud.com/weareforecast/helicity",
+        "webpage": "../content/helicity/index.html"
     },
     "contributors": {
-        "Popbot": "primary creator"
+        "Popbot": "primary creator",
+        "Vipley": "primary creator",
+        "fehu": "primary creator",
+        "Zachary": "primary creator",
+        "1emjay": "primary creator",
+        "Clayne": "primary creator",
+        "Skipaay": "primary creator",
+        "Kyōdaina": "primary creator"
+    },
+    "media": {
+        "sov6-artwork.jpg": "artwork for the sleepover v6 compilation album"
     }
 }

@@ -12,7 +12,7 @@
     "links": {
         "soundcloud": "https://soundcloud.com/popbot1/likethis",
         "bandcamp": "https://popbotmusic.bandcamp.com/track/like-this",
-        "webpage": "./content/like this/index.html"
+        "webpage": "../content/like-this/index.html"
     },
     "contributors": {
         "Popbot": "primary creator"

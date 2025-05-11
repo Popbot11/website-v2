@@ -1,0 +1,37 @@
+{
+    "title": "corpswave 2024",
+    "dates": {
+        "2024-01-13": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single", "collab", "megacollab"
+    ],
+    "contributors": {
+        "Worldwave": "organizer",
+        "Lirion": "Contributor",
+        "Semi Neural": "Contributor",
+        "glum bass": "Contributor",
+        "glyphli": "Contributor",
+        "inktome": "Contributor",
+        "Levia": "Contributor",
+        "Popbot": "contributor",
+        "Amfivolia": "Contributor",
+        "xaelon": "Contributor",
+        "PLAGVE": "Contributor",
+        "PixelPelixan": "Contributor",
+        "Norkhuna": "Contributor",
+        "1emjay": "Contributor",
+        "Siedoro": "Contributor",
+        "Bleizik": "Contributor",
+        "-MoonOWO-": "Contributor",
+        "lukasipo": "Contributor"
+    },
+    "links": {
+        "soundcloud": "",
+        "bandcamp": "",
+        "webpage": "../content/index/index.html"
+    }
+}

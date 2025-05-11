@@ -12,7 +12,7 @@
     "links": {
         "soundcloud": "https://soundcloud.com/popbot1/resen",
         "bandcamp": "https://popbotmusic.bandcamp.com/track/resen",
-        "webpage": "./content/resen/index.html"
+        "webpage": "../content/resen/index.html"
     },
     "contributors": {
         "Popbot": "primary creator"

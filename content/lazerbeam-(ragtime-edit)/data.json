@@ -1,7 +1,7 @@
 {
     "title": "Lazerbeam (ragtime edit)",
     "dates": {
-        "yyyy-mm-dd": "published"
+        "2023-02-04": "published"
     },
     "categories": [
         "music"
@@ -12,8 +12,8 @@
         "shitpost"
     ],
     "links": {
-        "soundcloud": "",
-        "webpage": ""
+        "soundcloud": "https://soundcloud.com/popbot1/ray-volpe-lazerbeam-ragtime-edit",
+        "webpage": "../content/lazerbeam-(ragtime-edit)/index.html"
     },
     "contributors": {
         "Popbot": "primary creator",

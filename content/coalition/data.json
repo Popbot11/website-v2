@@ -1,7 +1,7 @@
 {
     "title": "Coalition",
     "dates": {
-        "yyyy-mm-dd": "published"
+        "2023-06-29": "published"
     },
     "categories": [
         "music"
@@ -12,11 +12,20 @@
         "single"
     ],
     "links": {
-        "soundcloud": "",
-        "bandcamp": "",
-        "webpage": ""
+        "soundcloud": "https://soundcloud.com/wearesilkenwood/apm-coalition",
+        "webpage": "../content/coalition/index.html"
     },
     "contributors": {
-        "Popbot": "primary creator"
+        "APM": "collective alias",
+        "Popbot": "project manager, contributor",
+        "glyphli": "contributor",
+        "mleuc": "contributor",
+        "lukasipo": "contributor",
+        "AO": "contributor",
+        "prox.bleep": "contributor",
+        "Ry3": "contributor",
+        "juha": "contributor",
+        "Bleizik": "contributor",
+        "Thorjn": "contributor"
     }
 }

@@ -16,7 +16,7 @@
         "arrival soundcloud": "https://soundcloud.com/popbot1/arrival",
         "lockjaw soundcloud": "https://soundcloud.com/popbot1/lockjaw",
         "bandcamp": "https://popbotmusic.bandcamp.com/album/depth-ep",
-        "webpage": "./content/depth/index.html"
+        "webpage": "../content/depth/index.html"
     },
     "contributors": {
         "Popbot": "primary creator"

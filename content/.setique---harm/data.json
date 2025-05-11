@@ -1,0 +1,27 @@
+{
+    "title": ".setique - harm",
+    "dates": {
+        "2023-10-16": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "collab",
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "boxkitty": "primary creator",
+        ".setique": "boxkitty & Popbot dual alias",
+        "dove": "cover artwork"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/setique/harm",
+        "webpage": "./content/setique---harm/index.html",
+        "bandcamp": "https://setique.bandcamp.com/track/harm"
+    },
+    "media": {
+        "harm-cover.jpg": "cover artwork by Dove"
+    }
+}

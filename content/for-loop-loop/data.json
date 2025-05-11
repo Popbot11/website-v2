@@ -7,7 +7,7 @@
         "music"
     ],
     "tags": [
-        "single"
+        "single", "remix"
     ],
     "links": {
         "soundcloud": "https://soundcloud.com/popbot1/for-loop-loop",
@@ -16,5 +16,8 @@
     },
     "contributors": {
         "Popbot": "primary creator"
+    },
+    "media": {
+        "for-loop-loop-cover.jpg": "cover artwork made by me in blender"
     }
 }

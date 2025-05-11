@@ -13,6 +13,7 @@
         "Popbot": "primary creator"
     },
     "links": {
-        "soundcloud": "https://soundcloud.com/popbot1/stardust-1"
+        "soundcloud": "https://soundcloud.com/popbot1/stardust-1",
+        "webpage": "../content/stardust/index.html"
     }
 }

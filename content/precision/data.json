@@ -18,6 +18,25 @@
     "links": {
         "soundcloud": "https://soundcloud.com/rhinobetatron/06-rhino-betatron-popbot",
         "bandcamp": "https://rhinobetatron.bandcamp.com/track/precision",
-        "webpage": "./content/precision/index.html"
-    }
+        "webpage": "../content/precision/index.html"
+    },
+    "media": {
+        "album-cover.jpg": "album cover digitally drawn by Stasys"
+    },
+    "contents": [
+        "Diffuse",
+        "Sudden",
+        "Abend",
+        "Happy Disobedience",
+        "Precision",
+        "Fog Chamber",
+        "Psychic Mechanism",
+        "Finger",
+        "Wonk Kebob",
+        "Floating",
+        "Privatmond",
+        "Post Apocalyptic Stress Disorder",
+        "Bakeneko",
+        "Reverse Psychology"
+    ]
 }

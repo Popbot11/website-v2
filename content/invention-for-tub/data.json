@@ -10,9 +10,8 @@
         "collab"
     ],
     "links": {
-        "soundcloud": "",
-        "bandcamp": "",
-        "webpage": ""
+        "soundcloud": "https://soundcloud.com/laurentidemusic/invention-for-tub",
+        "webpage": "../content/invention-for-tub/index.html"
     },
     "contributors": {
         "Popbot": "primary creator"

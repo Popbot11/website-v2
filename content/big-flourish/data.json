@@ -14,7 +14,7 @@
     "links": {
         "soundcloud": "https://soundcloud.com/popbot1/sets/keitha-manstretta-popbot?si=0d3a210a0b924d1eaff2f32cedae93c5&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
         "bandcamp": "https://artbyform.bandcamp.com/track/big-flourish",
-        "webpage": "./content/big-flourish/index.html"
+        "webpage": "../content/big-flourish/index.html"
     },
     "contributors": {
         "Stasys": "primary creator",

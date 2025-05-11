@@ -14,7 +14,7 @@
     ],
     "links": {
         "soundcloud": "https://soundcloud.com/popbot1/popbot-arcerion-zed-not-z-cyberfridge",
-        "webpage": "./content/cyberfridge/index.html"
+        "webpage": "../content/cyberfridge/index.html"
     },
     "contributors": {
         "Popbot": "primary creator",

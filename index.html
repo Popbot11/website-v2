@@ -43,9 +43,7 @@
         </span>
 
         <div class="main" id="mobileNotif">
-            hey, it looks like you're using a browser on a mobile client. <br>
-            this page will likely be unusable on your device. <br>
-            you can choose to either continue with the normal desktop page, or redirrect to expert mode (which works better on mobile). <br>
+            it's likely that the width of your browser window is smaller than what would be ideal for this page. If you're on a mobile client, I suggest you head on over to expert mode, or open this page on a desktop computer. 
             <button onclick="
                 document.body.removeChild(document.getElementById(`mobileNotif`));
             "
@@ -129,7 +127,8 @@
                         right: 5px;
                         top: 175px;
                     ">
-                    <b>info:</b> click on an item on the left to see more info here
+                    <b>info:</b> <br>
+                    click on an item on the left to see more info here
                 </div>
 
                  <!-- CONTRIBUTORS -->
@@ -155,6 +154,19 @@
                         overflow: hidden;
                     ">
                     hover to view tracklist
+                </div>
+
+                <!-- MEDIA -->
+                <div 
+                    id="container-media"
+                    style="
+                        width: fit-content;
+                        height:fit-content;
+                        right: 20px;
+                        top:175px;
+                        overflow: hidden;
+                    ">
+                    <button>view media</button>
                 </div>
             </span>
 

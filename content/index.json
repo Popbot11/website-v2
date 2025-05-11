@@ -27,9 +27,17 @@
         "date": "2025-01-15",
         "category": "music"
     },
+    "g drum og (sick mode)": {
+        "category": "music",
+        "date": "2025-01-15"
+    },
     "TECH 201 Etude": {
         "date": "2025-01-09",
         "category": "music"
+    },
+    "alon mor type beat drums": {
+        "category": "music",
+        "date": "2024-12-29"
     },
     "Texture": {
         "date": "2024-12-07",
@@ -83,7 +91,15 @@
         "date": "2024-03-02",
         "category": "music"
     },
-    "setique - harm": {
+    "Corpswave 2024": {
+        "category": "music",
+        "date": "2024-01-13"
+    },
+    "The Travelers Mind": {
+        "category": "music",
+        "date": "2023-12-01"
+    },
+    ".setique - harm": {
         "date": "2023-10-16",
         "category": "music"
     },
@@ -100,8 +116,8 @@
         "category": "music"
     },
     "Coalition": {
-        "date": "2023-06-29",
-        "category": "music"
+        "category": "music",
+        "date": "2023-06-29"
     },
     "TPain Church dont blink mix": {
         "date": "2023-05-25",
@@ -163,6 +179,10 @@
         "date": "2020-09-29",
         "category": "music"
     },
+    "old soundcloud stuff": {
+        "category": "music",
+        "date": "2020-05-09"
+    },
     "combobulator brains": {
         "date": "yyyy-mm-dd",
         "category": "contraption"
@@ -183,4 +203,4 @@
         "date": "yyyy-mm-dd",
         "category": "contraption"
     }
-}  
+}

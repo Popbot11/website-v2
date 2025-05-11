@@ -13,7 +13,7 @@
     ],
     "links": {
         "soundcloud": "https://soundcloud.com/popbot1/sets/producer-hub-loose-connections/s-clvX00DvSG5?",
-        "webpage": "./content/producer hub megacollab/index.html"
+        "webpage": "../content/producer-hub-megacollab/index.html"
     },
     "contributors": {
         "Popbot": "contributor, primary organizer, project manager",
@@ -44,5 +44,8 @@
         "Producer Hub - Parrot Cave",
         "Producer Hub - Ocean Breeze",
         "Producer Hub Megacollab Project"
-    ]
+    ],
+    "media": {
+        "FInalArtwork3.png": "cover artwork by ZedNotZ and Deadbushia"
+    }
 }

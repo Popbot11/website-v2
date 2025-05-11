@@ -12,9 +12,12 @@
     "links": {
         "soundcloud": "https://soundcloud.com/popbot1/restitution",
         "bandcamp": "https://popbotmusic.bandcamp.com/track/restitution",
-        "webpage": "./content/restitution/index.html"
+        "webpage": "../content/restitution/index.html"
     },
     "contributors": {
         "Popbot": "primary creator"
+    },
+    "media": {
+        "restitution-cover.jpg": "cover artwork made by me in blender"
     }
 }

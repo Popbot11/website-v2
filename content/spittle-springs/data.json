@@ -12,7 +12,7 @@
     "links": {
         "soundcloud": "https://soundcloud.com/billegalbeats/sets/popbot-spittle-springs-ep",
         "bandcamp": "https://billegalbeats.bandcamp.com/album/spittle-springs",
-        "webpage": "./content/spittle springs/index.html"
+        "webpage": "../content/spittle-springs/index.html"
     },
     "contributors": {
         "Popbot": "primary creator",
