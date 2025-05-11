@@ -1,0 +1,21 @@
+{
+    "title": "combobulator brains",
+    "dates": {
+        "yyyy-mm-dd": "published"
+    },
+    "categories": [
+        "contraption"
+    ],
+    "tags": [
+        "paid",
+        "add-on"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "Datamind Audio": "creator of plugin and company that paid me"
+    },
+    "links": {
+        "webpage": "./content/combobulator brains/index.html",
+        "datamind": "https://datamindaudio.ai/shop/"
+    }
+}

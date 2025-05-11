@@ -16,19 +16,23 @@
 	// 	"description": "Log output to console"
 	// }
 	"new site item": {
-		"scope": "javascript",
+		"scope": "json",
 		"prefix": ["item", "entry"],
 		"body": [
 			",",
 			"{",
 			"    \"title\": \"${1:title}\", ",
-			"    \"description\": `${2:description}`,",
-			"    \"href\": \"${3:url}\",",
+			"    \"description\": \"${2}\",",
 			"    \"dates\": {",
-			"        \"${4:yyyy-mm-dd}\": \"${5:published}\"",
+			"        \"${3:yyyy-mm-dd}\": \"${4:published}\"",
 			"    },",
-			"    \"categories\": [\"${6|music,contraption,video,writing,other|}\"],",
+			"    \"categories\": [\"${5|music,contraption,video,writing,other|}\"],",
 			"    \"tags\": [$7],",
+			"    \"links\": {",
+			"        \"soundcloud\": \"\",",
+			"        \"bandcamp\": \"\",",
+			"        \"webpage\": \"\"",
+			"    },",
 			"    \"contributors\": {",
 			"        \"Popbot\": \"primary creator\"",
 			"    }$0",
@@ -37,7 +41,7 @@
 		"description": "adds a new item entry"
 	},
 	"key value pair": {
-		"scope": "javascript",
+		"scope": "json",
 		"prefix": "pair",
 		"body": [
 			",",
@@ -45,7 +49,7 @@
 		]
 	},
 	"new date": {
-		"scope": "javascript",
+		"scope": "json",
 		"prefix": "date",
 		"body": [
 			",",
@@ -53,7 +57,7 @@
 		]
 	},
 	"add contents body": {
-		"scope": "javascript",
+		"scope": "json",
 		"prefix": "contents body",
 		"body": [
 			",",

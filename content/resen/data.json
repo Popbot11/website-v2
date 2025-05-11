@@ -1,0 +1,24 @@
+{
+    "title": "Resen",
+    "dates": {
+        "2021-04-25": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single"
+    ],
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/resen",
+        "bandcamp": "https://popbotmusic.bandcamp.com/track/resen",
+        "webpage": "./content/resen/index.html"
+    },
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "media": {
+        "resen-cover.png": "cover artwork i made for resen, made in blender"
+    }
+
+}

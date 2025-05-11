@@ -1,0 +1,26 @@
+{
+    "title": "example",
+    "dates": {
+        "yyyy-mm-dd": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "soundcloud": "",
+        "bandcamp": "",
+        "webpage": "./content/<title>/index.html"
+    },
+    "contents": [
+        "TRACKLIST GOES HERE"
+    ],
+    "media": {
+        "filename.filetype": "short caption"
+    }
+}

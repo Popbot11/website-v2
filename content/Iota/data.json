@@ -1,0 +1,42 @@
+{
+    "title": "Iota",
+    "src": "https://popbot.work/music/iotaAlbum.html",
+    "dates": {
+        "2023-05-20": "full release",
+        "2023-05-16": "released Flakes as a single"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "album",
+        "collab"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "Amfivolia": "album artwork, collaborator on track 2",
+        "Corrix": "collaborator on track 7"
+    },
+    "contents": [
+        "Fibril",
+        "Flakes",
+        "Tulip Tree (w/ Amfivolia)",
+        "Beams",
+        "Organic Machine",
+        "Falling Objects",
+        "Spokes (w/ Corrix)",
+        "Crystals",
+        "Mites",
+        "Sediment",
+        "Agglomerate",
+        "Ash"
+    ],
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/sets/iota-1",
+        "bandcamp": "https://popbotmusic.bandcamp.com/album/iota",
+        "webpage": "./content/Iota/index.html"
+    },
+    "media": {
+        "iota-cover.png": "cover artwork by amfivolia modelled in Blender then drawn over in photoshop"
+    }
+}

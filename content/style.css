@@ -1,0 +1,47 @@
+.title {
+    font-size: larger;
+}
+
+.dates{
+    padding-left: 40px;
+}
+.category {
+    padding-left: 40px;
+}
+.tags {
+    padding-left: 40px;
+}
+.links {
+    padding-left: 40px;
+}
+.contributors {
+    padding-left: 40px;
+}
+.description {
+    padding-left: 40px;
+}
+.contents {
+    padding-left: 40px;
+}
+.media {
+    padding-left: 40px;
+}
+.contributor-links {
+    padding-left: 80px;
+}
+.indent {
+    padding-left: 40px;
+}
+.media-item {
+    width: 250px;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: top;
+}
+
+.error {
+    color: rgb(255, 196, 196);
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+}

@@ -1,0 +1,24 @@
+{
+    "title": "Cyberfridge",
+    "dates": {
+        "2022-01-10": "published on streaming",
+        "2023-09-20": "taken off of streaming (remains on soundcloud)"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "collab",
+        "single",
+        "shitpost"
+    ],
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/popbot-arcerion-zed-not-z-cyberfridge",
+        "webpage": "./content/cyberfridge/index.html"
+    },
+    "contributors": {
+        "Popbot": "primary creator",
+        "arcerion": "primary creator",
+        "ZedNotZ": "primary creator, artwork"
+    }
+}

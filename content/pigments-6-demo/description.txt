@@ -1,0 +1,3 @@
+I did the primary audio demo for the pigments 6 landing page, using mainly pigments 6 stock presets. the new features are (among lots of other stuff) a new modal filter engine and a vocoder effect.
+<br>
+link to the internet archive is there because they update that url whenever they release a new major version. so if pigments 7+ is out by the time you're reading this you'll wanna navigate to teh archive.org link instead. 

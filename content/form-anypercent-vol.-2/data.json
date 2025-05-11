@@ -1,0 +1,25 @@
+{
+    "title": "FORM anypercent vol. 2",
+    "dates": {
+        "2025-02-07": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "collab",
+        "single"
+    ],
+    "contributors": {
+        "Axis Twelve": "primary creator",
+        "Popbot": "featured artist"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/artbyform/axis-twelve-quandary-feat?in=artbyform/sets/anypercent-level-2",
+        "bandcamp": "https://artbyform.bandcamp.com/album/any-level-2",
+        "artwork": "https://www.instagram.com/iamrluquin/"
+    },
+    "media": {
+        "anypercent-cover.jpg": "cover art by iamrluquin"
+    }
+}

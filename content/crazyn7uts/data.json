@@ -1,0 +1,26 @@
+{
+    "title": "crazyn7uts",
+    "dates": {
+        "2024-08-30": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single",
+        "collab"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "lukasipo": "primary creator, atrwork",
+        "juha": "artwork"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/popbot-lukasipo-crazyn7uts",
+        "bandcamp": "https://popbotmusic.bandcamp.com/track/crazyn7uts",
+        "webpage": "./content/crazyn7uts/index.html"
+    },
+    "media": {
+        "crazyn7uts-cover.png": "cover artwork for crazyn7uts. purpleish background texture made by lukas in blender, editing and vector graphics made by juha in gimp (i think it was gimp)"
+    }
+}

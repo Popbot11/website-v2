@@ -17,16 +17,22 @@ TODOS:
     - [ ] collaborators
     - [ ] music
     - [ ] contraptions
-    - [ ] all videos (livestreams stay seperate)
+    - [ ] all videos
     - [ ] random other stuff (writings, shitposts, whatever other garbage)
+- [ ] transfer files
+    - [ ] cover artwork 
+    - [ ] contraption downloads
+    - [ ] html for site pages
+    - [ ] associated media
 - [ ] implement rendering for
-    - [x] descriptions when applicable
-    - [ ] proper iframe rendering for when src is specified
-    - [ ] cover artwork when applicable
-    - [ ] automatic embeds
-        - [ ] bandcamp (API?)
-        - [ ] soundcloud (API?)
-- [x] filter entries by tags
+    - [ ] cover artwork
+    - [x] descriptions
+    - [ ] tracklist 
+    - [ ] 
+    - [ ] embeds
+        - [ ] bandcamp
+        - [ ] soundcloud
+- [ ] filter entries by tags
 - [ ] sections for
     - [x] contraptions
     - [ ] videos

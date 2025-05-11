@@ -1,0 +1,23 @@
+{
+    "title": "Thumper",
+    "dates": {
+        "2021-02-09": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single"
+    ],
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/thumper",
+        "bandcamp": "https://popbotmusic.bandcamp.com/track/thumper",
+        "webpage": "./content/thumper/index.html"
+    },
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "media": {
+        "thumper-cover.jpg": "cover artwork for thumper made by me in blender"
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "title": "Nodes",
+    "dates": {
+        "2022-02-26": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "ep"
+    ],
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/sets/nodes",
+        "bandcamp": "https://popbotmusic.bandcamp.com/album/nodes-2",
+        "webpage": "./content/nodes/index.html"
+    },
+    "contributors": {
+        "Popbot": "primary creator",
+        "ZedNotZ": "added the transparent foreground layer on the cover artwork"
+    },
+    "contents": [
+        "Decagonite",
+        "schlonkus",
+        "Mammatus Clouds",
+        "Photo SYnthesis",
+        "Stratus"
+    ],
+    "media": {
+        "nodes-cover.png": "cover art for the Nodes EP. the foreground 'crystalized' layer is by ZedNotZ"
+    }
+}

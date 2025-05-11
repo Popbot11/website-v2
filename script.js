@@ -1,18 +1,43 @@
-import entryData from './data/entryData.js';
-import personData from './data/personData.js';
+// Logic for spacing out containers
+// the purpose of the container class is to dynamically render out boxes so that when the window resizes, they move around
+// implement this later if you want. for now, leave it as just being static. 
 
+const getViewportWidth = () => {
+    if (typeof window.innerWidth != 'undefined') {
+        return window.innerWidth;
+   } else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0) {
+       return document.documentElement.clientWidth;
+   } else {
+         return document.getElementsByTagName('body')[0].clientWidth;
+   }
+}
 
-entryData.sort((a, b) => parseInt(Object.keys(b.dates)[0].replaceAll("-","")) - parseInt(Object.keys(a.dates)[0].replaceAll("-",""))); 
-
-const categories = ["music", "contraption"];
-var tags = {
-    "shitpost": false,
-    "wip": false
+window.mobileCheck = function() {
+  let check = false;
+  (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
+  return check;
 };
 
-console.log(tags);
+const priorityTags = [
+    "album",
+    "ep",
+    "shitpost",
+    "wip",
+    "m4l",
+    "paid"
+]
 
-
+// useful for clearing event listeners
+function recreateNode(el, withChildren) {
+  if (withChildren) {
+    el.parentNode.replaceChild(el.cloneNode(true), el);
+  }
+  else {
+    var newEl = el.cloneNode(false);
+    while (el.hasChildNodes()) newEl.appendChild(el.firstChild);
+    el.parentNode.replaceChild(newEl, el);
+  }
+}
 
 
 // track mouse position
@@ -25,260 +50,368 @@ document.addEventListener(
         mouseX = event.clientX;
         mouseY = event.clientY;
         document.getElementById("mousecoords").innerHTML = `
-                debug stuff:<br>
-                X: ${mouseX}<br>
-                Y: ${mouseY}<br>
-                scroll: ${window.scrollY}<br>
+                debug stuff:
+                X: ${mouseX} |
+                Y: ${mouseY} |
+                scroll: ${window.scrollY} | 
                 vp width: ${getViewportWidth()}`;
     }
 );
 
-
-// var viewportwidth;
-// var viewportheight;
-// if (typeof window.innerWidth != 'undefined') {
-//      viewportwidth = window.innerWidth,
-//      viewportheight = window.innerHeight
-// } else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0) {
-//     viewportwidth = document.documentElement.clientWidth,
-//     viewportheight = document.documentElement.clientHeight
-// } else {
-//       viewportwidth = document.getElementsByTagName('body')[0].clientWidth,
-//       viewportheight = document.getElementsByTagName('body')[0].clientHeight
-// }
-
-// code from https://andylangton.co.uk/web-development/get-viewport-size-width-and-height-with-javascript/
-const getViewportWidth = () => {
-    if (typeof window.innerWidth != 'undefined') {
-        return window.innerWidth;
-   } else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0) {
-       return document.documentElement.clientWidth;
-   } else {
-         return document.getElementsByTagName('body')[0].clientWidth;
-   }
+if (window.mobileCheck()) {
+    document.getElementById("mobileNotif").style = `
+        visibility: visible;
+        position: relative;
+    `; 
 }
 
-// generate html for a single entry
-const renderEntry = (entry) => {
-    let element = document.createElement("div");
-    element.className="item";
-    element.id = (entry.title);
-    element.innerHTML = `<span class="tags">${entry.tags.join(", ")}</span><span class="year">${Object.keys(entry.dates)[0].substring(0, 4)}</span> | <span class="title">${entry.title}</span> `
-    
-    // TODO: define more dynamic functionality for dates. on hover, the date should expand to a verbose date ("Month" ##, 20xx)
-    let dropdown = document.createElement("div");
-    dropdown.appendChild(renderDropdown(entry));
+fetch("content/index.json").then(res => res.json()).then(index => {
+    // this goes through and creates all of the nessisary item divs in the correct order
+    // this has to be done first because all their contents will be loaded asynchronously
+    console.log(index);
+    Object.keys(index).forEach(async title => {
+        const path = title.toLowerCase().replaceAll(" ", "-")
+        let entryItem = document.createElement("div");
+        entryItem.className="entry";
+        entryItem.id = ("entryItem-"+title);
 
-    if (Object.keys(entry).includes("contents")) {
-        dropdown.appendChild(renderTracklist(entry));
-    }
-
-    dropdown.className="dropdown";
-
-    element.addEventListener(
-        "mouseover",
-        (event) => {
-            element.style.backgroundColor = "rgba(0, 0, 0, 0.27)";
-            
-            dropdown.style=`
-                top: ${mouseY + 10 + window.scrollY + 2}px;
-                left: ${Math.max(
-                    Math.min(
-                        mouseX + 10 + window.scrollX - 126.6, 
-                        getViewportWidth() - 253.2), 
-                    0)}px;
-            `;
-            document.documentElement.appendChild(dropdown);
-            
-        }
-    );
-    element.addEventListener(
-        "mouseout",
-        (event) => {
-            element.style.backgroundColor = "";
-            document.documentElement.removeChild(dropdown);
-        }
-    )
-
-    element.addEventListener(
-        "mousedown",
-        (event) => {
-            // display stuff in main window when clicked
-            document.getElementById("metadata").innerHTML="";
-            document.getElementById("metadata").appendChild(renderContent(entry));
-        }
-    )
-    
-
-    return element;
-};
-
-// generate html for the main info dropdown
-const renderDropdown = (entry) => {
-    
-    let element = document.createElement("div");
-    
-    element.className="info";
-    element.innerHTML = `
-    <center style="font-size: 20px">${entry.title}<br></center>
-    <div class="container">
-        <span>Author(s):</span> 
-        <div class="indent">
-            ${Object.keys(entry.contributors).map(author => ` <span><b>${author}</b>: ${entry.contributors[author]}</span><br>`).join('')}
-        </div>
-    </div>
-    <div class="container">
-        <span>Date(s):</span>
-        <div class="indent">
-            ${Object.keys(entry.dates).map(date => `<span><b>${date}</b>: ${entry.dates[date]}</span><br>`).join('')}
-        </div>
-    </div>
-    `;
-
-    element.style=`transform: rotate(${(Math.random() * 10 )- 5}deg)`
-    
-    return element;
-};
-
-// generate HTML for the tracklist, if applicable
-const renderTracklist = (entry) => {
-    
-    let element = document.createElement("div");
-    element.className="tracklist";
-    element.innerHTML=`
-    <div class="container">
-        <span>Tracklist: </span>
-        <div class="indent">
-            
-            ${entry.contents.map((track, index) => `<div>${index + 1}. ${track}</div>`).join('')}
-        </div>
-    </div>
-    `;
-    element.style=`transform: rotate(${(Math.random() * 10 )- 5}deg)`
-    return element;
-};
+        let entryDropdown = document.createElement("div")
+        entryDropdown.className = "dropdown";
+        entryDropdown.innerHTML = `
+            <span id="dropdown-${title}-title"></span>
+            <span id="dropdown-${title}-tags"></span>
+            <span id="dropdown-${title}-dates"></span>
+            <span id="dropdown-${title}-contributors"></span>
+        `;
+        document.getElementById("dropdown-cache").appendChild(entryDropdown);
 
 
-// inject html for the content, displayed after an item is clicked
-const renderContent = entry => {
-    let element = document.createElement("div");
-    element.innerHTML = `
-    <div class="container">
-        <span>Authors:</span>
-        <div class="indent">
-            ${Object.keys(entry.contributors).map(author => renderAuthor(author, entry).outerHTML).join("")}
+
+        entryItem.innerHTML = `       
+            <span class="year" id="item-${title}-date">${index[title]["date"].substring(0,4)}</span> | 
+            <span class="title">${title}</span> 
+            <span class="tags" id="item-${title}-tags"></span>
             <br>
-            <span id="authorInfo"></span>
-        </div>
-        <span>Dates:</span>
-        <div class="indent">
-            dates dont work yet :)
-        </div>
+        `;
+
+        entryItem.addEventListener(
+            "mouseover",
+            (event) => {
+                entryItem.style.left = "10px";
+                entryItem.style.backgroundColor = "rgba(1, 1, 1, 0.1)";
+                const hiddenTags = entryItem.querySelectorAll('.tag-hidden');
+                hiddenTags.forEach(el => {
+                    el.style = "visibility: visible;";
+                });
+            
+                if (document.getElementById("show-dropdowns").checked) {
+                    entryDropdown.style=`
+                        top: ${mouseY + 25 + window.scrollY + 2}px;
+                        left: ${Math.max(
+                            Math.min(
+                                mouseX + 10 + window.scrollX - 126.6, 
+                                getViewportWidth() - 253.2), 
+                            0)}px;
+                        visibility: visible;
+                    `;
+                }
+            }
+        );
+        entryItem.addEventListener(
+            "mouseout",
+            (event) => {
+                entryItem.style.left = "";
+                entryItem.style.backgroundColor = "rgba(1, 1, 1, 0)";
+                entryItem.querySelectorAll('.tag-hidden').forEach(el => 
+                    el.style = "visibility: hidden; position: absolute;");
+                if (document.getElementById("show-dropdowns").checked) {
+                    entryDropdown.style = `
+                        visibility: hidden;
+                    `;
+                }
+                
+            }
+        );
+
+        // ONCLICK
+        entryItem.addEventListener(
+            "click",
+            async (event) => {
+                console.log("clicked "+title);
+                
+                
+                // DESCRIPTION.TXT
+                {
+                    try {
+                        const response = await fetch('./content/'+path+"/description.txt");
+                        if (response.ok) {
+                            const file = await response.text();
+                            if (file.length != 0) {
+                                document.getElementById(`container-description`).innerHTML = `
+                                    <b>Description</b>:
+                                    <div class="indent">${file}</div>
+                                `;
+                            } else {
+                                document.getElementById(`container-description`).innerHTML = `
+                                    <b>Description</b>: <span class="error">description is empty</span>
+                                `;
+                            }
+                        } else {
+                            document.getElementById(`${title}-description`).remove();
+                        }
+                    } catch (error) {}
+                }
+
+                // DATA.JSON
+                {
+                    try {
+                        const response = await fetch('./content/'+path+"/data.json");
+                        if (response.ok) {
+                            const data = await response.json();
+                            
+                            // TITLE
+                            document.getElementById(`container-title`).innerHTML = title;
+                            
+
+                            // CATEGORY
+                            document.getElementById(`container-category`).innerHTML = data.categories[0];
+                            
+
+                            // TAGS
+                            document.getElementById(`container-tags`).innerHTML = data.tags.map(tag => `${tag}`).join(" | ");
+                            
+
+                            // CONTRIBUTORS
+                            {
+                                // let element = document.createElement("span");
+                                let target = document.getElementById(`container-contributors`)
+                                target.innerHTML = `
+                                    <b>Contributors</b>: 
+                                    <span id='contributor-buttons'></span><br><br>
+                                    <span id='contributor-links'></span>`;
+                                Object.keys(data.contributors).forEach(contributor => {
+                                    
+                                    let button = document.createElement("button");
+                                    button.innerHTML = contributor
+                                    button.setAttribute("onclick", "fetch('./data/personData.json').then(res => res.json()).then(personData => {try{document.getElementById('contributor-links').innerHTML = `<b>"+contributor+":</b> "+data.contributors[contributor]+"<br><b>Links:</b> ${Object.keys(personData['"+contributor.toLowerCase()+"']).map(text => \"<a target='_blank' href='\"+personData['"+contributor.toLowerCase()+"'][text]+\"'>\"+text+\"</a>\").join(' | ')}` + `<br><button onclick=\"document.getElementById('contributor-links').innerHTML=null;\">hide</button>`;}catch{document.getElementById('contributor-links').innerHTML = `<b>"+contributor+"</b>: "+data.contributors[contributor]+"<br><b>Links:</b>  isn't in the database yet; no links` + `<br><button onclick=\"document.getElementById('contributor-links').innerHTML=null;\">hide</button>`;}})");
+                                    document.getElementById('contributor-buttons').appendChild(button);
+                                });
+                            }
+
+                            // LINKS
+                            {  
+                                document.getElementById(`container-links`).innerHTML = `
+                                <b>Links</b>: ${Object.keys(data.links).map(link => `<a href="${data.links[link]}" target="_blank">${link}</a>`).join(" | ")}
+                                `;
+                            }
+
+                            // DATES
+                            {
+                                document.getElementById("date-dropdown").innerHTML =  Object.keys(data["dates"]).map(date => 
+                                    `<b>${date}</b>: ${data["dates"][date]}`
+                                ).join("<br>");
+
+                                recreateNode(document.getElementById("container-date"));
+                                const containerDate = document.getElementById(`container-date`);
+                                containerDate.innerHTML = Object.keys(data["dates"])[0];
+                                containerDate.addEventListener(
+                                    "mouseover",
+                                    event => {
+                                       document.getElementById(`date-dropdown`).style=`
+                                                top: ${mouseY + 25 + window.scrollY + 2}px;
+                                                left: ${Math.max(
+                                                    Math.min(
+                                                        mouseX + 10 + window.scrollX - (document.getElementById("date-dropdown").offsetWidth / 2), 
+                                                        getViewportWidth() - 253.2), 
+                                                    0)}px;
+                                                visibility: visible;
+                                            `;
+                                    }
+                                );
+                                containerDate.addEventListener(
+                                    "mouseleave",
+                                    event => {
+                                        document.getElementById(`date-dropdown`).style.visibility = "hidden";
+                                    }
+                                );
+                            }
+
+                          
+
+                            // CONTENTS
+                            {
+                                if (Object.keys(data).includes("contents")){
+                                    document.getElementById("container-contents").style.visibility = "visible";
+                                    
+                                    document.getElementById("contents-dropdown").innerHTML = data["contents"].map((track, index) => `<div>${index + 1}. ${track}</div>`).join('')
+
+                                    recreateNode(document.getElementById("container-contents"));
+                                    const containerContents = document.getElementById(`container-contents`);
+                                    // containerDate.innerHTML = Object.keys(data["contents"])[0];
+                                    containerContents.addEventListener(
+                                        "mouseover",
+                                        event => {
+                                            
+                                            document.getElementById(`contents-dropdown`).style=`
+                                                top: ${mouseY + 25 + window.scrollY + 2}px;
+                                                left: ${Math.max(
+                                                    Math.min(
+                                                        mouseX + 10 + window.scrollX - (document.getElementById("contents-dropdown").offsetWidth / 2), 
+                                                        getViewportWidth() - 253.2), 
+                                                    0)}px;
+                                                visibility: visible;
+                                            `;
+                                        }
+                                    );
+                                    containerContents.addEventListener(
+                                        "mouseleave",
+                                        event => {
+                                            document.getElementById(`contents-dropdown`).style.visibility = "hidden";
+                                        }
+                                    );
+                                } else {
+                                    document.getElementById("container-contents").style.visibility = "hidden";
+                                }
+                            }
+
+                            
+
+                            //MEDIA
+                            {
+                                if(Object.keys(data).includes("media")) {
+                                    document.getElementById(`${title}-media`).innerHTML += "<b>Media</b>:<br><br>";
+                                    for (const filename of Object.keys(data.media)) {
+                                        const imgPath = `${path}/${filename.replace(" ", "-")}`;
+                                        document.getElementById(`${title}-media`).innerHTML += `
+                                        
+                                        <span class="media-item">
+                                            <a href="${imgPath}" target="_blank">
+                                                <img src="${imgPath}" width="250px"><br>
+                                            </a>
+                                            <span>${data.media[filename]}</span>
+                                        </span>
+                                        
+                                        `;
+                                    }
+                                }else {
+                                    document.getElementById(`${title}-media`).remove();
+                                }
+                            }
+
+                        } else {
+                            document.getElementById(`${title}-dates`).innerHTML = "<span class='error'>data file missing, or some other worse error</span><br>";
+                        }
+                    } catch (error) {}
+                }
+            }
+        );
         
-    `;
-
-    // NOTE: prioritizes 
-    if (Object.keys(entry).includes("src")){
-        let iframe = document.createElement("iframe");
-        iframe.setAttribute("src", entry.src);
-
-        // TODO: finish this
-        element.appendChild(iframe);
-        document.getElementById("description").innerHTML = `no description provided`;
-    } else if (Object.keys(entry).includes("description")) {
-        document.getElementById("description").innerHTML = `<b>${entry.title}</b>:<br>${entry.description}`;
-    }
-    else {
-        console.log("does not include source or description");
-    }
-
-    
-    // renderDisplay();
-    element.innerHTML += `</div>`
-    return element;
-};
-
-
-const renderAuthor = (author, entry) => {
-    let element = document.createElement("button");
-    element.innerHTML=`${author}`
-    
-    const renderAuthorLink = (text, author) => {return `<a href='${personData[author.toLowerCase()][String(text)]}' target='_blank'>${text}</a>`;}
-    try {
-        element.setAttribute("onclick", `document.getElementById("authorInfo").innerHTML="<b>${author}</b>: ${Object.keys(personData[author.toLowerCase()]).map(text => renderAuthorLink(text, author)).join(" | ")}<br><b>role</b>: ${entry.contributors[author]}"`);
-    } catch {
-        element.setAttribute("onclick", `document.getElementById("authorInfo").innerHTML="<b>${author}</b>: isn't in the database yet; no links. <br><b>role</b>: ${entry.contributors[author]}"`);
-    }
-    return element;
-}
-
-
-function filterEntries(){
-    for (const entry of entryData){
-        let rendered = true;
-        // console.log(entry.tags.sort());
-        for (const entryTag of entry.tags.sort()){
-            if (!tags[entryTag.toLowerCase()]) { 
-                rendered = false; 
-            }  
-        }
-
-        if (!rendered){
-            document.getElementById(entry.title).setAttribute("hidden", "hidden")
-        } else {
-            document.getElementById(entry.title).removeAttribute("hidden")
-        }
-
-    }
-}
-
-// GO ENTRIES
-for (const entry of entryData){
-    for (const tag of entry.tags.sort()) {
-        if (!(tag.toLowerCase() in tags)) {
-            tags[tag.toLowerCase()] = true;
-        }
-    }
-
-    for (const category of categories) {
-        if (entry.categories.includes(category)) {
-            document.getElementById("container-"+category).appendChild(renderEntry(entry));
-        }
         
-    }
-}
+        
+        // switch (index[title]["category"]) {
+        //     case "music": 
+        //         console.log("music");
+        //         document.getElementById("container-music").appendChild(element);
+        //         break;
+        // }
 
+        document.getElementById("container-"+index[title]["category"]).appendChild(entryItem)
+        
+        // DATA.JSON
+        {
+            try {
+                const response = await fetch('./content/'+path+"/data.json");
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    // TAGS
+                    {
+                        document.getElementById(`dropdown-${title}-tags`).innerHTML = `
+                            <b>Tags</b>:
+                            ${data.tags.map(tag => `${tag}`).join(" | ")}
+                            <br>
+                        `;
+                        document.getElementById(`item-${title}-tags`).innerHTML = data.tags.map(tag => {
+                            if (priorityTags.includes(tag)) {
+                                return `<span class="tag-priority" id="tag-${title}-${tag}" style="visibility: visible;">${tag}</span>`
+                            } else {
+                                return `<span class="tag-hidden" id="tag-${title}-${tag}" style="visibility: hidden; position: absolute;">${tag}</span>`
+                            }
+                            
+                        }).join("");
+                            
+                    }
 
-// GO TAGS
-console.log(tags);
-for (const tag of Object.keys(tags)) {
-    let checkbox = document.createElement("span");
-    const checkboxStatus = input => {
-        if(!input){ return "checked"; } 
-        return "";
-    }
-    checkbox.innerHTML = `
-        <input type="checkbox" id="${tag}"  ${checkboxStatus(tags[tag.toLowerCase()])}>
-        <label for="${tag}">${tag}</label>
-        <br>
-    `
+                    // CONTRIBUTORS
+                    {
+                        // let element = document.createElement("span");
+                         document.getElementById(`dropdown-${title}-contributors`).innerHTML = `
+                            <b>Contributors</b>:<br>
+                        `;
 
-    checkbox.addEventListener("change", () => {
-        tags[tag] = !tags[tag];
-        filterEntries();
-    })
+                        Object.keys(data.contributors).forEach(contributor => {
+                            document.getElementById(`dropdown-${title}-contributors`).innerHTML+= `
+                                <b><span class="indent">${contributor}</span></b>: ${data.contributors[contributor]}<br>
+                            `;
+                        });
+                        
+                    }
 
-    document.getElementById("container-taglist").appendChild(checkbox);
-}
+                   
+                    // DATES
+                    {
+                        document.getElementById(`dropdown-${title}-dates`).innerHTML += "<b>Date(s)</b>:<br>"
+                        for (const date of Object.keys(data["dates"])) {
+                            document.getElementById(`dropdown-${title}-dates`).innerHTML += `
+                                <span class="indent">${date}: ${data["dates"][date]}</span><br>
+                            `
+                        }
 
-filterEntries();
+                        document.getElementById(`item-${title}-date`).addEventListener(
+                            "mouseover",
+                            (event) => {
+                                document.getElementById(`item-${title}-date`).innerHTML = Object.keys(data["dates"])[0];
+                            }
+                        )
+                        document.getElementById(`item-${title}-date`).addEventListener(
+                            "mouseleave",
+                            (event) => {
+                                document.getElementById(`item-${title}-date`).innerHTML = Object.keys(data["dates"])[0].substring(0,4);
+                            }
+                        )
+                    }
 
+                    // CONTENTS
+                    {
+                        if (Object.keys(data).includes("contents")){
+                            document.getElementById(`${title}-contents`).innerHTML += `
+                                <b>Tracklist</b>:
+                                <ol>
+                                    ${data.contents.map((track) => `<li>${track}</li>`).join(``)}
+                                </ol>
+                            `;
+                        } else {
+                            document.getElementById(`${title}-contents`).remove();
+                        }
+                    }
 
+                    // LINKS
+                    {
+                        if (Object.keys(data).includes("links")) {
+                            document.getElementById(`${title}-links`).innerHTML += `
+                            <b>Links</b>: ${Object.keys(data.links).map(link => `<a href="${data.links[link]}" target="_blank">${link}</a>`).join(" | ")}
+                            `;
+                        } else {
+                            document.getElementById(`${title}-links`).remove();
+                        }
+                    }
 
-
-// TODO: ZORA CODE IMPLEMENT THIS IN A SEC
-// const renderAuthorLink = (text, author) => `<a href='${personData[author.toLowerCase()][String(text)]}' target='_blank'>${text}</a>`;
-// element.addEventListener("click", () => {
-//   const links = Object.keys(personData[author.toLowerCase()]).map(text => renderAuthorLink(text, author)).join(" | ");
-//   document.getElementById("authorInfo").innerHTML = links;
-// });
+                    
+                } else {
+                    document.getElementById(`${title}-dates`).innerHTML = "<span class='error'>data file missing, or some other worse error</span><br>";
+                }
+            } catch (error) {}
+        }
+    
+    });
+})
