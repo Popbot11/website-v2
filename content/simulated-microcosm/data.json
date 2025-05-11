@@ -26,7 +26,7 @@
     "links": {
         "soundcloud": "https://soundcloud.com/popbot1/sets/simulated-microcosm",
         "bandcamp": "https://popbotmusic.bandcamp.com/album/simulated-microcosm",
-        "webpage": "./content/Simulated Microcosm/index.html"
+        "webpage": "../content/simulated-microcosm/index.html"
     },
     "media": {
         "microcosm-cover-huge.png": "full 6k x 6k cover art, masterfully made in blender by Amfivolia",
