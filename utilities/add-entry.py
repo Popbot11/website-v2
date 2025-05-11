@@ -36,7 +36,7 @@ while True:
     tag = input("\tadd tag: ")
     if (tag == "done"):
         break
-    tags.append(input("\tadd tag: "))
+    tags.append(tag)
 
 print("enter link titles (NOT URLS). enter 'done' to continue: ")
 link = ""
