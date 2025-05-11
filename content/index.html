@@ -3,14 +3,19 @@
         <link rel="stylesheet" href="style.css">
         <style>
             .header {
+                padding-top: 0px;
+                margin-top: 0px;
                 backdrop-filter: blur(3px);
                 position:fixed;
+            }
+            body {
+                margin-top: 0px;
             }
         </style>
     </head>
     <body>
         <script src="script.js" type="module"></script>   
-        <a href='../index.html' class="header">home</a><br><hr>
+        <span class="header"><a href='../index.html'>home</a> | newer items added at the top</span><br><hr>
         <div id="content"></div>
     </body>
 </html>
