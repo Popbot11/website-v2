@@ -1,0 +1,18 @@
+{
+    "title": "Pinging",
+    "dates": {
+        "2023-05-29": "published"
+    },
+    "categories": [
+        "video"
+    ],
+    "tags": [
+        "tutorial"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "youtube": "https://www.youtube.com/watch?v=6X78mQjIssA"
+    }
+}

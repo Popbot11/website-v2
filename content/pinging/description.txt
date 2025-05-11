@@ -1,0 +1,1 @@
+a tutorial about a particular sound design technique where you focus on the feedback of time-based effects as opposed to the behaviour of more conventional synthesis techniques

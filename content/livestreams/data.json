@@ -15,6 +15,6 @@
     },
     "links": {
         "youtube": "https://www.youtube.com/@Popbot/streams",
-        "webpage": "../content/livestreams/index.html"
+        "webpage": "./content/livestreams/index.html"
     }
 }
