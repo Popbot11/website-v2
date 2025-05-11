@@ -112,21 +112,27 @@ fetch("content/index.json").then(res => res.json()).then(index => {
 
 
         entryItem.innerHTML = `       
+            <span class="tags" id="item-${title}-tags"></span>
             <span class="year" id="item-${title}-date">${index[title]["date"].substring(0,4)}</span> | 
             <span class="title">${title}</span> 
-            <span class="tags" id="item-${title}-tags"></span>
             <br>
         `;
 
+        // ON MOUSEOVER
         entryItem.addEventListener(
             "mouseover",
             (event) => {
                 entryItem.style.left = "10px";
                 entryItem.style.backgroundColor = "rgba(1, 1, 1, 0.1)";
-                const hiddenTags = entryItem.querySelectorAll('.tag-hidden');
-                hiddenTags.forEach(el => {
-                    el.style = "visibility: visible;";
+                const allTags = entryItem.querySelectorAll('[class^="tag-"]');
+                allTags.forEach(el => {
+                    if (el.className == "tag-hidden") {
+                        el.style =  "visibility: visible";
+                    }
+                    el.style.backgroundColor = "rgb(0, 255, 255)";
                 });
+
+                
             
                 if (document.getElementById("show-dropdowns").checked) {
                     entryDropdown.style=`
@@ -141,16 +147,28 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                 }
             }
         );
+
+        // ON MOUSEOUT
         entryItem.addEventListener(
             "mouseout",
             (event) => {
                 entryItem.style.left = "";
                 entryItem.style.backgroundColor = "rgba(1, 1, 1, 0)";
-                entryItem.querySelectorAll('.tag-hidden').forEach(el => 
-                    el.style = "visibility: hidden; position: absolute;");
+                
+                const allTags = entryItem.querySelectorAll('[class^="tag-"]');
+                allTags.forEach(el => {
+                    el.style.backgroundColor = "rgba(0, 0, 0, 0)";
+                    if (el.className == "tag-hidden") {
+                        console.log(el)
+                        el.style.visibility = "hidden";
+                        el.style.position = "absolute";
+                    }
+                });
+
                 if (document.getElementById("show-dropdowns").checked) {
                     entryDropdown.style = `
                         visibility: hidden;
+
                     `;
                 }
                 
