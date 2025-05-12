@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <style>
+            body {
+                padding: 0px;
+                margin: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <span id="media">
+        </span>
+
+
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            const path = urlParams.get("path");
+            console.log(path);
+
+            fetch(`./content/${path}/data.json`).then(res => res.json()).then(index =>  {
+                for (const filename of Object.keys(index["media"])) {
+                    const imgPath = `content/${path}/${filename}`;
+                    document.getElementById(`media`).innerHTML += `
+                    
+                    <span class="media-item">
+                        <img src="${imgPath}" width="100%"><br>
+                        <span>${index["media"][filename]}</span>
+                        <br><br>
+                    </span>
+                    `;
+                }
+            });
+
+        </script>
+    </body>
+</html>

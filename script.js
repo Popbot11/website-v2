@@ -27,7 +27,7 @@ function recreateNode(el, withChildren) {
     el.parentNode.replaceChild(el.cloneNode(true), el);
   }
   else {
-    var newEl = el.cloneNode(false);
+    let newEl = el.cloneNode(false);
     while (el.hasChildNodes()) newEl.appendChild(el.firstChild);
     el.parentNode.replaceChild(newEl, el);
   }
@@ -159,7 +159,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                 allTags.forEach(el => {
                     el.style.backgroundColor = "rgba(0, 0, 0, 0)";
                     if (el.className == "tag-hidden") {
-                        console.log(el)
+                        // console.log(el)
                         el.style.visibility = "hidden";
                         el.style.position = "absolute";
                     }
@@ -328,7 +328,9 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                     viewMediaButton.addEventListener(
                                         "click",
                                         () => {
-                                            alert("this feature doesn't work yet. \nit does work in expert mode, though. ")
+                                            let url = new URL("viewMedia.html", window.location.href);
+                                            url.searchParams.append('path', path)
+                                            window.open(url.toString(), "viewMedia", "width=600,height=620,menubar=no,toolbar=no");
                                         }
                                     );
                                 } else {
