@@ -1,0 +1,18 @@
+{
+    "title": "Stuff about pads",
+    "dates": {
+        "2022-11-21": "published"
+    },
+    "categories": [
+        "video"
+    ],
+    "tags": [
+        "tutorial"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "youtube": "https://www.youtube.com/watch?v=GGMzprbN1aA"
+    }
+}
