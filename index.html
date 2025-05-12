@@ -30,6 +30,7 @@
     </head>
     <body>
         <script src="script.js" type="module"></script>  
+
         <!-- NAV BAR -->
         <span class="nav">
             popbot.work | 
@@ -37,11 +38,14 @@
             <a href="">press kit</a> | 
             <a href="">robingillespie.com</a> | 
             <a href="old/index.html">old version</a> | 
-            <input type="checkbox" id="show-dropdowns" ><label for="show-dropdowns">show dropdowns</label>
+            <button id="options-button">options</button>
             <span id="mousecoords">😺😺😺🦊🦊🦊🦊rmmmrrp!</span>
             <hr>
         </span>
 
+        
+
+        <!-- MOBILE NOTIF -->
         <div class="main" id="mobileNotif">
             it's likely that the width of your browser window is smaller than what would be ideal for this page. If you're on a mobile client, I suggest you head on over to expert mode, or open this page on a desktop computer. 
             <button onclick="
@@ -211,17 +215,6 @@
                     
                 </div>
 
-                <!-- FILTERS -->
-                <div 
-                    id="container-filters"
-                    style="
-                        width: 100px;
-                        height: 210px;
-                        left: 180px;
-                        top: 445px;
-                    ">
-                    <input type="checkbox">tag<br>
-                </div>
 
 
                 <!-- INFO -->
@@ -244,6 +237,14 @@
         <!-- DROPDOWNS -->
         <span id="date-dropdown" class="date-dropdown"></span>
         <span id="contents-dropdown" class="contents-dropdown"></span>
+
+        <!-- OPTIONS MENU -->
+        <span id="options-menu">
+            <input type="checkbox" id="show-dropdowns" ><label for="show-dropdowns">show hover dropdowns</label><br>
+            
+            <input type="checkbox" id="include-shitposts" ><label for="include-shitposts">include shitposts</label>
+            
+        </span>
 
         <!-- DROPDOWN CACHE -->
         <span id="dropdown-cache"></span>

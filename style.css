@@ -84,6 +84,7 @@ body {
 }
 #container-video {
     overflow-x: hidden;
+    border-style: hidden;
 }
 
 #container-title {
@@ -185,6 +186,28 @@ body {
     width: fit-content;
     height: fit-content;
     border-style: hidden;
+    backdrop-filter: blur(7px) hue-rotate(90deg);
+    visibility: hidden;
+}
+#options-menu {
+    left: 450px;
+    top: 40px;
+    width: fit-content;
+    height: fit-content;
+
+    position: absolute;
+    
+    border-style:ridge;
+    border-color: rgb(255, 185, 246);
+    border-width: 1px;
+    border-radius: 10px;
+
+    box-shadow: 
+        0px 1px 15px rgba(0, 0, 0, 0.666),
+        0px 1px 10px rgba(255, 0, 187, 0.67),
+        0px 1px 5px rgba(72, 0, 255, 0.444),
+        0px 1px 30px rgba(0, 255, 30, 0.421);
+
     backdrop-filter: blur(7px) hue-rotate(90deg);
     visibility: hidden;
 }

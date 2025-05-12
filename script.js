@@ -19,7 +19,7 @@ const priorityTags = [
     "wip",
     "m4l",
     "paid"
-]
+];
 
 // useful for clearing event listeners
 function recreateNode(el, withChildren) {
@@ -33,6 +33,7 @@ function recreateNode(el, withChildren) {
   }
 }
 
+// DEBUG STUFF
 
 // track mouse position
 let mouseX;
@@ -61,10 +62,9 @@ function updateMobileNotif() {
             `; 
         }
 }
-
 document.addEventListener(
     "mousemove",
-    (event) => {
+    () => {
         mouseX = event.clientX;
         mouseY = event.clientY;
         viewportWidth = window.innerWidth;
@@ -74,14 +74,13 @@ document.addEventListener(
 );
 window.addEventListener(
     "resize",
-    event => {
+    () => {
         viewportWidth = window.innerWidth;
         updateDebug();
         updateMobileNotif();
         
     }
 )
-
 if (viewportWidth < 970) {
     document.getElementById("mobileNotif").style = `
         visibility: visible;
@@ -89,15 +88,67 @@ if (viewportWidth < 970) {
     `; 
 }
 
+
+// OPTIONS MENU
+
+document.getElementById("options-button").addEventListener(
+    "click",
+    () => {
+        let optionsMenu = document.getElementById("options-menu");
+        if (optionsMenu.style.visibility == "visible") {
+            optionsMenu.style.visibility = "hidden";
+        } else {
+            optionsMenu.style.visibility = "visible";
+        }
+    }
+);
+function filterShitposts() {
+    console.log("filtershitposts")
+    if (document.getElementById("include-shitposts").checked) {
+        document.querySelectorAll('[id^="entry-"]').forEach(entry => {
+            
+            if (entry.getAttribute("data-tags").split(",").includes('shitpost')) {
+                entry.removeAttribute("hidden");
+            } 
+        })
+    } else {
+        console.log("not checked")
+        document.querySelectorAll('.entry').forEach(entry => {
+            console.log(entry.getAttribute("data-tags").split(","));
+            console.log()
+            if (entry.getAttribute("data-tags").split(",").includes('shitpost')) {
+                entry.setAttribute("hidden", "hidden");
+            } 
+        })
+    }
+    // document.getElementById("container-music").querySelectorAll('.entry').forEach(entry => {
+    //     console.log(entry)
+    //     if ("shitpost" in entry.getAttribute("data-tags").split(",")) {
+    //         entry.setAttribute("hidden", "hidden");
+    //     } 
+    // })
+}
+document.getElementById("include-shitposts").addEventListener(
+    "click",
+    () => {
+        filterShitposts();
+    }
+);
+
+
+
 fetch("content/index.json").then(res => res.json()).then(index => {
     // this goes through and creates all of the nessisary item divs in the correct order
     // this has to be done first because all their contents will be loaded asynchronously
+    const fetchPromises = [];
+    
     console.log(index);
     Object.keys(index).forEach(async title => {
-        const path = title.toLowerCase().replaceAll(" ", "-")
+        const path = title.toLowerCase().replaceAll(" ", "-");
+
         let entryItem = document.createElement("div");
         entryItem.className="entry";
-        entryItem.id = ("entryItem-"+title);
+        entryItem.id = ("entry-"+title);
 
         let entryDropdown = document.createElement("div")
         entryDropdown.className = "dropdown";
@@ -121,7 +172,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
         // ON MOUSEOVER
         entryItem.addEventListener(
             "mouseover",
-            (event) => {
+            () => {
                 entryItem.style.left = "10px";
                 entryItem.style.backgroundColor = "rgba(1, 1, 1, 0.1)";
                 const allTags = entryItem.querySelectorAll('[class^="tag-"]');
@@ -151,7 +202,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
         // ON MOUSEOUT
         entryItem.addEventListener(
             "mouseout",
-            (event) => {
+            () => {
                 entryItem.style.left = "";
                 entryItem.style.backgroundColor = "rgba(1, 1, 1, 0)";
                 
@@ -178,7 +229,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
         // ONCLICK
         entryItem.addEventListener(
             "click",
-            async (event) => {
+            async () => {
                 console.log("clicked "+title);
                 
                 
@@ -263,7 +314,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                 containerDate.innerHTML = Object.keys(data["dates"])[0];
                                 containerDate.addEventListener(
                                     "mouseover",
-                                    event => {
+                                    () => {
                                        document.getElementById(`date-dropdown`).style=`
                                                 top: ${mouseY + 25 + window.scrollY + 2}px;
                                                 left: ${Math.max(
@@ -277,7 +328,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                 );
                                 containerDate.addEventListener(
                                     "mouseleave",
-                                    event => {
+                                    () => {
                                         document.getElementById(`date-dropdown`).style.visibility = "hidden";
                                     }
                                 );
@@ -295,7 +346,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                     // containerDate.innerHTML = Object.keys(data["contents"])[0];
                                     containerContents.addEventListener(
                                         "mouseover",
-                                        event => {
+                                        () => {
                                             
                                             document.getElementById(`contents-dropdown`).style=`
                                                 top: ${mouseY + 25 + window.scrollY + 2}px;
@@ -310,7 +361,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                     );
                                     containerContents.addEventListener(
                                         "mouseleave",
-                                        event => {
+                                        () => {
                                             document.getElementById(`contents-dropdown`).style.visibility = "hidden";
                                         }
                                     );
@@ -346,16 +397,13 @@ fetch("content/index.json").then(res => res.json()).then(index => {
             }
         );
         
-
         document.getElementById("container-"+index[title]["category"]).appendChild(entryItem)
         
         // DATA.JSON
-        {
-            try {
-                const response = await fetch('./content/'+path+"/data.json");
-                if (response.ok) {
-                    const data = await response.json();
-                    
+        fetchPromises.push(
+            fetch('./content/'+path+"/data.json")
+                .then(res => res.json())
+                .then(data => {
                     // TAGS
                     {
                         document.getElementById(`dropdown-${title}-tags`).innerHTML = `
@@ -371,13 +419,15 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                             }
                             
                         }).join("");
+
+                        document.getElementById(`entry-${title}`).setAttribute("data-tags", data.tags.join(","));                        
                             
                     }
 
                     // CONTRIBUTORS
                     {
                         // let element = document.createElement("span");
-                         document.getElementById(`dropdown-${title}-contributors`).innerHTML = `
+                            document.getElementById(`dropdown-${title}-contributors`).innerHTML = `
                             <b>Contributors</b>:<br>
                         `;
 
@@ -389,7 +439,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                         
                     }
 
-                   
+                    
                     // DATES
                     {
                         document.getElementById(`dropdown-${title}-dates`).innerHTML += "<b>Date(s)</b>:<br>"
@@ -401,49 +451,35 @@ fetch("content/index.json").then(res => res.json()).then(index => {
 
                         document.getElementById(`item-${title}-date`).addEventListener(
                             "mouseover",
-                            (event) => {
+                            () => {
                                 document.getElementById(`item-${title}-date`).innerHTML = Object.keys(data["dates"])[0];
                             }
                         )
                         document.getElementById(`item-${title}-date`).addEventListener(
                             "mouseleave",
-                            (event) => {
+                            () => {
                                 document.getElementById(`item-${title}-date`).innerHTML = Object.keys(data["dates"])[0].substring(0,4);
                             }
                         )
                     }
 
-                    // CONTENTS (unused code)
-                    {
-                        if (Object.keys(data).includes("contents")){
-                            document.getElementById(`${title}-contents`).innerHTML += `
-                                <b>Tracklist</b>:
-                                <ol>
-                                    ${data.contents.map((track) => `<li>${track}</li>`).join(``)}
-                                </ol>
-                            `;
-                        } else {
-                            document.getElementById(`${title}-contents`).remove();
-                        }
-                    }
 
-                    // LINKS (unused code)
-                    {
-                        if (Object.keys(data).includes("links")) {
-                            document.getElementById(`${title}-links`).innerHTML += `
-                            <b>Links</b>: ${Object.keys(data.links).map(link => `<a href="${data.links[link]}" target="_blank">${link}</a>`).join(" | ")}
-                            `;
-                        } else {
-                            document.getElementById(`${title}-links`).remove();
-                        }
-                    }
-
-                    
-                } else {
-                    document.getElementById(`${title}-dates`).innerHTML = "<span class='error'>data file missing, or some other worse error</span><br>";
-                }
-            } catch (error) {}
-        }
-    
+                })
+                .catch(error => console.error(`Error loading data for ${title}:`, error))
+        );
+        
     });
+
+    // wait for all fetches to complete
+    return Promise.all(fetchPromises);
+}).then(() => {
+    console.log("All entries loaded");
+    filterShitposts();
+}).catch(error => {
+    console.error("Error loading entries:", error);
 })
+
+
+
+// filterShitposts();
+
