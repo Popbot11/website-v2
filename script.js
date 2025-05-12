@@ -103,7 +103,6 @@ document.getElementById("options-button").addEventListener(
     }
 );
 function filterShitposts() {
-    console.log("filtershitposts")
     if (document.getElementById("include-shitposts").checked) {
         document.querySelectorAll('[id^="entry-"]').forEach(entry => {
             
@@ -112,10 +111,7 @@ function filterShitposts() {
             } 
         })
     } else {
-        console.log("not checked")
         document.querySelectorAll('.entry').forEach(entry => {
-            console.log(entry.getAttribute("data-tags").split(","));
-            console.log()
             if (entry.getAttribute("data-tags").split(",").includes('shitpost')) {
                 entry.setAttribute("hidden", "hidden");
             } 
