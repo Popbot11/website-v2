@@ -15,6 +15,7 @@ const getViewportWidth = () => {
 const priorityTags = [
     "album",
     "ep",
+    "collection",
     "shitpost",
     "wip",
     "m4l",
