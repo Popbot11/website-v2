@@ -106,23 +106,18 @@ function filterShitposts() {
     if (document.getElementById("include-shitposts").checked) {
         document.querySelectorAll('[id^="entry-"]').forEach(entry => {
             
-            if (entry.getAttribute("data-tags").split(",").includes('shitpost')) {
+            if ((entry.getAttribute("data-tags")+'').split(",").includes('shitpost')) {
                 entry.removeAttribute("hidden");
             } 
         })
     } else {
         document.querySelectorAll('.entry').forEach(entry => {
-            if (entry.getAttribute("data-tags").split(",").includes('shitpost')) {
+            if ((entry.getAttribute("data-tags")+'').split(",").includes('shitpost')) {
+                console.log(entry.id)
                 entry.setAttribute("hidden", "hidden");
             } 
         })
     }
-    // document.getElementById("container-music").querySelectorAll('.entry').forEach(entry => {
-    //     console.log(entry)
-    //     if ("shitpost" in entry.getAttribute("data-tags").split(",")) {
-    //         entry.setAttribute("hidden", "hidden");
-    //     } 
-    // })
 }
 document.getElementById("include-shitposts").addEventListener(
     "click",
