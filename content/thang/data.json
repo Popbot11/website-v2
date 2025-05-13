@@ -1,0 +1,21 @@
+{
+    "title": "Thang",
+    "dates": {
+        "2024-08-23": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "shitpost"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/greatfiyahoflondon/thang"
+    },
+    "media": {
+        "image.png": "my Oberlin College and COnservatory photo ID"
+    }
+}
