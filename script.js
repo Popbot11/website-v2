@@ -158,6 +158,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
             <span class="tags" id="item-${title}-tags"></span>
             <span class="year" id="item-${title}-date">${index[title]["date"].substring(0,4)}</span> | 
             <span class="title">${title}</span> 
+            
             <br>
         `;
 
@@ -470,8 +471,3 @@ fetch("content/index.json").then(res => res.json()).then(index => {
 }).catch(error => {
     console.error("Error loading entries:", error);
 })
-
-
-
-// filterShitposts();
-
