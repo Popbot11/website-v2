@@ -49,7 +49,6 @@ function updateDebug() {
                 scroll: ${window.scrollY} | 
                 vp width: ${viewportWidth}`;
 }
-
 function updateMobileNotif() {
     if (viewportWidth < 970) {
             document.getElementById("mobileNotif").style = `
@@ -88,6 +87,12 @@ if (viewportWidth < 970) {
         position: relative;
     `; 
 }
+document.getElementById("log-selected-item").addEventListener(
+    "click",
+    () => {
+        console.log("selected item: "+selectedItems)
+    }
+)
 
 
 // OPTIONS MENU
@@ -114,7 +119,7 @@ function filterShitposts() {
     } else {
         document.querySelectorAll('.entry').forEach(entry => {
             if ((entry.getAttribute("data-tags")+'').split(",").includes('shitpost')) {
-                console.log(entry.id)
+                // console.log(entry.id)
                 entry.setAttribute("hidden", "hidden");
             } 
         })
@@ -127,7 +132,7 @@ document.getElementById("include-shitposts").addEventListener(
     }
 );
 
-
+let selectedItems = new Set();
 
 fetch("content/index.json").then(res => res.json()).then(index => {
     // this goes through and creates all of the nessisary item divs in the correct order
@@ -137,30 +142,40 @@ fetch("content/index.json").then(res => res.json()).then(index => {
     console.log(index);
     Object.keys(index).forEach(async title => {
         const path = title.toLowerCase().replaceAll(" ", "-");
+        
+        
 
-        let entryItem = document.createElement("div");
-        entryItem.className="entry";
-        entryItem.id = ("entry-"+title);
+        
 
         let entryDropdown = document.createElement("div")
         entryDropdown.className = "dropdown";
         entryDropdown.innerHTML = `
             <span id="dropdown-${title}-title"></span>
-            <span id="dropdown-${title}-tags"></span>
             <span id="dropdown-${title}-dates"></span>
             <span id="dropdown-${title}-contributors"></span>
+            <span id="dropdown-${title}-description"></span>
         `;
         document.getElementById("dropdown-cache").appendChild(entryDropdown);
 
+        let expertModeButton = document.createElement("span");
+        expertModeButton.className = "expert-mode";
+        expertModeButton.id = `item-${title}-expert-mode`;
+        expertModeButton.innerHTML = `<a>expert mode</a>`
 
 
+        let entryItem = document.createElement("div");
+        entryItem.className="entry";
+        entryItem.id = ("entry-"+title);
         entryItem.innerHTML = `       
             <span class="tags" id="item-${title}-tags"></span>
             <span class="year" id="item-${title}-date">${index[title]["date"].substring(0,4)}</span> | 
             <span class="title">${title}</span> 
-            
             <br>
         `;
+        entryItem.appendChild(expertModeButton)
+        entryItem.innerHTML += `<span class="links" id="item-${title}-links"></span>`;
+
+
 
         // ON MOUSEOVER
         entryItem.addEventListener(
@@ -222,9 +237,31 @@ fetch("content/index.json").then(res => res.json()).then(index => {
         // ONCLICK
         entryItem.addEventListener(
             "click",
-            async () => {
+            async (event) => {
                 console.log("clicked "+title);
                 
+                // Don't process click if it's on a link
+                if (event.target.tagName === 'A') return;
+                
+                // MANAGE SELECTED
+                if (selectedItems.has(title)) {
+                    document.getElementById(`entry-${title}`).classList.remove("selected");
+                    selectedItems.delete(title);
+                } else {
+                    document.getElementById(`entry-${title}`).classList += " selected";
+                    selectedItems.add(title);
+                }
+
+                // EXPERT MODE BUTTON
+                document.getElementById(`item-${title}-expert-mode`).addEventListener(
+                    "click",
+                    () => {
+                        console.log(`${title}: expert mode`);
+                        let url = new URL("content/index.html", window.location.href);
+                        url.searchParams.append('entry', path);
+                        window.open(url.toString(), "viewMedia", "width=600,height=620,menubar=no,toolbar=no");
+                    }
+                )
                 
                 // DESCRIPTION.TXT
                 {
@@ -274,7 +311,6 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                     <span id='contributor-buttons'></span><br><br>
                                     <span id='contributor-links'></span>`;
                                 Object.keys(data.contributors).forEach(contributor => {
-                                    
                                     let button = document.createElement("button");
                                     button.innerHTML = contributor
                                     button.setAttribute("onclick", "fetch('./data/personData.json').then(res => res.json()).then(personData => {try{document.getElementById('contributor-links').innerHTML = `<b>"+contributor+":</b> "+data.contributors[contributor]+"<br><b>Links:</b> ${Object.keys(personData['"+contributor.toLowerCase()+"']).map(text => \"<a target='_blank' href='\"+personData['"+contributor.toLowerCase()+"'][text]+\"'>\"+text+\"</a>\").join(' | ')}` + `<br><button onclick=\"document.getElementById('contributor-links').innerHTML=null;\">hide</button>`;}catch{document.getElementById('contributor-links').innerHTML = `<b>"+contributor+"</b>: "+data.contributors[contributor]+"<br><b>Links:</b>  isn't in the database yet; no links` + `<br><button onclick=\"document.getElementById('contributor-links').innerHTML=null;\">hide</button>`;}})");
@@ -282,7 +318,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                 });
                             }
 
-                            // LINKS
+                            // LINKS (depreciate this)
                             {  
                                 document.getElementById(`container-links`).innerHTML = `
                                 <b>Links</b>: ${Object.keys(data.links)
@@ -387,6 +423,8 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                         }
                     } catch (error) {}
                 }
+                
+            
             }
         );
         
@@ -399,11 +437,6 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                 .then(data => {
                     // TAGS
                     {
-                        document.getElementById(`dropdown-${title}-tags`).innerHTML = `
-                            <b>Tags</b>:
-                            ${data.tags.map(tag => `${tag}`).join(" | ")}
-                            <br>
-                        `;
                         document.getElementById(`item-${title}-tags`).innerHTML = data.tags.map(tag => {
                             if (priorityTags.includes(tag)) {
                                 return `<span class="tag-priority" id="tag-${title}-${tag}" style="visibility: visible;">${tag}</span>`
@@ -454,6 +487,25 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                 document.getElementById(`item-${title}-date`).innerHTML = Object.keys(data["dates"])[0].substring(0,4);
                             }
                         )
+                    }
+
+                    // LINKS
+                    {
+                        document.getElementById(`item-${title}-links`).innerHTML = ``+
+                            `<b>||</b> ${Object.keys(data["links"])
+                                .map(link => {
+                                    let url = data["links"][link];
+                                    if (url.startsWith("../content/")) {
+                                        url = url.substring(1);
+                                    } 
+                                    if (url.startsWith("../content/") || url.startsWith("./content/")) {
+                                        return `<b><a href="${url}">${link}</a></b>`;                
+                                    }
+                                    return `<a href="${url}" target="_blank">${link}</a>`;
+                                }).join(" | ")}
+                            `;
+                        ;
+
                     }
 
 

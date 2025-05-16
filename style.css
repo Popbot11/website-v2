@@ -123,25 +123,58 @@ body {
     /* position: relative; */
     cursor: pointer;
 }
-.year {
+.entry .year {
     height: max-content;
     font-family: 'Courier New', Courier, monospace;
     font-size: small;
 }
-.title {
+.entry .title {
     backdrop-filter: blur(2px);
     z-index: 9;
 }
-.tags {
+.entry .tags {
     float: right;
     right: 0px;
     position: absolute;
     height: max-content;
     font-family:Arial, Helvetica, sans-serif;
     font-size: small;
-    /* background-color: rgb(0, 255, 255); */
     z-index: 3;
 }
+.entry .links {
+    position: absolute;
+    left: 5px;
+    visibility: hidden;
+}
+.entry .expert-mode {
+    position: absolute;
+    left: 5px;
+    visibility: hidden;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: small;
+    box-shadow: 0px 0px 5px inset rgba(119, 133, 255, 0.589);
+}
+.entry.selected .expert-mode:hover {
+    background-color: rgba(0, 0, 0, 0.13);
+}
+
+
+.entry.selected {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.589);
+}
+.entry.selected .expert-mode {
+    position: relative;
+    visibility: visible;
+    left: 5px;
+}
+
+.entry.selected .links{
+    position: relative;
+    visibility: visible;
+    left: 5px;
+}
+
+
 [class^="tag-"] {
     margin-left: 4px;
     background-image: repeating-linear-gradient(
@@ -167,14 +200,16 @@ body {
     
     border-color: rgba(255, 255, 255, 0);
     background-image: repeating-linear-gradient(
-        180deg, rgba(250, 118, 18, 0.27) 0%, 
-        rgba(82, 53, 22, 0.385) 10%, 
-        rgba(250, 103, 18, 0.297) 20%);
+        180deg, rgba(89, 133, 255, 0) 0%, 
+        rgba(255, 90, 25, 0.212) 10%, 
+        rgba(89, 133, 255, 0) 20%); 
     box-shadow: 0px 0px 30px rgb(179, 161, 0);
 
     filter: opacity(0.9);
     border-width: 2px;
     border-style: solid;
+
+    font-family: Arial, Helvetica, sans-serif;
 
 
     backdrop-filter: blur(7px) hue-rotate(180deg);
@@ -236,3 +271,4 @@ body {
     position: absolute;
     font-size: x-large;
 }
+
