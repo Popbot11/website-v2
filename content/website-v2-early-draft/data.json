@@ -1,0 +1,20 @@
+{
+    "title": "website v2 early draft",
+    "dates": {
+        "2025-05-21": "published"
+    },
+    "categories": [
+        "other"
+    ],
+    "tags": [
+        "web",
+        "wip"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "webpage": "../content/website-v2-early-draft/index.html",
+        "early expert mode": "../content/website-v2-early-draft/expertmode.html"
+    }
+}

@@ -35,7 +35,6 @@
         <span class="nav">
             popbot.work | 
             <a href="./content/index.html">expert mode</a> | 
-            <a href="">press kit</a> | 
             <a href="">robingillespie.com</a> | 
             <a href="old/index.html">old version</a> | 
             <button id="options-button">options</button>
@@ -43,208 +42,94 @@
             <hr>
         </span>
 
-        
-
-        <!-- MOBILE NOTIF -->
-        <div class="main" id="mobileNotif">
-            it's likely that the width of your browser window is smaller than what would be ideal for this page. If you're on a mobile client, I suggest you head on over to expert mode, or open this page on a desktop computer. 
-            <button onclick="
-                document.body.removeChild(document.getElementById(`mobileNotif`));
-            "
-            >continue</button> | <a href="./content/index.html"><button>expert mode</button></a>
-        </div>
-
         <!-- MAIN CONTENT -->
-        <div class="main" id="main">
-            <!-- STUFF ON RIGHT -->
-            <span>
+        <div class="main" id="main">           
+
+             <!-- INFO -->
+            <div 
+                id="container-info"
+                style="
+                    width: 600px;
+                    height: 140px;
+                    left: 5px;
+                    top: px;
+            ">
                 
-
-                <!-- TITLE -->
-                <div 
-                    id="container-title"
-                    style="
-                        width: 300px;
-                        height: 1em;
-                        text-align: center;
-                        right: 5px;
-                        top: 5px;
-                    ">
-                    [ title ]
-                </div>
-
-                <!-- CATEGORY -->
-                <div 
-                    id="container-category"
-                    style="
-                        width: 80px;
-                        height: 1em;
-                        right: 225px;
-                        top: 40px;
-                    ">
-                    [ category ]
-                </div>
-
-                <!-- TAGS -->
-                <div 
-                    id="container-tags"
-                    style="
-                        width: 200px;
-                        height: 1em;
-                        right: 5px;
-                        top: 40px;
-                    ">
-                    [ tags ]
-                </div>
-
-                <!-- DATE -->
-                <div 
-                    id="container-date"
-                    style="
-                        width: 125px;
-                        height: 1em;
-                        right: 5px;
-                        top: 70px;
-                    ">
-                    [ yyyy-mm-dd ]
-                </div>
-
-                <!-- LINKS -->
-                <div 
-                    id="container-links"
-                    style="
-                        width: 300px;
-                        height: fit-content;
-                        right: 5px;
-                        top: 100px;
-                    ">
-                   [ <a href="">links</a> ]
-                </div>
-
-
-                <!-- DESCRIPTION -->
-                <div 
-                    id="container-description"
-                    style="
-                        width: 300px;
-                        height: fit-content;
-                        max-height: 180px;
-                        right: 5px;
-                        top: 175px;
-                    ">
-                    <b>info:</b> <br>
-                    click on an item on the left to see more info here
-                </div>
-
-                 <!-- CONTRIBUTORS -->
-                <div 
-                    id="container-contributors"
-                    style="
-                        width: 300px;
-                        height:fit-content;
-                        right: 5px;
-                        top:370px;
-                    ">
-                    [ <button>contributors</button> ]
-                </div>
-
-                 <!-- CONTENTS -->
-                <div 
-                    id="container-contents"
-                    style="
-                        width: fit-content;
-                        height:15px;
-                        right: 155px;
-                        top:72.5px;
-                        overflow: hidden;
-                    ">
-                    hover to view tracklist
-                </div>
-
-                <!-- MEDIA -->
-                <div 
-                    id="container-media"
-                    style="
-                        width: fit-content;
-                        height:fit-content;
-                        right: 20px;
-                        top:175px;
-                        overflow: hidden;
-                    ">
+                <span id="info-title"></span>
+                <span id="info-tags"></span>
+                <span id="info-date"></span>
+                <span id="info-contents" hidden>hover to view tracklist</span>
+                <span id="info-media" hidden>
                     <button>view media</button>
-                </div>
-            </span>
-
-
-            <!-- STUFF ON LEFT -->
-            <span>
-                <!-- MUSIC -->
-                <div 
-                    id="container-music"
-                    style="
-                        width: 300px;
-                        height: 440px;
-                        left: 5px;
-                        top: 5px;
-                    ">
-                    <center><b>music</b></center><hr>
-                </div>
-
-                <!-- CONTRAPTIONS -->
-                <div 
-                    id="container-contraption"
-                    style="
-                        width: 300px;
-                        height: 220px;
-                        left: 330px;
-                        top: 5px;
-                    ">
-                    <center><b>contraptions</b></center><hr>
-                </div>
-
-                <!-- VIDEO -->
-                <div 
-                    id="container-video"
-                    style="
-                        width: 300px;
-                        height: 200px;
-                        left: 320px;
-                        top: 250px;
-                    ">
-                    <center><b>video</b></center><hr>
-                    
-                </div>
-
-                <!-- OTHER -->
-                <div 
-                    id="container-other"
-                    style="
-                        width: 250px;
-                        height: 230px;
-                        left: 30px;
-                        top: 470px;
-                    ">
-                    <center><b>other</b></center><hr>
-                    
-                </div>
-
-
-
-                <!-- INFO -->
-                <div 
-                    id="container-info"
-                    style="
-                        width: 250px;
-                        height: 150px;
-                        left: 320px;
-                        top: 495px;
-                    ">
+                </span>
+                <span id="info-links"></span>
+                <br>
+                <div id="info-description">
                     My name is Robin, and I make music and music-related things. Most people online know me as Popbot.
                     This website is a place where I put all of the stuff I'm personally involved with, and probably other things too.
                     I'm currently a student at Oberlin College & Conservatory, persuing a double degree in Computer Science and TIMARA (Technology in Music and Related Arts)
                 </div>
+                
+                <!-- CONTRIBUTORS -->
+                <span id="info-contributors"></span>
 
-            </span>
+            </div>
+        
+            <!-- MUSIC -->
+            <div 
+                id="container-music"
+                style="
+                    width: 300px;
+                    height: 440px;
+                    left: 5px;
+                    top: 155px;
+            ">
+                <center><b>music</b></center><hr>
+            </div>
+
+            <!-- CONTRAPTIONS -->
+            <div 
+                id="container-contraption"
+                style="
+                    width: 300px;
+                    height: 280px;
+                    left: 330px;
+                    top: 155px;
+            ">
+                <center><b>contraptions</b></center><hr>
+            </div>
+
+            <!-- VIDEO -->
+            <div 
+                id="container-video"
+                style="
+                    width: 300px;
+                    height: 300px;
+                    left: 320px;
+                    top: 460px;
+            ">
+                <center><b>video</b></center><hr>
+                
+            </div>
+
+            <!-- OTHER -->
+            <div 
+                id="container-other"
+                style="
+                    width: 250px;
+                    height: 230px;
+                    left: 30px;
+                    top: 620px;
+            ">
+                <center><b>other</b></center><hr>
+                
+            </div>
+
+
+
+           
+
+            
         </div>
 
         <!-- DROPDOWNS -->
@@ -253,15 +138,15 @@
 
         <!-- OPTIONS MENU -->
         <span id="options-menu">
-            <input type="checkbox" id="show-dropdowns" ><label for="show-dropdowns">show hover dropdowns</label><br>
-            <input type="checkbox" id="include-shitposts" ><label for="include-shitposts">include shitposts</label><br><br>
+            
+            <input type="checkbox" id="include-shitposts" ><label for="include-shitposts">include shitposts</label><br>
+            
+            <input type="checkbox" id="multi-select"><label for="multi-select">multi-select</label><br>
             ---debug---<br>
             <button id="log-selected-item">log selected item</button>
             
         </span>
 
-        <!-- DROPDOWN CACHE -->
-        <span id="dropdown-cache"></span>
 
         
     </body>

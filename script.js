@@ -43,25 +43,12 @@ let viewportWidth = window.innerWidth;
 
 function updateDebug() {
     document.getElementById("mousecoords").innerHTML = `
-                debug stuff:
                 X: ${mouseX} |
                 Y: ${mouseY} |
-                scroll: ${window.scrollY} | 
-                vp width: ${viewportWidth}`;
+                s: ${window.scrollY} | 
+                vp: ${viewportWidth}`;
 }
-function updateMobileNotif() {
-    if (viewportWidth < 970) {
-            document.getElementById("mobileNotif").style = `
-                visibility: visible;
-                position: relative;
-            `; 
-        } else {
-            document.getElementById("mobileNotif").style = `
-                visibility: hidden;
-                position: absolute;
-            `; 
-        }
-}
+
 document.addEventListener(
     "mousemove",
     () => {
@@ -69,7 +56,6 @@ document.addEventListener(
         mouseY = event.clientY;
         viewportWidth = window.innerWidth;
         updateDebug();
-        updateMobileNotif();
     }
 );
 window.addEventListener(
@@ -77,20 +63,14 @@ window.addEventListener(
     () => {
         viewportWidth = window.innerWidth;
         updateDebug();
-        updateMobileNotif();
         
     }
 )
-if (viewportWidth < 970) {
-    document.getElementById("mobileNotif").style = `
-        visibility: visible;
-        position: relative;
-    `; 
-}
+
 document.getElementById("log-selected-item").addEventListener(
     "click",
     () => {
-        console.log("selected item: "+selectedItems)
+        selectedItems.forEach(item => console.log(item));
     }
 )
 
@@ -143,19 +123,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
     Object.keys(index).forEach(async title => {
         const path = title.toLowerCase().replaceAll(" ", "-");
         
-        
 
-        
-
-        let entryDropdown = document.createElement("div")
-        entryDropdown.className = "dropdown";
-        entryDropdown.innerHTML = `
-            <span id="dropdown-${title}-title"></span>
-            <span id="dropdown-${title}-dates"></span>
-            <span id="dropdown-${title}-contributors"></span>
-            <span id="dropdown-${title}-description"></span>
-        `;
-        document.getElementById("dropdown-cache").appendChild(entryDropdown);
 
         let expertModeButton = document.createElement("span");
         expertModeButton.className = "expert-mode";
@@ -191,19 +159,6 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                     el.style.backgroundColor = "rgb(0, 255, 255)";
                 });
 
-                
-            
-                if (document.getElementById("show-dropdowns").checked) {
-                    entryDropdown.style=`
-                        top: ${mouseY + 25 + window.scrollY + 2}px;
-                        left: ${Math.max(
-                            Math.min(
-                                mouseX + 10 + window.scrollX - 126.6, 
-                                getViewportWidth() - 253.2), 
-                            0)}px;
-                        visibility: visible;
-                    `;
-                }
             }
         );
 
@@ -223,14 +178,6 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                         el.style.position = "absolute";
                     }
                 });
-
-                if (document.getElementById("show-dropdowns").checked) {
-                    entryDropdown.style = `
-                        visibility: hidden;
-
-                    `;
-                }
-                
             }
         );
 
@@ -244,12 +191,27 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                 if (event.target.tagName === 'A') return;
                 
                 // MANAGE SELECTED
-                if (selectedItems.has(title)) {
-                    document.getElementById(`entry-${title}`).classList.remove("selected");
-                    selectedItems.delete(title);
+                if (document.getElementById("multi-select").checked) {
+                    if (selectedItems.has(title)) {
+                        document.getElementById(`entry-${title}`).classList.remove("selected");
+                        selectedItems.delete(title);
+                    } else {
+                        document.getElementById(`entry-${title}`).classList += " selected";
+                        selectedItems.add(title);
+                    }
                 } else {
-                    document.getElementById(`entry-${title}`).classList += " selected";
-                    selectedItems.add(title);
+                    if (selectedItems.has(title)) {
+                        
+                        document.getElementById(`entry-${title}`).classList.remove("selected");
+                        selectedItems.delete(title);
+                    } else {
+                        selectedItems.forEach(selectedItem => {
+                            document.getElementById(`entry-${selectedItem}`).classList.remove("selected");
+                            selectedItems.delete(selectedItem)
+                        });
+                        document.getElementById(`entry-${title}`).classList += " selected";
+                        selectedItems.add(title);
+                    }
                 }
 
                 // EXPERT MODE BUTTON
@@ -259,7 +221,10 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                         console.log(`${title}: expert mode`);
                         let url = new URL("content/index.html", window.location.href);
                         url.searchParams.append('entry', path);
-                        window.open(url.toString(), "viewMedia", "width=600,height=620,menubar=no,toolbar=no");
+
+                        const screenX = window.screenX || window.screenLeft;
+                        const screenY = window.screenY || window.screenTop;
+                        window.open(url.toString(), "viewMedia", `width=600,height=620,left=${screenX+700},top=${screenY+50},menubar=no,toolbar=no`);
                     }
                 )
                 
@@ -270,18 +235,13 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                         if (response.ok) {
                             const file = await response.text();
                             if (file.length != 0) {
-                                document.getElementById(`container-description`).innerHTML = `
-                                    <b>Description</b>:
-                                    <div class="indent">${file}</div>
-                                `;
+                                document.getElementById(`info-description`).innerHTML = file;
                             } else {
-                                document.getElementById(`container-description`).innerHTML = `
+                                document.getElementById(`info-description`).innerHTML = `
                                     <b>Description</b>:<br> <span class="error">description is empty</span>
                                 `;
                             }
-                        } else {
-                            document.getElementById(`${title}-description`).remove();
-                        }
+                        } 
                     } catch (error) {}
                 }
 
@@ -293,35 +253,33 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                             const data = await response.json();
                             
                             // TITLE
-                            document.getElementById(`container-title`).innerHTML = title;
-                            
-                            // CATEGORY
-                            document.getElementById(`container-category`).innerHTML = data.categories[0];
+                            document.getElementById(`info-title`).innerHTML = `${title} -- `;
 
                             // TAGS
-                            document.getElementById(`container-tags`).innerHTML = data.tags.map(tag => `${tag}`).join(" | ");
+                            document.getElementById(`info-tags`).innerHTML = data.tags.map(tag => `${tag}`).join(" | ") + " -- ";
                             
 
                             // CONTRIBUTORS
                             {
                                 // let element = document.createElement("span");
-                                let target = document.getElementById(`container-contributors`)
+                                let target = document.getElementById(`info-contributors`)
                                 target.innerHTML = `
                                     <b>Contributors</b>: 
-                                    <span id='contributor-buttons'></span><br><br>
-                                    <span id='contributor-links'></span>`;
+                                    <span id='contributor-buttons'></span><br>
+                                    <div id='contributor-links'></div>`;
                                 Object.keys(data.contributors).forEach(contributor => {
                                     let button = document.createElement("button");
                                     button.innerHTML = contributor
                                     button.setAttribute("onclick", "fetch('./data/personData.json').then(res => res.json()).then(personData => {try{document.getElementById('contributor-links').innerHTML = `<b>"+contributor+":</b> "+data.contributors[contributor]+"<br><b>Links:</b> ${Object.keys(personData['"+contributor.toLowerCase()+"']).map(text => \"<a target='_blank' href='\"+personData['"+contributor.toLowerCase()+"'][text]+\"'>\"+text+\"</a>\").join(' | ')}` + `<br><button onclick=\"document.getElementById('contributor-links').innerHTML=null;\">hide</button>`;}catch{document.getElementById('contributor-links').innerHTML = `<b>"+contributor+"</b>: "+data.contributors[contributor]+"<br><b>Links:</b>  isn't in the database yet; no links` + `<br><button onclick=\"document.getElementById('contributor-links').innerHTML=null;\">hide</button>`;}})");
                                     document.getElementById('contributor-buttons').appendChild(button);
+                                    document.getElementById('contributor-buttons').innerHTML+= " ";
                                 });
                             }
 
                             // LINKS (depreciate this)
                             {  
-                                document.getElementById(`container-links`).innerHTML = `
-                                <b>Links</b>: ${Object.keys(data.links)
+                                document.getElementById(`info-links`).innerHTML = `
+                                <br>${Object.keys(data.links)
                                     .map(link => {
                                         let url = data.links[link];
                                         if (url.startsWith("../content/")) {
@@ -338,14 +296,14 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                     `<b>${date}</b>: ${data["dates"][date]}`
                                 ).join("<br>");
 
-                                recreateNode(document.getElementById("container-date"));
-                                const containerDate = document.getElementById(`container-date`);
+                                recreateNode(document.getElementById("info-date"));
+                                const containerDate = document.getElementById(`info-date`);
                                 containerDate.innerHTML = Object.keys(data["dates"])[0];
                                 containerDate.addEventListener(
                                     "mouseover",
                                     () => {
                                        document.getElementById(`date-dropdown`).style=`
-                                                top: ${mouseY + 25 + window.scrollY + 2}px;
+                                                top: ${mouseY + 7 + window.scrollY}px;
                                                 left: ${Math.max(
                                                     Math.min(
                                                         mouseX + 10 + window.scrollX - (document.getElementById("date-dropdown").offsetWidth / 2), 
@@ -366,19 +324,19 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                             // CONTENTS
                             {
                                 if (Object.keys(data).includes("contents")){
-                                    document.getElementById("container-contents").style.visibility = "visible";
+                                    document.getElementById("info-contents").removeAttribute("hidden");
                                     
                                     document.getElementById("contents-dropdown").innerHTML = data["contents"].map((track, index) => `<div>${index + 1}. ${track}</div>`).join('')
 
-                                    recreateNode(document.getElementById("container-contents"));
-                                    const containerContents = document.getElementById(`container-contents`);
+                                    recreateNode(document.getElementById("info-contents"));
+                                    const containerContents = document.getElementById(`info-contents`);
                                     // containerDate.innerHTML = Object.keys(data["contents"])[0];
                                     containerContents.addEventListener(
                                         "mouseover",
                                         () => {
                                             
                                             document.getElementById(`contents-dropdown`).style=`
-                                                top: ${mouseY + 25 + window.scrollY + 2}px;
+                                                top: ${mouseY + 7 + window.scrollY}px;
                                                 left: ${Math.max(
                                                     Math.min(
                                                         mouseX + 10 + window.scrollX - (document.getElementById("contents-dropdown").offsetWidth / 2), 
@@ -395,16 +353,16 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                         }
                                     );
                                 } else {
-                                    document.getElementById("container-contents").style.visibility = "hidden";
+                                    document.getElementById("info-contents").setAttribute("hidden", "hidden");
                                 }
                             }
 
                             //MEDIA
                             {
-                                recreateNode(document.getElementById("container-media"));
-                                let viewMediaButton = document.getElementById("container-media");
+                                recreateNode(document.getElementById("info-media"));
+                                let viewMediaButton = document.getElementById("info-media");
                                 if (Object.keys(data).includes('media')) {
-                                    viewMediaButton.style.visibility = "visible";
+                                    viewMediaButton.removeAttribute("hidden");
                                     viewMediaButton.addEventListener(
                                         "click",
                                         () => {
@@ -414,7 +372,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                         }
                                     );
                                 } else {
-                                    viewMediaButton.style.visibility = "hidden";
+                                    viewMediaButton.setAttribute("hidden", "hidden");
                                 }
                             }
 
@@ -450,30 +408,9 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                             
                     }
 
-                    // CONTRIBUTORS
-                    {
-                        // let element = document.createElement("span");
-                            document.getElementById(`dropdown-${title}-contributors`).innerHTML = `
-                            <b>Contributors</b>:<br>
-                        `;
-
-                        Object.keys(data.contributors).forEach(contributor => {
-                            document.getElementById(`dropdown-${title}-contributors`).innerHTML+= `
-                                <b><span class="indent">${contributor}</span></b>: ${data.contributors[contributor]}<br>
-                            `;
-                        });
-                        
-                    }
-
                     
                     // DATES
                     {
-                        document.getElementById(`dropdown-${title}-dates`).innerHTML += "<b>Date(s)</b>:<br>"
-                        for (const date of Object.keys(data["dates"])) {
-                            document.getElementById(`dropdown-${title}-dates`).innerHTML += `
-                                <span class="indent">${date}: ${data["dates"][date]}</span><br>
-                            `
-                        }
 
                         document.getElementById(`item-${title}-date`).addEventListener(
                             "mouseover",
@@ -505,7 +442,6 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                 }).join(" | ")}
                             `;
                         ;
-
                     }
 
 

@@ -1,0 +1,1 @@
+an early draft of the 2nd version (first refactor) of this website. I later refactored this before it was entirely finished, but I still think it looks sort of cool and would like to preserve it if only for that reason. 
