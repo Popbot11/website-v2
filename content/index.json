@@ -1,4 +1,8 @@
 {
+    "all external links": {
+        "category": "other",
+        "date": "2025-05-22"
+    },
     "website v2 early draft": {
         "category": "other",
         "date": "2025-05-21"
@@ -26,6 +30,10 @@
     "FORM anypercent vol. 2": {
         "date": "2025-02-07",
         "category": "music"
+    },
+    "collection": {
+        "category": "other",
+        "date": "2025-01-30"
     },
     "WIP track for my next album": {
         "category": "video",
@@ -58,6 +66,10 @@
     "livestreams": {
         "category": "video",
         "date": "2025-01-01"
+    },
+    "music i like": {
+        "category": "other",
+        "date": "2024-29-07"
     },
     "alon mor type beat drums": {
         "category": "music",
@@ -126,6 +138,10 @@
     "Guidelines for Physically Based Sound Design": {
         "category": "video",
         "date": "2024-05-01"
+    },
+    "some cool people": {
+        "category": "other",
+        "date": "2024-04-07"
     },
     "Yapping about sound design workflow": {
         "category": "video",
