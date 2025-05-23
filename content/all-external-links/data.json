@@ -1,0 +1,18 @@
+{
+    "title": "all external links",
+    "dates": {
+        "2025-05-22": "published"
+    },
+    "categories": [
+        "other"
+    ],
+    "tags": [
+        "collection"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "webpage": "../content/all-external-links/index.html"
+    }
+}

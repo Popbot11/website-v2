@@ -1,0 +1,67 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        
+
+        <a href="../../index.html">home</a> | <a href="../index.html">expert mode</a><br><br>
+
+        <p>
+            here's the majority of my external llinks to various places. listing all of them under my user in the main userData json would take up too much space under collaborator credits so i'm filling out the rest here. 
+        </p>
+
+        <div id="links"></div>
+
+        <script>
+            // "title": "url",
+            let links = {
+                "website": "https://www.popbot.work",
+                "bandcamp": "https://popbotmusic.bandcamp.com/",
+                "soundcloud": "https://soundcloud.com/popbot1",
+                "spotify": "https://open.spotify.com/artist/4eDbD4oyIs9osobAAkkh0T",
+                "bluesky": "https://bsky.app/profile/popbot.work",
+                "instagram": "https://www.instagram.com/popbot_/?hl=af",
+                "youtube": "https://www.youtube.com/channel/UCckNFTtfD7FKCqbTE5UBVPw",
+                "github": "https://github.com/Popbot11",
+                "newgrounds": "https://popbot2.newgrounds.com/",
+                "discord server": "https://discord.gg/RpZ4dt9mUr",
+                "bandcamp fan acc": "https://bandcamp.com/xxx_-_popbots-fan-account42069_-_xxx",
+                "twitter": "",
+                "paypal": "",
+                "gumroad": "",
+                "email": "",
+                "last.fm": "",
+                "soundcloud alt 1": "",
+                "soundcloud alt 2": "",
+                "soundcloud alt 3": "",
+                ".setique soundcloud": "",
+                ".setique bandcamp": "",
+                "steam": "",
+                "telegram": "",
+                "deezer": "",
+                "apple music": "",
+                "venmo": "",
+                "discord profile": "", 
+                "gdrive?": "",
+                "abandoned devlog channel": "",
+                "datamind audio": "",
+                "billegal beats": "",
+                
+            };  
+            // TODO: sort links alhabetically by title
+            let element = document.getElementById("links");
+            Object.keys(links).forEach(link => {
+                let link_element = document.createElement("a");
+                link_element.href = links[link];
+                link_element.target = "_blank";
+                link_element.innerHTML = link;
+                document.getElementById("links").appendChild(link_element);
+                document.getElementById("links").appendChild(
+                    document.createElement("br")
+                );
+            });
+
+        </script>    
+    </body>
+</html>
