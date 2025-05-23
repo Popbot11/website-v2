@@ -1,0 +1,22 @@
+{
+    "title": "collection",
+    "dates": {
+        "2025-01-30": "published",
+        "2025-02-11": "added more stuff",
+        "2025-02-23": "dubstep",
+        "2025-03-14": "picture of me",
+        "2025-05-22": "videos in my folder"
+    },
+    "categories": [
+        "other"
+    ],
+    "tags": [
+        "collection"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "webpage": "../cotents/collection/index.html"
+    }
+}
