@@ -1,0 +1,23 @@
+{
+    "title": "music i like",
+    "dates": {
+        "2024-07-39": "published",        
+        "2024-07-39-1": "Amfivolia - Seawards",
+        "2024-08-19": "Vorso - Holomony",
+        "2024-08-19-1": "Patricia Taxxon - TECHDOG",
+        "2025-01-20": "Zachary Paul - A Meditation on Discord",
+        "2025-01-23": "Dorian Concept - Let It All Go"
+    },
+    "categories": [
+        "other"
+    ],
+    "tags": [
+        "writing"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "webpage": "../content/music-i-like/index.html"
+    }
+}
