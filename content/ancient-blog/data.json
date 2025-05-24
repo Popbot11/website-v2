@@ -13,7 +13,7 @@
         "Popbot": "primary creator"
     },
     "links": {
-        "webpage": "../content/ancient-blog/index.html",
-        "blog": "../content/ancient-blog/"
+        "webpage": "../content/ancient-blog/",
+        "blog": "../content/ancient-blog/my_blog.html"
     }
 }

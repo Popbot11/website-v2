@@ -14,6 +14,7 @@
         "Popbot": "primary creator"
     },
     "links": {
-        "webpage": "../content/old-kidoyo-website/index.html"
+        "webpage": "../content/old-kidoyo-website/index.html",
+        "actual site": "../content/old-kidoyo-website/site/index.html"
     }
 }
