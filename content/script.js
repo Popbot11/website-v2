@@ -156,4 +156,14 @@ fetch("./index.json").then(res => res.json()).then(index => {
         }
     
     });
+}).then( () => {
+    // scroll to entry in urlsearchparams
+    const params = Object.fromEntries(new URLSearchParams(window.location.search));
+    if (Object.keys(params).includes("entry")) {
+        const entry = params["entry"]
+        console.log(entry);
+        document.getElementById(entry).scrollIntoView();
+        window.scrollBy(0, -25);
+        document.getElementById("home").remove();
+    }
 })

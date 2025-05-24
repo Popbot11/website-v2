@@ -221,7 +221,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                     () => {
                         console.log(`${title}: expert mode`);
                         let url = new URL("content/index.html", window.location.href);
-                        url.searchParams.append('entry', path);
+                        url.searchParams.append('entry', title);
 
                         const screenX = window.screenX || window.screenLeft;
                         const screenY = window.screenY || window.screenTop;
