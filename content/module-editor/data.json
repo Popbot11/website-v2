@@ -10,10 +10,13 @@
         "contraption"
     ],
     "tags": [
-        "wip",
+        "unfinished",
         "melda"
     ],
     "contributors": {
         "Popbot": "primary creator"
+    },
+    "links": {
+        "webpage": "./content/module-editor/index.html"
     }
 }

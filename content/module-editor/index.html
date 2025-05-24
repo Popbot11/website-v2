@@ -1,0 +1,536 @@
+<html>
+    <head>
+                                        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMF5SZ58X2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-ZMF5SZ58X2');
+        </script>
+
+        <style>
+            .moduleMain{
+                padding: 5px;
+                border: 2px;
+                margin: 2px;
+                border-style: solid;
+                border-color: rgb(94, 94, 94);
+                background-color: rgba(0, 0, 0, 0.103);
+                width:fit-content;
+            }
+            .moduleMini{
+                /* padding: 5px; */
+                /* border: 2px; */
+                margin: 2px;
+                border-style:dotted;
+                border-color: rgb(143, 143, 143);
+                background-color: rgba(0, 0, 0, 0.074);
+                width:fit-content;
+            }
+            .tooltip{
+                position: absolute;
+                background-color: aqua;
+            }
+            .text_output{
+                margin: 10px;
+                padding: 10px;
+
+                font-family: 'Courier New', Courier, monospace;
+                background-color: rgb(35, 35, 35);
+                color: rgb(209, 209, 209);
+            }
+            input {
+                min-width: 10px;
+                width: 6ch;
+            }
+            button{
+                border-radius: 0%;
+            }
+            .hide{
+                visibility:visible;
+            }
+        </style>
+
+        <!--BROKEN-->
+        <script>
+            class ExpandBox extends HTMLElement {
+                constructor(){
+                    super();
+                }
+
+            
+                connectedCallback() {
+                    var visible = false;
+
+                    var target = document.getElementById(this.getAttribute("targetID"));
+                    console.log(this.getAttribute("targetID"))
+                    
+                    target.hidden = !visible;
+
+                    // this.hidden = true;
+                    var button = document.createElement("button");
+                    button.innerText = this.getAttribute("hiddenText");
+                    button.onclick = function(){
+                        var target = document.getElementById(this.getAttribute("targetID"));
+                        visible = !visible;
+                        target.hidden = visible;
+                    };
+
+                    // button.show = false;
+                    this.appendChild(button);
+
+                }
+            }
+            customElements.define("expand-box", ExpandBox);
+        </script>
+
+
+        <script>
+            
+           
+
+            class ModuleData {
+                constructor(params, accepts_submodules, syntax_text){
+                    
+                    this.params = params;
+                    this.accepts_submodules = accepts_submodules;
+                    this.syntax_text = syntax_text;
+                    
+                }
+            }
+
+            var modulecount = 0;
+
+            // var currentModule = "";
+            
+            //storing info for each module and how that works etc
+            const modules = {
+                "serial": new ModuleData([], true, "s"),
+                "parallel": new ModuleData([], true, "p"),
+                "level": new ModuleData([
+                    `gain
+                     in dB
+                     When there is no gain specified, it does nothing, literally. 
+                     That way it can be used as a dummy module which is sometimes useful for more complex algorithms. 
+                     
+                     for example, a value of -3 makes the signal quieter by 3 dB.`], false, "l"),
+                "comb_nesting": new ModuleData([
+                    `decay coefficient
+                     if left blank, defaults to a value of 1, which means that it will follow the length parameter within the Plugin UI. 
+                     you can invert the phase by setting it to -1 (or any negative value). 
+                     if you specify 0, the parameter will be randomized. 
+
+                     in general, this parameter represents the specific value that a signal is multiplied by each time it is fed back into the delay line in a comb filter. 
+                     (reverb length is calculated based on how long it takes to decay below -60dBFS)`, 
+                     
+                     `feedback time
+                      in ms
+                      this value represents the length of the delay line that the signal is fed back into. 
+                      `], true, "cn"),
+                "comb_basic": new ModuleData([
+                    `decay coefficient
+                     if left blank, defaults to a value of 1, which means that it will follow the length parameter within the Plugin UI. 
+                     you can invert the phase by setting it to -1 (or any negative value). 
+                     if you specify 0, the parameter will be randomized. 
+
+                     in general, this parameter represents the specific value that a signal is multiplied by each time it is fed back into the delay line in a comb filter. 
+                     (reverb length is calculated based on how long it takes to decay below -60dBFS)`, 
+                     
+                     `feedback time
+                      in ms
+                      this value represents the length of the delay line that the signal is fed back into. 
+                      `], false, "c"),
+                "nesting_allpass": new ModuleData(["delay", "feedback", "q"], true, "an"),
+                "allpass_basic": new ModuleData(["delay", "feedback"], false, "a"),
+                "fdn": new ModuleData(["size"], true, "fdn"),
+                "hi_dampening": new ModuleData([], false, "fh"),
+                
+            }
+            
+            
+            // specifically info about wwhat modules take what other modules as inputs
+            // module_name: ["type", [submodule names], num, [parameters]]
+            var chain = {
+                "serial0": ["serial", [], 0, []],
+            }
+            
+            //recursively navigate module tree to produce output algorithm
+            
+            // var outputText = "";
+            function output(targetModule){
+                console.log("------GENERATING OUTPUT------")
+                let outputCanvas = document.getElementById("output");
+
+                outputCanvas.innerText = getModule(targetModule)
+                console.log("------------DONE-------------")
+            }
+
+            function getModule(targetSubmodule){
+                
+                let prefix_text = ""
+                console.log("rendering: "+targetSubmodule);
+                let base_text = modules[ chain[targetSubmodule][0] ].syntax_text;
+                let submodules_text = "";
+                if (modules[ chain[targetSubmodule][0] ].accepts_submodules){
+                    submodules_text = "["
+                    for (var chain_submodule of chain[targetSubmodule][1]){
+                        console.log("chain_submodule: "+chain_submodule)
+                        submodules_text += getModule(chain_submodule)+";"
+                    }
+                    submodules_text += "]"
+                }
+                let parameters_text = "";
+                
+                if (modules[ chain[targetSubmodule][0] ].params.length != 0){
+                    console.log("ballsack supreme mega ultra suprise COMING RIGHT UP")
+                    // console.log(chain[targetSubmodule][3][0])
+                    parameters_text += "(";
+                    for (var i in modules[ chain[targetSubmodule][0] ].params){
+                        if (chain[targetSubmodule][3][i] === undefined){
+                            parameters_text += " ";
+                        } else {
+                            parameters_text += chain[targetSubmodule][3][i]+";";
+                        }
+                        
+                    }
+                    parameters_text += ")";
+                }
+                
+                return prefix_text+base_text+parameters_text+submodules_text;
+            }
+
+            //util functions
+            function updateUI(){
+                var canvas = document.getElementById("canvas")
+                var parent = canvas.parentNode;
+                parent.removeChild(canvas);
+                parent.appendChild(
+                    Object.assign(document.createElement("canvas-"), {
+                        id: "canvas", 
+                    })
+                )
+            }
+            function printChain(){
+                console.log(chain);
+            }
+
+            //custom UI element for a module parameter
+            class Parameter extends HTMLElement {
+                constructor(){
+                    super();
+                }
+                render() {
+                    var name = this.getAttribute("name");
+                    var info = this.getAttribute("info");
+                    var param_index = this.getAttribute('data-param-index');
+
+                    var owner_module = this.id;
+                    // var self_value = this.value;
+                    
+                    var numbox = document.createElement("input");
+                    numbox.type="number";
+                    numbox.name=name;
+                    numbox.value = this.getAttribute('data-param-value');
+                    numbox.onkeypress = function() {
+                        numbox.style.width = numbox.value.length + 5 + 'ch'
+                    };
+                    numbox.onchange = function(){
+                        console.log("on param change: "+chain[owner_module]);
+                        chain[owner_module][3][param_index] = numbox.value;
+                    };
+
+                    var tooltip = document.createElement("span");
+                    tooltip.class = "tooltip"
+                    tooltip.innerText = name;
+                    if (info != "null"){
+                        tooltip.innerText += "\n" + info;
+                    }
+                    tooltip.style="position:absolute;color:white;background-color:black;transform: translateY(20px);"
+                
+                    this.appendChild(numbox);
+                    
+                    this.onmouseover = function(){
+                        this.appendChild(tooltip);
+                        // console.log(this)
+                    };
+                    this.onmouseleave = function(){this.removeChild(tooltip)};
+
+                }
+                connectedCallback() {
+                    if (!this.rendered) {
+                        this.render();
+                        this.rendered = true;
+                    }   
+                }
+            }
+            customElements.define("param-", Parameter);
+
+            //ui for module list when hovered over add button
+            class ModuleDropdown extends HTMLElement {
+                constructor(){
+                    super();
+                }
+                render() {
+                    var parentModule = this.id;
+                    var dropdown = document.createElement("div");
+                    dropdown.style="position:absolute;left:"+this.getAttribute('data-pos-x')+"px;"
+                    // console.log(this.getAttribute('data-pos-x'))
+
+                    var fuck = this.getAttribute('data-num')
+                    // console.log("dropdown num: "+fuck);
+
+                    for (var module in modules) {
+                        // console.log(module);
+                        var item = document.createElement("button")
+                        item.style = "text-color: white;"   
+                        item.innerText = module;
+                        item.id = module;
+                        
+                        item.onclick = function(){
+                            // console.log(parentModule + ", " + fuck+ ", "+event.target.id);
+                            
+                            modulecount += 1;
+                            
+                            chain[parentModule][1].push(event.target.id+modulecount);
+                            chain[event.target.id+modulecount] = [event.target.id, [], modulecount, Array(modules[module].params.length)];
+                            console.log(module);
+                            console.log(modules["level"]);
+                            for(var j in modules[module].params){
+                                modules[module].params.push("");
+                                
+                            }
+                            // chain[parentModule][4].length = modules[module].params.length;
+                            console.log("params_length: "+modules[module].params.length );
+                            updateUI();
+
+                        }
+
+                        dropdown.appendChild(item);
+                        dropdown.appendChild(document.createElement("br"));
+                        
+                    }
+                    // console.log("id: "+this.id);
+                    this.appendChild(dropdown);
+                }
+                connectedCallback() {
+                    if (!this.rendered) {
+                        this.render();
+                        this.rendered = true;
+                    }   
+                }
+            }
+            customElements.define("module-dropdown", ModuleDropdown);
+
+            //custom UI element for the button to add a new module
+            class AddButton extends HTMLElement {
+                constructor(){
+                    super();
+                }
+
+                render() {
+                    var button = document.createElement("button");
+                    button.innerText = "add submodule";
+                    
+                    var dropdown = Object.assign(document.createElement("module-dropdown"), {id: this.id});
+                    dropdown.setAttribute('data-num', this.getAttribute('data-num'));
+
+                    this.onmouseover = function(){
+                        dropdown.setAttribute('data-pos-x', event.clientX-15);
+                        this.appendChild(dropdown)
+                    };
+
+                    this.onmouseleave = function(){
+                        this.removeChild(dropdown)
+                    };
+
+                    this.appendChild(button);
+                }
+                connectedCallback() {
+                    if (!this.rendered) {
+                        this.render();
+                        this.rendered = true;
+                    }   
+                }
+            }
+            customElements.define("add-button", AddButton);
+
+            //custom UI element for the mini module thats added after you add a new module
+            class ModuleMini extends HTMLElement {
+                constructor(){
+                    super();
+                }
+                render() {
+                    var contents = document.createElement("span");
+                    // console.log(this.getAttribute('data-sub-id'));
+                    var submoduleName = this.getAttribute('data-sub-id');
+                    var submoduleIndex = this.getAttribute('data-index');
+                    var supermoduleName = this.getAttribute("id")
+
+                    contents.innerText = " " +submoduleName+" ";
+                    contents.className  = "moduleMini";
+
+                    var deleteButton = document.createElement("button");
+                    deleteButton.innerText = "x"
+                    deleteButton.style="padding: 2px;"
+                    
+                    deleteButton.onclick = function(){
+                        console.log("removing: "+submoduleName+", "+submoduleIndex+" from "+supermoduleName);
+
+                        delete chain[submoduleName];
+                        delete chain[supermoduleName][1][submoduleIndex];
+                        chain[supermoduleName][1].length -= 1;
+
+
+                        updateUI();
+                    }   
+
+                    contents.appendChild(deleteButton);
+                    
+                    this.appendChild(contents);
+                }
+                connectedCallback() {
+                    if (!this.rendered) {
+                        this.render();
+                        this.rendered = true;
+                    }   
+                }
+            }
+            customElements.define("module-mini", ModuleMini);
+
+            //primary ui for singular module
+            class ModuleMain extends HTMLElement {
+                
+                constructor(){
+                    super();
+                }
+                render() {
+
+                    
+                    // console.log(this.id)
+                    this.setAttribute('data-num', chain[this.id][2]);
+                    console.log(chain[this.id][2]+", "+this.id);
+                    var selfName = this.id;
+                    
+                    var contents = document.createElement("div");
+                    contents.className = "moduleMain";
+                    
+                    var divider = document.createElement("span");
+                    divider.innerText = " | ";
+                    
+                    var title = document.createElement("span");
+                    title.innerText = selfName + " | ";
+                    contents.appendChild(title);
+                    
+                    //render add button and mini modules
+                    if (modules[chain[this.id][0]].accepts_submodules){
+                       
+                        //add button
+                        var addButton = Object.assign(document.createElement("add-button"), {
+                            id: this.id, 
+                        }); 
+                        addButton.setAttribute('data-num', this.getAttribute('data-num'))
+                        contents.appendChild(addButton);
+
+                        // mini modules
+                        var debugText = "";
+                        var i = 0;
+                        for (var sub of chain[selfName][1]){
+                            var submodule = Object.assign(document.createElement("module-mini"), {
+                                id: this.id,
+                            });
+                            submodule.setAttribute('data-sub-id', sub);
+                            submodule.setAttribute('data-index', i);
+
+                            contents.appendChild(submodule);
+                            i += 1;
+                            debugText += ("submodule:"+i+", "+sub+"\n");
+                        }
+                        if (i != 0){
+                            console.log(debugText);
+                        }
+                        
+                        contents.appendChild(divider);
+                    }
+
+                    // render parameters 
+                    var param_index = 0;
+                    for (const param_name of modules[chain[this.id][0]].params){
+                        var paramUI = (Object.assign(document.createElement("param-"), {
+                            id: this.id, 
+                            ['data-num']: this.num
+                        }))
+                        paramUI.setAttribute('data-param-value', chain[this.id][3][param_index])
+                        paramUI.setAttribute('data-param-index', param_index)
+                        // console.log(value)
+                        paramUI.setAttribute("name", param_name);
+                        paramUI.setAttribute("info", "null");
+                        // console.log(paramUI);
+                        contents.appendChild(paramUI);
+                        param_index += 1;
+                    }
+
+                    this.appendChild(contents);
+                    
+                    
+                }
+                connectedCallback() {
+                    if (!this.rendered) {
+                        this.render();
+                        this.rendered = true;
+                    }   
+                }
+            }
+            customElements.define("module-main", ModuleMain);
+
+            //ui for all modules in a connected list
+            class Canvas extends HTMLElement {
+                constructor(){
+                    super();
+                }
+                render() {
+                    console.log("-----RENDERING UI-----")
+                    for (let module in chain){
+                        // console.log("thingy: "+module);
+                        var ui = Object.assign(document.createElement("module-main"), {id: module});
+                        // ui.id = module.name;
+                        this.appendChild(ui);
+                    }
+                    console.log("-----FINISHED UI------")
+                }
+                connectedCallback() {
+                    if (!this.rendered) {
+                        this.render();
+                        this.rendered = true;
+                    }   
+                }
+            }
+            customElements.define("canvas-", Canvas);
+
+        </script>
+    </head>
+    <body>
+        <a href="../../index.html">home</a> | <a href="../index.html">expert mode</a> <br><br>
+        <p>
+            a <b>WIP</b> experiment to make a general-purpose editor for text-based modular software. The two things I woudl immediately be able to use this for are my own project, buffer-gen, and the melda algorithms. I'm sure there's other things, though. ill keep this updated with a changelog maybe? idk. 
+        </p>
+
+        <hr size="5px" color="black">
+        <span>Editor</span><br><br><hr>
+
+
+        <div>
+            <canvas- id="canvas"></canvas->
+        </div>
+
+        <hr size="5px" color="black">
+        <div class="text_output"><span id="output"></span></div>
+        <button onclick="output('serial0')">render output</button><br><br><br>
+
+
+        <span>debug:</span><br>
+        <button onclick="printChain()">log raw chain</button>
+        <button onclick="updateUI()">update ui</button>
+    </body>
+</html>
