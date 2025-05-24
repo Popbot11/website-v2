@@ -1,0 +1,19 @@
+{
+    "title": "ancient blog",
+    "dates": {
+        "2015-08-15": "published"
+    },
+    "categories": [
+        "other"
+    ],
+    "tags": [
+        "writing"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "webpage": "../content/ancient-blog/index.html",
+        "blog": "../content/ancient-blog/"
+    }
+}
