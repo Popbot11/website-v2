@@ -1,7 +1,8 @@
 {
     "title": "john feedback explorer",
     "dates": {
-        "yyyy-mm-dd": "published"
+        "2024-04-22": "published",
+        "2024-07-26": "update 1.1"
     },
     "categories": [
         "contraption"
@@ -11,5 +12,12 @@
     ],
     "contributors": {
         "Popbot": "primary creator"
+    },
+    "links": {
+        "webpage": "../content/john-feedback-explorer/"
+    },
+    "media": {
+        "media/johnFeedbackExplorer1.0.png": "",
+        "media/johnFeedbackExplorer1.1.png": ""
     }
 }
