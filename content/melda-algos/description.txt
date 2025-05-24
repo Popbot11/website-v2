@@ -1,0 +1,1 @@
+some algorithms for mturboreverb and mturbo filter. myself, lukasipo, and amfivolia were having a lot of fun with this for a couple weeks. Those two made a lot of really interesting ones, I don't seem to remember mine being all that interesting in comparison. but we had fun!!
