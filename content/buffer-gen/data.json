@@ -9,8 +9,12 @@
     "categories": [
         "contraption"
     ],
-    "tags": [],
+    "tags": ["unfinished"],
     "contributors": {
         "Popbot": "primary creator"
+    },
+    "links": {
+        "webpage": "./content/buffer-gen/index.html"
     }
+    
 }
