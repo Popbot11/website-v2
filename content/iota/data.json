@@ -34,7 +34,7 @@
     "links": {
         "soundcloud": "https://soundcloud.com/popbot1/sets/iota-1",
         "bandcamp": "https://popbotmusic.bandcamp.com/album/iota",
-        "webpage": "./content/Iota/index.html"
+        "webpage": "./content/iota/"
     },
     "media": {
         "iota-cover.png": "cover artwork by amfivolia modelled in Blender then drawn over in photoshop"

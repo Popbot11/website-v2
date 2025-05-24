@@ -19,7 +19,8 @@ const priorityTags = [
     "shitpost",
     "wip",
     "m4l",
-    "paid"
+    "paid",
+    "unfinished"
 ];
 
 // useful for clearing event listeners

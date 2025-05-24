@@ -131,6 +131,10 @@
         "date": "2024-07-07",
         "category": "music"
     },
+    "combobulator brains": {
+        "date": "2024-07-03",
+        "category": "contraption"
+    },
     "stardust": {
         "date": "2024-06-04",
         "category": "music"
@@ -138,6 +142,22 @@
     "Guidelines for Physically Based Sound Design": {
         "category": "video",
         "date": "2024-05-01"
+    },
+    "battery muncher": {
+        "date": "2024-04-9",
+        "category": "contraption"
+    },
+    "john feedback explorer": {
+        "date": "2024-04-22",
+        "category": "contraption"
+    },
+    "25 parallel delays": {
+        "date": "2024-04-09",
+        "category": "contraption"
+    },
+    "bad reverb": {
+        "date": "2024-04-09",
+        "category": "contraption"
     },
     "some cool people": {
         "category": "other",
@@ -314,25 +334,5 @@
     "ancient blog": {
         "category": "other",
         "date": "2015-08-15"
-    },
-    "combobulator brains": {
-        "date": "yyyy-mm-dd",
-        "category": "contraption"
-    },
-    "john feedback explorer": {
-        "date": "yyyy-mm-dd",
-        "category": "contraption"
-    },
-    "25 parallel delays": {
-        "date": "yyyy-mm-dd",
-        "category": "contraption"
-    },
-    "bad reverb": {
-        "date": "yyyy-mm-dd",
-        "category": "contraption"
-    },
-    "battery muncher": {
-        "date": "yyyy-mm-dd",
-        "category": "contraption"
     }
 }
