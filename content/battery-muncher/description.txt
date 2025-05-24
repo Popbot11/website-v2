@@ -1,0 +1,2 @@
+A max device I made in collaboration with my Jasko, who used to enjoy making wavetables in desmos. Jasko was responsible for a lot of the math, and I put it into the format of a m4l device, also contributing to the dsp a bit. 
+The device is capable of producting a lot of really messy digital distorted sounds.  

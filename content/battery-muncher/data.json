@@ -1,7 +1,7 @@
 {
     "title": "battery muncher",
     "dates": {
-        "yyyy-mm-dd": "published"
+        "2024-04-09": "published"
     },
     "categories": [
         "contraption"
@@ -15,6 +15,6 @@
         "Jasko": "algorithm"
     },
     "links": {
-        "webpage": "./content/battery muncher/index.html"
+        "webpage": "./content/battery-muncher/index.html"
     }
 }
