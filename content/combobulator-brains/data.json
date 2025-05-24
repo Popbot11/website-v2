@@ -1,7 +1,7 @@
 {
     "title": "combobulator brains",
     "dates": {
-        "yyyy-mm-dd": "published"
+        "2024-07-03": "published"
     },
     "categories": [
         "contraption"
@@ -15,7 +15,10 @@
         "Datamind Audio": "creator of plugin and company that paid me"
     },
     "links": {
-        "webpage": "./content/combobulator brains/index.html",
+        "webpage": "./content/combobulator-brains/index.html",
         "datamind": "https://datamindaudio.ai/shop/"
+    },
+    "media": {
+        "combobulatorCard.png": "a screenshot of the shop card for one of my artist brains"
     }
 }
