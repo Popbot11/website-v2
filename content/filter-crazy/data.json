@@ -12,5 +12,12 @@
     ],
     "contributors": {
         "Popbot": "primary creator"
+    },
+    "links": {
+        "webpage": "../content/filter-crazy/index.html"
+    },
+    "media": {
+        "filterCrazy1.0.png": "",
+        "filterCrazy1.1.png": ""
     }
 }

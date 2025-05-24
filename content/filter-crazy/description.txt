@@ -1,0 +1,1 @@
+a really simple "utility" i made for my friend emily. it modulates a biquad filter really quickly to create artifacts. 
