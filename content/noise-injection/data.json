@@ -11,5 +11,11 @@
     ],
     "contributors": {
         "Popbot": "primary creator"
+    },
+    "links": {
+        "webpage": "../content/noise-injection/index.html"
+    },
+    "media": {
+        "PB-Noise-Injection.png": "a screenshot of the noise injection max for live device"
     }
 }

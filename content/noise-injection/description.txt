@@ -1,0 +1,1 @@
+A simple max device intended to add subtle noise to sub/bass layers
