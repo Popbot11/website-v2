@@ -1,0 +1,69 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <a href="../index.html">home</a> | <a href="index.html">New version</a><br><br>
+        A modal resonator that can analyze an input signal and map its harmonics onto the resonator in realtime. 
+        it's currently very unfinished, so i'll update this page as I make progress. 
+        maybe it'll have a single update with a finished version, maybe it'll have like 30. idk. 
+        i'll seperate updates with horizontal dividers. 
+        <br><hr>
+        
+        <p>skeletal version. only 8 bands, monophonic, no ui, no ux, really scuffed stuff.
+             this is just the raw concept. I doubt this is useful to anybody since it doesnt have a ui but i figured i'd put it up here anyways since i spent a couple days on this prototype</p>
+        <a href="media/PB modal resynth v1.maxpat">download</a><br><br>
+        <img src="media/modalResynthMaxpat.png" width="800px">
+        <br><hr>
+        <p>
+            added a bunch of functionality. added a mode display UI, a very functional impulse generator, and a number of smaller tweaks. 
+            I'm yet to implement polyphony and an actual  designed ui, but i'm not gonna do that today. 
+        </p>
+        <a href="media/PB modal resynth v2.maxpat">download</a><br><br>
+        <img src="media/modalResynthMaxpat2.png" width="800px">
+        <br><hr>
+        <p>
+            added polyphony (up to 16 voices), added a super super basic ui, ported to amxd. it should work in ablton now without max msp. <br>
+            got some people to test it too, and i got some pretty valuable feedback regarding the UI that i intend to implement. <br>
+            i also kinda want to rework the signal flow a bit so that i can implement more moduoation options a bit easier. here's a draft of an alternative signal flow i put together in an obsidian canvas
+        </p>
+        <a href="media/PB modal resynth v3.amxd">download</a><br><br>
+        <img src="media/modalResynthMaxpat3.png" width="800px"><br><img src="media/modalResynthRoutingDiagram.png" width="800px">
+        <br><hr>
+        <p>
+            decided to abandon the max for live stuff now and to instead focus my attention on finishing all the features first, and then implementing it into a device with a UI. 
+            i have a more final list of things i want to do down, all thats left is tyo actually do it. <br>
+            I've finished the sampler part of it, and refined the polyphony a bit i think. I stoped working on a m4l thing, so its back to a max patch now. <br>
+            the sampler sounds really pretty with the polyphony, i love it so much. Anyways, here's the picture and downloads:
+        </p>
+        <a href="media/Modal Resynth v4.rar">download</a><br><br>
+        <img src="media/modalResynthMaxpat4.png" width="800px"><br><hr>
+        <p>
+            this is probably the final update on this page, because I intend to see this device for money. I think t's fair to give people access to the main max patch for free, 
+            but if you want the m4l device you'd have to pay ideally. idk. makes sense to me. <br>
+            anyways, this version has a lot of updates, its the mostly final evolution of the dsp. 
+            the main things I added were stereo, the harmonic prism which works similarly to harmor's harmonic prism in multiply mode, a 'reso morph' feature which can morph between two per-mode resonance settings, 
+            a fully-featured polyphonic mod matrix with 2 envelopes and 2 lfos, velocity (which is a bit jank) and per-voice per-parameter randomization. These features <i>MASSIVELY</i> expand the sound for the device,
+             and is mostly the final evolution of what i want it to be. Any additional features i can think of are to be aded in a v2 of the device that i mght make later. What i'm working on now is mostly UI,
+              UX, and cpu optimization for the m4l version. Initally it was taking about 80% cpu, and ive gotten it down to around 30 - 40, but I want it to be under 10, so theres a lot of work ahead of me. <br>
+              I've decided to remove the resynth options from the device cause it doesn't work very well in compartson to all the other things i've made for it
+        </p>
+        <a href="media/PB Modal Synth v5.rar">download</a><br><br>
+        <img src="media/modalSynthMaxpat5.png" width="800px"><br><hr>
+
+        <p>
+            This is a demo of the UI i've been working on:
+        </p>
+        <video width="800px" controls>
+            <source src="media/modalResynthUIDemo.mp4" type="video/mp4">
+            <source src="media/modalResynthUIDemo.mp4" type="video/ogg">
+            Your browser does not support the video tag.
+          </video>
+          <hr>
+          <p>
+            OH ALSO i'm updating this after the release of the final thing, but i just remembered another one ofthe super old test builds i made. This was the very first implementation of a modal resonator in a max for live device, which had 32 modes and sounds like crap. You're welcome to download it and give it a try. 
+          </p>
+          <a href="media/PB Shit Modal v1.amxd">download</a><br><br>
+          <hr>
+    </body>
+</html>

@@ -13,5 +13,11 @@
     ],
     "contributors": {
         "Popbot": "primary creator"
+    },
+    "links": {
+        "webpage": "../content/modal-synth/"
+    },
+    "media": {
+        "media/modalSynthF.png": "a screenshot of the modal synth max for live device"
     }
 }
