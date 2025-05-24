@@ -1,0 +1,272 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Clicker</title>
+        <meta name="generator" content="BBEdit 11.6" />
+
+        <style>
+
+
+            .button { 
+                border: none;
+                color: black;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer; 
+            }
+            .button1 {
+                border: 40px;
+                border-color: orange;
+                border-radius: 8px;
+                background-color: orange;
+                color: black;
+                width: 300px;
+                height: 200px;
+            }
+            .button1:hover {
+                border: 20px;
+                border-color: #ffcc00;
+                border-radius: 8px;
+                background-color: #ffcc00;
+                color: red;
+            }
+            .button1:active {
+                border: 20px;
+                border-color: #d6c104;
+                border-radius: 8px;
+                background-color: #d6c104;
+                color: #c40000;
+                cursor: not-allowed;
+            }
+            .button2 {
+                border-radius: 8px;
+                background-color: orange; 
+                color: black;
+            }
+            .button2:hover {
+                border-radius: 8px;
+                background-color: #ffcc00;
+                color: red;
+              }   
+              
+            .button2:active {
+                border-radius: 8px;
+                background-color: #d6c104;
+                color: #c40000;
+                cursor: not-allowed;
+            }
+           .button3 {
+                border-radius: 8px;
+                background-color: orange;
+                color: black;
+            }
+            .button3:hover {
+                border-radius: 8px;
+                background-color: #ffcc00;
+                color: red;
+            }
+            .button3:active {
+                border-radius: 8px;
+                background-color: #d6c104;
+                color: #c40000;
+                cursor: not-allowed;
+            }
+            
+            body {
+                background-color: red;
+            }
+            h2 {
+                font-size: 30px;
+            }
+            td {
+                padding: 20px;
+                width: 400px;
+                
+            }
+            /* pointless css drives me nuts 
+            
+              AAARRRGGGHHHHHHHHHHHHHH!!!! */           
+            
+                                         
+
+        </style>
+
+    </head>
+    <body>
+        <h1>
+            <a href='my-projects.html'>Back</a>
+        </h1>
+        <table width='1800'>
+            <!-- column one (below) -->
+            <tr>
+                <td width='300' class='one'><span><font size=24px> 
+                    <br><br><br><br><br>
+                    <br><br><br><br><br>
+                    <br><br><br><br><br>
+                     <button class='button button2' onClick='onClickTwo()'>
+                        <h2>
+                            This does <i>nothing!</i>
+                        </h2>
+
+                    </button>
+                    <h2 id='buttonTwo'>
+
+                    </h2>
+                    
+                    </font></span></td>
+             <!-- column two (below) -->   
+                 <td sidth='300' class='two'><span><font size=24px>
+                   <button class='button button1'onclick='onClick()'>
+                        <h1>
+                            Pointless Button 
+                        </h1>
+                    </button><h2 id='buttonOne'></h2>
+                     <h2 id='funnyText'></h2>
+                         
+                     
+
+                    
+
+                    </font></span></td>
+             <!-- column three (below) -->   
+                <td sidth='300'><span><font size=24px>
+                    <br><br><br>
+                    <br><br><br>
+                    <br><br><br>
+                   
+                    <button class='button button3' onClick='onClickThree()'>
+                        <h2>
+                            And just for fun...
+                        </h2>
+
+                    </button>
+                    <h2 id='buttonThree'>
+
+                    </h2>
+
+                    </font></span></td>
+                <!-- end of column three (above) -->
+            </tr>
+        </table>
+
+        <script>
+            clicks = 0;
+
+
+            function onClick () {
+                clicks = (clicks + 1);
+                document.getElementById("buttonOne").innerHTML = "You have clicked the pointless button " + clicks + " times!";
+
+
+                if (clicks == 10) {document.getElementById("funnyText").innerHTML = "This is a place where you can waste all of your time while clicking a pointless button!";
+                                  };
+                if (clicks == 20) {document.getElementById("funnyText").innerHTML = "You must be really bored.";
+                                  };
+                if (clicks == 50) {document.getElementById("funnyText").innerHTML = "No, seriously. REALLY bored. To be doing this.";
+                                  };
+                if (clicks == 100) {document.getElementById("funnyText").innerHTML = "Why are you doing this to yourself?";
+                                   };
+                if (clicks == 150) {document.getElementById("funnyText").innerHTML = "Go do something else.";
+                                   };
+                if (clicks == 151) {document.getElementById("funnyText").innerHTML = "Play outside!";
+                                   };
+                if (clicks == 153) {document.getElementById("funnyText").innerHTML = "Or read a book!";
+                                   };
+                if (clicks == 200) {document.getElementById("funnyText").innerHTML = "Or mabye just take a nap.";
+                                   };
+                if (clicks == 300) {document.getElementById("funnyText").innerHTML = "That would help all of us.";
+                                   };
+                if (clicks == 450) {document.getElementById("funnyText").innerHTML = "At least go and do somethng useful.";
+                                   };
+                if (clicks == 500) {document.getElementById("funnyText").innerHTML = "Why are you still here?";
+                                   };
+                if (clicks == 650) {document.getElementById("funnyText").innerHTML = "Maybe you have nothing else to do.";
+                                   };
+                if (clicks == 800) {document.getElementById("funnyText").innerHTML = "In that case, go play a different game that is actually a good game.";                    
+                                   };
+                if (clicks == 1000) {document.getElementById("funnyText").innerHTML = "Okay that's it. If you keep going I'm going to shut down the game.";
+                                    };
+                if (clicks == 1005) {document.getElementById("funnyText").innerHTML = "GEEZ!!!!";
+                                    };
+                if (clicks == 1200) {document.getElementById("funnyText").innerHTML = "Whatever. If you want to waste away in front of this STUPID computer screen, you can! Just beware that you will probably not get anything out of it.";
+                                    };
+                if (clicks == 1400) {document.getElementById("funnyText").innerHTML = "Your mouse is going to break. You'll have to pay a lot of money for a new one.";
+                                    };
+                if (clicks == 1600) {document.getElementById("funnyText").innerHTML = "Mabye you'll sprain your finger. Or even break it!";
+                                    };
+                if (clicks == 1800) {document.getElementById("funnyText").innerHTML = "This is getting out of hand.";
+                                    };
+                if (clicks == 2000) {document.getElementById("funnyText").innerHTML = "THATS IT! I'M NOT TALKING TO YOU ANY MORE! YOU CAN KEEP CLICKING, BUT YOU WILL PROBABLY DIE BEFORE I TALK TO YOU AGAIN!";
+                                    };
+                if (clicks == 2002) {document.getElementById("funnyText").innerHTML = "Are you dead yet?";
+                                    };
+                if (clicks == 2004) {document.getElementById("funnyText").innerHTML = "Oh, you're still clicking.";
+                                    };
+                if (clicks == 2100) {document.getElementById("funnyText").innerHTML = "Welp,";
+                                    };
+                if (clicks == 2200) {document.getElementById("funnyText").innerHTML = "I gotta pee.";
+                                    };
+                if (clicks == 2600) {document.getElementById("funnyText").innerHTML = "Oh, you're still here. You should go pee actually. Unless you already did go pee on the chair that you're sitting on. That would be depressing.";
+                                    };
+                if (clicks == 2800) {document.getElementById("funnyText").innerHTML = "The real question is, why am I still here! Watching you click a stupid button. I feel bad for myself.";
+                                    };
+                if (clicks == 3000) {document.getElementById("funnyText").innerHTML = "I feel bad for both of us!";
+                                    };
+                if (clicks == 3250) {document.getElementById("buttonOne").innerHTML = "Sooooooo...";
+                                    };
+                if (clicks == 3500) {document.getElementById("funnyText").innerHTML = "Wanna text or somethin? My number is 631-555-1212 if you want to call or anything.";
+                                    };
+                if (clicks == 3750) {document.getElementById("funnyText").innerHTML = "Actually,";
+                                    };
+                if (clicks == 4000) {document.getElementById("funnyText").innerHTML = "I've been here so long that I think that I forgot my name!";
+                                    };
+                if (clicks == 4250) {document.getElementById("funnyText").innerHTML = "Is it jarry? Loe? Mabye Chrick or nistan?";
+                                    };
+                if (clicks == 4500) {document.getElementById("funnyText").innerHTML = "Mabye bob? Rob?";
+                                    };
+                if (clicks == 4750) {document.getElementById("funnyText").innerHTML = "OH! THATS IS! MY NAME IS Beezow Doo-Doo Zopittybop Bop-Bop!";
+                                    };
+                if (clicks == 5000) {document.getElementById("funnyText").innerHTML = "I'm going to flush myself down the toilet now. I'll miss youuuuuuuu!!!  Byeeeeeeeeeeeee!";
+                                    };
+                if (clicks == 10000) {document.getElementById("funnyText").innerHTML = "You should go and eat snickers until you go poop. Go ahead. Do it. If you don't, I'm not talking to you forEVER";
+                                     };
+                if (clicks == 100000) {document.getElementById("funnyText").innerHTML = "So sad.";
+                                      };
+                if (clicks == 1000000) {document.getElementById("funnyText").innerHTML = "Why?";
+                                       };
+                if (clicks == 10000010) {document.getElementById("funnyText").innerHTML = "Go die in a hole, you imbecile.";
+                                       };
+            
+            };
+
+            clicks2 = 0;
+            function onClickTwo () {
+                clicks2 = (clicks2  + 1);
+                document.getElementById("buttonTwo").innerHTML = "I said that this button does nothing!";
+                
+           
+                if (clicks2 == 2) {document.getElementById("buttonTwo").innerHTML = "I said that this button does nothing!";
+                                  };
+                
+            };
+            clicks3 = 0;
+            
+            function onClickThree () {
+            	clicks3 = (clicks3 + 1);
+                document.getElementById("buttonThree").innerHTML = "You have shown me that you are bored out of your mind " + clicks3 + " times!";
+                if (clicks3 >= 500) {document.getElementById("buttonThree").innerHTML = "Your life really is boring. You've clicked that button " + clicks3 + " times!";
+                                  };              
+            };
+            
+                              
+                            
+        </script>
+
+    </body>
+</html>
+
+pity

@@ -1,0 +1,19 @@
+{
+    "title": "old KidOYO website",
+    "dates": {
+        "2017-06-00": "published"
+    },
+    "categories": [
+        "other"
+    ],
+    "tags": [
+        "web",
+        "archive"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "webpage": "../content/old-kidoyo-website/index.html"
+    }
+}
