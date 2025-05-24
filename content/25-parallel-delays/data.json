@@ -1,7 +1,7 @@
 {
     "title": "25 parallel delays",
     "dates": {
-        "yyyy-mm-dd": "published"
+        "2024-04-09": "published"
     },
     "categories": [
         "contraption"
@@ -11,5 +11,11 @@
     ],
     "contributors": {
         "Popbot": "primary creator"
+    },
+    "media": {
+        "25ParallelDelays.png": "screenshot of it"
+    },
+    "links": {
+        "webpage": "../content/25-parallel-delays/"
     }
 }
