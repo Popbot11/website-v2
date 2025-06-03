@@ -249,6 +249,8 @@ body {
     visibility: hidden;
 }
 #options-menu {
+    z-index: 1001;
+
     left: 200px;
     top: 40px;
     width: fit-content;
@@ -327,15 +329,34 @@ body {
 }
 
 @media (max-width: 650px) {
+    #options-menu {
+        position: fixed;
+    }
+
+    .nav {
+        position: fixed;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+        background-color: rgba(240, 248, 255, 0.312);
+        width: 100%;
+    }
+    .nav hr {
+        visibility: hidden;
+    }
+
     #mousecoords {
         visibility: hidden;
     }
 
     #container-info {
         width: 100%;
-        height: 140px;
+        height: 135px;
         padding: 0px;
-
+        position: fixed;
+        z-index: 1000;
+        top: 40px;
+        background-color: rgba(240, 248, 255, 0.312);
+        backdrop-filter: blur(10px);
     }
 
     #container-music {
