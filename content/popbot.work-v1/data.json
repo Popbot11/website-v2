@@ -1,0 +1,21 @@
+{
+    "title": "popbot.work v1",
+    "dates": {
+        "2024-04-06": "published"
+    },
+    "categories": [
+        "other"
+    ],
+    "tags": [
+        "archive",
+        "web"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "glyphli": "helped with some beginner questions",
+        "emilydotgg": "helped with getting github pages running with a custom domain and other beginner questions"
+    },
+    "links": {
+        "popbot.work v1": "https://popbot11.github.io/website/"
+    }
+}

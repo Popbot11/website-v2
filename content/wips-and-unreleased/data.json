@@ -1,0 +1,31 @@
+{
+    "title": "wips and unreleased",
+    "dates": {
+        "2024-11-06": "published",
+        "2024-12-06": "updated",
+        "2024-12-26": "updated",
+        "2025-03-25": "updated"
+    },
+    "categories": [
+        "other"
+    ],
+    "tags": [
+        "collection",
+        "wip"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "webpage": "../content/wips-and-unreleased/"
+    },
+    "contents": [
+        "stubs from 2021 - 2024",
+        "bare branches wip",
+        "lukasipo ep wip",
+        "unsorted bass stuff",
+        "texture ep remnants",
+        "creature ep remnants",
+        "bunch of other unsorted stuff"
+    ]
+}

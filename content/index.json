@@ -99,6 +99,10 @@
         "date": "2024-11-09",
         "category": "music"
     },
+    "wips and unreleased": {
+        "category": "other",
+        "date": "2024-11-06"
+    },
     "noise injection": {
         "date": "2024-09-29",
         "category": "contraption"
@@ -170,6 +174,10 @@
     "some cool people": {
         "category": "other",
         "date": "2024-04-07"
+    },
+    "popbot.work v1": {
+        "category": "other",
+        "date": "2024-04-06"
     },
     "Yapping about sound design workflow": {
         "category": "video",
