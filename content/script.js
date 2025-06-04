@@ -76,7 +76,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
                         let target = document.getElementById(`${title}-contributors`)
                         target.innerHTML += "<b>Contributors</b>: "
                         Object.keys(data.contributors).forEach(contributor => {
-                            
+                            console.log(contributor);
                             let button = document.createElement("button");
                             button.innerHTML = contributor
                             button.setAttribute("onclick", "fetch('../data/personData.json').then(res => res.json()).then(personData => {try{document.getElementById('"+title+"-contributor-links').innerHTML = `<b>"+contributor+":</b> "+data.contributors[contributor]+"<br><b>Links:</b> ${Object.keys(personData['"+contributor.toLowerCase()+"']).map(text => \"<a target='_blank' href='\"+personData['"+contributor.toLowerCase()+"'][text]+\"'>\"+text+\"</a>\").join(' | ')}` + `<br><button onclick=\"document.getElementById('"+title+"-contributor-links').innerHTML=null;\">hide</button>`;}catch{document.getElementById('"+title+"-contributor-links').innerHTML = `<b>"+contributor+"</b>: "+data.contributors[contributor]+"<br><b>Links:</b>  isn't in the database yet; no links` + `<br><button onclick=\"document.getElementById('"+title+"-contributor-links').innerHTML=null;\">hide</button>`;}})");
