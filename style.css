@@ -14,7 +14,7 @@
 hr {
     width: 90%;
     border-color: rgba(0, 2, 51, 0.251);
-    filter: blur(0.5px);
+    /* filter: blur(0.5px); */
 }
 body {
     overflow-x: auto;
@@ -30,8 +30,8 @@ body {
 
     position: absolute;
     background-color: rgba(0, 0, 0, 0.05);
-    -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px);
+    /* -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px); */
     overflow-y: scroll;
     scrollbar-width:thin;
 }
@@ -98,10 +98,14 @@ body {
 
 #container-info {
     font-size: small;
+    transform: translateX(-7px);
+    background-color: rgba(240, 248, 255, 0.312);
+    
 }
 #container-info button {
     font-size: smaller;
     padding: 1px;
+    margin-left: 0px;
 }
 
 
@@ -127,6 +131,8 @@ body {
     padding-left: 4px;
     margin-top: 3px;
     margin-bottom: 3px;
+    /* width: 95%; */
+
     border-left-style: dotted;
     border-color: rgba(0, 0, 0, 0.305);
 }
@@ -143,8 +149,8 @@ body {
     font-size: small;
 }
 .entry .title {
-    -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px);
+    /* -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px); */
     z-index: 9;
 }
 .entry .tags {
@@ -194,8 +200,8 @@ body {
         rgba(255, 242, 0, 0) 20%, 
         rgba(13, 203, 255, 0.551) 80%, 
         rgba(18, 115, 250, 0) 100%);
-    -webkit-backdrop-filter: blur(7px);
-    backdrop-filter: blur(7px);
+    /* -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px); */
     box-shadow: 0px 0px 30px rgba(255, 52, 133, 0);
     border-style:groove;
     position: relative;
@@ -244,8 +250,8 @@ body {
     width: fit-content;
     height: fit-content;
     border-style: hidden;
-    -webkit-backdrop-filter: blur(7px) hue-rotate(90deg);
-    backdrop-filter: blur(7px) hue-rotate(90deg);
+    -webkit-backdrop-filter: blur(5px) hue-rotate(90deg);
+    backdrop-filter: blur(5px) hue-rotate(90deg);
     visibility: hidden;
 }
 #options-menu {
@@ -336,6 +342,7 @@ body {
     .nav {
         position: fixed;
         z-index: 1000;
+        -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
         background-color: rgba(240, 248, 255, 0.312);
         width: 100%;
@@ -351,11 +358,14 @@ body {
     #container-info {
         width: 100%;
         height: 135px;
-        padding: 0px;
+        /* padding: 0px; */
+        padding-right: -100px;
         position: fixed;
         z-index: 1000;
         top: 40px;
         background-color: rgba(240, 248, 255, 0.312);
+
+        -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
     }
 

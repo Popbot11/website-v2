@@ -42,6 +42,8 @@ let mouseX;
 let mouseY;
 let viewportWidth = window.innerWidth;
 
+let rapidlisteners = 0;
+
 function updateDebug() {
     document.getElementById("mousecoords").innerHTML = `
                 X: ${mouseX} |
@@ -59,6 +61,7 @@ document.addEventListener(
         updateDebug();
     }
 );
+rapidlisteners++;
 window.addEventListener(
     "resize",
     () => {
@@ -66,7 +69,7 @@ window.addEventListener(
         updateDebug();
         
     }
-)
+);rapidlisteners++;
 
 document.getElementById("log-selected-item").addEventListener(
     "click",
@@ -161,7 +164,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                 });
 
             }
-        );
+        );rapidlisteners ++;
 
         // ON MOUSEOUT
         entryItem.addEventListener(
@@ -180,7 +183,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                     }
                 });
             }
-        );
+        );rapidlisteners ++;
 
         // ONCLICK
         entryItem.addEventListener(
@@ -314,12 +317,14 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                             `;
                                     }
                                 );
+                                rapidlisteners ++;
                                 containerDate.addEventListener(
                                     "mouseleave",
                                     () => {
                                         document.getElementById(`date-dropdown`).style.visibility = "hidden";
                                     }
                                 );
+                                rapidlisteners ++;
                             }
 
                             // CONTENTS
@@ -347,12 +352,14 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                             `;
                                         }
                                     );
+                                    rapidlisteners ++;
                                     containerContents.addEventListener(
                                         "mouseleave",
                                         () => {
                                             document.getElementById(`contents-dropdown`).style.visibility = "hidden";
                                         }
                                     );
+                                    rapidlisteners ++;
                                 } else {
                                     document.getElementById("info-contents").setAttribute("hidden", "hidden");
                                 }
@@ -418,13 +425,15 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                             () => {
                                 document.getElementById(`item-${title}-date`).innerHTML = Object.keys(data["dates"])[0];
                             }
-                        )
+                        );
+                        rapidlisteners ++;
                         document.getElementById(`item-${title}-date`).addEventListener(
                             "mouseleave",
                             () => {
                                 document.getElementById(`item-${title}-date`).innerHTML = Object.keys(data["dates"])[0].substring(0,4);
                             }
-                        )
+                        );
+                        rapidlisteners ++;
                     }
 
                     // LINKS
@@ -457,6 +466,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
 }).then(() => {
     console.log("All entries loaded");
     filterShitposts();
+    console.log(rapidlisteners);
 }).catch(error => {
     console.error("Error loading entries:", error);
-})
+});
