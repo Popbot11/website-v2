@@ -16,7 +16,7 @@
             console.log(URL);
             fetch("data/404-redirects.json").then(res => res.json()).then(redirects => {
                 let redirect = redirects[URL];
-                if (recirect == null) { redirect = "/index.html" }
+                if (redirect == null) { redirect = "/index.html" }
 
                 console.log(redirect);
                 window.location.href = DOMAIN+redirect;
