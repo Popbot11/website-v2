@@ -10,14 +10,14 @@
         <script>
             // first 19 chars are https://popbot.work
             // this just leaves the actual page
-            const URL = window.location.href.slice(18);
+            const URL = window.location.href.slice(19);
             const DOMAIN = "https://popbot.work";
             
             console.log(URL);
             fetch("data/404-redirects.json").then(res => res.json()).then(redirects => {
                 let redirect = redirects[URL];
                 if (recirect == null) { redirect = "/index.html" }
-                
+
                 console.log(redirect);
                 window.location.href = DOMAIN+redirect;
             }).catch(error => {

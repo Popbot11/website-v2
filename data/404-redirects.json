@@ -1,4 +1,4 @@
 {
-    "music/iota.html": "content/iota/index.html",
-    "test": "/content/index.html"
+    "/music/iota.html": "content/iota/index.html",
+    "/test": "/content/index.html"
 }
