@@ -1,0 +1,22 @@
+{
+    "title": "capsule",
+    "dates": {
+        "2025-06-23": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/capsule",
+        "bandcamp": "https://popbotmusic.bandcamp.com/track/capsule"
+    },
+    "media": {
+        "cover.png": "cover artwork for capsule i made by recursively screenshotting a bunch of screenshots of increasingly dense window arrangements."
+    }
+}
