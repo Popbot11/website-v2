@@ -1,0 +1,25 @@
+{
+    "title": "Anukari Demos",
+    "dates": {
+        "2025-06-25": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "commission"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "Evan Anukari": "anukari dev"
+    },
+    "links": {
+        "watercolor sc": "https://soundcloud.com/anukari/watercolor-feat-popbot-3",
+        "feelin plucky sc": "https://soundcloud.com/anukari/feelin-plucky-feat-popbot-13",
+        "anukari homepage": "https://anukari.com/"
+    },
+    "contents": [
+        "Watercolor",
+        "Feellin Plucky"
+    ]
+}
