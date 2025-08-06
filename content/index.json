@@ -1,4 +1,28 @@
 {
+    "PB Kicks": {
+        "category": "contraption",
+        "date": "2025-08-05"
+    },
+    "PB Crunch Mech": {
+        "category": "contraption",
+        "date": "2025-08-05"
+    },
+    "PB Digital Noise": {
+        "category": "contraption",
+        "date": "2025-08-05"
+    },
+    "PB Distorted Hits": {
+        "category": "contraption",
+        "date": "2025-08-05"
+    },
+    "PB Odd Gongs": {
+        "category": "contraption",
+        "date": "2025-08-05"
+    },
+    "PB Physical Hits": {
+        "category": "contraption",
+        "date": "2025-08-05"
+    },
     "time waster": {
         "category": "music",
         "date": "2025-07-20"
@@ -27,7 +51,7 @@
         "category": "other",
         "date": "2025-05-18"
     },
-    "SiS Pack 1 PCRF": {
+    "SiS Pack 1 (PCRF)": {
         "category": "contraption",
         "date": "2025-05-18"
     },

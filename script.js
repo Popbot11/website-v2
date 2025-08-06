@@ -20,6 +20,7 @@ const priorityTags = [
     "wip",
     "m4l",
     "paid",
+    "samples",
     "unfinished"
 ];
 
