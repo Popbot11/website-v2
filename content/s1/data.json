@@ -16,7 +16,9 @@
     },
     "links": {
         "soundcloud": "https://soundcloud.com/popbot1/infinitum-s1",
-        "bandcamp": "https://amfivolia.bandcamp.com/track/s1"
+        "bandcamp": "https://amfivolia.bandcamp.com/track/s1",
+        "youtube": "https://www.youtube.com/watch?v=vF-Usz_Iw7I&list=OLAK5uy_mIM8BNBmRRwD0D6XfxF4d8aToEaL5BFL8",
+        "newgrounds": "https://www.newgrounds.com/audio/listen/1458904"
     },
     "media": {
         "s1-cover.png": "cover artwork made by amfivolia in blender"
