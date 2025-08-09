@@ -1,0 +1,21 @@
+{
+    "title": "im mister science",
+    "dates": {
+        "2025-08-08": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single",
+        "collab",
+        "shitpost"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "lukasipo": "contributed some sounds"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/im-mister-science"
+    }
+}
