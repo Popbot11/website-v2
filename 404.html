@@ -14,7 +14,7 @@
             const DOMAIN = "https://popbot.work";
             
             console.log(URL);
-            fetch("data/404-redirects.json").then(res => res.json()).then(redirects => {
+            fetch("../data/404-redirects.json").then(res => res.json()).then(redirects => {
                 let redirect = redirects[URL];
                 // if (redirect == null) { redirect = "/index.html" }
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script type="module">
+            fetch("../data/personData.json").then(res => res.json()).then(people => {
+            console.log(people);
+            for (const name of (Object.keys(people))) {
+                let personItem = document.createElement("span");
+                personItem.innerHTML = `<b>${name}</b>: ${Object.keys(people[name])
+                    .map(linkText => {
+                        return `<a href="${people[name][linkText]}" target="_blank">${linkText}</a>`;
+                    }).join(' | ')}
+                <br>`;
+
+                
+                document.getElementById("people").appendChild(personItem);
+            }
+        });
+        </script>   
+        <a href="../../index.html">home</a> | <a href="../content/index.html">expert mode</a> <br><br>
+        <p>currently this page just lists off all my collaborators as expressed in my data in the order that I add them to the file. This data is not very clean or reliable, but it's something which in this case is better than nothing. I plan to add more to this in the future.</p>
+        <div id="people"></div>
+
+    </body>
+</html>
