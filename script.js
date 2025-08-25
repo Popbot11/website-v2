@@ -79,13 +79,27 @@ document.getElementById("log-selected-item").addEventListener(
     }
 )
 
+let contactMenu = document.getElementById("contact-menu");
+let optionsMenu = document.getElementById("options-menu");
+
+// CONTACT MENU
+document.getElementById("contact-button").addEventListener(
+    "click",
+    () => {
+        optionsMenu.style.visibility = "hidden";
+        if (contactMenu.style.visibility == "visible") {
+            contactMenu.style.visibility = "hidden";
+        } else {
+            contactMenu.style.visibility = "visible";
+        }
+    }
+);
 
 // OPTIONS MENU
-
 document.getElementById("options-button").addEventListener(
     "click",
     () => {
-        let optionsMenu = document.getElementById("options-menu");
+        contactMenu.style.visibility = "hidden";
         if (optionsMenu.style.visibility == "visible") {
             optionsMenu.style.visibility = "hidden";
         } else {
@@ -116,6 +130,8 @@ document.getElementById("include-shitposts").addEventListener(
         filterShitposts();
     }
 );
+
+
 
 let selectedItems = new Set();
 
