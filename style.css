@@ -58,14 +58,7 @@ body {
 
     /* transform: rotate(3deg); */
 }
-#container-video {
-    /* transform: rotate(-7deg); */
-    box-shadow: 
-        0px 0px 30px rgba(0, 91, 107, 0.61),
-        20px -20px 100px rgba(0, 255, 213, 0.333),
-        inset 20px -20px 100px rgba(255, 142, 76, 0.313),
-        -20px -20px 400px 100px rgba(111, 0, 255, 0.16);
-}
+
 #container-contraption {
     color: rgb(0, 0, 0);
     background-image: repeating-linear-gradient(
@@ -88,9 +81,35 @@ body {
 #container-video {
     overflow-x: hidden;
     border-style: hidden;
+    box-shadow: 
+        0px 0px 20px rgba(0, 7, 100, 0.258),
+        inset 0px 40px 70px 30px rgba(160, 207, 31, 0.66);
+    background-image: repeating-linear-gradient(
+        -10deg ,
+        rgba(255, 0, 170, 0.401) 0%, 
+        rgb(237, 203, 125) 10%, 
+        rgba(188, 195, 85, 0.584) 30%, 
+        rgba(255, 0, 170, 0.401) 40%); 
 }
 #container-other {
     overflow-x: hidden;
+    border-style:hidden;
+    
+
+    box-shadow: 
+        0px 0px 30px rgba(0, 91, 107, 0.61),
+        20px -20px 100px rgba(94, 255, 0, 0.333),
+        inset -100px 40px 100px rgba(146, 139, 9, 0.407),
+        -20px -20px 400px 100px rgba(111, 0, 255, 0.16);
+
+    background-image: repeating-linear-gradient(
+        100deg ,
+        rgba(1, 255, 230, 0.401) 0%, 
+        rgba(76, 0, 217, 0.168) 2%, 
+        rgba(255, 221, 0, 0.119) 3%, 
+        rgba(255, 0, 170, 0.116) 10%); 
+
+    
 }
 
 #container-buttons {
@@ -108,6 +127,13 @@ body {
     font-size: small;
     transform: translateX(-7px);
     background-color: rgba(240, 248, 255, 0.312);
+
+    background-image: repeating-linear-gradient(
+        3deg ,
+        rgba(255, 136, 1, 0.082) 0%, 
+        rgba(217, 0, 51, 0.053) 20%, 
+        rgba(0, 76, 255, 0.058) 40%, 
+        rgba(255, 136, 1, 0.082) 60%); 
     
 }
 #container-info button {
@@ -329,7 +355,103 @@ body {
     right: 0px;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 1300px) {
+    #mousecoords {
+        visibility: visible;
+    }
+
+    #container-info {
+        width: 1250px;
+        height: 140px;
+        left: 5px;
+    }
+
+    #container-music {
+        width: 300px;
+        height: 440px;
+        left: 5px;
+        top: 155px;
+    }
+
+    #container-contraption {
+        width: 300px;
+        height: 350px;
+        left: 330px;
+        top: 155px;
+    }
+
+    #container-video {
+        width: 300px;
+        height: 365px;
+        left: 645px;
+        top: 170px;
+    }
+
+    #container-other {
+        width: 275px;
+        height: 260px;
+        left: 967px;
+        top: 160px;
+    }
+
+    #container-buttons {
+        width: 100px;
+        height: 110px;
+        left: 980px;
+        top: 440px;
+    }
+
+}
+
+@media (max-width: 1300px) {
+    #mousecoords {
+        visibility: visible;
+    }
+
+    #container-info {
+        width: 960px;
+        height: 140px;
+        left: 5px;
+    }
+
+    #container-music {
+        width: 300px;
+        height: 440px;
+        left: 5px;
+        top: 155px;
+    }
+
+    #container-contraption {
+        width: 300px;
+        height: 350px;
+        left: 330px;
+        top: 155px;
+    }
+
+    #container-video {
+        width: 300px;
+        height: 230px;
+        left: 650px;
+        top: 155px;
+    }
+
+    #container-other {
+        width: 250px;
+        height: 230px;
+        left: 650px;
+        top: 410px;
+    }
+
+    #container-buttons {
+        width: 100px;
+        height: 110px;
+        left: 520px;
+        top: 515px;
+    }
+
+}
+
+@media (max-width: 1000px) {
     #mousecoords {
         visibility: visible;
     }
@@ -377,6 +499,9 @@ body {
 
 }
 
+
+/* ----------- */
+
 @media (max-width: 650px) {
     #options-menu {
         position: fixed;
@@ -420,6 +545,7 @@ body {
         height: 440px;
         padding: 0px;
         top: 155px;
+        left: 5px;
     }
 
     #container-contraption {
@@ -427,6 +553,7 @@ body {
         height: 280px;
         padding: 0px;
         top: 620px;
+        left: 5px;
     }
 
     #container-video {
@@ -434,6 +561,7 @@ body {
         height: 300px;
         padding: 0px;
         top: 925px;
+        left: 5px;
     }
 
     #container-other {
@@ -441,6 +569,7 @@ body {
         height: 230px;
         top: 1240px;
         padding: 0px;
+        left: 5px;
     }
 
     #container-buttons {
@@ -448,5 +577,9 @@ body {
         /* height: 80px; */
         /* left: 310px; */
         top: 1475px;
+        left: 5px;
     }
 }
+
+/* --------- */
+

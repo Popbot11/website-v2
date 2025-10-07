@@ -1,0 +1,24 @@
+{
+    "title": "press kit",
+    "dates": {
+        "2025-09-30": "published"
+    },
+    "categories": [
+        "other"
+    ],
+    "tags": [
+        "downloads"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "webpage": "content/press-kit/index.html",
+        "download": "content/press-kit/media/POPBOT-PRESS-KIT.zip"
+    },
+    "media": {
+        "media/Photographs/Dark1.png": "Photograph of me setting up my field recorder in the middle of the night during a visit to colchester",
+        "media/Photographs/Dark2.png": "A photograph of me",
+        "media/Photographs/Pipe_Full.jpg": "A Photograph of me in a cement pipe"
+    }
+}

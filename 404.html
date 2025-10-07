@@ -15,11 +15,11 @@
             
             console.log(URL);
             fetch("../data/404-redirects.json").then(res => res.json()).then(redirects => {
-                let redirect = redirects[URL];
-                // if (redirect == null) { redirect = "/index.html" }
+                let redirect = DOMAIN;
+                if (redirect != null || redirect != undefined) { redirect += redirects[URL] }
 
                 console.log(redirect);
-                window.location.href = DOMAIN+redirect;
+                window.location.href = redirect;
             }).catch(error => {
                 console.log(error);
             })
