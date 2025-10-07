@@ -4,10 +4,16 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>popbot.work</title>
-        <meta name="description" content="">
+        <meta name="description" content="description">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; media-src 'self' http: https: data:;">
-
+        <!-- <meta http-equiv="Content-Security-Policy" content="
+            default-src 'self' http://127.0.0.1:5501;
+            script-src 'self' 'unsafe-inline' 'unsafe-eval' http://127.0.0.1:5501;
+            img-src 'self' data: blob: http: https:;
+            media-src 'self' data: blob: http: https:;
+            style-src 'self' 'unsafe-inline' http: https:;
+            connect-src 'self' http: https:;
+        "> -->
         <link rel="stylesheet" href="style.css">
 
         <!-- DEFINING SVG FIILTERS FOR CSS -->
@@ -30,9 +36,10 @@
             </defs>
         </svg>
     </head>
+    
     <body>
         <script src="script.js" type="module"></script>  
-
+        
         <!-- NAV BAR -->
         <span class="nav">
             popbot.work | 
@@ -43,7 +50,6 @@
             <span id="mousecoords">😺😺😺🦊🦊🦊🦊rmmmrrp!</span>
             <hr>
         </span>
-
         <!-- MAIN CONTENT -->
         <div class="main" id="main">           
 

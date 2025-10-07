@@ -564,5 +564,13 @@
         "discord": "https://discord.gg/ywwYfhGbDp",
         "bluesky": "https://bsky.app/profile/anukari.bsky.social",
         "youtube": "https://www.youtube.com/@anukarimusic"
+    },
+    "monkat": {
+        "website": "https://monckat.net/"
+    },
+    "ellularautomaton": {
+        "website": "https://minor-locrian.neocities.org/",
+        "tumblr": "https://www.tumblr.com/minor-locrian",
+        "bandcamp": "https://cellularautomaton.bandcamp.com/"
     }
 }
