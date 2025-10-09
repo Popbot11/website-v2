@@ -111,15 +111,12 @@ body {
 
     
 }
-
 #container-buttons {
     overflow-x: hidden;
     border-style: hidden;
     
     background-color: rgba(0, 0, 0, 0);
 }
-
-
 
 
 
@@ -402,7 +399,6 @@ body {
     }
 
 }
-
 @media (max-width: 1300px) {
     #mousecoords {
         visibility: visible;
@@ -450,7 +446,6 @@ body {
     }
 
 }
-
 @media (max-width: 1000px) {
     #mousecoords {
         visibility: visible;
@@ -498,10 +493,6 @@ body {
     }
 
 }
-
-
-/* ----------- */
-
 @media (max-width: 650px) {
     #options-menu {
         position: fixed;
@@ -581,5 +572,12 @@ body {
     }
 }
 
-/* --------- */
-
+#link_containment_zone {
+    width:120px;
+    top: 1000px;
+    float: right;
+    z-index: 100000;
+}
+#link_containment_zone img {
+    width: 100px;
+}

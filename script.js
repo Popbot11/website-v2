@@ -157,7 +157,6 @@ let counter = document.getElementById("counter");
 const shop = {
     "click strength": {
         name: "click strength",
-        threshold: 0,
         price: 4,
         description: "multiplies click strength by a factor of 1.3",
         available: true,
@@ -196,7 +195,6 @@ const shop = {
     },
     "the greener": {
         name: "the greener",
-        threshold: 0,
         price: 50,
         description: "gets greasy with it -- temp second shop item for testing reasons",
         available: true,
@@ -232,6 +230,62 @@ const shop = {
 
             return item_el;
         }
+    },
+    "link": {
+        name: "link",
+        price: 10,
+        ddescription: "he helps you out",
+        available: true,
+        effect: function() {
+            if (clicks >= this.price && this.available) {
+                clicks-= this.price;
+                this.available = false;
+                let link_containment_zone = document.createElement("div")
+                link_containment_zone.setAttribute("id", "link_containment_zone")
+
+                let link = document.createElement("img");
+                link.setAttribute("id", "linkImage");
+                link.setAttribute("src", "media/link.jpg");
+
+                link_containment_zone.appendChild(link);
+                link_containment_zone.appendChild(document.createElement("br"));
+
+                let link_button = document.createElement("button");
+                link_button.innerHTML = "click for help!";
+                link_button.setAttribute("onclick", `document.getElementById("link_containment_zone_help_text").innerHTML="<br>clicking the options button will gain you points, which you can use to buy nifty items from the shop! meow!"; document.getElementById("linkImage").setAttribute("src", "media/link2.png")`);
+                link_containment_zone.appendChild(link_button);
+                
+                let help_text = document.createElement("span");
+                help_text.setAttribute("id", "link_containment_zone_help_text");
+                link_containment_zone.appendChild(help_text);
+
+                document.body.appendChild(link_containment_zone);
+            }
+
+            counter.innerHTML = clicks;
+            document.getElementById("shop-item-"+this.name).replaceChildren(this.render());
+        },
+        render: function() {
+            let item_el = document.createElement("div");
+            if (this.available) {
+                let button_el = document.createElement("button");
+                button_el.innerHTML = "activate link"
+                button_el.addEventListener(
+                    "click",
+                    () => {
+                        shop[this.name].effect();
+                    }
+                );
+
+                item_el.innerHTML = `${this.name} | price: ${this.price} | `;
+                item_el.appendChild(button_el);
+            } else {
+                item_el.innerHTML = `${this.name} | we fresh out! | `;
+            }
+
+            return item_el;
+        }
+
     }
 }
 
