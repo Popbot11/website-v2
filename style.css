@@ -573,7 +573,7 @@ body {
 }
 
 #link_containment_zone {
-    width:120px;
+    width:100px;
     top: 1000px;
     float: right;
     z-index: 100000;

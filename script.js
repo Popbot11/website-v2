@@ -252,7 +252,7 @@ const shop = {
 
                 let link_button = document.createElement("button");
                 link_button.innerHTML = "click for help!";
-                link_button.setAttribute("onclick", `document.getElementById("link_containment_zone_help_text").innerHTML="<br>clicking the options button will gain you points, which you can use to buy nifty items from the shop! meow!"; document.getElementById("linkImage").setAttribute("src", "media/link2.png")`);
+                link_button.setAttribute("onclick", `document.getElementById("link_containment_zone_help_text").innerHTML="<br>*buuurp*"; document.getElementById("linkImage").setAttribute("src", "media/link2.png"); setTimeout(function(){document.getElementById("link_containment_zone_help_text").innerHTML="<br>";document.getElementById("linkImage").setAttribute("src", "media/link.jpg");}, 1000);`);
                 link_containment_zone.appendChild(link_button);
                 
                 let help_text = document.createElement("span");
