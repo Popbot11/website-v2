@@ -1,7 +1,3 @@
-// Logic for spacing out containers
-// the purpose of the container class is to dynamically render out boxes so that when the window resizes, they move around
-// implement this later if you want. for now, leave it as just being static. 
-
 const getViewportWidth = () => {
     if (typeof window.innerWidth != 'undefined') {
         return window.innerWidth;
@@ -35,14 +31,16 @@ function recreateNode(el, withChildren) {
     el.parentNode.replaceChild(newEl, el);
   }
 }
-
 // DEBUG STUFF
+
+
 
 // track mouse position
 let mouseX;
 let mouseY;
 let viewportWidth = window.innerWidth;
 
+// number of event listeners
 let rapidlisteners = 0;
 
 function updateDebug() {
@@ -52,7 +50,6 @@ function updateDebug() {
                 s: ${window.scrollY} | 
                 vp: ${viewportWidth}`;
 }
-
 document.addEventListener(
     "mousemove",
     () => {
@@ -96,6 +93,9 @@ document.getElementById("contact-button").addEventListener(
 );
 
 // OPTIONS MENU
+
+
+
 document.getElementById("options-button").addEventListener(
     "click",
     () => {
@@ -105,6 +105,8 @@ document.getElementById("options-button").addEventListener(
         } else {
             optionsMenu.style.visibility = "visible";
         }
+
+        buttonClick();
     }
 );
 function filterShitposts() {
@@ -131,6 +133,154 @@ document.getElementById("include-shitposts").addEventListener(
     }
 );
 
+// =======================================================
+// ---CLICKER NONSENSE---
+// =======================================================
+let clicks = 0;
+let clickValue = 1;
+let counter = document.getElementById("counter");
+
+// shop item function structure:
+// effect: the thing that happens when you click the buy button
+//      check if price matches, and optionally if it's available
+//      subtract price from clicks
+//      do logic specific to shop item
+//      increment quantity, or modify availabillity 
+//      VITALLY: counter.innerHTML = clicks;
+//      VITALLY: document.getElementById("shop-item-"+this.name).replaceChildren(this.render());
+// render: the thing used to return html that renders the item in the shop list
+//      initalize item_el 
+//      create button element, add click event listener that executes shop[this.name].effect();
+//      whatever else in item_el, append button to item_el
+//      return item_el
+
+const shop = {
+    "click strength": {
+        name: "click strength",
+        threshold: 0,
+        price: 4,
+        description: "multiplies click strength by a factor of 1.3",
+        available: true,
+        quantity: 0,
+        effect: function() {
+            if (clicks >= this.price && this.available) {
+                clicks -= this.price;
+                clickValue = Math.ceil(clickValue * 1.3);
+
+                this.price = Math.floor(this.price * 1.6);
+                this.quantity += 1;
+
+                counter.innerHTML = clicks;
+                document.getElementById("shop-item-"+this.name).replaceChildren(this.render());
+            } 
+            
+        },
+
+        render: function() {
+            let button_el = document.createElement("button");
+                button_el.innerHTML = "Buy " + this.name;
+                button_el.addEventListener(
+                    "click",
+                    () => {
+                        shop[this.name].effect();
+                    }
+                );
+
+            let item_el = document.createElement("div");
+                item_el.innerHTML = `${this.name} | price: ${this.price} | owned: ${this.quantity} | strength: ${clickValue} | `;
+                item_el.appendChild(button_el);
+                // item_el.innerHTML += `current click strength: ${clickValue}`;
+
+            return item_el;
+        }
+    },
+    "the greener": {
+        name: "the greener",
+        threshold: 0,
+        price: 50,
+        description: "gets greasy with it -- temp second shop item for testing reasons",
+        available: true,
+        effect: function() {
+            if (clicks >= this.price) {
+                clicks-= this.price;
+                this.available = false;
+
+                document.body.style.backgroundColor = "green"
+
+                counter.innerHTML = clicks;
+                document.getElementById("shop-item-"+this.name).replaceChildren(this.render());
+            }
+        },
+        render: function() {
+            let item_el = document.createElement("div");
+
+            if (this.available) {
+                let button_el = document.createElement("button");
+                    button_el.innerHTML = "Buy " + this.name;
+                    button_el.addEventListener(
+                        "click",
+                        () => {
+                            shop[this.name].effect();
+                        }
+                    );
+
+                item_el.innerHTML = `${this.name} | price: ${this.price} | `;
+                item_el.appendChild(button_el);
+            } else {
+                item_el.innerHTML = `${this.name} | we fresh out! | `;
+            }   
+
+            return item_el;
+        }
+    }
+}
+
+
+function updateShop(item) {
+    document.getElementById(item.name+"-stats").innerHTML=`${item.name} | price: ${item.price} | owned: ${item.quantity} | `;
+}
+
+function showShop() {
+    let shop_target = document.getElementById("info-links");
+    Object.keys(shop).forEach(item_name => {
+        let item_el = shop[item_name].render();
+        item_el.setAttribute("id", "shop-item-"+item_name);
+        shop_target.appendChild(item_el);
+    });   
+}
+
+
+document.getElementById("shop").addEventListener(
+    "click",
+    () => {
+        // CLEAR EXISTING FIELDS
+        {
+            ["info-tags", "info-date", "info-links", "info-description", "info-contributors"].forEach(id => {
+                document.getElementById(id).innerHTML="";
+            });
+            document.getElementById("info-title").innerHTML="shop<br>";
+            document.getElementById("info-contents").setAttribute("hidden", "hidden");
+            document.getElementById("info-media").setAttribute("hidden", "hidden");
+        }
+
+        showShop();
+    }
+)
+
+function buttonClick() {
+    clicks += clickValue;
+    if (clicks < 51) {
+        if (clicks > 3) {
+            document.getElementById("counter").style.visibility = "visible";
+        }
+        if (clicks == 4) {
+            document.getElementById("shop-button").style.visibility = "visible";
+        }
+    }
+    counter.innerHTML = clicks
+}
+
+
 
 
 let selectedItems = new Set();
@@ -144,13 +294,10 @@ fetch("content/index.json").then(res => res.json()).then(index => {
     Object.keys(index).forEach(async title => {
         const path = title.toLowerCase().replaceAll(" ", "-");
         
-
-
         let expertModeButton = document.createElement("span");
         expertModeButton.className = "expert-mode";
         expertModeButton.id = `item-${title}-expert-mode`;
         expertModeButton.innerHTML = `<a>expert mode</a>`
-
 
         let entryItem = document.createElement("div");
         entryItem.className="entry";
@@ -163,8 +310,6 @@ fetch("content/index.json").then(res => res.json()).then(index => {
         `;
         entryItem.appendChild(expertModeButton)
         entryItem.innerHTML += `<span class="links" id="item-${title}-links"></span>`;
-
-
 
         // ON MOUSEOVER
         entryItem.addEventListener(
@@ -291,6 +436,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                 Object.keys(data.contributors).forEach(contributor => {
                                     let button = document.createElement("button");
                                     button.innerHTML = contributor;
+                                    // observe: the fucker 
                                     button.setAttribute("onclick", "fetch('./data/personData.json').then(res => res.json()).then(personData => {try{document.getElementById('contributor-links').innerHTML = `<b>"+contributor+":</b> "+data.contributors[contributor]+"<br><b>Links:</b> ${Object.keys(personData['"+contributor.toLowerCase()+"']).map(text => \"<a target='_blank' href='\"+personData['"+contributor.toLowerCase()+"'][text]+\"'>\"+text+\"</a>\").join(' | ')}` + `<br><button onclick=\"document.getElementById('contributor-links').innerHTML=null;\">hide</button>`;}catch{document.getElementById('contributor-links').innerHTML = `<b>"+contributor+"</b>: "+data.contributors[contributor]+"<br><b>Links:</b>  isn't in the database yet; no links` + `<br><button onclick=\"document.getElementById('contributor-links').innerHTML=null;\">hide</button>`;}})");
                                     document.getElementById('contributor-buttons').appendChild(button);
                                     document.getElementById('contributor-buttons').innerHTML+= " ";
@@ -483,7 +629,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
 }).then(() => {
     console.log("All entries loaded");
     filterShitposts();
-    console.log(rapidlisteners);
+    // console.log(rapidlisteners);
 }).catch(error => {
     console.error("Error loading entries:", error);
 });
