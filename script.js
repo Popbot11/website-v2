@@ -157,7 +157,7 @@ let counter = document.getElementById("counter");
 const shop = {
     "click strength": {
         name: "click strength",
-        price: 4,
+        price: 45,
         description: "multiplies click strength by a factor of 1.3",
         available: true,
         quantity: 0,
@@ -195,7 +195,7 @@ const shop = {
     },
     "the greener": {
         name: "the greener",
-        price: 50,
+        price: 500,
         description: "gets greasy with it -- temp second shop item for testing reasons",
         available: true,
         effect: function() {
@@ -233,8 +233,8 @@ const shop = {
     },
     "link": {
         name: "link",
-        price: 10,
-        ddescription: "he helps you out",
+        price: 1000,
+        description: "he helps you out",
         available: true,
         effect: function() {
             if (clicks >= this.price && this.available) {
@@ -286,6 +286,51 @@ const shop = {
             return item_el;
         }
 
+    },
+    "move options menu": {
+        name: "move options menu",
+        price: 1,
+        description: "moves the options menu",
+        available: true,
+        quantity: 0,
+        effect: function() {
+            if (clicks >= this.price && this.available) {
+                clicks -= this.price;
+
+                this.price = Math.floor(this.price * 1.6);
+                this.quantity += 1;
+
+                
+                let options_menu = document.getElementById("options-menu");
+
+                let topamt = Math.ceil(Math.random() * 15)
+                let currenttop = parseInt(options_menu.style.top, topamt) || 40;
+                options_menu.style.top = (currenttop + topamt) + "px";
+
+                let leftamt = Math.ceil(Math.random() * 15)
+                let currentleft = parseInt(options_menu.style.left, leftamt) || 200;
+                options_menu.style.left = (currentleft + leftamt) + "px";
+
+                counter.innerHTML = clicks;
+                document.getElementById("shop-item-"+this.name).replaceChildren(this.render());
+            } 
+        },
+        render: function() {
+            let item_el = document.createElement("div");
+            let button_el = document.createElement("button");
+            button_el.innerHTML = "Buy"
+            button_el.addEventListener(
+                "click",
+                () => {
+                    shop[this.name].effect();
+                }
+            );
+
+            item_el.innerHTML = `${this.name} | price: ${this.price} | owned: ${this.quantity} | `;
+            item_el.appendChild(button_el);
+
+            return item_el;
+        }
     }
 }
 
