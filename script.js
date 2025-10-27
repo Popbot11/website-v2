@@ -354,11 +354,10 @@ document.getElementById("shop").addEventListener(
     () => {
         // CLEAR EXISTING FIELDS
         {
-            ["info-tags", "info-date", "info-links", "info-description", "info-contributors"].forEach(id => {
+            ["info-tags", "info-date", "info-links", "info-description", "info-contributors", "info-contents"].forEach(id => {
                 document.getElementById(id).innerHTML="";
             });
             document.getElementById("info-title").innerHTML="shop<br>";
-            document.getElementById("info-contents").setAttribute("hidden", "hidden");
             document.getElementById("info-media").setAttribute("hidden", "hidden");
         }
 
@@ -591,39 +590,11 @@ fetch("content/index.json").then(res => res.json()).then(index => {
 
                             // CONTENTS
                             {
-                                if (Object.keys(data).includes("contents")){
-                                    document.getElementById("info-contents").removeAttribute("hidden");
-                                    
-                                    document.getElementById("contents-dropdown").innerHTML = data["contents"].map((track, index) => `<div>${index + 1}. ${track}</div>`).join('')
 
-                                    recreateNode(document.getElementById("info-contents"));
-                                    const containerContents = document.getElementById(`info-contents`);
-                                    // containerDate.innerHTML = Object.keys(data["contents"])[0];
-                                    containerContents.addEventListener(
-                                        "mouseover",
-                                        () => {
-                                            
-                                            document.getElementById(`contents-dropdown`).style=`
-                                                top: ${mouseY + 7 + window.scrollY}px;
-                                                left: ${Math.max(
-                                                    Math.min(
-                                                        mouseX + 10 + window.scrollX - (document.getElementById("contents-dropdown").offsetWidth / 2), 
-                                                        getViewportWidth() - 253.2), 
-                                                    0)}px;
-                                                visibility: visible;
-                                            `;
-                                        }
-                                    );
-                                    rapidlisteners ++;
-                                    containerContents.addEventListener(
-                                        "mouseleave",
-                                        () => {
-                                            document.getElementById(`contents-dropdown`).style.visibility = "hidden";
-                                        }
-                                    );
-                                    rapidlisteners ++;
+                                if (Object.keys(data).includes("contents")) {
+                                    document.getElementById("info-contents").innerHTML = `<b>Tracklist: </b><br><div id="info-contents-list">` + data["contents"].map((track, index) => `${index + 1}. ${track}`).join('<br>') + "</div>";
                                 } else {
-                                    document.getElementById("info-contents").setAttribute("hidden", "hidden");
+                                    document.getElementById("info-contents").innerHTML = '';
                                 }
                             }
 

@@ -1,7 +1,8 @@
 {
     "title": "2021-2024 neglected works",
     "dates": {
-        "2025-10-26": "published"
+        "2025-03-02": "published on soundcloud",
+        "2025-10-26": "published on bandcamp"
     },
     "categories": [
         "music"
@@ -9,11 +10,16 @@
     "tags": [
         "collection",
         "collab",
-        "wip",
-        "unfinished"
+        "Unfinished"
     ],
     "contributors": {
-        "Popbot": "primary creator"
+        "Popbot": "primary creator",
+        "Dream Static": "collaborator on Awakening (track 40)",
+        "ry3": "collaborator on track 54",
+        "poztman": "made the track I tried to remix here",
+        "jhl": "collabor on tracks 72 and 84",
+        "stasys": "creator of the track i tried to remix",
+        "lukasipo": "collaborator on track 62"
     },
     "links": {
         "bandcamp": "https://popbotmusic.bandcamp.com/album/2021-2024-neglected-works",
