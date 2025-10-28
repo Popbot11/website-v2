@@ -156,7 +156,7 @@ body {
     padding-left: 4px;
     margin-top: 3px;
     margin-bottom: 3px;
-    /* width: 95%; */
+    /* width: 98%; */
 
     border-left-style: dotted;
     border-color: rgba(0, 0, 0, 0.305);
@@ -345,6 +345,18 @@ body {
     -webkit-backdrop-filter: blur(7px) hue-rotate(90deg);
     backdrop-filter: blur(7px) hue-rotate(90deg);
     visibility: hidden; 
+}
+
+/* AUDIO PLAYER */
+#player-body{
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    background-color: rgb(212, 255, 157);
+    z-index: 4;
+    padding: 5px;
 }
 
 /* OTHER BULLSHIT */

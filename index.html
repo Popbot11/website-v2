@@ -6,14 +6,6 @@
         <title>popbot.work</title>
         <meta name="description" content="description">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <meta http-equiv="Content-Security-Policy" content="
-            default-src 'self' http://127.0.0.1:5501;
-            script-src 'self' 'unsafe-inline' 'unsafe-eval' http://127.0.0.1:5501;
-            img-src 'self' data: blob: http: https:;
-            media-src 'self' data: blob: http: https:;
-            style-src 'self' 'unsafe-inline' http: https:;
-            connect-src 'self' http: https:;
-        "> -->
         <link rel="stylesheet" href="style.css">
 
         <!-- DEFINING SVG FIILTERS FOR CSS -->
@@ -119,17 +111,13 @@
 
         <!-- DROPDOWNS -->
         <span id="date-dropdown" class="date-dropdown"></span>
-        <span id="contents-dropdown" class="contents-dropdown"></span>
 
         <!-- OPTIONS MENU -->
         <span id="options-menu">
-            
             <input type="checkbox" id="include-shitposts" ><label for="include-shitposts">include shitposts</label><br>
-            
             <input type="checkbox" id="multi-select"><label for="multi-select">multi-select</label><br>
             ---debug---<br>
             <button id="log-selected-item">log selected item</button>
-            
         </span>   
 
         <!-- CONTACT MENU -->
@@ -141,7 +129,25 @@
             Please, do not hesitate to reach out!
          </span>
 
-         
+         <!-- AUDIO PLAYER -->
+        <div id="player-body">
+            <span id="player-title">Track Title</span> |             
+            <span id="player-timecode"> x:xx - x:xx</span> |             
+            <span id="player-controls">
+                <button id="player-control-transport">play</button> |             
+                <button id="player-control-prev"><<</button>
+                <button id="player-control-next">>></button>
+            </span> |             
+            <br>
+            <span id="player-progress">
+                <input 
+                    type="range"
+                    style="
+                        width: calc(100% - 15px);
+                    ">
+            </span>
+        
+        </div>
         
     </body>
 </html>
