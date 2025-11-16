@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <button onclick="playerPlay()" id="transport">play</button> | 
+        <button onclick="playerPrev()" id="prev">prev</button>
+        <button onclick="playerNext()" id="next">next</button>
+
+        <hr>
+        <div id="queue"></div>
+        <script>
+
+            // keep track of player info
+            const player = {
+                active: false,
+                current: "",
+                length: 0,
+                queue: [],
+                queuePos: 0
+            }   
+
+            // setup audio
+            let audioCtx = new AudioContext(); 
+            let audio = new Audio("/");
+            let source = audioCtx.createMediaElementSource(audio);
+            source.connect(audioCtx.destination);
+
+            // play or pause the audio
+            function playerPlay() {
+                playerUpdateAudio()
+                if (player.active) {
+                    player.active = false;
+                    document.getElementById("transport").innerHTML = "play";
+                    audio.pause();
+                } else {
+                    player.active = true;
+                    document.getElementById("transport").innerHTML = "pause";
+                    audio.play();
+                }
+                playerUpdateUI();
+            }
+
+            function playerNext() {
+                if (player.queuePos < player.queue.length - 1) {
+                    player.queuePos += 1;
+                    player.current = player.queue[player.queuePos]
+                } else {
+                    console.log("no, bad girl *tightens your collar*")
+                }
+                playerUpdateAudio()
+                playerUpdateUI();
+            }
+
+            function playerPrev() {
+                if (player.queuePos > 0) {
+                    player.queuePos -= 1;
+                    player.current = player.queue[player.queuePos]
+                } else {
+                    console.log("no, bad girl *tightens your collar*")
+                }
+                playerUpdateAudio()
+                playerUpdateUI();
+            }
+
+            // update the ui for the player stats
+            function playerUpdateUI() {
+                // update
+                document.getElementById("queue").innerHTML = `
+                    active: ${player.active} <br>
+                    current: ${player.current} <br>
+                    length: ${player.length} <br><br>
+                    queue: <ul>${(player.queue).map(item => `<li>${item}</li>`).join("")}</ul>
+                `
+            }
+
+            // Update the audio file currently loaded into the player
+            // does so if the audio src is not synchronized with player.current
+            function playerUpdateAudio() {
+                if (player.current != audio.currentSrc.split("/").at(-1)) {
+                    console.log(`changing audio from ${audio.src} to ${player.current}`)
+                    audio.src = "audio/"+player.current;
+                }
+                if (player.active) {
+                    audio.play();
+                }
+            }
+
+            // Load sound file names into playlist
+            fetch("data.json").then(res => res.json()).then(data => {
+                const fetchPromises = [];
+
+                // Everything happens here:
+                player.queue = [];
+                Object.values(data.audio).forEach(async filename => {
+                    player.queue.push(filename);
+                });
+
+                player.current = (player.queue)[0]
+                playerUpdateUI()
+                return Promise.all(fetchPromises);
+            }).then(() => {
+                console.log("All entries loaded");
+            }).catch(error => {
+                console.error("Error loading entries:", error);
+            });
+
+            console.log(player)
+        </script>
+
+    </body>
+</html>

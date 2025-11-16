@@ -1,0 +1,26 @@
+{
+    "title": "AUDIO PLAYER TEST",
+    "dates": {
+        "2025-10-28": "published"
+    },
+    "categories": [
+        "contraption"
+    ],
+    "tags": [
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "webpage": "./content/audio-player-test/index.html"
+    },
+    "contents": [
+        "audiofile"
+    ],
+    "audio": [
+        "audiofileA.mp3",
+        "audiofileB.mp3",
+        "audiofileC.mp3"
+    ]
+}
