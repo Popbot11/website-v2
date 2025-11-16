@@ -34,7 +34,6 @@ function recreateNode(el, withChildren) {
 // DEBUG STUFF
 
 
-
 // track mouse position
 let mouseX;
 let mouseY;
@@ -93,9 +92,6 @@ document.getElementById("contact-button").addEventListener(
 );
 
 // OPTIONS MENU
-
-
-
 document.getElementById("options-button").addEventListener(
     "click",
     () => {
@@ -132,6 +128,11 @@ document.getElementById("include-shitposts").addEventListener(
         filterShitposts();
     }
 );
+
+
+
+
+
 
 // =======================================================
 // ---CLICKER NONSENSE---
@@ -334,7 +335,6 @@ const shop = {
     }
 }
 
-
 function updateShop(item) {
     document.getElementById(item.name+"-stats").innerHTML=`${item.name} | price: ${item.price} | owned: ${item.quantity} | `;
 }
@@ -347,7 +347,6 @@ function showShop() {
         shop_target.appendChild(item_el);
     });   
 }
-
 
 document.getElementById("shop").addEventListener(
     "click",
@@ -381,8 +380,24 @@ function buttonClick() {
 
 
 
-let selectedItems = new Set();
 
+// =======================================================
+// ---AUDIO PLAYER---
+// =======================================================
+
+
+
+
+
+
+
+
+
+// =======================================================
+// ---CONTENT---
+// =======================================================
+
+let selectedItems = new Set();
 fetch("content/index.json").then(res => res.json()).then(index => {
     // this goes through and creates all of the nessisary item divs in the correct order
     // this has to be done first because all their contents will be loaded asynchronously
@@ -520,7 +535,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                             document.getElementById(`info-title`).innerHTML = `${title} -- `;
 
                             // TAGS
-                            document.getElementById(`info-tags`).innerHTML = data.tags.map(tag => `${tag}`).join(" | ") + " -- ";
+                            document.getElementById(`info-tags`).innerHTML = data.tags.map(tag => `<span class="tag-">${tag}</span>`).join('') + " -- ";
                             
 
                             // CONTRIBUTORS
@@ -534,7 +549,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                 Object.keys(data.contributors).forEach(contributor => {
                                     let button = document.createElement("button");
                                     button.innerHTML = contributor;
-                                    // observe: the fucker 
+                                    // the fucker:
                                     button.setAttribute("onclick", "fetch('./data/personData.json').then(res => res.json()).then(personData => {try{document.getElementById('contributor-links').innerHTML = `<b>"+contributor+":</b> "+data.contributors[contributor]+"<br><b>Links:</b> ${Object.keys(personData['"+contributor.toLowerCase()+"']).map(text => \"<a target='_blank' href='\"+personData['"+contributor.toLowerCase()+"'][text]+\"'>\"+text+\"</a>\").join(' | ')}` + `<br><button onclick=\"document.getElementById('contributor-links').innerHTML=null;\">hide</button>`;}catch{document.getElementById('contributor-links').innerHTML = `<b>"+contributor+"</b>: "+data.contributors[contributor]+"<br><b>Links:</b>  isn't in the database yet; no links` + `<br><button onclick=\"document.getElementById('contributor-links').innerHTML=null;\">hide</button>`;}})");
                                     document.getElementById('contributor-buttons').appendChild(button);
                                     document.getElementById('contributor-buttons').innerHTML+= " ";
