@@ -85,11 +85,11 @@
         "youtube": "https://www.youtube.com/channel/UCML-eNMLew5sfE-NaNFTzYA",
         "bandcamp": "https://juha-fool.bandcamp.com/",
         "twitter": "https://twitter.com/Juha_fool"
-    },  
+    },
     "rhino betatron": {
         "soundcloud": "https://soundcloud.com/rhinobetatron",
         "bandcamp": "https://rhinobetatron.bandcamp.com/"
-    },  
+    },
     "stasys": {
         "soundcloud": "https://soundcloud.com/stasysmusial",
         "spotify": "https://open.spotify.com/artist/42WsHNvflODKwiBMmIWHqL",
@@ -106,7 +106,7 @@
         "instagram": "https://www.instagram.com/keiitha_a/"
     },
     "manstretta": {
-        "soundcloud":"https://soundcloud.com/manstretta",
+        "soundcloud": "https://soundcloud.com/manstretta",
         "instagram": "https://www.instagram.com/manstretta_/",
         "spotify": "https://open.spotify.com/artist/3sWQqGx3UeAlSbmHbI1VcS"
     },
@@ -137,7 +137,7 @@
         "spotify": "https://open.spotify.com/artist/6IX7He83XWRn8L0Y8Worte?si=WMLOB9PZT7irUnfAZ4uZ3w",
         "twitter": "https://x.com/jhlofficixl"
     },
-    "fehu": {   
+    "fehu": {
         "soundcloud": "https://soundcloud.com/listentofehu",
         "linktree": "https://linktr.ee/listentofehu",
         "instagram": "https://www.instagram.com/listentofehu_/",
@@ -282,7 +282,7 @@
         "bandcamp": "https://bandcamp.com/wow_so_music",
         "rateyourmusic": "https://rateyourmusic.com/~pigeonfeathers"
     },
-    "malísima": {
+    "malisima": {
         "website": "http://malisima.info/",
         "soundcloud": "https://soundcloud.com/malisimapc",
         "bandcamp": "https://malisima.bandcamp.com/music"
@@ -389,87 +389,66 @@
         "instagarm": "https://www.instagram.com/viplexmusic/",
         "twitter": "https://twitter.com/viplexmusic"
     },
-    "zachary": {
-        
-    },
+    "zachary": {},
     "1emjay": {
-        
+        "soundcloud": "https://soundcloud.com/1emjay",
+        "linktree": "https://linktr.ee/1emjay",
+        "bandcamp": "https://1emjay.bandcamp.com/"
     },
     "clayne": {
-        
+        "linktree": "https://linktr.ee/clayne_official",
+        "soundcloud": "https://soundcloud.com/clayne_off",
+        "instagram": "https://www.instagram.com/clayne_music/"
     },
-    "skipaay": {
-        
-    },
-    "kyōdaina": {
-        
-    },
+    "skipaay": {},
+    "kyodaina": {},
     "datamind audio": {
-        
+        "website": "https://datamindaudio.ai/",
+        "instagram": "https://www.instagram.com/datamindaudio/"
     },
-    "jasko": {
-        
-    },
-    "worldwave": {
-        
-    },
-    "lirion": {
-        
-    },
-    "semi neural": {
-        
-    },
+    "jasko": {},
+    "worldwave": {},
+    "lirion": {},
+    "semi neural": {},
     "glum bass": {
-        
+        "soundcloud": "https://soundcloud.com/glumbass"
     },
-    "inktome": {
-        
-    },
-    "levia": {
-        
-    },
-    "xaelon": {
-        
-    },
-    "plagve": {
-        
-    },
-    "pixelpelixan": {
-        
-    },
-    "norkhuna": {
-        
-    },
-    "siedoro": {
-        
-    },
+    "inktome": {},
+    "levia": {},
+    "xaelon": {},
+    "plagve": {},
+    "pixelpelixan": {},
+    "norkhuna": {},
+    "siedoro": {},
     "bleizik": {
-        
+        "soundcloud": "https://soundcloud.com/bleizik",
+        "linktree": "https://linktr.ee/bleizik",
+        "bandcamp": "https://bleizik.bandcamp.com/",
+        "twitter": "https://x.com/Bleizik1"
     },
     "-moonowo-": {
-        
-    },
-    "kyodaina": {
-        
+        "soundcloud": "https://soundcloud.com/moons_music808",
+        "website": "https://moon800xl.pages.dev/"
     },
     "fwocl": {
-        
+        "bandcamp": "https://fwocl.bandcamp.com/",
+        "soundcloud": "https://soundcloud.com/fwocl"
     },
     "aeronoise": {
-        
+        "site": "https://bento.me/aeronoise",
+        "soundcloud": "https://soundcloud.com/aero_noise"
     },
-    "ranotot": {
-        
-    },
+    "ranotot": {},
     "apm": {
-        
+        "group alias, no links": "."
     },
     "ao": {
-        
+        "SUPERDUBSTEP SC": "https://soundcloud.com/superdubstepping",
+        "samples on gumroad": "https://aowaves.gumroad.com/",
+        "soundcloud": "https://soundcloud.com/aowaves",
+        "twitter": "https://x.com/aowaves"
     },
-    "prox.bleep": {
-        
-    },
+    "prox.bleep": {},
     "ry3": {
         "linktree": "https://linktr.ee/Ry3Music",
         "soundcloud": "https://soundcloud.com/ry3gaming-gd",
@@ -486,83 +465,58 @@
         "thorjn mail": "https://cff4565f.sibforms.com/serve/MUIFAHWWqGD0EokVcq4ZYHHXaR4B4exmg3eaFFVm-GclC2YGn2f0DTm8NYbAIrHHb21GHcHSm06B-6eN-njditkAxMkFk6JFEHZnAISVfbJgIK83R8w1j5j76Q8kS3w82g0vU5rsNyF0r85hl0Q05vpqHPPGiZgE-T10_BYA8e7pm6fsw-iUTsfIrOjBtVBZJ0Gt3DG2mlHpTptY"
     },
     "george antonios": {
-        
+        "instagram": "https://www.instagram.com/georgeantonios/?hl=en"
     },
     "gm_work": {
-        
+        "instagram": "https://www.instagram.com/gm_work/",
+        "website": "https://giuliomartinelli.com/"
     },
-    "ray volpe": {
-        
-    },
-    "zednotz": {
-        
-    },
+    "ray volpe": {},
+    "zednotz": {},
     "deadbushia": {
-        
+        "soundcloud": "https://soundcloud.com/db-yt-199381364",
+        "comics": "https://namicomi.com/en/org/deadbushia/titles"
     },
-    "lightspark": {
-        
-    },
-    "lukemans": {
-        
-    },
-    "pfiffel": {
-        
-    },
-    "jesus stevan": {
-        
-    },
-    "rannument": {
-        
-    },
+    "lightspark": {},
+    "lukemans": {},
+    "pfiffel": {},
+    "jesus stevan": {},
+    "rannument": {},
     "3manon": {
-        
+        "soundcloud": "https://soundcloud.com/user-667341290-348353004",
+        "linktree": "https://linktr.ee/3manon",
+        "youtube": "https://www.youtube.com/channel/UC5p5KOzLwzybRIBucQW07IA",
+        "newgrounds": "https://3manonmusic.newgrounds.com/",
+        "fiverr": "http://www.fiverr.com/s/AZBw5Y"
     },
     "asymmetrical faces": {
-        
+        "soundcloud": "https://soundcloud.com/asymmetricalfaces"
     },
-    "jaxxic / alaska": {
-        
-    },
-    "shoug": {
-        
-    },
-    "shoug's dad": {
-        
-    },
-    "jame5": {
-        
-    },
-    "pixelgrowlz": {
-        
-    },
+    "jaxxic / alaska": {},
+    "shoug": {},
+    "shoug's dad": {},
+    "jame5": {},
+    "pixelgrowlz": {},
     "denomally": {
-        
+        "soundcloud": "https://soundcloud.com/denomaly-sentience"
     },
     "geefogo": {
-        
+        "soundcloud": "https://soundcloud.com/geefogo"
     },
     "dazed": {
-        
+        "soundcloud": "https://soundcloud.com/dazed63"
     },
     "dead sm!le": {
-        
+        "soundcloud": "https://soundcloud.com/dead-sm-le",
+        "instagram": "https://www.instagram.com/officialdeadsmile/"
     },
-    "lionblaze": {
-        
-    },
-    "klarigon": {
-        
-    },
+    "lionblaze": {},
+    "klarigon": {},
     "cranque": {
-        
+        "soundcloud": "https://soundcloud.com/cranqueofficial2006"
     },
-    "ryan wheless": {
-        
-    },
-    "retroreboot": {
-        
-    },
+    "ryan wheless": {},
+    "retroreboot": {},
     "evan anukari": {
         "anukari homepage": "https://anukari.com/",
         "instagram": "https://www.instagram.com/anukarimusic",
@@ -580,5 +534,11 @@
     },
     "kyra lopez": {
         "spotify": "https://open.spotify.com/artist/6jgI7sy520Jhuno2ZBowTv"
+    },
+    "Dream Static": {
+        "youtube": "https://www.youtube.com/channel/UChYg5JqFG474HTR5J9nYVFA",
+        "bandcamp": "https://dreamstatic.bandcamp.com/",
+        "website": "https://dreamstaticsounds.weebly.com/",
+        "patreon": "https://www.patreon.com/dreamstatic"
     }
 }
