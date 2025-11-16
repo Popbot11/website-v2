@@ -4,6 +4,8 @@
 # later, i need to create a script that can just sort the index.json file without needing the original data. 
 # for now tho, this is fine. 
 
+# This script currently isn't needed anymore because add-entry.py does about everything automatically. 
+
 import json
 import os
 
@@ -41,7 +43,7 @@ for entry in datajson:
     data.pop('description', None)
     # f = open("./content/"+entry["title"]+"/data.json", "w")
     with open("./content/"+entry["title"].lower().replace(" ", "-")+"/data.json", 'x') as jsonfile:
-        json.dump(data, jsonfile, indent=4)
+        json.dump(data, jsonfile, indent=4, ensure_ascii=False)
     # print (data, '\n')
 
 
@@ -53,7 +55,7 @@ index = dict(sorted(index.items(), key=lambda x:
 #     print(item, "\n\t", index[item])
 
 with open('./content/index.json', 'w') as jsonfile:
-    json.dump(index, jsonfile, indent=4)
+    json.dump(index, jsonfile, indent=4, ensure_ascii=False)
  
 
 

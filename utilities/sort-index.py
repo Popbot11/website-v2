@@ -1,3 +1,5 @@
+# sorts the index.json file in order of descending date
+
 import json
 import os
 from datetime import datetime
@@ -9,7 +11,7 @@ with open('./content/index.json', 'r+') as indexfile:
                     (''.join(c for c in x[1]['date'] if not c.isalpha())), 
                     reverse=True))
     indexfile.seek(0)
-    json.dump(indexdata, indexfile, indent=4)
+    json.dump(indexdata, indexfile, indent=4, ensure_ascii=False)
     print("\sorted index.json")
 
     

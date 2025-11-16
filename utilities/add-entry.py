@@ -51,7 +51,16 @@ includeMedia = True
 if input("include media? (y/n): ") != "y":
     includeMedia = False
 
+print("enter all additional contributors, followed by their corrosponding role. enter 'done' to continue. \n\tname: Popbot\n\trole: primary creator")
+contributor = ""
+contributors = {"Popbot": "primary creator"}
+while True:
+    contributor = input("\tname: ")
+    if contributor == "done":
+        break
+    contributors[contributor] = input("\trole: ")
 
+# PRINT OUT ALL FIELDS TO CHECK IF IT's CORRECT
 print("-----------")
 print("\ttitle: "+title)
 print("\tcategory: "+category)
@@ -60,8 +69,8 @@ print("\tdate: "+date)
 print("\tcontents: "+str(contents))
 print("\ttags: "+str(tags))
 print("\tlinks: "+str(links))
+print("\tcontributors: "+str(contributors))
 if input("continue with entry creation? (y/n): ") != "y":
-    print("exiting...")
     sys.exit()
 print("-----------")
 
@@ -79,6 +88,7 @@ else:
     templatedata["contents"] = contents
 templatedata["tags"] = tags
 templatedata["links"] = links
+templatedata["contributors"] = contributors
 if not includeMedia:
     del templatedata["media"]
 
@@ -88,7 +98,7 @@ try:
     # create description file. if the directory already exists, error
     os.makedirs("./content/"+title.lower().replace(" ", "-"))
     with open("./content/"+title.lower().replace(" ", "-")+"/data.json", "x") as datafile:
-        json.dump(templatedata, datafile, indent=4)
+        json.dump(templatedata, datafile, indent=4, ensure_ascii=False)
         print("\twrote template data to data.json")
     with open("./content/"+title.lower().replace(" ", "-")+"/description.txt", "x") as descriptionfile:
         descriptionfile.write(description)
@@ -96,23 +106,26 @@ try:
 except:
     print("an entry of this title already exists")
 
-
-# APPEND INFO TO index.json
+# open index.json
 with open('./content/index.json', 'r+') as indexfile:
     indexdata = json.load(indexfile)
+    
+    # APPEND INFO TO index.json
     indexdata[title] = {
         "category": category,
         "date": date
     }   
+
+    # sort data in reverse date order
     indexdata = dict(sorted(indexdata.items(), key=lambda x: 
                     (''.join(c for c in x[1]['date'] if not c.isalpha())), 
                     reverse=True))
     indexfile.seek(0)
-    json.dump(indexdata, indexfile, indent=4)
+    json.dump(indexdata, indexfile, indent=4, ensure_ascii=False)
     print("\tupdated index.json")
 
 print("done! make sure to go and check to verify that everything's correct, and to add anything that this script doesn't automate")
-print("add link urls, webpage, media, collaborators, etc")
+print("add link urls, webpage, media, contributors, etc")
 # indexdata = json.load(open("./content/index.json"))
 # indexdata = dict(sorted(indexdata.items(), key=lambda x: 
 #                     (''.join(c for c in x[1]['date'] if not c.isalpha())), 
