@@ -29,13 +29,22 @@
         "webpage": "../content/simulated-microcosm/index.html"
     },
     "media": {
-        "microcosm-cover-huge.png": "full 6k x 6k cover art, masterfully made in blender by Amfivolia",
-        "propagule.jpg": "zooomed-in section for Propagule",
-        "tardigrades.jpg": "zooomed-in section for Tardigrades",
-        "diatoms.jpg": "zooomed-in section for Diatoms",
-        "canopy.jpg": "zooomed-in section for Canopy",
-        "murmuration.jpg": "zooomed-in section for Murmuration",
-        "allelopathy.png": "zooomed-in section for Alleopathy",
-        "bouyant.jpg": "zooomed-in section for Bouyant"
-    }
+        "media/microcosm-cover-huge.png": "full 6k x 6k cover art, masterfully made in blender by Amfivolia",
+        "media/propagule.jpg": "zooomed-in section for Propagule",
+        "media/tardigrades.jpg": "zooomed-in section for Tardigrades",
+        "media/diatoms.jpg": "zooomed-in section for Diatoms",
+        "media/canopy.jpg": "zooomed-in section for Canopy",
+        "media/murmuration.jpg": "zooomed-in section for Murmuration",
+        "media/allelopathy.png": "zooomed-in section for Alleopathy",
+        "media/bouyant.jpg": "zooomed-in section for Bouyant"
+    },
+    "audio": [
+        "1 - Propagule.mp3",
+        "2 - Tardigrades.mp3",
+        "3 - Diatoms.mp3",
+        "4 - Canopy.mp3",
+        "5 - Murmuration.mp3",
+        "6 - Allelopathy.mp3",
+        "7 - Bouyant.mp3"
+    ]
 }

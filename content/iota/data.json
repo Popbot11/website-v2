@@ -38,5 +38,19 @@
     },
     "media": {
         "iota-cover.png": "cover artwork by amfivolia modelled in Blender then drawn over in photoshop"
-    }
+    }, 
+    "audio": [
+        "1 - Fibril.mp3",
+        "2 - Flakes.mp3",
+        "3 - Popbot & Amfivolia -Tulip Tree.mp3",
+        "4 - Beams.mp3",
+        "5 - Organic Machine.mp3",
+        "6 - Falling Objects.mp3",
+        "7 - Popbot & Corrix - Spokes.mp3",
+        "8 - Crystals.mp3",
+        "9 - Mites.mp3",
+        "10 - Sediment.mp3",
+        "11 - Agglomerate.mp3",
+        "12 - Ash.mp3"
+    ]
 }

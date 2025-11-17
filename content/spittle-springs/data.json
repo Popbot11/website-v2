@@ -27,5 +27,11 @@
     ],
     "media": {
         "spittle-springs-cover.jpeg": "cover art for the EP by gm_work"
-    }
+    },
+    "audio": [
+        "1 - Grist.mp3",
+        "2 - pocket-note.mp3",
+        "3 - Admixture.mp3",
+        "4 - Brain Termites"
+    ]
 }

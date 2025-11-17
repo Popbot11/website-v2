@@ -28,11 +28,17 @@
         "webpage": "../content/texture/index.html"
     },
     "media": {
-        "pellegrino5.png": "final cover artwork for the EP (by lukasipo, made in blender)",
-        "pellegrino.png": "alternate cover artwork (by lukasipo, made in blender)",
-        "pellegrino1.png": "alternate cover artwork (by lukasipo, made in blender)",
-        "pellegrino2.png": "alternate cover artwork (by lukasipo, made in blender)",
-        "pellegrino3.png": "alternative cover artwork (by lukasipo, made in blender)",
-        "pellegrino4.png": "alternate cover artwork (by lukasipo, made in blender)"
-    }
+        "media/pellegrino5.png": "final cover artwork for the EP (by lukasipo, made in blender)",
+        "media/pellegrino.png": "alternate cover artwork (by lukasipo, made in blender)",
+        "media/pellegrino1.png": "alternate cover artwork (by lukasipo, made in blender)",
+        "media/pellegrino2.png": "alternate cover artwork (by lukasipo, made in blender)",
+        "media/pellegrino3.png": "alternative cover artwork (by lukasipo, made in blender)",
+        "media/pellegrino4.png": "alternate cover artwork (by lukasipo, made in blender)"
+    }, 
+    "audio": [
+        "1 - Swells.mp3",
+        "2 - Whine.mp3",
+        "3 - Dry.mp3",
+        "4 - Auning.mp3"
+    ]
 }

@@ -22,5 +22,8 @@
     },
     "media": {
         "s1-cover.png": "cover artwork made by amfivolia in blender"
-    }
+    },
+    "audio": [
+        "s1.mp3"
+    ]
 }

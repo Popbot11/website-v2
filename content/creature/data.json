@@ -31,9 +31,15 @@
         "webpage": "../content/creature/index.html"
     },
     "media": {
-        "Glint.png": "cover artwork for Glint",
-        "Creature.png": "cover artwork for Creature",
-        "Deep_Hollow.png": "cover artwork for Deep Hollow (w/ Macronutrients)",
-        "Cloudburst.png": "cover artwork for Cloudburst and the whole EP (w/ rendering help from omatsu)"
-    }
+        "media/Glint.png": "cover artwork for Glint",
+        "media/Creature.png": "cover artwork for Creature",
+        "media/Deep_Hollow.png": "cover artwork for Deep Hollow (w/ Macronutrients)",
+        "media/Cloudburst.png": "cover artwork for Cloudburst and the whole EP (w/ rendering help from omatsu)"
+    },
+    "audio": [
+        "1 - Glint.mp3",
+        "2 - Creature.mp3",
+        "3 - Popbot & Macronutrients - Deep Hollow.mp3",
+        "4 - Cloudburst.mp3"
+    ]
 }
