@@ -1,5 +1,5 @@
 {
-    "title": "AUDIO PLAYER TEST",
+    "title": "audio player test",
     "dates": {
         "2025-10-28": "published"
     },
@@ -16,7 +16,9 @@
         "webpage": "./content/audio-player-test/index.html"
     },
     "contents": [
-        "audiofile"
+        "audiofileA",
+        "audiofileB",
+        "audiofileC"
     ],
     "audio": [
         "audiofileA.mp3",

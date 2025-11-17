@@ -75,6 +75,25 @@ document.getElementById("log-selected-item").addEventListener(
     }
 )
 
+let playerInfo = document.getElementById("player-info")
+document.getElementById("show-player-info").addEventListener(
+    "click",
+    () => {
+        if (playerInfo.style.visibility == "visible") {
+            playerInfo.style.visibility = "hidden";
+        } else {
+            playerInfo.style.visibility = "visible";
+        }
+    }
+);
+document.getElementById("log-player-info").addEventListener(
+    "click",
+    () => {
+        console.log(player);
+    }
+);
+
+
 let contactMenu = document.getElementById("contact-menu");
 let optionsMenu = document.getElementById("options-menu");
 
@@ -387,6 +406,113 @@ function buttonClick() {
 
 
 
+// keep track of player info
+const player = {
+    path: "",
+    engaged: false, //currently available for selected item
+    active: false, //currently playing
+    current: "",
+    queue: [],
+    queuePos: 0
+}   
+
+// setup audio
+let audioCtx = new AudioContext(); 
+let audio = new Audio("/");
+let source = audioCtx.createMediaElementSource(audio);
+source.connect(audioCtx.destination);
+
+// play or pause the audio
+function playerPlay() {
+    playerUpdateAudio()
+    if (player.active && player.engaged) {
+        player.active = false;
+        // document.getElementById("player-transport").innerHTML = "play";
+        audio.pause();
+    } else if (player.engaged){
+        player.active = true;
+        // document.getElementById("player-transport").innerHTML = "pause";
+        audio.play();
+    }
+    playerUpdateUI();
+}
+
+function playerNext() {
+    if ((player.queuePos < player.queue.length - 1) && player.engaged) {
+        player.queuePos += 1;
+        player.current = player.queue[player.queuePos]
+    } 
+    playerUpdateAudio()
+    playerUpdateUI();
+}
+
+function playerPrev() {
+    if ((player.queuePos > 0) && player.engaged) {
+        player.queuePos -= 1;
+        player.current = player.queue[player.queuePos]
+    } 
+    playerUpdateAudio()
+    playerUpdateUI();
+}
+
+// update the ui for the player stats
+function playerUpdateUI() {
+
+    // update player debug info
+    document.getElementById("player-info").innerHTML = `
+        path: ${player.path} <br>
+        active: ${player.active} <br>
+        current: ${player.current} <br>
+        queue pos: ${player.queuePos}<br>
+        <br>
+        queue: <ul>${(player.queue).map(item => `<li>${item}</li>`).join("")}</ul>
+    `
+
+    // update main player 
+    document.getElementById("player-nowPlaying").innerHTML = `${player.current}`
+    if (player.queuePos == 0) {
+        document.getElementById("player-prev").style.visibility = "hidden";
+    } else {
+        document.getElementById("player-prev").style.visibility = "visible";
+    }
+    if (player.queuePos == player.queue.length - 1) {
+        document.getElementById("player-next").style.visibility = "hidden";
+    } else {
+        document.getElementById("player-next").style.visibility = "visible";
+    }
+
+    if (!player.engaged) {
+        document.getElementById("player-next").style.visibility = "hidden";
+        document.getElementById("player-prev").style.visibility = "hidden";
+    }
+
+
+    if (player.active) {
+        document.getElementById("player-transport").innerHTML = "pause";
+    } else {
+        document.getElementById("player-transport").innerHTML = "play";
+    }
+
+}
+
+// Update the audio file currently loaded into the player
+// does so if the audio src is not synchronized with player.current
+function playerUpdateAudio() {
+    if (player.current != audio.currentSrc.split("/").at(-1)) {
+        console.log(`changing audio from ${audio.src} to ${player.current}`)
+        audio.src = player.path+player.current;
+    }
+    if (player.active) {
+        audio.play();
+    }
+}
+
+document.getElementById("player-transport").addEventListener("click", () => {playerPlay();});
+document.getElementById("player-next").addEventListener("click", () => {playerNext();});
+document.getElementById("player-prev").addEventListener("click", () => {playerPrev();});
+
+console.log(player)
+
 
 
 
@@ -468,7 +594,12 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                 
                 // Don't process click if it's on a link
                 if (event.target.tagName === 'A') return;
-                
+
+                // pause audio player
+                audio.pause();
+                player.active = false;
+                playerUpdateUI();
+
                 // MANAGE SELECTED
                 if (document.getElementById("multi-select").checked) {
                     if (selectedItems.has(title)) {
@@ -629,6 +760,36 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                     );
                                 } else {
                                     viewMediaButton.setAttribute("hidden", "hidden");
+                                }
+                            }
+
+                            // AUDIO PLAYER
+                            {
+                                let playerElement = document.getElementById("player");
+                                if (Object.keys(data).includes('audio')) {
+    
+                                    player.queuePos = 0;
+                                    player.path = "content/"+path+"/audio/";
+                                    player.queue = [];
+
+                                    Object.values(data.audio).forEach(async filename => {
+                                        player.queue.push(filename);
+                                    });
+        
+                                    player.current = (player.queue)[0];
+                                    player.engaged = true;
+    
+                                    playerUpdateUI()
+                                    
+                                    playerElement.style.visibility = "visible";
+                                    playerElement.style.position = "relative";
+                                } else {
+                                    player.engaged = false;
+    
+                                    playerElement.style.visibility = "hidden";
+                                    playerElement.style.position = "absolute";
+
+                                    playerUpdateUI();
                                 }
                             }
 

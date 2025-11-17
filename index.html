@@ -52,6 +52,14 @@
             <span id="shop-button" style="visibility: hidden;">| <button id="shop">shop</button></span>
             <span id="mousecoords">😺😺😺🦊🦊🦊🦊rmmmrrp!</span>
             <hr>
+
+            <span id="player">
+                <button id="player-transport">play</button> | 
+                <button id="player-prev" style="visibility: hidden;"> << </button>
+                <button id="player-next"> >> </button> | 
+                <span id="player-nowPlaying"></span>
+            </span>
+
         </span>
         <!-- MAIN CONTENT -->
         <div class="main" id="main">           
@@ -116,6 +124,7 @@
             </div>
             
         </div>
+        <span id="player-info" style="position:absolute; top: 1000px"></span>
 
         <!-- DROPDOWNS -->
         <span id="date-dropdown" class="date-dropdown"></span>
@@ -128,7 +137,9 @@
             
             <input type="checkbox" id="multi-select"><label for="multi-select">multi-select</label><br>
             ---debug---<br>
-            <button id="log-selected-item">log selected item</button>
+            <button id="log-selected-item">log selected item</button><br>
+            <button id="show-player-info">show player info</button><br>
+            <button id="log-player-info">log player info</button>
             
         </span>   
 

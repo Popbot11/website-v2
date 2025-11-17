@@ -20,6 +20,12 @@ body {
     overflow-x: auto;
 }
 
+#player {
+    padding: 4px;
+    visibility: hidden;
+    position:absolute;
+}
+
 /* CONTAINERS */
 [id^="container"] {
     border-color: black;
@@ -317,6 +323,9 @@ body {
 
     -webkit-backdrop-filter: blur(7px) hue-rotate(90deg);
     backdrop-filter: blur(7px) hue-rotate(90deg);
+    visibility: hidden;
+}
+#player-info {
     visibility: hidden;
 }
 
