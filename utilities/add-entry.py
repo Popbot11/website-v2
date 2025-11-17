@@ -51,6 +51,10 @@ includeMedia = True
 if input("include media? (y/n): ") != "y":
     includeMedia = False
 
+includeAudio = True
+if input("include audio? (y/n): ") != "y":
+    includeMedia = False
+
 print("enter all additional contributors, followed by their corrosponding role. enter 'done' to continue. \n\tname: Popbot\n\trole: primary creator")
 contributor = ""
 contributors = {"Popbot": "primary creator"}
@@ -91,7 +95,8 @@ templatedata["links"] = links
 templatedata["contributors"] = contributors
 if not includeMedia:
     del templatedata["media"]
-
+if not includeAudio:
+    del templatedata["audio"]
 
 # MAKE FOLDER, POPULATE WITH BASIC FILES
 try:
