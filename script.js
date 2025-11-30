@@ -422,9 +422,24 @@ let audio = new Audio("/");
 let source = audioCtx.createMediaElementSource(audio);
 source.connect(audioCtx.destination);
 
+// Resume audio context on user interaction
+document.addEventListener('click', () => {
+    if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+    }
+});
+
+audio.addEventListener("ended", () => {
+    if (player.queuePos == player.queue.length - 1) {
+        player.active = false;
+    }
+    playerNext();
+
+})
+
 // play or pause the audio
 function playerPlay() {
-    playerUpdateAudio()
+    playerUpdateAudio();
     if (player.active && player.engaged) {
         player.active = false;
         // document.getElementById("player-transport").innerHTML = "play";
@@ -432,6 +447,7 @@ function playerPlay() {
     } else if (player.engaged){
         player.active = true;
         // document.getElementById("player-transport").innerHTML = "pause";
+        
         audio.play();
     }
     playerUpdateUI();
@@ -455,6 +471,19 @@ function playerPrev() {
     playerUpdateUI();
 }
 
+let progressClicked = false;
+function playerUpdateProgress() {
+    setTimeout(() => {
+        if (!progressClicked) {
+            document.getElementById("player-progress").value = (audio.currentTime / audio.duration) * 150;
+        }
+        if (player.engaged) {
+            playerUpdateProgress();
+        }
+    }, 250);
+}
+
+
 // update the ui for the player stats
 function playerUpdateUI() {
 
@@ -462,6 +491,7 @@ function playerUpdateUI() {
     document.getElementById("player-info").innerHTML = `
         path: ${player.path} <br>
         active: ${player.active} <br>
+        engaged: ${player.engaged} <br>
         current: ${player.current} <br>
         queue pos: ${player.queuePos}<br>
         <br>
@@ -469,7 +499,7 @@ function playerUpdateUI() {
     `
 
     // update main player 
-    document.getElementById("player-nowPlaying").innerHTML = `${player.current}`
+    document.getElementById("player-nowPlaying").innerHTML = `<a href="${player.path+player.current}" target="_blank" download>${player.current}</a>`
     if (player.queuePos == 0) {
         document.getElementById("player-prev").style.visibility = "hidden";
     } else {
@@ -505,12 +535,22 @@ function playerUpdateAudio() {
     if (player.active) {
         audio.play();
     }
+    playerUpdateProgress();
+
 }
 
 document.getElementById("player-transport").addEventListener("click", () => {playerPlay();});
 document.getElementById("player-next").addEventListener("click", () => {playerNext();});
 document.getElementById("player-prev").addEventListener("click", () => {playerPrev();});
 
+document.getElementById("player-progress").addEventListener("mousedown", () => {
+    progressClicked = true;
+});
+document.getElementById("player-progress").addEventListener("mouseup", () => {
+
+    audio.currentTime = (document.getElementById("player-progress").value / 150) * audio.duration;
+    progressClicked = false;
+});
 console.log(player)
 
 
