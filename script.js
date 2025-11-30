@@ -430,6 +430,7 @@ document.addEventListener('click', () => {
 });
 
 audio.addEventListener("ended", () => {
+    console.log("ended")
     if (player.queuePos == player.queue.length - 1) {
         player.active = false;
     }
@@ -447,7 +448,6 @@ function playerPlay() {
     } else if (player.engaged){
         player.active = true;
         // document.getElementById("player-transport").innerHTML = "pause";
-        
         audio.play();
     }
     playerUpdateUI();
@@ -475,6 +475,7 @@ let progressClicked = false;
 function playerUpdateProgress() {
     setTimeout(() => {
         if (!progressClicked) {
+            // 150 is the width of the audio progress slider. 
             document.getElementById("player-progress").value = (audio.currentTime / audio.duration) * 150;
         }
         if (player.engaged) {
@@ -528,7 +529,8 @@ function playerUpdateUI() {
 // Update the audio file currently loaded into the player
 // does so if the audio src is not synchronized with player.current
 function playerUpdateAudio() {
-    if (player.current != audio.currentSrc.split("/").at(-1)) {
+
+    if (player.current != decodeURIComponent(audio.currentSrc.split("/").at(-1))) {
         console.log(`changing audio from ${audio.src} to ${player.current}`)
         audio.src = player.path+player.current;
     }
@@ -547,7 +549,7 @@ document.getElementById("player-progress").addEventListener("mousedown", () => {
     progressClicked = true;
 });
 document.getElementById("player-progress").addEventListener("mouseup", () => {
-
+    // 150 is the width of the audio progress slider
     audio.currentTime = (document.getElementById("player-progress").value / 150) * audio.duration;
     progressClicked = false;
 });
