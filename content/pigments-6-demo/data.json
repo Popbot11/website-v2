@@ -21,5 +21,8 @@
         "webpage": "../content/pigments-6-demo/index.html",
         "pigments landing page": "https://www.arturia.com/products/software-instruments/pigments/overview",
         "pigments landing page (archive.org)": "https://web.archive.org/web/20250128232214/https://www.arturia.com/products/software-instruments/pigments/overview"
-    }
+    },
+    "audio": [
+        "Popbot Code Bloom (pigments 6 demo).mp3"
+    ]
 }

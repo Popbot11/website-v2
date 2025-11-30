@@ -18,5 +18,8 @@
     },
     "media": {
         "cover.png": "cover artwork for capsule i made by recursively screenshotting a bunch of screenshots of increasingly dense window arrangements."
-    }
+    },
+    "audio": [
+        "capsule.mp3"
+    ]
 }

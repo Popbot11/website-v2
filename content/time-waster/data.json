@@ -17,5 +17,8 @@
     },
     "media": {
         "sc-cover.png": "the cover on soundcloud-- it's a screenshot of the project file in ableton. "
-    }
+    },
+    "audio": [
+        "time waster unmixed.mp3"
+    ]
 }
