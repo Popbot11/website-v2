@@ -1,0 +1,21 @@
+{
+    "title": "pigments 7 presets",
+    "dates": {
+        "2025-12-16": "published"
+    },
+    "categories": [
+        "contraption"
+    ],
+    "tags": [
+        "commission",
+        "presets"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "Arturia": "company that paid me"
+    },
+    "links": {
+        "arturia pigments": "https://www.arturia.com/products/software-instruments/pigments/overview"
+    },
+    "audio": ["pigments 7 popbot preset demo.mp3"]
+}
