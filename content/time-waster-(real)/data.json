@@ -1,0 +1,23 @@
+{
+    "title": "time waster (real)",
+    "dates": {
+        "2025-12-16": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/time-waster-real",
+        "bandcamp": "https://popbotmusic.bandcamp.com/track/time-waster-real"
+    },
+    "media": {
+        "media/time-waster-real-cover.png": "cover artwork made by me in blender"
+    },
+    "audio": ["time waster (real).mp3"]
+}
