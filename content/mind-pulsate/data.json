@@ -1,7 +1,8 @@
 {
     "title": "Mind Pulsate",
     "dates": {
-        "2025-11-29": "published"
+        "2025-11-29": "published",
+        "2025-12-17": "changed cover artwork"
     },
     "categories": [
         "music"
@@ -17,7 +18,8 @@
         "bandcamp": "https://popbotmusic.bandcamp.com/track/mind-pulsate"
     },
     "media": {
-        "cover.png": "an unused cover art for the creature EP, which I decided to repurpose for this track"
+        "cover.png": "upated cover artwork, made by me using blender",
+        "cover-old.png": "an unused cover art for the creature EP, which I originally decided to repurpose for this track"
     },
     "audio": ["mind pulsate.mp3"]
 }
