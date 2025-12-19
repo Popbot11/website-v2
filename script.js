@@ -351,8 +351,86 @@ const shop = {
 
             return item_el;
         }
+    },
+
+    "turn down player volume": {
+        name: "turn down player volume",
+        price: 1,
+        description: "turns down the volume",
+        available: true,
+        quantity: 0,
+        effect: function() {
+            if (clicks >= this.price && this.available) {
+                clicks -= this.price;
+                this.price = Math.floor((this.price + 1) * 1.1);
+
+                this.quantity += 1;
+                gainNode.gain.value -= 0.05;
+                
+
+                counter.innerHTML = clicks;
+                document.getElementById("shop-item-"+this.name).replaceChildren(this.render());
+                document.getElementById("shop-item-turn up player volume").replaceChildren(shop["turn up player volume"].render());
+            } 
+        },
+        render: function() {
+            let item_el = document.createElement("div");
+            let button_el = document.createElement("button");
+            button_el.innerHTML = "Buy"
+            button_el.addEventListener(
+                "click",
+                () => {
+                    shop[this.name].effect();
+                }
+            );
+
+            item_el.innerHTML = `${this.name} | price: ${this.price} | current gain: ${gainNode.gain.value} | `;
+            item_el.appendChild(button_el);
+
+            return item_el;
+        }
+    },
+
+    "turn up player volume": {
+        name: "turn up player volume",
+        price: 1,
+        description: "turns up the volume",
+        available: true,
+        quantity: 0,
+        effect: function() {
+            if (clicks >= this.price && this.available) {
+                clicks -= this.price;
+                this.price = Math.floor((this.price + 1) * 1.1);
+
+                this.quantity += 1;
+                gainNode.gain.value += 0.05;
+                
+
+                counter.innerHTML = clicks;
+                document.getElementById("shop-item-"+this.name).replaceChildren(this.render());
+                document.getElementById("shop-item-turn down player volume").replaceChildren(shop["turn down player volume"].render());
+            } 
+        },
+        render: function() {
+            let item_el = document.createElement("div");
+            let button_el = document.createElement("button");
+            button_el.innerHTML = "Buy"
+            button_el.addEventListener(
+                "click",
+                () => {
+                    shop[this.name].effect();
+                }
+            );
+
+            item_el.innerHTML = `${this.name} | price: ${this.price} | current gain: ${gainNode.gain.value} | `;
+            item_el.appendChild(button_el);
+
+            return item_el;
+        }
     }
 }
+
+
 
 function updateShop(item) {
     document.getElementById(item.name+"-stats").innerHTML=`${item.name} | price: ${item.price} | owned: ${item.quantity} | `;
@@ -420,7 +498,11 @@ const player = {
 let audioCtx = new AudioContext(); 
 let audio = new Audio("/");
 let source = audioCtx.createMediaElementSource(audio);
-source.connect(audioCtx.destination);
+
+let gainNode = new GainNode(audioCtx);
+source.connect(gainNode).connect(audioCtx.destination);
+// gainNode.gain.value = 0;
+// console.log(gainNode.gain.value);
 
 // Resume audio context on user interaction
 document.addEventListener('click', () => {
@@ -575,10 +657,10 @@ fetch("content/index.json").then(res => res.json()).then(index => {
     Object.keys(index).forEach(async title => {
         const path = title.toLowerCase().replaceAll(" ", "-");
         
-        let expertModeButton = document.createElement("span");
-        expertModeButton.className = "expert-mode";
-        expertModeButton.id = `item-${title}-expert-mode`;
-        expertModeButton.innerHTML = `<a>expert mode</a>`
+        // let expertModeButton = document.createElement("span");
+        // expertModeButton.className = "expert-mode";
+        // expertModeButton.id = `item-${title}-expert-mode`;
+        // expertModeButton.innerHTML = `<a>expert mode</a>`
 
         let entryItem = document.createElement("div");
         entryItem.className="entry";
@@ -589,7 +671,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
             <span class="title">${title}</span> 
             <br>
         `;
-        entryItem.appendChild(expertModeButton)
+        // entryItem.appendChild(expertModeButton)
         entryItem.innerHTML += `<span class="links" id="item-${title}-links"></span>`;
 
         // ON MOUSEOVER
@@ -667,18 +749,18 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                 }
 
                 // EXPERT MODE BUTTON
-                document.getElementById(`item-${title}-expert-mode`).addEventListener(
-                    "click",
-                    () => {
-                        console.log(`${title}: expert mode`);
-                        let url = new URL("content/index.html", window.location.href);
-                        url.searchParams.append('entry', title);
+                // document.getElementById(`item-${title}-expert-mode`).addEventListener(
+                //     "click",
+                //     () => {
+                //         console.log(`${title}: expert mode`);
+                //         let url = new URL("content/index.html", window.location.href);
+                //         url.searchParams.append('entry', title);
 
-                        const screenX = window.screenX || window.screenLeft;
-                        const screenY = window.screenY || window.screenTop;
-                        window.open(url.toString(), "viewMedia", `width=600,height=620,left=${screenX+700},top=${screenY+50},menubar=no,toolbar=no`);
-                    }
-                )
+                //         const screenX = window.screenX || window.screenLeft;
+                //         const screenY = window.screenY || window.screenTop;
+                //         window.open(url.toString(), "viewMedia", `width=600,height=620,left=${screenX+700},top=${screenY+50},menubar=no,toolbar=no`);
+                //     }
+                // )
                 
                 // DESCRIPTION.TXT
                 {
@@ -803,6 +885,24 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                                 } else {
                                     viewMediaButton.setAttribute("hidden", "hidden");
                                 }
+                            }
+
+                            // EXPERT MODE
+                            {
+                                recreateNode(document.getElementById("info-expert-mode"));
+                                document.getElementById("info-expert-mode").addEventListener(
+                                    "click",
+                                    () => {
+                                        console.log(`${title}: expert mode`);
+                                        let url = new URL("content/index.html", window.location.href);
+                                        url.searchParams.append('entry', title);
+
+                                        const screenX = window.screenX || window.screenLeft;
+                                        const screenY = window.screenY || window.screenTop;
+                                        window.open(url.toString(), "viewMedia", `width=600,height=620,left=${screenX+700},top=${screenY+50},menubar=no,toolbar=no`);
+                                    }
+                                );
+
                             }
 
                             // AUDIO PLAYER
