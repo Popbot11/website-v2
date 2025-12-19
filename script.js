@@ -362,7 +362,7 @@ const shop = {
         effect: function() {
             if (clicks >= this.price && this.available) {
                 clicks -= this.price;
-                this.price = Math.floor((this.price + 1) * 1.1);
+                this.price = Math.floor(this.price + 1);
 
                 this.quantity += 1;
                 gainNode.gain.value -= 0.05;
