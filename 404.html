@@ -4,22 +4,31 @@
 
     </head>
     <body>
+        <hr>
         404 error<br>
-        it's likely you followed a link that worked on a <a href="https://popbot11.github.io/website/">previous iteration</a> of this page, but has now been depreciated in favour of a more systematic structure. <a href="">here's</a> the json of currently implemented redirects<br>
-        if that isn't the issue, message me on discord (username: popbot) or email me at popbotmusic@gmail.com with a description of the problem. i probably just misspelled a url. 
+        the page you tried to go isn't valid. <br>
+        please contact me <br>
         <script>
             // first 19 chars are https://popbot.work
             // this just leaves the actual page
-            const URL = window.location.href.slice(19);
-            const DOMAIN = "https://popbot.work";
+            const URL = window.location.pathname + window.location.search;
+            // const URL = "/test"
             
-            console.log(URL);
-            fetch("../data/404-redirects.json").then(res => res.json()).then(redirects => {
-                let redirect = DOMAIN;
-                if (redirect != null || redirect != undefined) { redirect += redirects[URL] }
-
-                console.log(redirect);
-                window.location.href = redirect;
+            // console.log(URL);
+            fetch("https://popbot.work/data/404-redirects.json").then(res => res.json()).then(redirects => {
+                console.log(redirects)
+                // console.log(redirect)
+                console.log("URL: " + URL)
+                if (redirects[URL] != null || redirects[URL] != undefined) { 
+                    console.log("redirect is valid") 
+                    console.log("redirect url: " + redirects[URL]);
+                    // console.log("redirect url: " + redirect);
+                    // window.location.href = redirects[URL];
+                    document.body.innerHTML += `
+                        <br>
+                        redirect to <a href="${redirects[URL]}">${redirects[URL]}</a>?
+                    `
+                }
             }).catch(error => {
                 console.log(error);
             })

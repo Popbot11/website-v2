@@ -1,7 +1,7 @@
 {
     "/music/iota.html": "content/iota/index.html",
     "/music/anypercent2.html": "/content/form-anypercent-vol.-2/index.html",
-    "/test": "/content/index.html",
+    "/test": "/index.html",
     "/music/luminanceEP.html": "/content/luminance/index.html",
     "/music/depthEP.html": "/content/depth/index.html",
     "/music/reactantEP.html": "/content/reactant/index.html",
@@ -29,5 +29,6 @@
     "/other/collection.html": "/content/collection/index.html",
     "/other/coolPeople.html": "/content/some-cool-people/index.html",
     "/other/oldWebsite.html": "/content/old-kidoyo-website/index.html",
-    "/video/livestreams.html": "value"
+    "/video/livestreams.html": "value",
+    "/404.html": "/index.html"
 }
