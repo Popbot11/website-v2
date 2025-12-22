@@ -27,5 +27,13 @@
     ],
     "media": {
         "reactant-cover.jpg": "cover artwork for Reactant made by me in blender"
-    }
+    },
+    "audio": [
+        "1-Flow 3.mp3",
+        "2-cascade 3.mp3",
+        "3-boiling point 4.mp3",
+        "4-Fibers 3.mp3",
+        "5-Element B 3.mp3",
+        "6-Restraint 4.mp3"
+    ]
 }

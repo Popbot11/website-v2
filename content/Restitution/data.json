@@ -19,5 +19,8 @@
     },
     "media": {
         "restitution-cover.jpg": "cover artwork made by me in blender"
-    }
+    },
+    "audio": [
+        "Restitution 5.mp3"
+    ]
 }

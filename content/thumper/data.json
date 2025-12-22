@@ -19,5 +19,8 @@
     },
     "media": {
         "thumper-cover.jpg": "cover artwork for thumper made by me in blender"
-    }
+    },
+    "audio": [
+        "Thumper.mp3"
+    ]
 }

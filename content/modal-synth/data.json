@@ -19,5 +19,8 @@
     },
     "media": {
         "media/modalSynthF.png": "a screenshot of the modal synth max for live device"
-    }
+    },
+    "audio": [
+        "Modal Synth Promo Video.mp3"
+    ]
 }

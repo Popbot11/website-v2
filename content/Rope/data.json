@@ -29,5 +29,8 @@
     },
     "media": {
         "rope_13_artwork.png": "cover artwork by visyura"
-    }
+    },
+    "audio": [
+        "Rope v2.mp3"
+    ]
 }

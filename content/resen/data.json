@@ -19,6 +19,9 @@
     },
     "media": {
         "resen-cover.png": "cover artwork i made for resen, made in blender"
-    }
+    },
+    "audio": [
+        "Resen.mp3"
+    ]
 
 }

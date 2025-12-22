@@ -66,4 +66,11 @@
 			"]"
 		]
 	},
+		"Date": {
+		"prefix": "date",
+		"description": "insert current date",
+		"body": [
+			"$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+		]
+	}
 }

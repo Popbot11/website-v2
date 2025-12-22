@@ -19,5 +19,8 @@
     },
     "media": {
         "like-this-cover.png": "cover art for Like This made by myself in blender"
-    }
+    },
+    "audio": [
+        "Like This.mp3"
+    ]
 }

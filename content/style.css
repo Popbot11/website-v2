@@ -23,6 +23,9 @@
 .contents {
     padding-left: 40px;
 }
+.audio {
+    padding-left: 40px;
+}
 .media {
     padding-left: 40px;
 }
@@ -44,4 +47,10 @@
     color: rgb(255, 196, 196);
     font-family: 'Courier New', Courier, monospace;
     background-color: black;
+}
+
+
+audio {
+    height: 30px;
+    width: 400px;
 }

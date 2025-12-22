@@ -455,7 +455,8 @@ document.getElementById("shop").addEventListener(
             });
             document.getElementById("info-title").innerHTML="shop<br>";
             document.getElementById("info-media").setAttribute("hidden", "hidden");
-        }
+            document.getElementById("info-expert-mode").style.visibility = "hidden";
+        }   
 
         showShop();
     }
@@ -890,6 +891,7 @@ fetch("content/index.json").then(res => res.json()).then(index => {
                             // EXPERT MODE
                             {
                                 recreateNode(document.getElementById("info-expert-mode"));
+                                document.getElementById("info-expert-mode").style.visibility = "visible";
                                 document.getElementById("info-expert-mode").addEventListener(
                                     "click",
                                     () => {

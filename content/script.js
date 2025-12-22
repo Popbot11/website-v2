@@ -17,6 +17,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
             <div class="contributors" id="${title}-contributors"></div>
             <div class="contributor-links" id="${title}-contributor-links"></div>
             <div class="contents" id="${title}-contents"></div>
+            <div class="audio" id="${title}-audio"></div>
             <div class="media" id="${title}-media"></div>
             <hr>
             
@@ -76,7 +77,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
                         let target = document.getElementById(`${title}-contributors`)
                         target.innerHTML += "<b>Contributors</b>: "
                         Object.keys(data.contributors).forEach(contributor => {
-                            console.log(contributor);
+                            // console.log(contributor);
                             let button = document.createElement("button");
                             button.innerHTML = contributor
                             button.setAttribute("onclick", "fetch('../data/personData.json').then(res => res.json()).then(personData => {try{document.getElementById('"+title+"-contributor-links').innerHTML = `<b>"+contributor+":</b> "+data.contributors[contributor]+"<br><b>Links:</b> ${Object.keys(personData['"+contributor.toLowerCase()+"']).map(text => \"<a target='_blank' href='\"+personData['"+contributor.toLowerCase()+"'][text]+\"'>\"+text+\"</a>\").join(' | ')}` + `<br><button onclick=\"document.getElementById('"+title+"-contributor-links').innerHTML=null;\">hide</button>`;}catch{document.getElementById('"+title+"-contributor-links').innerHTML = `<b>"+contributor+"</b>: "+data.contributors[contributor]+"<br><b>Links:</b>  isn't in the database yet; no links` + `<br><button onclick=\"document.getElementById('"+title+"-contributor-links').innerHTML=null;\">hide</button>`;}})");
@@ -128,6 +129,20 @@ fetch("./index.json").then(res => res.json()).then(index => {
                         }
                     }
 
+                    // AUDIO
+                    {
+                        if(Object.keys(data).includes("audio")) {
+                            // <audio controls src='${path}/audio/${filename}' type='audio/mp3'>
+                            document.getElementById(`${title}-audio`).innerHTML = `
+                                <b>Audio</b>:<br>
+                                ${data.audio.map((filename) => `
+                                    <audio controls src='${path}/audio/${filename}' type='audio/mp3'></audio> | <a href='${path}/audio/${filename}' download>${filename}</a>
+                                `).join("<br>")}
+                            `;
+                        // console.log(data.audio);
+                        }
+                    } 
+
                     //MEDIA
                     {
                         if(Object.keys(data).includes("media")) {
@@ -149,6 +164,8 @@ fetch("./index.json").then(res => res.json()).then(index => {
                             document.getElementById(`${title}-media`).remove();
                         }
                     }
+
+                    
                 } else {
                     document.getElementById(`${title}-dates`).innerHTML = "<span class='error'>data file missing, or some other worse error</span><br>";
                 }
@@ -161,7 +178,7 @@ fetch("./index.json").then(res => res.json()).then(index => {
     const params = Object.fromEntries(new URLSearchParams(window.location.search));
     if (Object.keys(params).includes("entry")) {
         const entry = params["entry"]
-        console.log(entry);
+        // console.log(entry);
         document.getElementById(entry).scrollIntoView();
         window.scrollBy(0, -25);
         document.getElementById("home").remove();

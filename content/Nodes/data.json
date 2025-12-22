@@ -27,5 +27,12 @@
     ],
     "media": {
         "nodes-cover.png": "cover art for the Nodes EP. the foreground 'crystalized' layer is by ZedNotZ"
-    }
+    },
+    "audio": [
+        "Decagonite.mp3",
+        "Mammatus Clouds.mp3",
+        "Photo Synthesis.mp3",
+        "schlonkus.mp3",
+        "Stratus.mp3"
+    ]
 }

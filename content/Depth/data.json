@@ -30,5 +30,10 @@
         "magma-cover.png": "cover artwork for Magma made by me in blender",
         "arrival-cover.png": "cover artwork for arrival made by me in blender",
         "lockjaw-cover.png": "cover artwork for lockjaw made by me in blender"
-    }
+    },
+    "audio": [
+        "Magma.mp3",
+        "Arrival.mp3",
+        "Lockjaw.mp3"
+    ]
 }
