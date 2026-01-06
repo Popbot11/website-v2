@@ -430,8 +430,6 @@ const shop = {
     }
 }
 
-
-
 function updateShop(item) {
     document.getElementById(item.name+"-stats").innerHTML=`${item.name} | price: ${item.price} | owned: ${item.quantity} | `;
 }
