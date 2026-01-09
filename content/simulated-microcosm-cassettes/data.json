@@ -1,0 +1,35 @@
+{
+    "title": "Simulated Microcosm Cassettes",
+    "dates": {
+        "2026-01-09": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "EP",
+        "physical"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "Keith Rankin": "Owner of Orange Milk Records, created cover and design/look for the cassettes",
+        "Amfivolia": "Original Cover Artwork"
+    },
+    "links": {
+        "Bandcamp (Orange Milk)": "https://orangemilkrecords.bandcamp.com/album/simulated-microcosm"
+    },
+    "contents": [
+        "Propagule",
+        "Tardigrades",
+        "Diatoms",
+        "Canopy",
+        "Murmuration",
+        "Alleopathy",
+        "Buoyant"
+    ],
+    "media": {
+        "media/front.jpg": "front cover, by Keith Rankin",
+        "media/mockup.jpg": "mockup, by Keith Rankin",
+        "media/reallife.jpg": "a picture i took of me holding it"
+    }
+}
