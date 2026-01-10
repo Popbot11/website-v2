@@ -184,3 +184,9 @@ fetch("./index.json").then(res => res.json()).then(index => {
         document.getElementById("home").remove();
     }
 })
+
+// TODO: formalize abstraction to just return the rendered item widget instead of doing it in this spaghetti way
+function renderElement() {
+
+    return
+}

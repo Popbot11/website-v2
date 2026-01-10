@@ -24,6 +24,9 @@ body {
     padding: 4px;
     visibility: hidden;
     position:absolute;
+    /* height: 30px; */
+    overflow-x: scroll;
+    overflow-y: scroll;
 }
 
 /* CONTAINERS */
@@ -60,7 +63,7 @@ body {
     overflow-x: hidden;
     scrollbar-width:thin;
 
-    /* z-index: 1; */
+    z-index: 1;
 
     /* transform: rotate(3deg); */
 }
@@ -191,11 +194,10 @@ body {
     font-family: 'Courier New', Courier, monospace;
     font-size: small;
 }
-.entry .title {
-    /* -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px); */
-    z-index: 9;
-}
+/* .entry .title {
+
+    z-index: 1;
+} */
 .entry .tags {
     float: right;
     right: 0px;
@@ -361,6 +363,35 @@ body {
 .indent {
     padding-left: 20px;
 }
+#spotlight {
+    /* position: absolute; */
+    top:300px;
+    height: 70px;
+
+
+    /* background-color: rgba(121, 121, 121, 0.256); */
+    /* background-image: ''; */
+    background-image: url(content/simulated-microcosm-cassettes/media/front.jpg);
+    background-size: contain;
+
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+
+    box-shadow: 
+        0px 0px 20px rgba(67, 211, 0, 0.625),
+        0px 0px 50px rgba(0, 134, 211, 0.625),
+        inset 0px 0px 20px pink,
+        inset 0px 0px 50px pink;
+
+    overflow-y: scroll;
+}
+#spotlight a {
+    background-color: rgba(128, 255, 0, 0.496);
+}
+#spotlight span {
+    background-color: rgba(8, 174, 16, 0.141);
+}
 
 #mousecoords {
     position:fixed;  
@@ -369,10 +400,17 @@ body {
     float: right;
     right: 0px;
 }
+#spacer {
+    position: absolute;
+}
 
 @media (min-width: 1300px) {
     #mousecoords {
         visibility: visible;
+    }
+
+    #spotlight {
+        width: 1250px;
     }
 
     #container-info {
@@ -380,6 +418,8 @@ body {
         height: 140px;
         left: 5px;
     }
+
+    
 
     #container-music {
         width: 300px;
@@ -416,10 +456,18 @@ body {
         top: 440px;
     }
 
+    /* #spotlight {
+        top: 600px
+    } */
+
 }
 @media (max-width: 1300px) {
     #mousecoords {
         visibility: visible;
+    }
+
+    #spotlight {
+       width: 960px;
     }
 
     #container-info {
@@ -469,6 +517,10 @@ body {
         visibility: visible;
     }
 
+    #spotlight {
+        width: 600px;
+    }
+
     #container-info {
         width: 600px;
         height: 140px;
@@ -512,6 +564,10 @@ body {
 
 }
 @media (max-width: 650px) {
+    #spacer {
+        position: relative;
+    }
+
     #options-menu {
         position: fixed;
     }
@@ -522,9 +578,9 @@ body {
     .nav {
         position: fixed;
         z-index: 1000;
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-        background-color: rgba(240, 248, 255, 0.312);
+        /* -webkit-backdrop-filter: blur(10px); */
+        /* backdrop-filter: blur(10px); */
+        /* background-color: rgba(240, 248, 255, 0.312); */
         width: 100%;
     }
     .nav hr {
@@ -535,14 +591,22 @@ body {
         visibility: hidden;
     }
 
+    #spotlight {
+        margin-right: 10px;
+        overflow-x: scroll;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+
     #container-info {
+
         width: 100%;
         height: 135px;
         /* padding: 0px; */
         padding-right: -100px;
-        position: fixed;
+        /* position: fixed; */
         z-index: 1000;
-        top: 40px;
+        /* top: 110px; */
         background-color: rgba(240, 248, 255, 0.312);
 
         -webkit-backdrop-filter: blur(10px);
@@ -553,7 +617,7 @@ body {
         width: 100%;
         height: 440px;
         padding: 0px;
-        top: 155px;
+        top: 225px;
         left: 5px;
     }
 
@@ -561,7 +625,7 @@ body {
         width: 100%;
         height: 280px;
         padding: 0px;
-        top: 620px;
+        top: 690px;
         left: 5px;
     }
 
@@ -569,14 +633,14 @@ body {
         width: 100%;
         height: 300px;
         padding: 0px;
-        top: 925px;
+        top: 995px;
         left: 5px;
     }
 
     #container-other {
         width: 100%;
         height: 230px;
-        top: 1240px;
+        top: 1310px;
         padding: 0px;
         left: 5px;
     }
@@ -585,7 +649,7 @@ body {
         width: 100%;
         /* height: 80px; */
         /* left: 310px; */
-        top: 1475px;
+        top: 1545px;
         left: 5px;
     }
 }
