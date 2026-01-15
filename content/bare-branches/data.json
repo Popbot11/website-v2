@@ -1,0 +1,39 @@
+{
+    "title": "Bare Branches",
+    "dates": {
+        "2026-01-15": "released Greenway, the first single"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "album",
+        "collab"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "lukasipo": "collaborator on track 6",
+        "Amfivolia": "collaborator on track 8, painted cover artwork"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/sets/bare-branches",
+        "bandcamp": "https://popbotmusic.bandcamp.com/album/bare-branches"
+    },
+    "contents": [
+        "Greenway",
+        "Keep Pushing",
+        "Twigs",
+        "Convergent Evolution",
+        "Telephone Poles",
+        "Inward Fold (w/ lukasipo)",
+        "Sky Through Bare Branches",
+        "Kli (w/ Amfivolia)",
+        "Indecision",
+        "Isolated Experience of Snowflakes",
+        "Thaw"
+    ],
+    "media": {
+        "media/bare_branches_cover.png": "Cover artwork, painted by Amfivolia using Rebelle"
+    },
+    "audio": ["Greenway.mp3"]
+}
