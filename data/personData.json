@@ -406,7 +406,14 @@
         "website": "https://datamindaudio.ai/",
         "instagram": "https://www.instagram.com/datamindaudio/"
     },
-    "jasko": {},
+    "jasko": {
+        
+        "soundcloud": "https://soundcloud.com/jaskotunes",
+        "twitter": "https://x.com/JaskoTunes",
+        "insta": "https://www.instagram.com/jaskotunes",
+        "old music": "https://soundcloud.com/jaskotunes/sets/old-music-cringe/s-F2DaNTKHiqZ",
+        "2nd soundcloud": "https://soundcloud.com/jaskodump"
+    },
     "worldwave": {},
     "lirion": {},
     "semi neural": {},

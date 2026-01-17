@@ -1,0 +1,31 @@
+{
+    "title": "Cosmogony V2",
+    "dates": {
+        "2023-10-xx": "track was made",
+        "2025-02-07": "published posthumously"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "collab",
+        "wip",
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "Jasko": "primary creator"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/jaskotunes/jasko-popbot-cosmogony-v2"
+    },
+    "audio": [
+        "Jasko & Popbot - Cosmogony V2.mp3",
+        "jasko & popbot btv6 popbot evil version.mp3"
+    ],
+    
+    "contents": [
+        "Cosmogony V2",
+        "Cosmogony V2 (popbot evil version)"
+    ]
+}
