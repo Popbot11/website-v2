@@ -35,5 +35,17 @@
     "media": {
         "media/bare_branches_cover.png": "Cover artwork, painted by Amfivolia using Rebelle"
     },
-    "audio": ["Greenway.mp3"]
+    "audio": [
+        "1 - Greenway.mp3",
+        "2 - Keep Pushing.mp3",
+        "3 - Twigs.mp3",
+        "4 - Convergent Evolution.mp3",
+        "5 - Telephone Poles.mp3",
+        "6 - Inward Fold (w. lukasipo).mp3",
+        "7 - Sky Through Bare Branches.mp3",
+        "8 - Kli (w. Amfivolia).mp3",
+        "9 - Indecision.mp3",
+        "10 - Isolated Experience of Snowflakes.mp3",
+        "11 - Thaw.mp3"
+    ]
 }
