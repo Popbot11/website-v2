@@ -220,11 +220,12 @@ if (Object.keys(params).includes("entry")) {
         document.getElementById("content").appendChild(element)
     );
     
-    document.getElementById("home").remove();
+    document.getElementById("extras").remove();
 
 } else {
     fetch("./index.json").then(res => res.json()).then(index => {
-        
+       
+        // First go through all of the entries in index.json, and create placeholder divs for all of them in the correct order 
         Object.keys(index).forEach(title => {
             
             let item_container = document.createElement("div");
@@ -234,9 +235,7 @@ if (Object.keys(params).includes("entry")) {
         });
 
 
-        // this goes through and creates all of the nessisary item divs in the correct order
-        // this has to be done first because all their contents will be loaded asynchronously
-        console.log(index);
+        // Again, go through index.json, and fill in all of the placeholder divs with correct info. Does this asynchrously. 
         Object.keys(index).forEach(async title => {
             renderElement(title).then(
                 element => {
