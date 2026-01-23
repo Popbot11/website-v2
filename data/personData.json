@@ -644,5 +644,10 @@
     "yandrel": {
         "soundcloud": "https://soundcloud.com/yandrel",
         "bandcamp": "https://yandrel.bandcamp.com/album/tempo"
+    },
+    "tea team": {
+        "soundcloud": "https://soundcloud.com/teateamdesu",
+        "bandcamp": "https://teateamdesu.bandcamp.com/",
+        "titter": "https://x.com/teateamdesu"
     }
 }
