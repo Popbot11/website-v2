@@ -389,7 +389,11 @@
         "instagarm": "https://www.instagram.com/viplexmusic/",
         "twitter": "https://twitter.com/viplexmusic"
     },
-    "zachary": {},
+    "zachary": {
+        "soundcloud": "https://soundcloud.com/zacharystime",
+        "solo.to": "https://solo.to/zacharystime",
+        "soundbetter": "https://soundbetter.com/profiles/619021-zachary"
+    },
     "1emjay": {
         "soundcloud": "https://soundcloud.com/1emjay",
         "linktree": "https://linktr.ee/1emjay",
@@ -400,33 +404,50 @@
         "soundcloud": "https://soundcloud.com/clayne_off",
         "instagram": "https://www.instagram.com/clayne_music/"
     },
-    "skipaay": {},
-    "kyodaina": {},
+    "skipaay": {
+        "soundcloud": "https://soundcloud.com/skipaay"
+    },
+    "kyodaina": {
+        "soundcloud": "https://soundcloud.com/kyodai-na",
+        "bandcamp": "https://clockworkred.bandcamp.com/"
+    },
     "datamind audio": {
         "website": "https://datamindaudio.ai/",
         "instagram": "https://www.instagram.com/datamindaudio/"
     },
     "jasko": {
-        
         "soundcloud": "https://soundcloud.com/jaskotunes",
         "twitter": "https://x.com/JaskoTunes",
         "insta": "https://www.instagram.com/jaskotunes",
         "old music": "https://soundcloud.com/jaskotunes/sets/old-music-cringe/s-F2DaNTKHiqZ",
         "2nd soundcloud": "https://soundcloud.com/jaskodump"
     },
-    "worldwave": {},
+    "worldwave": {
+        "soundcloud": "website",
+        "website": "https://www.worldwave.music/"
+    },
     "lirion": {},
     "semi neural": {},
     "glum bass": {
         "soundcloud": "https://soundcloud.com/glumbass"
     },
-    "inktome": {},
+    "inktome": {
+        "twitter": "https://x.com/tylerinktome",
+        "soundcloud": "https://soundcloud.com/inktome"
+    },
     "levia": {},
-    "xaelon": {},
+    "xaelon": {
+        "soundcloud": "https://soundcloud.com/xaelon"
+    },
     "plagve": {},
     "pixelpelixan": {},
-    "norkhuna": {},
-    "siedoro": {},
+    "norkhuna": {
+        "soundcloud": "https://soundcloud.com/norhkuna"
+    },
+    "siedoro": {
+        "soundcloud": "https://soundcloud.com/siedoro",
+        "insta": "https://www.instagram.com/siedoro.music/"
+    },
     "bleizik": {
         "soundcloud": "https://soundcloud.com/bleizik",
         "linktree": "https://linktr.ee/bleizik",
@@ -455,7 +476,10 @@
         "soundcloud": "https://soundcloud.com/aowaves",
         "twitter": "https://x.com/aowaves"
     },
-    "prox.bleep": {},
+    "prox.bleep": {
+        "bandcamp": "https://proxbleep.bandcamp.com/",
+        "soundcloud": "https://soundcloud.com/proxdotbleep"
+    },
     "ry3": {
         "linktree": "https://linktr.ee/Ry3Music",
         "soundcloud": "https://soundcloud.com/ry3gaming-gd",
@@ -478,17 +502,31 @@
         "instagram": "https://www.instagram.com/gm_work/",
         "website": "https://giuliomartinelli.com/"
     },
-    "ray volpe": {},
-    "zednotz": {},
+    "ray volpe": {
+        "soundcloud": "https://soundcloud.com/rayvolpemusic"
+    },
+    "zednotz": {
+        "soundcloud": "https://soundcloud.com/zed_not_z"
+    },
     "deadbushia": {
         "soundcloud": "https://soundcloud.com/db-yt-199381364",
         "comics": "https://namicomi.com/en/org/deadbushia/titles"
     },
-    "lightspark": {},
+    "lightspark": {
+        "soundcloud": "https://soundcloud.com/lightspark-965819462"
+    },
     "lukemans": {},
-    "pfiffel": {},
-    "jesus stevan": {},
-    "rannument": {},
+    "pfiffel": {
+        "soundcloud": "https://soundcloud.com/pfiffel",
+        "website": "https://pfiffel.com/"
+    },
+    "jesus stevan": {
+        "instagram": "https://www.instagram.com/jesus.stevan/",
+        "bluesky": "https://bsky.app/profile/svaen.bsky.social"
+    },
+    "rannument": {
+        "soundcloud": "https://soundcloud.com/rannument"
+    },
     "3manon": {
         "soundcloud": "https://soundcloud.com/user-667341290-348353004",
         "linktree": "https://linktr.ee/3manon",
@@ -499,11 +537,18 @@
     "asymmetrical faces": {
         "soundcloud": "https://soundcloud.com/asymmetricalfaces"
     },
-    "jaxxic / alaska": {},
+    "jaxxic / alaska": {
+        "soundcloud": "https://soundcloud.com/jaxxic"
+    },
     "shoug": {},
     "shoug's dad": {},
-    "jame5": {},
-    "pixelgrowlz": {},
+    "jame5": {
+        "soundcloud": "https://soundcloud.com/james-wicks-101337267"
+    },
+    "pixelgrowlz": {
+        "youtube": "https://www.youtube.com/channel/UC3F_8mCL1whxbC5Tn6C4KsQ/videos",
+        "bandcamp": "https://ketaedm.bandcamp.com/"
+    },
     "denomally": {
         "soundcloud": "https://soundcloud.com/denomaly-sentience"
     },
@@ -518,7 +563,9 @@
         "instagram": "https://www.instagram.com/officialdeadsmile/"
     },
     "lionblaze": {},
-    "klarigon": {},
+    "klarigon": {
+        "bandcamp": "https://klarigon.bandcamp.com/"
+    },
     "cranque": {
         "soundcloud": "https://soundcloud.com/cranqueofficial2006"
     },
@@ -555,5 +602,47 @@
         "Twitter": "https://x.com/keithrankin0_0?lang=en",
         "Instagram": "https://www.instagram.com/keithrankin",
         "Youtube": "https://www.youtube.com/channel/UCkz3Pvdc5aBLZWllZNr_eKA"
+    },
+    "binap": {
+        "soundcloud": "https://soundcloud.com/binap1310",
+        "insta": "https://www.instagram.com/fede_gamboa/",
+        "bandcamp": "https://binap.bandcamp.com/music"
+    },
+    "artikko": {
+        "soundcloud": "https://soundcloud.com/artikko",
+        "bandcamp": "https://artikko.bandcamp.com/",
+        "linktree": "https://linktr.ee/artikko"
+    },
+    "eksau": {
+        "soundcloud": "https://soundcloud.com/eksau",
+        "twitter": "https://x.com/eksau_"
+    },
+    "kapyo": {
+        "soundcloud": "https://soundcloud.com/kapyo",
+        "instagram": "https://www.instagram.com/kapyomusic/",
+        "linktree": "https://linktr.ee/kapyo",
+        "bandcamp": "https://kapyo.bandcamp.com/"
+    },
+    "poztman": {
+        "soundcloud": "https://soundcloud.com/poztman",
+        "linktree": "https://linktr.ee/Poztman"
+    },
+    "ravenclone": {},
+    "sharksbarksss": {
+        "soundcloud": "https://soundcloud.com/sharkbarksss",
+        "twitter": "https://x.com/sharkbarksss"
+    },
+    "stephie": {
+        "soundcloud": "https://soundcloud.com/smelliestephie",
+        "linktree": "https://linktr.ee/smelliestephie"
+    },
+    "viuk": {
+        "soundcloud": "https://soundcloud.com/viuk",
+        "bandcamp": "https://viuk.bandcamp.com/",
+        "twitter": "https://x.com/viukscoffee"
+    },
+    "yandrel": {
+        "soundcloud": "https://soundcloud.com/yandrel",
+        "bandcamp": "https://yandrel.bandcamp.com/album/tempo"
     }
 }

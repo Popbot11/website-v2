@@ -48,7 +48,7 @@ for person in people_todo:
             persondata = {}
             with open('./data/personData.json', 'r') as f:
                 persondata = json.load(f)
-                persondata[person] = links
+                persondata[person.lower()] = links
             with open('./data/personData.json', 'w') as f:
                 f.seek(0)
                 json.dump(persondata, f, indent=4, ensure_ascii=False)

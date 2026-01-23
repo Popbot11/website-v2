@@ -1,0 +1,43 @@
+{
+    "title": "distance remix",
+    "dates": {
+        "2026-01-23": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single",
+        "collab",
+        "remix"
+    ],
+    "contributors": {
+        "kapyo": "primary creator, cover artwork",
+        "Popbot": "remixer of distance on remix ep",
+        "fehu": "collaborator on original sepi ep",
+        "Binap": "collaborator on kapyo's original sepi ep",
+        "artikko": "remixer of septiembre on remix ep",
+        "stephie": "remixer of septiembre on remix ep",
+        "zetvue": "remixer of out of the blue on remix ep",
+        "eksau": "remixer of falling stars on remix ep",
+        "sharksbarksss": "remixer of february on remix ep",
+        "yandrel": "remixer of the end is near on remix ep",
+        "viuk": "remixer of the end is near on remix ep"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/distance-popbot-remix",
+        "bandcamp": "https://popbotmusic.bandcamp.com/track/kapyo-distance-popbot-remix"
+    },
+    "contents": [
+        "kapyo - distance (popbot remix)",
+        "kapyo, Fehu. - septiembre (artikko and stephie remix)",
+        "kapyo - out of the blue (zetvue remix)",
+        "kapyo, Binbap - falling stars (eksau remix)",
+        "kapyo - february (sharksbarksss remix)",
+        "kapyo - the end is near (yandrel and viuk remix)"
+    ],
+    "media": {
+        "media/sepi-remixes-cover.jpg": "cover artwork for the remix EP, made by kapyo"
+    },
+    "audio": ["Kapyo - Distance (Popbot remix).mp3"]
+}
