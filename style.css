@@ -371,7 +371,7 @@ body {
 
     /* background-color: rgba(121, 121, 121, 0.256); */
     /* background-image: ''; */
-    background-image: url(content/simulated-microcosm-cassettes/media/front.jpg);
+    background-image: url(content/bare-branches/media/bare_branches_cover.png);
     background-size: contain;
 
     border-color: black;
@@ -379,18 +379,21 @@ body {
     border-style: solid;
 
     box-shadow: 
-        0px 0px 20px rgba(67, 211, 0, 0.625),
+        0px 0px 20px rgba(211, 190, 0, 0.625),
         0px 0px 50px rgba(0, 134, 211, 0.625),
         inset 0px 0px 20px pink,
         inset 0px 0px 50px pink;
 
     overflow-y: scroll;
+
+    align-items: center;
 }
 #spotlight a {
-    background-color: rgba(128, 255, 0, 0.496);
+    background-color: rgba(214, 142, 160, 0.496);
 }
 #spotlight span {
-    background-color: rgba(8, 174, 16, 0.141);
+    background-color: rgba(255, 255, 255, 0.788);
+    
 }
 
 #mousecoords {
