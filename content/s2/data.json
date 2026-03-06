@@ -1,0 +1,27 @@
+{
+    "title": "s1",
+    "dates": {
+        "2026-03-05": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "collab",
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "Amfivolia": "primary creator, track artwork"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/infinitum-s2",
+        "bandcamp": "https://amfivolia.bandcamp.com/track/s2"
+    },
+    "media": {
+        "s2-cover.png": "cover artwork made by amfivolia in blender"
+    },
+    "audio": [
+        "s2.mp3"
+    ]
+}
