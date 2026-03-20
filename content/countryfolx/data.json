@@ -17,9 +17,10 @@
         "euphee": "primary creator"
     },
     "links": {
-        "soundcloud": "https://soundcloud.com/unbeyond-anthologies/vorso-euphee-djeb-popbot-countryfolx"
+        "soundcloud": "https://soundcloud.com/unbeyond-anthologies/countryfolx"
     },
     "media": {
         "media/tempcover_cfc2.png": "a teporary cover that will be updated later once its finished. "
-    }
+    },
+    "audio": ["Vorso, euphee, djeb, Popbot - CoUNTrYfolx.mp3"]
 }
