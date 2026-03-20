@@ -1,0 +1,25 @@
+{
+    "title": "CoUNTrYfolx",
+    "dates": {
+        "2026-03-20": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "collab",
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "Vorso": "primary creator",
+        "djeb": "primary creator",
+        "euphee": "primary creator"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/unbeyond-anthologies/vorso-euphee-djeb-popbot-countryfolx"
+    },
+    "media": {
+        "media/tempcover_cfc2.png": "a teporary cover that will be updated later once its finished. "
+    }
+}

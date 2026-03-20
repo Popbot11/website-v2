@@ -649,5 +649,21 @@
         "soundcloud": "https://soundcloud.com/teateamdesu",
         "bandcamp": "https://teateamdesu.bandcamp.com/",
         "titter": "https://x.com/teateamdesu"
+    },
+    "vorso": {
+        "soundcloud": "https://soundcloud.com/vorso",
+        "bandcamp": "https://vorso.bandcamp.com/music",
+        "insta": "https://www.instagram.com/vorsomusic/",
+        "youtube": "https://www.youtube.com/c/VorsoMusic"
+    },
+    "djeb": {
+        "soundcloud": "https://soundcloud.com/djebrayass",
+        "bandcamp": "https://djeb.bandcamp.com/",
+        "youtube": "https://www.youtube.com/@djebrayass",
+        "discord server": "https://discord.gg/hZd3SERSYS"
+    },
+    "euphee": {
+        "soundcloud": "https://soundcloud.com/euphee",
+        "insta": "https://www.instagram.com/eupheewtf"
     }
 }
