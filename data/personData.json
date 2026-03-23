@@ -665,5 +665,10 @@
     "euphee": {
         "soundcloud": "https://soundcloud.com/euphee",
         "insta": "https://www.instagram.com/eupheewtf"
+    },
+    "dog lady": {
+        "youtube": "https://www.youtube.com/@guywith_dog",
+        "soundcloud": "https://soundcloud.com/guy-with-dog",
+        "website": "https://buelfest.guywith.dog/"
     }
 }
