@@ -1,0 +1,1 @@
+a demo i made for ry3's upcoming decentsampler libraries. all of the synth sounds come from said libraries, processed to varying degrees. all other non-tonal sounds, aside from teh ableton default 707, come from raw field recordings i've made of enviornments I enjoy. 

@@ -1,0 +1,23 @@
+{
+    "title": "sample web",
+    "dates": {
+        "2026-03-24": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "ry3": "made the sample libraries i used"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/sample-web-decentsampler-demo"
+    },
+    "media": {
+        "media/sampleweb-cover.jpg": "a zoomed in screenshot of a background image in one of the sample libraries' interfaces. presumably originally photographed by ry3."
+    },
+    "audio": ["sample web.mp3"]
+}
