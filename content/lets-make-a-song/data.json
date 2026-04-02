@@ -1,0 +1,25 @@
+{
+    "title": "lets make a song",
+    "dates": {
+        "2026-04-01": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "collab",
+        "single",
+        "feature"
+    ],
+    "contributors": {
+        "Popbot": "featured vocalist",
+        "CellularAutomaton": "primary creator"
+    },
+    "links": {
+        "bandcamp": "https://cellularautomaton.bandcamp.com/track/lets-make-a-song"
+    },
+    "media": {
+        "cover.jpg": "cover art they drew probably in ms paint or something"
+    },
+    "audio": ["lets make a song.mp3"]
+}
