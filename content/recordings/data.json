@@ -1,0 +1,18 @@
+{
+    "title": "recordings",
+    "dates": {
+        "2026-05-04": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "collection"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "webpage": "./content/recordings/index.html"
+    }
+}
