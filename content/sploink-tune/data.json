@@ -1,0 +1,28 @@
+{
+    "title": "sploink tune",
+    "dates": {
+        "2026-05-09": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "collab",
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "Hudson Lee": "primary creator, cover artwork",
+        "takanoez": "additional designs on artwork"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/hudsonlee/sploinktune",
+        "bandcamp": "https://popbotmusic.bandcamp.com/track/sploink-tune",
+        "sploink m4l device": "https://www.patreon.com/posts/sploink-157849715",
+        "youtube visualizer": "https://www.youtube.com/watch?v=xp6tbnyyeVs"
+    },
+    "media": {
+        "media/sploink_tune_cover.png": "cover artwork made by hudson with additional designs by takonez, and ofc input from me and whoever else was in the discord vc"
+    },
+    "audio": ["sploink tune.mp3"]
+}

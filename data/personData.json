@@ -424,7 +424,9 @@
         "soundcloud": "website",
         "website": "https://www.worldwave.music/"
     },
-    "lirion": {},
+    "lirion": {
+        "no links": "."
+    },
     "semi neural": {},
     "glum bass": {
         "soundcloud": "https://soundcloud.com/glumbass"
@@ -433,12 +435,18 @@
         "twitter": "https://x.com/tylerinktome",
         "soundcloud": "https://soundcloud.com/inktome"
     },
-    "levia": {},
+    "levia": {
+        "no links": "."
+    },
     "xaelon": {
         "soundcloud": "https://soundcloud.com/xaelon"
     },
-    "plagve": {},
-    "pixelpelixan": {},
+    "plagve": {
+        "no links": ","
+    },
+    "pixelpelixan": {
+        "no links": "."
+    },
     "norkhuna": {
         "soundcloud": "https://soundcloud.com/norhkuna"
     },
@@ -464,7 +472,9 @@
         "site": "https://bento.me/aeronoise",
         "soundcloud": "https://soundcloud.com/aero_noise"
     },
-    "ranotot": {},
+    "ranotot": {
+        "no links": "."
+    },
     "apm": {
         "group alias, no links": "."
     },
@@ -513,7 +523,9 @@
     "lightspark": {
         "soundcloud": "https://soundcloud.com/lightspark-965819462"
     },
-    "lukemans": {},
+    "lukemans": {
+        "no links": "."
+    },
     "pfiffel": {
         "soundcloud": "https://soundcloud.com/pfiffel",
         "website": "https://pfiffel.com/"
@@ -560,7 +572,9 @@
         "soundcloud": "https://soundcloud.com/dead-sm-le",
         "instagram": "https://www.instagram.com/officialdeadsmile/"
     },
-    "lionblaze": {},
+    "lionblaze": {
+        "no links": "."
+    },
     "klarigon": {
         "bandcamp": "https://klarigon.bandcamp.com/"
     },
@@ -625,7 +639,9 @@
         "soundcloud": "https://soundcloud.com/poztman",
         "linktree": "https://linktr.ee/Poztman"
     },
-    "ravenclone": {},
+    "ravenclone": {
+        "": ""
+    },
     "sharksbarksss": {
         "soundcloud": "https://soundcloud.com/sharkbarksss",
         "twitter": "https://x.com/sharkbarksss"
@@ -668,5 +684,17 @@
         "youtube": "https://www.youtube.com/@guywith_dog",
         "soundcloud": "https://soundcloud.com/guy-with-dog",
         "website": "https://buelfest.guywith.dog/"
+    },
+    "hudson lee": {
+        "soundcloud": "https://soundcloud.com/hudsonlee",
+        "patreon": "https://www.patreon.com/hudsonleemusic",
+        "UPSCALE": "https://soundcloud.com/upscale-recordings",
+        "youtube": "https://www.youtube.com/@hudsonleemusic",
+        "bandcamp": "https://hudsonlee.bandcamp.com/",
+        "insta": "https://www.instagram.com/hudsonleemusic/"
+    },
+    "takanoez": {
+        "instagram": "https://www.instagram.com/takanoez/",
+        "neocities": "https://takanoez.neocities.org/"
     }
 }
