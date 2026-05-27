@@ -1,0 +1,25 @@
+{
+    "title": "outdoor sploink jam",
+    "dates": {
+        "2026-05-27": "published"
+    },
+    "categories": [
+        "video"
+    ],
+    "tags": [
+        "collab",
+        "shortform"
+    ],
+    "contributors": {
+        "Hudson Lee": "primary creator",
+        "Popbot": "music collaborator",
+        "Pedestrian Tactics": "videography",
+        "Takanoez": "little guys"
+    },
+    "links": {
+        "instagram": "https://www.instagram.com/p/DY2pmPoNE2W/",
+        "youtube": "https://www.youtube.com/watch?v=vUvT8VvaAXs",
+        "tiktok": "https://www.tiktok.com/@hudsonleemusic/video/7644659556076965127"
+    },
+    "audio": ["sploink demo thing render REAL.mp3"]
+}
