@@ -50,6 +50,25 @@
             12 - island undereye<br>
 <br>
             recordings of dreams within dreams, scored by the enormous radiator and the buildings it provides
+<br><br>    
+            <span id="message">
+                click to start
+            </span>
+
         </span>
+        <script>
+            var audio = new Audio('audio/radiator dream recursion full mix (2).mp3');
+            var playing = false;
+            document.addEventListener(
+                "click",
+                () => {
+                    if (playing == false) {
+                        playing = true;
+                        audio.play();
+                        document.getElementById("message").style.visibility = "hidden";
+                    }
+                }
+            )
+        </script>
     </body>    
 </html>
