@@ -1,0 +1,165 @@
+<html>
+    <head>
+        <style>
+            @font-face {
+                font-family: 'AbletonSansSmall';
+                src: url('media/AbletonSansSmall-Regular.ttf') format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            html, body {
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                scrollbar-width: none;
+            }
+
+            #tracklist{
+                color: #281917;
+                /* color: rgb(255, 0, 0); */
+                position: fixed;
+                font-family: 'AbletonSansSmall', sans-serif;
+                z-index: 1;
+
+
+            }
+            #scrollblock {
+                visibility: hidden;
+                position: absolute;
+                height: 500%;
+            }
+            #debug {
+                position: fixed;
+                right: 0px;
+                color: rgb(0, 255, 242);
+                z-index: 4;
+                visibility: hidden;
+            }
+            #fadefilter{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(255,255,255, 0);
+                backdrop-filter: saturate(1) blur(0px);
+            }   
+
+            #viewbutton{
+                z-index: 4;
+                position: fixed;
+                visibility: hidden;
+            }
+            a {
+                text-decoration: none;
+            }
+
+            a:link {
+                color: #281917;   
+            }
+            /* visited link */
+            a:visited {
+            color: #281917;
+            }
+
+            /* mouse over link */
+            a:hover {
+            color: #321f1d;
+            }
+
+            /* selected link */
+            a:active {
+            color: #281917;
+            }
+        </style>    
+    </head>
+    <body>
+        
+        
+        <span id="tracklist">
+            <a href="https://scarabmoonmedia.bandcamp.com/album/radiator-dream-recursion" target="_blank">radiator dream recursion</a> <br>
+            <br>
+            1 - grounding<br>
+            2 - ground reflection, false arousal<br>
+            3 - ground reflection<br>
+            4 - undereye formation, false arousal<br>
+            5 - manor park undereye formation<br>
+            6 - continuous flush<br>
+            7 - lamina<br>
+            8 - torn ear seal (lamina, false arousal)<br>
+            9 - concrete structure (approach)<br>
+            10 - concrete structure<br>
+            11 - concrete structure (unmaintained)<br>
+            12 - island undereye<br>
+            <br>
+            recordings of dreams within dreams, scored by the enormous radiator and the buildings it provides
+            <br><br>    
+            
+            <span id="message" style="color: #5a3933">
+                click to start
+            </span>
+
+        </span>
+        <img  src="media/inside no text.png" 
+            style="
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100vw;
+              height: 100vh;
+              object-fit: cover;
+            ">
+       
+        <span id="debug">debug text</span>
+        <span id="scrollblock">a</span><span>a</span>
+        <span id="fadefilter"style=""></span>
+        <button id="viewbutton" onclick="viewExtras()">view extras</button>
+        
+        <script>
+
+            
+            // document.addEventListener('DOMContentLoaded', () => {
+            //     console.log("AHHUSFLSIHFJKSHRFjlkn");
+                
+            // }, { once: true });
+            const heightamt = 20;
+            document.getElementById("scrollblock").style.height=`${heightamt*100 + 101}%`
+
+            let audio = new Audio('audio/radiator dream recursion full mix.mp3');
+            let playing = false;
+            let scrollvh = 0;
+
+
+            document.addEventListener(
+                "click",
+                () => {
+                    if (playing == false) {
+                        playing = true;
+                        audio.play();
+                        document.getElementById("message").style.visibility = "hidden";
+                    }
+                }
+            )
+
+            window.addEventListener("scroll", () => {
+                scrollvh = window.scrollY / (window.innerHeight / 100);
+                scrollvh_int = Math.floor(scrollvh);
+                document.getElementById("debug").innerHTML=scrollvh_int;
+                document.getElementById("fadefilter").style.backdropFilter = `saturate(${1+(scrollvh/(heightamt*50))}) blur(${scrollvh/heightamt}px)`;
+                document.getElementById("tracklist").style.filter = `saturate(${1+(scrollvh/(heightamt*50))}) blur(${scrollvh/(heightamt * 6)}px)`;
+
+                if (scrollvh_int >= 2000) {
+                    console.log("ALERT! ALERT! VIRUS DELECTED! ALERT!! \nexecuting: code.remove.virus([protocol])");
+                    document.getElementById("viewbutton").style.visibility="visible";
+                } else {
+                    document.getElementById("viewbutton").style.visibility="hidden";
+                }
+            });
+
+            function viewExtras() {
+                window.open("extras.html");
+            }
+        </script>
+    </body>    
+</html>

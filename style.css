@@ -11,6 +11,13 @@
 .main {
     position: relative;
 }
+
+ @font-face {
+        font-family: 'AbletonSansSmall';
+        src: url('media/AbletonSansSmall-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
 hr {
     width: 90%;
     border-color: rgba(0, 2, 51, 0.251);
@@ -367,33 +374,37 @@ body {
     /* position: absolute; */
     top:300px;
     height: 70px;
-
+    font-family: 'AbletonSansSmall', sans-serif;
 
     /* background-color: rgba(121, 121, 121, 0.256); */
     /* background-image: ''; */
-    background-image: url(content/bare-branches/media/bare_branches_cover.png);
-    background-size: contain;
+    background-image: url(content/radiator-dream-recursion/media/FRONT\ COVER.png);
+    /* background-size: contain; */
 
     border-color: black;
     border-width: 2px;
     border-style: solid;
 
-    box-shadow: 
+    /* box-shadow: 
         0px 0px 20px rgba(211, 190, 0, 0.625),
         0px 0px 50px rgba(0, 134, 211, 0.625),
         inset 0px 0px 20px pink,
-        inset 0px 0px 50px pink;
+        inset 0px 0px 50px pink; */
 
     overflow-y: scroll;
 
     align-items: center;
 }
+
+
 #spotlight a {
-    background-color: rgba(214, 142, 160, 0.496);
+    /* background-color: rgba(214, 142, 160, 0.496); */
+    visibility: visible;
 }
 #spotlight span {
-    background-color: rgba(255, 255, 255, 0.788);
-    
+    /* background-color: rgba(255, 255, 255, 0.788); */
+    color: rgb(163, 170, 203);
+    visibility: visible;
 }
 
 #mousecoords {

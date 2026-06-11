@@ -1,0 +1,58 @@
+{
+    "title": "radiator dream recursion",
+    "dates": {
+        "2026-06-12": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "album"
+    ],
+    "contributors": {
+        "Popbot": "primary creator (music & artwork)",
+        "Thorjn": "additional audio material, scarab moon media, asked me to make this in the first place",
+        "iyrliaes": "additional audio material"
+    },
+    "links": {
+        "webpage":"../content/radiator-dream-recursion/index.html",
+        "bandcamp": "https://scarabmoonmedia.bandcamp.com/album/radiator-dream-recursion",
+        "soundcloud": "https://soundcloud.com/popbot1/sets/radiator-dream-recursion",
+        "scarab moon media bandcamp": "https://scarabmoonmedia.bandcamp.com/",
+        "scarab moon media youtube": "https://www.youtube.com/@scarabmoonmedia"
+    },
+    "contents": [
+        "grounding",
+        "ground reflection, false arousal",
+        "ground reflection",
+        "undereye formation, false arousal",
+        "manor park undereye formation",
+        "continuous flush",
+        "lamina",
+        "torn ear seal (lamina, false arousal)",
+        "concrete structure (approach)",
+        "concrete structure",
+        "concrete structure (unmaintained)",
+        "island undereye"
+    ],
+    "media": {
+        "media/FRONT%20COVER.png": "cover artwork",
+        "media/BACK%20COVER.png": "back/alt cover",
+        "media/CD.png": "disc/alt cover",
+        "media/INSIDE%20COVER%20(tracklist).png": "inside/alt cover"
+    },
+    "audio": [
+        "1 - grounding.mp3",
+        "2 - ground reflection, false arousal.mp3",
+        "3 - ground reflection.mp3",
+        "4 - undereye formation, false arousal.mp3",
+        "5 - manor park undereye formation.mp3",
+        "6 - continuous flush.mp3",
+        "7 - lamina.mp3",
+        "8 - torn ear seal (lamina, false arousal).mp3",
+        "9 - concrete structure (approach).mp3",
+        "10 - concrete structure.mp3",
+        "11 - concreet structure (unmaintained).mp3",
+        "12 - island undereye.mp3"
+    ]
+}
