@@ -1,7 +1,8 @@
 {
     "title": "gunk stripe shrine",
     "dates": {
-        "2025-05-13": "published"
+        "2025-05-13": "published",
+        "2026-06-15": "updated credits"
     },
     "categories": [
         "other"
@@ -10,7 +11,10 @@
         "shrine", "shitpost"
     ],
     "contributors": {
-        "Popbot": "primary creator"
+        "Popbot": "primary creator",
+        "wangleline": "gunk stripe documentarien",
+        "ockle": "come up with `gunk stripe documentarien`",
+        "popbot": "updated credits"
     },
     "links": {
         "webpage": "../content/gunk-stripe-shrine/index.html"
