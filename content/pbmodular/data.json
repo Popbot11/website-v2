@@ -1,0 +1,20 @@
+{
+    "title": "pbmodular",
+    "dates": {
+        "2026-06-16": "published"
+    },
+    "categories": [
+        "contraption"
+    ],
+    "tags": [
+        "wip",
+        "plugin"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "webpage": "./content/pbmodular/",
+        "github": "https://github.com/Popbot11/pbmodular"
+    }
+}

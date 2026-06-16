@@ -1,0 +1,1 @@
+a WIP modular vst3/clap effect plugin built in rust with the nice-plug framework. 
