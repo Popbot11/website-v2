@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <style>
+            #main img {
+                box-shadow:   0px 0px 10px rgb(0, 0, 0) 
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../../index.html">home</a> | <a href="../index.html">expert mode</a> <br><br>
+        images i found or created organized in a particular way
+        <hr>
+        <span id="main"></span>
+
+        <script>
+            const boards = {
+                "basketball": [
+                    'ball.jpg',
+                    'net.jpg',
+                    'one.jpg',
+                    'shoot.jpg',
+                    'two.jpg',
+                ],
+                "diagonal": [
+                    "beam.jpg",
+                    "elevator.jpg",
+                    "radiator.jpg",
+                    "radiator2.jpg",
+                ],
+                "orange": [
+                    'al.jpg',
+                    'glare.jpg',
+                    'headshot.jpg',
+                    'painting.jpg',
+                    'pills.jpg',
+                    'screen.jpg',
+                    'setup.jpg',
+                ],
+                "happy": [
+                    'floater.jpg',
+                    'grouper.jpg',
+                    'groupyay.jpg',
+                    'into.jpg',
+                    'wahoo.jpg',
+                ],
+                "mfw": [
+                    'conferty.gif',
+                    'darwin.png',
+                    'fly.gif',
+                    'glaggle.png',
+                    'watterson.webp',
+                ],
+                "people": [
+                    'faller.png',
+                    'looker.png',
+                    'parker.png',
+                    'pisser.png',
+                    'shoper.png',
+                    'stander.png',
+                    'talker.png',
+                ],
+                "science": [
+                    'ai.jpg',
+                    'brain.jpg',
+                    'map.jpg',
+                    'type2.jpg',
+                    'typer.jpg',
+                    'typer3.jpg',
+                ]
+                
+            }
+
+            for (const [key, images] of Object.entries(boards)) {
+                let width = 100 / images.length;
+
+                let boardElement = document.createElement("span");
+                boardElement.innerHTML = `
+                    ${key}:<br>
+                    ${
+                        images.map(image => {
+                            console.log(image);
+                            let url =`media/${key}/${image}`
+                            return `<a href="${url}" target="blank"><img src="${url}" style="width: ${width}%"></a>`;
+                        }).join("")
+                    }
+                    <br><br><hr><br>
+                `;
+                document.getElementById("main").appendChild(boardElement);
+            }
+
+
+
+        </script>
+    </body>
+</html>
