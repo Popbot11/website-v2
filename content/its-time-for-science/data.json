@@ -1,0 +1,20 @@
+{
+    "title": "ITS TIME FOR SCIENCE",
+    "dates": {
+        "2026-06-27": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/its-time-for-science",
+        "video": "https://www.youtube.com/watch?v=oe6g6yeADkM"
+    },
+    "audio": ["ITS TIME FOR SCIENCE.mp3"]
+}
