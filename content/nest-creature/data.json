@@ -1,0 +1,38 @@
+{
+    "title": "Nest Creature",
+    "dates": {
+        "2026-07-03": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single"
+    ],
+    "contributors": {
+        "Vara Ostria Belich": "(aka OCKLE) comp and community organizer, contributed to comp",
+        "Lyfens": "cover artwork",
+        "Popbot": "contributed to comp",
+        "a1sha_": "contributed to comp",
+        "Chalbert": "contributed to comp",
+        "Luminious": "contributed to comp",
+        "WYLDWORLD": "contributed to comp"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/nest-creature",
+        "bandcamp album": "https://ockle.bandcamp.com/album/circumnavigating-darwin-iv"
+    },
+    "media": {
+        "media/dar.png": "darwin mogging you",
+        "media/darwin_iv_final_art_v4.png": "full cover artwork by Lyfens"
+    },
+    
+    "contents": [
+        "Chalbert - BEACON OF LIGHT (a grave to die in)",
+        "Popbot - nest creature",
+        "WYLDWORLD - WALK OF SOLITUDE",
+        "Luminious - Amoebic Sea",
+        "a1sha_ & OCKLE - The Emperors"
+    ],
+    "audio": ["nest creature.mp3"]
+}

@@ -290,10 +290,21 @@
     },
     "ockle": {
         "linktree": "https://linktr.ee/ockle",
-        "soundcloud": "https://soundcloud.com/thelordoffools",
+        "ockle soundcloud": "https://soundcloud.com/thelordoffools",
+        "vara soundcloud": "https://soundcloud.com/weepingfolly",
         "bandcamp": "https://ockle.bandcamp.com/",
         "youtube": "https://www.youtube.com/@the_lord_of_fools",
         "instagram": "https://instagram.com/the_lord_of_fools",
+        "bluesky": "https://bsky.app/profile/ockle.bsky.social"
+    },
+    "vara ostria belich": {
+        "linktree": "https://linktr.ee/ockle",
+        "ockle soundcloud": "https://soundcloud.com/thelordoffools",
+        "vara soundcloud": "https://soundcloud.com/weepingfolly",
+        "bandcamp": "https://ockle.bandcamp.com/",
+        "youtube": "https://www.youtube.com/@the_lord_of_fools",
+        "weepingfolly insta": "https://www.instagram.com/weepingfolly/",
+        "ockle instagram": "https://instagram.com/the_lord_of_fools",
         "bluesky": "https://bsky.app/profile/ockle.bsky.social"
     },
     "pearl lump": {
@@ -708,5 +719,32 @@
         "soundcloud": "https://soundcloud.com/iyrliaes",
         "instagram": "https://www.instagram.com/iyrliaes/",
         "bandcmap": "https://iyrliaes.bandcamp.com/music"
+    },
+    "chalbert": {
+        "soundcloud": "https://soundcloud.com/chalbert-official",
+        "insta": "https://www.instagram.com/chalbertmusic?igshid=1vmo14jn0j8g3",
+        "twitter": "https://x.com/realchalbert",
+        "linktree": "https://linktr.ee/chalbertofficial"
+    },
+    "luminious": {
+        "soundcloud": "https://soundcloud.com/luminious-music",
+        "itch.io": "https://luminious.itch.io/",
+        "bandcamp": "https://luminious.bandcamp.com/",
+        "youtube": "https://www.youtube.com/@luminiousmusic"
+    },
+    "lyfens": {
+        "cardd": "https://lyfens.carrd.co/",
+        "twitter": "https://x.com/lyfens_",
+        "toyhouse": "https://toyhou.se/lyfens",
+        "insta": "https://www.instagram.com/lyfens/"
+    },
+    "WYLDWORLD": {
+        "soundcloud": "https://soundcloud.com/wyldworld",
+        "insta": "https://www.instagram.com/wyldworld_tunes/"
+    },
+    "a1sha_": {
+        "soundcloud": "https://soundcloud.com/a1sha0",
+        "insta": "https://www.instagram.com/0a1sha_/",
+        "are.na": "https://www.are.na/a1sha_-0/channels?utm_source=ig&utm_medium=social&utm_content=link_in_bio"
     }
 }
