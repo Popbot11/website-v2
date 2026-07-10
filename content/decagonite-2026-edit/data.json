@@ -1,0 +1,23 @@
+{
+    "title": "Decagonite 2026 Edit",
+    "dates": {
+        "2026-07-10": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "single",
+        "remix"
+    ],
+    "contributors": {
+        "Popbot": "primary creator"
+    },
+    "links": {
+        "soundcloud (followers only)": "https://soundcloud.com/popbot1/decagonite-2026-edit"
+    },
+    "media": {
+        "media/decagonite 2026 cover.png": "cover artwork made by me in blender a few months ago"
+    },
+    "audio": ["decagonite 2026.mp3"]
+}
