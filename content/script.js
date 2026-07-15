@@ -181,7 +181,7 @@ async function renderElement(title) {
                         ${Object.keys(data.media).map(filename => `
                             <span class="media-item">
                                 <a href="${path}/${filename.replace(" ", "-")}" target="_blank">
-                                    <img src="${path}/${filename.replace(" ", "-")}" width="250px"><br>
+                                    <img loading="lazy" src="${path}/${filename.replace(" ", "-")}" width="250px"><br>
                                 </a>
                                 <span>${data.media[filename]}</span>
                             </span>
