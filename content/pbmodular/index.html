@@ -1,9 +1,76 @@
 <html>
-    <head></head>
+    <head>
+        <style>
+            /* body
+                {
+                    font-size: 2.2vw;
+                } */
+        </style>
+    </head>
     <body>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <a href="../../index.html">home</a> | <a href="../index.html">expert mode</a> <br><br>
-        <h1>currently there's nothing here yet. Later today I will finish making this webpage!! </h1>
-        <img>
+        <hr>
+        
+
+        <p>PBModular is a modular fx plugin that I"m currently in the process of developing. </p>
+        <p>here's the <a href="https://github.com/Popbot11/pbmodular" target="_blank">github repo</a></p>
+        <p>I'm using the <a href="https://codeberg.org/RustAudio/nice-plug" target="_blank">Nice-Plug</a> VST3/CLAP Rust framework, which is a community fork of nih-plug. </p>
+        <p>You're probably on this website because you saw my talk at the OSRI symposium. Thank you for coming! As promised, here's some more technical details about what I'm doing for those who are interested.</p>
+        <hr>
+        Currently, this software is in a very early alpha. I have this modular archetecture working wonderfully, but that's really about it. Two months went by very quickly, haha. There's very little UI, and very little in terms of something that actually produces a compelling sound. I'm also still in the process of sorting out a few critical bugs with the parallel mixdown component, so it won't be at all usable until I do that. With that being said, I did put a lot of work and energy into this, and I'm very very happy with the process I've been able to make, because at the beginning of the summer I had absolutely no idea how any of this was going to work. 
+        <br><br>
+        before I dive headfirst into the jargon hellscape, I would like to mention that all of this technical nonsense has a lot of applications within my own creative practice as an electronic music composer.  <a href="../?entry=Bare+Branches" target="_blank">this</a> is a recent album I released that makes use of a lot of the concepts I mentioned during my talk and in this little article. 
+        <hr>
+
+        <p>This plugin keeps track of two types of modules: NRT Modules and DSP modules. NRT modules contain references to networks of DSP Modules. Because NRT Modules don't actually directly contain any DSP code, this makes it very easy to adaptively optimize the DSP graph depending on the context. For example, if you know a parameter doesn't have DAW automation assigned to it from outside the plugin, the plugin doesn't need to account for that. Generally, I'm able to precompute a lot of values that otherwise would need to be computed at audio rate because of the fact that I can rebuild the DSP graph at any point during runtime. </p>
+        <p>For example: Let's say I have DSP module implementations for lowpass filters, allpass filters, comb filters, and a module that can instantiate whatever's above it in the DSP graph n times in parallel. With these building blocks, I could create a NRT module that contains references to these DSP modules in a particular order and end up with a sort of freeverb implementation. </p>
+        <p>
+            Here's some rust-ish pesudocode for building a bank of parallel SVF bandpass filters using preconstructed DSP modules, within the definition of a <code>NRT_modal_filter</code>:
+        </p>
+        <pre>
+struct NRT_modal_filter {
+    input,
+    freq_low,
+    freq_high,
+    q_low,
+    q_high,
+
+    num_partials,
+}
+
+... 
+
+fn build_dsp(&self) -> DSPModule {
+
+    DSP_Parallel_Mixdown::new (
+        input: DSP_Parallel::new (
+            DSP_svf_bandpass::new (
+                input: self.input,
+                freq: DSP_range_distribution::new (
+                    range_lo: self.freq_low,
+                    range_hi: self.freq_high,
+                ),
+                q: DSP_range_distribution::new (
+                    range_lo: self.q_low,
+                    range_hi: self.q_high,
+                )
+            ),
+            num_chains: self.num_partials,
+        )
+    )
+}
+        </pre>
+
+<p>
+    in this example, the dsp graph will end up with a diferent number of parallel filters depending on the value of <code>NRT_modal_filter.num_partials</code>. 
+</p>        
+
+<hr>
+
+thanks for reading :) <br><br>
+<a href="../../index.html">home</a> | <a href="../index.html">expert mode</a> <br><br>
+
 
 
     </body>
