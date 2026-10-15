@@ -2,6 +2,7 @@
 .nav {
     position: relative;
     padding-top: 0px;
+    backdrop-filter: blur(10px);
 }
 .nav hr {
     height: 1px;
@@ -134,6 +135,7 @@ body {
     
     background-color: rgba(0, 0, 0, 0);
 }
+
 
 
 
@@ -333,8 +335,8 @@ body {
         0px 1px 5px rgba(72, 0, 255, 0.444),
         0px 1px 30px rgba(0, 255, 30, 0.421);
 
-    -webkit-backdrop-filter: blur(7px) hue-rotate(90deg);
-    backdrop-filter: blur(7px) hue-rotate(90deg);
+    -webkit-backdrop-filter: blur(7px) hue-rotate(90deg) invert(70%);
+    backdrop-filter: blur(7px) hue-rotate(90deg) contrast(80%) invert(70%);
     visibility: hidden;
 }
 #player-info {
@@ -364,9 +366,13 @@ body {
         0px 1px 5px rgba(72, 0, 255, 0.444),
         0px 1px 30px rgba(0, 255, 30, 0.421);
 
-    -webkit-backdrop-filter: blur(7px) hue-rotate(90deg);
-    backdrop-filter: blur(7px) hue-rotate(90deg);
+    -webkit-backdrop-filter: blur(7px) hue-rotate(90deg) invert(70%);
+    backdrop-filter: blur(7px) hue-rotate(90deg) contrast(80%) invert(70%);
     visibility: hidden; 
+}
+
+#contact-menu a {
+    text-shadow: 0px 0px 10px white;
 }
 
 /* OTHER BULLSHIT */
@@ -468,11 +474,13 @@ body {
     }
 
     #container-buttons {
-        width: 100px;
+        width: 290px;
         height: 110px;
         left: 980px;
         top: 290px;
     }
+
+
 
     /* #spotlight {
         top: 600px
@@ -523,9 +531,9 @@ body {
     }
 
     #container-buttons {
-        width: 100px;
+        width: 290px;
         height: 110px;
-        left: 520px;
+        left: 335px;
         top: 365px;
     }
 
@@ -574,8 +582,8 @@ body {
     }
 
     #container-buttons {
-        width: 100px;
-        height: 80px;
+        width: 290px;
+        height: 110px;
         left: 310px;
         top: 620px;
     }
