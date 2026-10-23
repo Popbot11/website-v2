@@ -1,0 +1,41 @@
+{
+    "title": "Villainous Item",
+    "dates": {
+        "2026-10-26": "published"
+    },
+    "categories": [
+        "music"
+    ],
+    "tags": [
+        "ep",
+        "collab"
+    ],
+    "contributors": {
+        "Popbot": "primary creator",
+        "iyrliaes": "primary creator"
+    },
+    "links": {
+        "soundcloud": "https://soundcloud.com/popbot1/sets/popbot-iyrliaes-villainous",
+        "bandcamp": "https://iyrliaes.bandcamp.com/album/villainous-item",
+        "music video": "https://youtu.be/cwAG9nbFrEI",
+        "instagram reel": "https://www.instagram.com/p/Devl-J8RvWq/?hl=en"
+    },
+    "contents": [
+        "Sgin",
+        "Todayssponsored",
+        "grounding (Villainous item)",
+        "basalt",
+        "44realle"
+    ],
+    "media": {
+        "media/VACoverFull.png": "primary cover artwork made by myself and iyrliaes. source material is a photo from my fucked up laptop camera that sometimes makes these glitchy horizontal blue lines and reacts to light in a vary particular way. i'm standing on something and sort of beholding my ceiling light that i covered with a pillow case. iyrliaes then did the majority of the editing",
+        "media/VACoverSingle.png": "single cover artwork; it's a screenshot from the music video. pretty sure this is an image of cough drops and some like vehicle that olive put onto a coffee cup? i'm not sure i didnt have any involvement in the creation of this other than the framinig of the screenshot lol"
+    },
+    "audio": [
+        "1 - Popbot & iyrliaes - Sgin.mp3",
+        "2 - Popbot & iyrliaes - Todayssponsored.mp3",
+        "3 - Popbot & iyrliaes - grounding (Villainous item).mp3",
+        "4 - Popbot & iyrliaes - basalt.mp3",
+        "5 - Popbot & iyrliaes - 44realle.mp3"
+    ]
+}
